@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1015.0" prefWidth="1920.0" style="-fx-background-color: #DBDBDB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Principal.Telas.TelaDeCadastroController">
+   <children>
+      <ImageView fitHeight="966.0" fitWidth="2670.0" layoutX="2.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-752.0" AnchorPane.topAnchor="94.0">
+         <image>
+            <Image url="@../../../Imagens/imagens%20cadastro/Rectangle%202.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="175.0" layoutY="166.0" prefHeight="811.0" prefWidth="1659.0" AnchorPane.bottomAnchor="84.0" AnchorPane.topAnchor="166.0">
+         <children>
+            <ImageView fitHeight="854.0" fitWidth="1056.0" layoutX="228.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-21.0" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="429.0" AnchorPane.topAnchor="-22.0">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20cadastro/Rectangle%207.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="142.0" fitWidth="421.0" layoutX="521.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="675.4491958618164" AnchorPane.leftAnchor="521.0" AnchorPane.rightAnchor="720.0" AnchorPane.topAnchor="50.0">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20cadastro/Cadastro.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="385.0" layoutY="180.0" prefHeight="4.0" prefWidth="720.0" style="-fx-background-color: #FFFFFF;" />
+            <TextField fx:id="TxtEmail" layoutX="322.0" layoutY="240.0" prefHeight="40.0" prefWidth="864.0" promptText="Email do usuário" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40;">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="psfsenha" layoutX="322.0" layoutY="360.0" prefHeight="40.0" prefWidth="864.0" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </PasswordField>
+            <Label layoutX="357.0" layoutY="570.0" text="Já possui login ?" textFill="#efefef">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="Logar" layoutX="541.0" layoutY="570.0" onMouseClicked="#clique" text="Logar" textFill="#faff00">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="psfConfirma" layoutX="322.0" layoutY="480.0" prefHeight="40.0" prefWidth="864.0" promptText="Confirmar Senha" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </PasswordField>
+            <ImageView fx:id="imbtn" fitHeight="99.0" fitWidth="297.0" layoutX="616.0" layoutY="652.0" onMouseClicked="#Continuar1" onMouseEntered="#Entrar1" onMouseExited="#Sair1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20cadastro2/Rectangle%208.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="830.0" layoutY="668.0" onMouseClicked="#Continuar1" onMouseEntered="#Entrar1" onMouseExited="#Sair1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20cadastro/Arrow_Right_SM.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="632.0" layoutY="676.0" onMouseClicked="#Continuar1" onMouseEntered="#Entrar1" onMouseExited="#Sair1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20cadastro/Continuar.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="114.0" fitWidth="157.0" layoutX="47.0" layoutY="150.0" onMouseClicked="#vol1" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0">
+         <image>
+            <Image url="@../../../Imagens/imagens%20login/Rectangle%2024.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="99.0" fitWidth="74.0" layoutX="20.0" layoutY="160.0" onMouseClicked="#vol1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagens/imagens%20cadastro/Arrow_Undo_Up_Left.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="20.0" layoutY="20.0" prefHeight="94.0" prefWidth="1920.0" style="-fx-background-color: #004391;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="120.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Super%20(1)%20(1)%201.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="257.0" layoutX="214.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20cadastro/-%20Cadastro.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
