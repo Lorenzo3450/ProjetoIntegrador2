@@ -66,12 +66,12 @@
                   </TableView>
                </content>
             </ScrollPane>
-            <TextField fx:id="TxtEmail" layoutX="212.0" layoutY="54.0" prefHeight="30.0" prefWidth="445.0" promptText="Pesquisar funcinário" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20; -fx-background-radius: 15;">
+            <TextField fx:id="TxtPesquisa" layoutX="212.0" layoutY="54.0" onKeyPressed="#PressionarEnter" prefHeight="30.0" prefWidth="445.0" promptText="Pesquisar funcinário" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20; -fx-background-radius: 15;">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <ImageView fx:id="BtnPesquisar" fitHeight="30.0" fitWidth="16.0" layoutX="636.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BtnPesquisar" fitHeight="30.0" fitWidth="16.0" layoutX="636.0" layoutY="64.0" onMouseClicked="#Pesquisar" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/Vector.png" />
                </image>
@@ -113,7 +113,7 @@
             <Image url="@../../../../Imagens/imagens%20cadastro2/Rectangle%2024.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="99.0" fitWidth="74.0" layoutX="20.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="99.0" fitWidth="74.0" layoutX="20.0" layoutY="160.0" onMouseClicked="#vol1" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../Imagens/imagens%20cadastro2/Arrow_Undo_Up_Left.png" />
          </image>
