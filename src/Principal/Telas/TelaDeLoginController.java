@@ -1,7 +1,12 @@
 package Principal.Telas;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 import javax.swing.JOptionPane;
 
+import BancoDeDados.ConexãoBD;
 import Principal.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -13,7 +18,7 @@ import Ferramentas.EfeitoBtn;
 
 public class TelaDeLoginController {
 
-		int index;
+		
 		
     	EfeitoBtn efeito = new EfeitoBtn();
 	
@@ -39,35 +44,34 @@ public class TelaDeLoginController {
 	    @FXML
 	    void Log1(MouseEvent event) throws Exception{
 
-
-	    	for(int i=0;i<=TelaDeCadastroController.index;i++) {
-	    		if(Main.email[i]==txflogin.getText()&&Main.senha[i]== psfsenha.getText()) {
-	    			JOptionPane.showMessageDialog(null, "bem vindo ao sistema");
-	    			break;
-	    			
-	    		}else JOptionPane.showMessageDialog(null, "senha ou login errados");
-	    		
-	    		
-	    	}
 	    	
+	    	//conferindo no banco de dados as informações 
+	    	Connection conecao = ConexãoBD.Conexao();
+			
+
+			String ComandoSql = "select *from funcionario where email=? and senha=?" ;
+			
+			
+			
+			PreparedStatement stmt = conecao.prepareStatement(ComandoSql);
+			
+			stmt.setString(1, txflogin.getText());
+			stmt.setString(2, psfsenha.getText());
+			
+			ResultSet rs = stmt.executeQuery();
+	    	
+			if(rs.next()) {
+				
+				JOptionPane.showMessageDialog(null,"seja bem vindo ");
+				
+				
+			}else JOptionPane.showMessageDialog(null, "erro, Senha ou email incorreto !");
+			
+			//encerrando a conexão  com o banco;
+			stmt.close();
+			conecao.close();
+			
 	    }
-
-
-	
- 
-
-	    @FXML
-	    void vol1(MouseEvent event) throws Exception {
-	    	
-
-	    	Main.Cena("Inicio");
-	    	psfsenha.setText("");
-	    	txflogin.setText("");
-	    	imlogar.requestFocus();
-	    	
-	    }
-
-	
 
 
     

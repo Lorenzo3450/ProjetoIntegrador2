@@ -15,16 +15,15 @@ import javafx.scene.layout.BorderPane;
 
 public class Main extends Application {
 	
-	public static String email[]= new String[10000];
-	public static String senha[]= new String[10000];
+
 	private static Stage primaryStage;
-	private static AnchorPane principal;
-	private static Scene primaryScene;
+	//tela de login
 	private static Scene login;
-	
+	//telas de cadastro
 	private static Scene cadastro;
 	private static Scene cadastro2;
-	
+	//telas gerente
+	private static Scene TabelaFuncionarios;
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception{
@@ -53,10 +52,12 @@ public class Main extends Application {
 			Parent fxmlCadastro2 = FXMLLoader.load(getClass().getResource("Telas/TelaDeCadastro2.fxml"));
 			cadastro2 = new Scene(fxmlCadastro2);
 			
-			Parent fxmlPrevia = FXMLLoader.load(getClass().getResource("Telas/PreviaTela.fxml"));
-			primaryScene = new Scene(fxmlPrevia);
+			Parent fxmlTabelaFuncionarios = FXMLLoader.load(getClass().getResource("Telas/Gerente/TabelaFuncionario.fxml"));
+			TabelaFuncionarios = new Scene(fxmlTabelaFuncionarios);
 			
-			this.primaryStage.setScene(primaryScene);
+			
+		
+			this.primaryStage.setScene(TabelaFuncionarios);
 			this.primaryStage.show();
 			
 		
@@ -69,12 +70,7 @@ public class Main extends Application {
 			
 		}
 		
-		if(a.equals("Inicio")) {
-			
-			primaryStage.setScene(primaryScene);
-			
-		}
-		
+
 		if(a.equals("Cadastro")) {
 			
 			primaryStage.setScene(cadastro);
@@ -87,6 +83,12 @@ public class Main extends Application {
 			
 		}
 	
+		if(a.equals("TabelaFuncionarios")) {
+			
+			primaryStage.setScene(TabelaFuncionarios);
+			
+		}
+		
 	}
 	
 	

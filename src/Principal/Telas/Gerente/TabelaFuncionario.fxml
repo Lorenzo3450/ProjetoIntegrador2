@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1015.0" prefWidth="1920.0" style="-fx-background-color: #DBDBDB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Principal.Telas.Gerente.TabelaFuncionarioController">
+   <children>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="94.0" prefWidth="1920.0" style="-fx-background-color: #004391;" AnchorPane.bottomAnchor="923.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="120.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Imagens/imagens%20login/Super%20(1)%20(1)%201.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="252.0" fitWidth="713.0" layoutX="214.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/-%20Tabela%20de%20Funcionários.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fitHeight="922.0" fitWidth="2028.0" layoutX="6.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-108.0" AnchorPane.topAnchor="93.0">
+         <image>
+            <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/Premium%20Vector%20_%20Mango%20seamless%20pattern%20background%20vector%20design%201.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="60.0" layoutY="220.0" prefHeight="788.0" prefWidth="1696.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="220.0">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="274.0" layoutX="116.0" layoutY="-46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/Rectangle%209.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="745.0" fitWidth="1685.0" layoutX="118.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="118.0" AnchorPane.rightAnchor="-113.25" AnchorPane.topAnchor="26.0">
+               <image>
+                  <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/Rectangle%20103.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="211.0" layoutX="151.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/Funcionários.png" />
+               </image>
+            </ImageView>
+            <ScrollPane layoutX="212.0" layoutY="244.0" prefHeight="551.0" prefWidth="1469.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="212.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+               <content>
+                  <TableView fx:id="tableView" prefHeight="559.0" prefWidth="1937.0">
+                    <columns>
+                      <TableColumn fx:id="nomeCompletoColumn" prefWidth="75.0" text="Nome completo" />
+                        <TableColumn fx:id="emailColumn" prefWidth="75.0" text="Email" />
+                      <TableColumn fx:id="cpfColumn" prefWidth="75.0" text="Cpf" />
+                        <TableColumn fx:id="idadeColumn" prefWidth="35.0" text="idade" />
+                        <TableColumn fx:id="telefoneColumn" prefWidth="75.0" text="Telefone" />
+                        <TableColumn fx:id="cargoColumn" prefWidth="75.0" text="Cargo" />
+                        <TableColumn fx:id="salarioColumn" prefWidth="75.0" text="Salario" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </content>
+            </ScrollPane>
+            <TextField fx:id="TxtEmail" layoutX="212.0" layoutY="54.0" prefHeight="30.0" prefWidth="445.0" promptText="Pesquisar funcinário" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20; -fx-background-radius: 15;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <ImageView fx:id="BtnPesquisar" fitHeight="30.0" fitWidth="16.0" layoutX="636.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/Vector.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="149.0" layoutX="1200.0" layoutY="44.0" onMouseClicked="#Filtro" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/Rectangle%204.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="74.0" layoutX="1220.0" layoutY="57.0" onMouseClicked="#Filtro" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/Filtro.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="29.0" fitWidth="30.0" layoutX="1297.0" layoutY="57.0" onMouseClicked="#Filtro" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/Add_Plus_Circle.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="306.0" layoutX="1372.0" layoutY="47.0" onMouseClicked="#RemoverFuncionario" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/Rectangle%2049.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="187.0" fitWidth="238.0" layoutX="1383.0" layoutY="60.0" onMouseClicked="#RemoverFuncionario" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/Remover%20funcionário.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="52.0" fitWidth="30.0" layoutX="1628.0" layoutY="56.0" onMouseClicked="#RemoverFuncionario" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/Trash_Full.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="114.0" fitWidth="157.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Imagens/imagens%20cadastro2/Rectangle%2024.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="99.0" fitWidth="74.0" layoutX="20.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Imagens/imagens%20cadastro2/Arrow_Undo_Up_Left.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -13,8 +13,8 @@ import javafx.scene.input.MouseEvent;
 
 public class TelaDeCadastroController {
 	
-	public static int index=0;
 	
+	public static String email,senha;
 	
 	EfeitoBtn efeito = new EfeitoBtn();
 
@@ -47,11 +47,13 @@ public class TelaDeCadastroController {
     	
     	if(psfsenha.getText() != "" && TxtEmail.getText() != "" && psfConfirma.getText() != "") {
     		if(psfsenha.getText().equals( psfConfirma.getText())) {
-    		Main.Cena("Cadastro2");
-    		Main.email[index]=TxtEmail.getText();
-    		Main.senha[index]= psfsenha.getText();
+    			
+    			email=TxtEmail.getText();
+    			senha=psfsenha.getText();
+    				Main.Cena("Cadastro2");
     		
-    		index++;}else JOptionPane.showMessageDialog(null, "senha digitada no campo de confirmação não é igual a senha digitada no campo senha ");
+    		
+    		}else JOptionPane.showMessageDialog(null, "senha digitada no campo de confirmação não é igual a senha digitada no campo senha ");
     	
     	}else JOptionPane.showMessageDialog(null, "Preencha todos os campos");
     	
@@ -67,15 +69,6 @@ public class TelaDeCadastroController {
     }
     
     
-
-    @FXML
-    void vol1(MouseEvent event) throws Exception {
-    	
-
-    	Main.Cena("Inicio");
-    	
-    	
-    }
 
   
     

@@ -62,12 +62,12 @@
                   <Font size="24.0" />
                </font>
             </TextField>
-            <TextField fx:id="TxtDataDeNascimento" layoutX="20.0" layoutY="340.0" prefHeight="60.0" prefWidth="750.0" promptText="Data de Nascimento" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+            <TextField fx:id="TxtDataDeNascimento" layoutX="20.0" layoutY="340.0" onKeyTyped="#Formataçãodata" prefHeight="60.0" prefWidth="750.0" promptText="Data de Nascimento" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
                <font>
                   <Font size="24.0" />
                </font>
             </TextField>
-            <TextField fx:id="TxtTelefone" layoutX="790.0" layoutY="340.0" prefHeight="60.0" prefWidth="750.0" promptText="Telefone" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+            <TextField fx:id="TxtTelefone" layoutX="790.0" layoutY="340.0" onKeyTyped="#FortmataçaoTelefone" prefHeight="60.0" prefWidth="750.0" promptText="Telefone" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
                <font>
                   <Font size="24.0" />
                </font>
