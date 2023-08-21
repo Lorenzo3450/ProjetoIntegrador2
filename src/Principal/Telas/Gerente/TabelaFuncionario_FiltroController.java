@@ -90,7 +90,7 @@ public class TabelaFuncionario_FiltroController {
     	if(RBtnAtendente.isSelected()) {
     		if(RBtnNãoDefinido.isSelected()) {
     		com3 += "cargo = 'Atendente' or ";
-    		}else com3 += "'Atendente'";
+    		}else com3 += "cargo='Atendente'";
     	}
     	
     	if(RBtnNãoDefinido.isSelected()) {

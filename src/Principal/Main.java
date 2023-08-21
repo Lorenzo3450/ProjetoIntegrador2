@@ -6,6 +6,8 @@ import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -23,6 +25,7 @@ public class Main extends Application {
 	private static Scene cadastro;
 	private static Scene cadastro2;
 	//telas gerente
+	private static Scene MenuPrincipalGerente;
 	private static Scene TabelaFuncionarios;
 	
 	@Override
@@ -52,12 +55,15 @@ public class Main extends Application {
 			Parent fxmlCadastro2 = FXMLLoader.load(getClass().getResource("Telas/TelaDeCadastro2.fxml"));
 			cadastro2 = new Scene(fxmlCadastro2);
 			
+			Parent fxmlMenuPrincipalGerente = FXMLLoader.load(getClass().getResource("Telas/Gerente/TelaPrincipalGerente.fxml"));
+			MenuPrincipalGerente = new Scene(fxmlMenuPrincipalGerente);
+			
 			Parent fxmlTabelaFuncionarios = FXMLLoader.load(getClass().getResource("Telas/Gerente/TabelaFuncionario.fxml"));
 			TabelaFuncionarios = new Scene(fxmlTabelaFuncionarios);
 			
-			
+
 		
-			this.primaryStage.setScene(TabelaFuncionarios);
+			this.primaryStage.setScene(login);
 			this.primaryStage.show();
 			
 		
@@ -86,6 +92,12 @@ public class Main extends Application {
 		if(a.equals("TabelaFuncionarios")) {
 			
 			primaryStage.setScene(TabelaFuncionarios);
+			
+		}
+		
+		if(a.equals("TelaPrincipalGerente")) {
+			
+			primaryStage.setScene(MenuPrincipalGerente);
 			
 		}
 		

@@ -62,7 +62,7 @@ public class TelaDeLoginController {
 	    	
 			if(rs.next()) {
 				
-				JOptionPane.showMessageDialog(null,"seja bem vindo ");
+				Main.Cena("TelaPrincipalGerente");
 				
 				
 			}else JOptionPane.showMessageDialog(null, "erro, Senha ou email incorreto !");
