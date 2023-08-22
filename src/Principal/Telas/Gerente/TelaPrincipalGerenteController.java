@@ -1,8 +1,14 @@
 package Principal.Telas.Gerente;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import BancoDeDados.ConexãoBD;
 import Ferramentas.EfeitoBtn;
 import Principal.Main;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -10,6 +16,12 @@ import javafx.scene.layout.AnchorPane;
 public class TelaPrincipalGerenteController {
 
 	EfeitoBtn efeito = new EfeitoBtn();
+	
+	@FXML
+	private ImageView BtnAlterarDados;
+
+	@FXML
+	private ImageView BtnEncerrarSessao;
 	
     @FXML
     private ImageView BtnProduto;
@@ -52,6 +64,36 @@ public class TelaPrincipalGerenteController {
 
     @FXML
     private AnchorPane painelTabelas;
+    
+    @FXML
+    private AnchorPane painelPerfil; 
+
+    @FXML
+    private TextField txfEmail;
+
+    @FXML
+    private TextField txtBairro;
+
+    @FXML
+    private TextField txtCep;
+
+    @FXML
+    private TextField txtLongradouro;
+
+    @FXML
+    private TextField txtSenha;
+
+    @FXML
+    private TextField txtTelefone;
+    
+    @FXML
+    private Label LblNome;
+
+    @FXML
+    private TextField TxtCidade;
+
+    
+    
 
     @FXML
     void AbrirSideBar(MouseEvent event) {
@@ -59,12 +101,36 @@ public class TelaPrincipalGerenteController {
     	
     	painelFechado.setVisible(false);
     	painelFechado.setDisable(true);
+    	painelPerfil.setVisible(false);
+    	painelPerfil.setDisable(true);
     	painelFuncionario.setVisible(false);
     	painelFuncionario.setDisable(true);
     	painelTabelas.setVisible(false);
     	painelTabelas.setDisable(true);
     	painelABerto.setVisible(true);
     	painelABerto.setDisable(false);
+    	
+    }
+
+    @FXML
+    void AlterarDados(MouseEvent event) {
+
+    }
+
+    @FXML
+    void EncerrarSessao(MouseEvent event) throws Exception {
+
+    	Connection conecao = ConexãoBD.Conexao();
+    	String updateSql ="UPDATE sessao SET sessao = ? WHERE id = 1";
+        PreparedStatement updatePs = conecao.prepareStatement(updateSql);
+        updatePs.setInt(1, 0);
+        int lf = updatePs.executeUpdate();
+        
+        updatePs.close();
+        conecao.close();
+        
+        Main.Cena("Login");
+    	
     	
     }
     
@@ -102,6 +168,20 @@ public class TelaPrincipalGerenteController {
     	BtnTabelas.setEffect(efeito.Efeito());
     	
     }
+    
+    @FXML
+    void Entrar6(MouseEvent event) {
+    	
+    	BtnAlterarDados.setEffect(efeito.Efeito());
+    	
+    }
+
+    @FXML
+    void Entrar7(MouseEvent event) {
+
+    	BtnEncerrarSessao.setEffect(efeito.Efeito());
+    	
+    }
 
 
 
@@ -111,6 +191,8 @@ public class TelaPrincipalGerenteController {
     	
     	painelFechado.setVisible(true);
     	painelFechado.setDisable(false);
+    	painelPerfil.setVisible(false);
+    	painelPerfil.setDisable(true);
     	painelFuncionario.setVisible(false);
     	painelFuncionario.setDisable(true);
     	painelTabelas.setVisible(false);
@@ -135,6 +217,8 @@ public class TelaPrincipalGerenteController {
 
     	painelFechado.setVisible(false);
     	painelFechado.setDisable(true);
+    	painelPerfil.setVisible(false);
+    	painelPerfil.setDisable(true);
     	painelFuncionario.setVisible(true);
     	painelFuncionario.setDisable(false);
     	painelTabelas.setVisible(false);
@@ -159,6 +243,17 @@ public class TelaPrincipalGerenteController {
     @FXML
     void IrParaPerfil(MouseEvent event) {
 
+    	painelFechado.setVisible(false);
+    	painelFechado.setDisable(true);
+    	painelPerfil.setVisible(true);
+    	painelPerfil.setDisable(false);
+    	painelFuncionario.setVisible(false);
+    	painelFuncionario.setDisable(true);
+    	painelTabelas.setVisible(false);
+    	painelTabelas.setDisable(true);
+    	painelABerto.setVisible(true);
+    	painelABerto.setDisable(false);
+    	
     }
 
     @FXML
@@ -191,6 +286,8 @@ public class TelaPrincipalGerenteController {
     	
     	painelFechado.setVisible(false);
     	painelFechado.setDisable(true);
+    	painelPerfil.setVisible(false);
+    	painelPerfil.setDisable(true);
     	painelFuncionario.setVisible(false);
     	painelFuncionario.setDisable(true);
     	painelTabelas.setVisible(true);
@@ -267,6 +364,22 @@ public class TelaPrincipalGerenteController {
     	BtnTabelas.setEffect(null);
     	
     }
+    
+    @FXML
+    void Sair6(MouseEvent event) {
+
+    	BtnAlterarDados.setEffect(null);
+    	
+    }
+
+    @FXML
+    void Sair7(MouseEvent event) {
+
+    	BtnEncerrarSessao.setEffect(null);
+    	
+    }
+
+    
 
 
 }

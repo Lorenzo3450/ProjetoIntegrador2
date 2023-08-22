@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 import BancoDeDados.ConexãoBD;
+import javafx.concurrent.Service;
+import javafx.concurrent.Task;
+import javafx.concurrent.Task;
 import Principal.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -18,10 +21,19 @@ import Ferramentas.EfeitoBtn;
 
 public class TelaDeLoginController {
 
-		
+	  @FXML
+	    private ImageView ImEsconde;
+
+	    @FXML
+	    private ImageView ImMostra;
 		
     	EfeitoBtn efeito = new EfeitoBtn();
 	
+    	@FXML
+        private ImageView TxtSenha;
+
+    	 @FXML
+    	    private TextField txtsenha;
     	
 	 	@FXML
 	    private Label cadastro;
@@ -39,8 +51,24 @@ public class TelaDeLoginController {
 	    @FXML
 	    private TextField txflogin;
 	    
-	    
+	    @FXML
+	    private TextField TxtPalavrasDeRecuperacao1;
+
+	    @FXML
+	    private TextField TxtPalavrasDeRecuperacao2;
+
+	    @FXML
+	    private TextField TxtPalavrasDeRecuperacao3;
 	  
+	    public class DelayedTask extends Task<Void> {
+	        @Override
+	        protected Void call() throws Exception {
+	            Thread.sleep(5000);
+	            return null;
+	        }
+	    }
+	    
+	    
 	    @FXML
 	    void Log1(MouseEvent event) throws Exception{
 
@@ -61,9 +89,34 @@ public class TelaDeLoginController {
 			ResultSet rs = stmt.executeQuery();
 	    	
 			if(rs.next()) {
-				
-				Main.Cena("TelaPrincipalGerente");
-				
+				 String updateSql ="UPDATE sessao SET sessao = ? WHERE id = 1";
+                 PreparedStatement updatePs = conecao.prepareStatement(updateSql);
+                 updatePs.setInt(1, 1);
+                 
+                 int lf = updatePs.executeUpdate();
+                 
+                 updatePs.close();
+                 
+	            
+                 
+				Main.Cena("loading");
+
+		        Service<Void> service = new Service<>() {
+		            @Override
+		            protected Task<Void> createTask() {
+		                return new DelayedTask();
+		            }
+		        };
+		        
+		        service.setOnSucceeded(e -> {
+					try {
+						Main.Cena("TelaPrincipalGerente");
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				});
+		        service.start();
 				
 			}else JOptionPane.showMessageDialog(null, "erro, Senha ou email incorreto !");
 			
@@ -73,7 +126,14 @@ public class TelaDeLoginController {
 			
 	    }
 
+	    @FXML
+	    void cliqueRecuperarSenha(MouseEvent event) throws Exception {
 
+	    	Main.Cena("RecuperaSenha");
+	    	
+	    }
+	    
+	    
     
 
     @FXML
@@ -103,6 +163,38 @@ public class TelaDeLoginController {
     	
     	imbtn.setEffect(null);
 
+    }
+    
+    @FXML
+    void EscondeSenhaSenha(MouseEvent event) {
+
+    txtsenha.setVisible(false);
+   	 String senha = String.valueOf(psfsenha.getText());
+   	ImMostra.setVisible(true);
+    ImMostra.setDisable(false);
+    
+    ImEsconde.setVisible(false);
+    ImEsconde.setDisable(true);
+   	 txtsenha.setText(senha);
+       psfsenha.setVisible(true);
+    	
+    }
+    
+    @FXML
+    void MostrarSenha(MouseEvent event) {
+
+    	String senha = String.valueOf(psfsenha.getText());
+
+    	txtsenha.setText(senha);
+    	txtsenha.setVisible(true);
+        ImMostra.setVisible(false);
+        ImMostra.setDisable(true);
+        
+        ImEsconde.setVisible(true);
+        ImEsconde.setDisable(false);
+        
+        psfsenha.setVisible(false);
+    	
     }
 
     

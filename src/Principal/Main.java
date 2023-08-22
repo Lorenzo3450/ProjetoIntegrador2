@@ -3,7 +3,11 @@ package Principal;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
+import BancoDeDados.ConexãoBD;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -19,8 +23,11 @@ public class Main extends Application {
 	
 
 	private static Stage primaryStage;
-	//tela de login
+	//tela de login e de carregamento e tela de recuperar a senha
 	private static Scene login;
+	private static Scene loading;
+	private static Scene RecuperaSenha;
+	
 	//telas de cadastro
 	private static Scene cadastro;
 	private static Scene cadastro2;
@@ -28,13 +35,14 @@ public class Main extends Application {
 	private static Scene MenuPrincipalGerente;
 	private static Scene TabelaFuncionarios;
 	
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception{
 	
 		
 		
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("LOLOAPP");
+		this.primaryStage.setTitle("SuperSminding");
 		
 		initMainStage();
 		
@@ -48,6 +56,11 @@ public class Main extends Application {
 			Parent fxmlLoguin = FXMLLoader.load(getClass().getResource("Telas/TelaDeLogin.fxml"));
 			login = new Scene(fxmlLoguin);
 			
+			Parent fxmlLoading = FXMLLoader.load(getClass().getResource("Telas/TelaDeLoading.fxml"));
+			loading = new Scene(fxmlLoading);
+			
+			Parent fxmlRecuperaSenha = FXMLLoader.load(getClass().getResource("Telas/TelaRecuperaSenha.fxml"));
+			RecuperaSenha = new Scene(fxmlRecuperaSenha);
 		
 			Parent fxmlCadastro = FXMLLoader.load(getClass().getResource("Telas/TelaDeCadastro.fxml"));
 			cadastro = new Scene(fxmlCadastro);
@@ -61,11 +74,23 @@ public class Main extends Application {
 			Parent fxmlTabelaFuncionarios = FXMLLoader.load(getClass().getResource("Telas/Gerente/TabelaFuncionario.fxml"));
 			TabelaFuncionarios = new Scene(fxmlTabelaFuncionarios);
 			
-
-		
-			this.primaryStage.setScene(login);
-			this.primaryStage.show();
+			Connection conecao = ConexãoBD.Conexao();
 			
+
+			String ComandoSql = "select *from sessao where id=1 and sessao=1" ;
+			
+			
+			PreparedStatement stmt = conecao.prepareStatement(ComandoSql);
+
+			ResultSet rs = stmt.executeQuery();
+			
+			if(rs.next()) {
+			this.primaryStage.setScene(MenuPrincipalGerente);
+			this.primaryStage.show();
+			}else {
+				this.primaryStage.setScene(login);
+				this.primaryStage.show();
+			}
 		
 	}
 	
@@ -73,6 +98,19 @@ public class Main extends Application {
 		if(a.equals("Login")) {
 			
 			primaryStage.setScene(login);
+			
+		}
+		
+		if(a.equals("RecuperaSenha")) {
+			
+			primaryStage.setScene(RecuperaSenha);
+			
+		}
+		
+		if(a.equals("loading")) {
+			
+			primaryStage.setScene(loading);
+			
 			
 		}
 		

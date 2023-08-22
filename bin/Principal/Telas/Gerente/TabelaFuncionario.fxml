@@ -106,6 +106,21 @@
                   <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/Trash_Full.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="58.0" fitWidth="161.0" layoutX="1030.0" layoutY="46.0" onMouseClicked="#imprimir" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/Rectangle%20104.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="30.0" layoutX="1129.0" layoutY="55.0" onMouseClicked="#imprimir" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/Printer.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="95.0" layoutX="1041.0" layoutY="60.0" onMouseClicked="#imprimir" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Imagens/imagens%20gerente/Tabela%20funcionario/Imprimir.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <ImageView fitHeight="114.0" fitWidth="157.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">

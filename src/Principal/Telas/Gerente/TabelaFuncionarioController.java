@@ -4,6 +4,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.print.PrinterJob;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
@@ -232,7 +233,7 @@ public class TabelaFuncionarioController {
     @FXML
     void vol1(MouseEvent event) throws Exception {
 
-
+    	Main.Cena("TelaPrincipalGerente");
     	
     }
     
@@ -302,7 +303,19 @@ public class TabelaFuncionarioController {
         } 
     }
     
+
     
+    @FXML
+    void imprimir(MouseEvent event) {
+
+        PrinterJob printerJob = PrinterJob.createPrinterJob();
+        if (printerJob != null && printerJob.showPrintDialog(tableView.getScene().getWindow())) {
+            printerJob.printPage(tableView);
+            printerJob.endJob();
+        }
+    	
+    }
+
     
 
 }

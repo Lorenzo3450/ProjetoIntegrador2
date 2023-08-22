@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1015.0" prefWidth="1920.0" style="-fx-background-color: #003491;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Principal.Telas.TelaDeLoadingController">
+   <children>
+      <Label fx:id="lblcarregando" layoutX="779.0" layoutY="613.0" prefHeight="139.0" prefWidth="519.0" text="CARREGANDO..." textFill="#f5f5f5">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Label>
+      <Pane fx:id="pnlbanana" layoutX="118.0" layoutY="112.0" prefHeight="88.0" prefWidth="98.0" />
+      <Pane fx:id="pnllaranja" layoutX="234.0" layoutY="112.0" prefHeight="100.0" prefWidth="113.0" />
+      <Pane fx:id="pnlabacaxi" layoutX="362.0" layoutY="112.0" prefHeight="100.0" prefWidth="113.0" />
+      <ImageView fx:id="imgabacaxi" fitHeight="221.0" fitWidth="273.0" layoutX="1200.0" layoutY="262.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../Imagens/imagens%20login/banana.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imglaranja" fitHeight="277.0" fitWidth="399.0" layoutX="790.0" layoutY="221.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../Imagens/imagens%20login/laranja.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgbanana" fitHeight="315.0" fitWidth="357.0" layoutX="450.0" layoutY="202.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../Imagens/imagens%20login/abacaxi.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

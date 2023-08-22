@@ -63,9 +63,14 @@ public class TelaDeCadastro2Controller {
     					+ "telefone, email, senha,cargo) values (?, ?, ?, ?, ?, ?,?)";
     			
     			String ComandoSql2 = "insert into endereco(logradouro,bairro,cep,cidade) values (?, ?, ?, ?)";
-    			    			
+    			
+    			String ComandoSql3 = "insert into perguntas(nome_meio_mae,primeira_escola,apelido_infancia) values (? , ?, ?)";
+    			
+    			
+    			
     			PreparedStatement stmt1 = conecao.prepareStatement(ComandoSql1);
     			PreparedStatement stmt2 = conecao.prepareStatement(ComandoSql2);
+    			PreparedStatement stmt3 = conecao.prepareStatement(ComandoSql3);
     			
     			stmt1.setString(1, TxtNome.getText());
     			stmt1.setString(2, TxtCpf.getText());
@@ -73,18 +78,25 @@ public class TelaDeCadastro2Controller {
     			stmt1.setString(4, TxtTelefone.getText());
     			stmt1.setString(5, TelaDeCadastroController.email);
     			stmt1.setString(6, TelaDeCadastroController.senha);
-    			stmt1.setString(7, "gerente");
+    			stmt1.setString(7, "Não definido");
+    		
     			
     			stmt2.setString(1, TxtRuaCasaComplemento.getText());
     			stmt2.setString(2, TxtBairro.getText());
     			stmt2.setString(3, TxtCep.getText());
     			stmt2.setString(4, TxtCidade.getText());
+    			
+    			stmt3.setNString(1, TelaDeCadastroController.txtr1);
+    			stmt3.setNString(2, TelaDeCadastroController.txtr2);
+    			stmt3.setNString(3, TelaDeCadastroController.txtr3);
 
     			stmt1.execute();
     			stmt2.execute();
+    			stmt3.execute();
     			
     			stmt1.close();
     			stmt2.close();
+    			stmt3.close();
     			conecao.close();
     			
     			JOptionPane.showMessageDialog(null, "dados cadastrados com sucesso");
