@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="501.0" prefWidth="656.0" style="-fx-background-color: #87CEFA;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.gerente.TabelaFuncionario_FiltroController">
+   <children>
+      <GridPane layoutX="1.0" layoutY="100.0" prefHeight="401.0" prefWidth="665.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="100.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="388.0" minWidth="10.0" prefWidth="181.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="551.0" minWidth="10.0" prefWidth="484.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="401.0" prefWidth="43.0">
+               <children>
+                  <Label layoutY="14.0" prefHeight="35.0" prefWidth="178.0" text="     Idade   :" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="76.0" prefHeight="35.0" prefWidth="178.0" text="     Salário :">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutY="122.0" prefHeight="5.0" prefWidth="658.0" style="-fx-background-color: #004391;" />
+                  <Label layoutY="144.0" prefHeight="35.0" prefWidth="178.0" text="     Cargo   :">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutY="250.0" prefHeight="5.0" prefWidth="658.0" style="-fx-background-color: #004391;" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Label layoutX="1.0" prefHeight="35.0" prefWidth="64.0" text="Entre">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="TxtIdade1" layoutX="65.0" layoutY="-2.0" prefHeight="35.0" prefWidth="127.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20; -fx-background-radius: 15;">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="207.0" prefHeight="35.0" prefWidth="64.0" text="E">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="TxtIdade2" layoutX="236.0" layoutY="-2.0" prefHeight="35.0" prefWidth="127.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20; -fx-background-radius: 15;">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="1.0" layoutY="76.0" prefHeight="35.0" prefWidth="64.0" text="Entre">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="TxtISalario1" layoutX="65.0" layoutY="74.0" prefHeight="35.0" prefWidth="127.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20; -fx-background-radius: 15;">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="207.0" layoutY="76.0" prefHeight="35.0" prefWidth="64.0" text="E">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="TxtSalario2" layoutX="236.0" layoutY="74.0" prefHeight="35.0" prefWidth="127.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20; -fx-background-radius: 15;">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <RadioButton fx:id="RBtnGerente" layoutY="144.0" mnemonicParsing="false" text="Gerente">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="RBtnGestor" layoutX="150.0" layoutY="144.0" mnemonicParsing="false" text="Gestor">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="RBtnAtendente" layoutX="300.0" layoutY="144.0" mnemonicParsing="false" text="Atendente">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="RBtnNãoDefinido" layoutY="192.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="188.0" text="Não Definido">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </RadioButton>
+                  <ImageView fx:id="BtnPesquisa" fitHeight="79.0" fitWidth="248.0" layoutX="16.0" layoutY="300.0" onMouseClicked="#Pesquisar" onMouseEntered="#Entrar1" onMouseExited="#Sair1" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imagens/imagens%20cadastro2/Rectangle%208.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="49.0" fitWidth="153.0" layoutX="31.0" layoutY="318.0" onMouseClicked="#Pesquisar" onMouseEntered="#Entrar1" onMouseExited="#Sair1" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Pesquisar.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="190.0" layoutY="316.0" onMouseClicked="#Pesquisar" onMouseEntered="#Entrar1" onMouseExited="#Sair1" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/lupa.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+      <Pane prefHeight="81.0" prefWidth="658.0" style="-fx-background-color: #004391;">
+         <children>
+            <ImageView fitHeight="79.0" fitWidth="137.0" layoutX="7.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Super%20(1)%20(1)%201.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1015.0" prefWidth="1920.0" style="-fx-background-color: #DBDBDB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.TelaDeCadastro2Controller">
+   <children>
+      <Pane layoutX="30.0" layoutY="30.0" prefHeight="94.0" prefWidth="1920.0" style="-fx-background-color: #004391;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="120.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20cadastro2/Super%20(1)%20(1)%201.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="56.0" fitWidth="288.0" layoutX="209.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20cadastro2/-%20Cadastro.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fitHeight="922.0" layoutX="10.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="401.2613525390625" AnchorPane.topAnchor="95.0">
+         <image>
+            <Image url="@../../../Imagens/imagens%20cadastro2/Rectangle%202.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="114.0" fitWidth="157.0" layoutX="47.0" layoutY="150.0" onMouseClicked="#vol1" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0">
+         <image>
+            <Image url="@../../../Imagens/imagens%20cadastro2/Rectangle%2024.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="99.0" fitWidth="74.0" layoutX="20.0" layoutY="160.0" onMouseClicked="#vol1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagens/imagens%20cadastro2/Arrow_Undo_Up_Left.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="122.0" layoutY="135.0" prefHeight="818.0" prefWidth="2254.0" AnchorPane.leftAnchor="162.0" AnchorPane.rightAnchor="100.0">
+         <children>
+            <ImageView fitHeight="804.0" fitWidth="1887.0" layoutX="162.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="509.0" AnchorPane.topAnchor="12.0">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20cadastro2/Rectangle%207.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="142.0" fitWidth="421.0" layoutX="593.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20cadastro2/Cadastro.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="450.0" layoutY="153.0" prefHeight="4.0" prefWidth="720.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;" />
+            <TextField fx:id="TxtNome" layoutX="20.0" layoutY="243.0" prefHeight="60.0" prefWidth="750.0" promptText="Nome" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;" AnchorPane.topAnchor="243.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtCpf" layoutX="790.0" layoutY="243.0" prefHeight="60.0" prefWidth="750.0" promptText="CPF" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtDataDeNascimento" layoutX="20.0" layoutY="340.0" onKeyTyped="#Formataçãodata" prefHeight="60.0" prefWidth="750.0" promptText="Data de Nascimento" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtTelefone" layoutX="790.0" layoutY="340.0" onKeyTyped="#FortmataçaoTelefone" prefHeight="60.0" prefWidth="750.0" promptText="Telefone" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <Pane layoutX="20.0" layoutY="483.0" prefHeight="2.0" prefWidth="1494.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;" />
+            <Label layoutX="700.0" layoutY="424.0" text="Endereço" textFill="#faff00">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <TextField fx:id="TxtCidade" layoutX="20.0" layoutY="520.0" prefHeight="60.0" prefWidth="750.0" promptText="Cidade" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtBairro" layoutX="20.0" layoutY="610.0" prefHeight="60.0" prefWidth="750.0" promptText="Bairro" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtRuaCasaComplemento" layoutX="790.0" layoutY="520.0" prefHeight="60.0" prefWidth="750.0" promptText="Rua, casa/complemento" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtCep" layoutX="790.0" layoutY="610.0" prefHeight="60.0" prefWidth="750.0" promptText="CEP" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <ImageView fx:id="Btnfinal" fitHeight="101.0" fitWidth="294.0" layoutX="658.0" layoutY="699.0" onMouseClicked="#BtnFinalizar" onMouseEntered="#Entrar1" onMouseExited="#Sair1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20cadastro2/Rectangle%208.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="170.0" layoutX="686.0" layoutY="724.0" onMouseClicked="#BtnFinalizar" onMouseEntered="#Entrar1" onMouseExited="#Sair1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20cadastro2/Finalizar.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="56.0" layoutX="864.0" layoutY="712.0" onMouseClicked="#BtnFinalizar" onMouseEntered="#Entrar1" onMouseExited="#Sair1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20cadastro2/Check.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
