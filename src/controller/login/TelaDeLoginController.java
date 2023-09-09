@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 import model.dao.ConexãoBD;
+import model.dao.login.loguinModel;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.concurrent.Task;
@@ -51,14 +52,7 @@ public class TelaDeLoginController {
 	    @FXML
 	    private TextField txflogin;
 	    
-	    @FXML
-	    private TextField TxtPalavrasDeRecuperacao1;
-
-	    @FXML
-	    private TextField TxtPalavrasDeRecuperacao2;
-
-	    @FXML
-	    private TextField TxtPalavrasDeRecuperacao3;
+	   
 	  
 	    public class DelayedTask extends Task<Void> {
 	        @Override
@@ -73,31 +67,17 @@ public class TelaDeLoginController {
 	    void Log1(MouseEvent event) throws Exception{
 
 	    	
-	    	//conferindo no banco de dados as informações 
-	    	Connection conecao = ConexãoBD.Conexao();
-			
-
-			String ComandoSql = "select *from funcionario where email=? and senha=?" ;
-			
-			
-			
-			PreparedStatement stmt = conecao.prepareStatement(ComandoSql);
-			
-			stmt.setString(1, txflogin.getText());
-			stmt.setString(2, psfsenha.getText());
-			
-			ResultSet rs = stmt.executeQuery();
 	    	
-			if(rs.next()) {
-				 String updateSql ="UPDATE sessao SET sessao = ? WHERE id = 1";
-                 PreparedStatement updatePs = conecao.prepareStatement(updateSql);
-                 updatePs.setInt(1, 1);
-                 
-                 int lf = updatePs.executeUpdate();
-                 
-                 updatePs.close();
-                 
-	            
+			if(loguinModel.ValidaLogin(txflogin.getText(), psfsenha.getText())) {
+				
+				if(loguinModel.getCargo(txflogin.getText(), psfsenha.getText()).equalsIgnoreCase("gerente")) {
+	            txflogin.setText("");
+	            psfsenha.setText("");
+				txtsenha.setText("");
+			
+				
+				
+				
                  
 				Main.Cena("loading");
 
@@ -117,12 +97,13 @@ public class TelaDeLoginController {
 					}
 				});
 		        service.start();
+		        
+				}
 				
 			}else JOptionPane.showMessageDialog(null, "erro, Senha ou email incorreto !");
 			
 			//encerrando a conexão  com o banco;
-			stmt.close();
-			conecao.close();
+			
 			
 	    }
 

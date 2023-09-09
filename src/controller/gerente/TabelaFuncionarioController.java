@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.dao.ConexãoBD;
+import model.dao.Gerente.TabelaFuncionarioDao;
 import controller.Ferramentas.EfeitoBtn;
 import controller.Ferramentas.Funcionario;
 import controller.Main;
@@ -86,39 +87,16 @@ public class TabelaFuncionarioController {
         cargoColumn.setCellValueFactory(cellData -> cellData.getValue().cargoProperty());
         salarioColumn.setCellValueFactory(cellData -> cellData.getValue().salarioProperty().asObject());
 
-        // Carregar dados do banco de dados e preencher a TableView
-        try (
-        	Connection connection = ConexãoBD.Conexao();
-             Statement statement = connection.createStatement()) {
-            String query = "SELECT nome_completo, cpf, data_nasc, telefone, email, cargo, salario FROM funcionario";
-            ResultSet resultSet = statement.executeQuery(query);
-
-            List<Funcionario> funcionarios = new ArrayList<>();
-            while (resultSet.next()) {
-                Funcionario funcionario = new Funcionario();
-                funcionario.setNomeCompleto(resultSet.getString("nome_completo"));
-                funcionario.setCpf(resultSet.getString("cpf"));
-                funcionario.setDataNascimento(resultSet.getDate("data_nasc").toLocalDate());
-                funcionario.setTelefone(resultSet.getString("telefone"));
-                funcionario.setEmail(resultSet.getString("email"));
-                funcionario.setCargo(resultSet.getString("cargo"));
-                funcionario.setSalario(resultSet.getDouble("salario"));
-
-                // Calcular idade com base na data de nascimento
-                int idade = Period.between(funcionario.getDataNascimento(), LocalDate.now()).getYears();
-                funcionario.setIdade(idade);
-
-                funcionarios.add(funcionario);
-            }
-
-        	statement.close();
-        	connection.close();
+     
         	
-            tableView.getItems().addAll(funcionarios);
+            try {
+				tableView.getItems().addAll(TabelaFuncionarioDao.inicializatabela());
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
       
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } 
+     
     }
     
     
@@ -188,41 +166,16 @@ public class TabelaFuncionarioController {
          cargoColumn.setCellValueFactory(cellData -> cellData.getValue().cargoProperty());
          salarioColumn.setCellValueFactory(cellData -> cellData.getValue().salarioProperty().asObject());
 
-         // Carregar dados do banco de dados e preencher a TableView
-         try (
-         	Connection connection = ConexãoBD.Conexao();
-              Statement statement = connection.createStatement()) {
-             String query = "SELECT nome_completo, cpf, data_nasc, telefone, email, cargo, salario FROM funcionario where nome_completo = '"+
-              TxtPesquisa.getText()+"'";
-             
-             ResultSet resultSet = statement.executeQuery(query);
-
-             List<Funcionario> funcionarios = new ArrayList<>();
-             while (resultSet.next()) {
-                 Funcionario funcionario = new Funcionario();
-                 funcionario.setNomeCompleto(resultSet.getString("nome_completo"));
-                 funcionario.setCpf(resultSet.getString("cpf"));
-                 funcionario.setDataNascimento(resultSet.getDate("data_nasc").toLocalDate());
-                 funcionario.setTelefone(resultSet.getString("telefone"));
-                 funcionario.setEmail(resultSet.getString("email"));
-                 funcionario.setCargo(resultSet.getString("cargo"));
-                 funcionario.setSalario(resultSet.getDouble("salario"));
-
-                 // Calcular idade com base na data de nascimento
-                 int idade = Period.between(funcionario.getDataNascimento(), LocalDate.now()).getYears();
-                 funcionario.setIdade(idade);
-
-                 funcionarios.add(funcionario);
-             }
-
-         	statement.close();
-         	connection.close();
+        
          	
-             tableView.getItems().addAll(funcionarios);
+             try {
+				tableView.getItems().addAll(TabelaFuncionarioDao.PesquisaFuncionario(TxtPesquisa.getText()));
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
        
-         } catch (SQLException e) {
-             e.printStackTrace();
-         } }else {
+       }else {
         	 initialize();
          }
     	
@@ -268,39 +221,16 @@ public class TabelaFuncionarioController {
         cargoColumn.setCellValueFactory(cellData -> cellData.getValue().cargoProperty());
         salarioColumn.setCellValueFactory(cellData -> cellData.getValue().salarioProperty().asObject());
 
-        // Carregar dados do banco de dados e preencher a TableView
-        try (
-        	Connection connection = ConexãoBD.Conexao();
-             Statement statement = connection.createStatement()) {
-            String query = "SELECT nome_completo, cpf, data_nasc, telefone, email, cargo, salario FROM funcionario where "+comando;
-            ResultSet resultSet = statement.executeQuery(query);
-
-            List<Funcionario> funcionarios = new ArrayList<>();
-            while (resultSet.next()) {
-                Funcionario funcionario = new Funcionario();
-                funcionario.setNomeCompleto(resultSet.getString("nome_completo"));
-                funcionario.setCpf(resultSet.getString("cpf"));
-                funcionario.setDataNascimento(resultSet.getDate("data_nasc").toLocalDate());
-                funcionario.setTelefone(resultSet.getString("telefone"));
-                funcionario.setEmail(resultSet.getString("email"));
-                funcionario.setCargo(resultSet.getString("cargo"));
-                funcionario.setSalario(resultSet.getDouble("salario"));
-
-                // Calcular idade com base na data de nascimento
-                int idade = Period.between(funcionario.getDataNascimento(), LocalDate.now()).getYears();
-                funcionario.setIdade(idade);
-
-                funcionarios.add(funcionario);
-            }
-
-        	statement.close();
-        	connection.close();
+        
         	
-            tableView.getItems().addAll(funcionarios);
+            try {
+				tableView.getItems().addAll(TabelaFuncionarioDao.aplicarFiltro(comando));
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
       
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } 
+       
     }
     
 

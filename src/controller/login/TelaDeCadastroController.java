@@ -87,7 +87,14 @@ public class TelaDeCadastroController {
     			txtr2=  TxtPalavrasDeRecuperacao2.getText();
     			txtr3=  TxtPalavrasDeRecuperacao3.getText();
     			
-    				Main.Cena("Cadastro2");
+    			psfsenha.setText("");
+    			TxtEmail.setText("");
+    			psfConfirma.setText("");
+    			TxtPalavrasDeRecuperacao1.setText("");
+    			TxtPalavrasDeRecuperacao2.setText("");
+    			TxtPalavrasDeRecuperacao3.setText("");
+    			
+    			Main.Cena("Cadastro2");
     		
     		
     		}else JOptionPane.showMessageDialog(null, "senha digitada no campo de confirmação não é igual a senha digitada no campo senha ");

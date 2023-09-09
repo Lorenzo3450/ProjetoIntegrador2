@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 import model.dao.ConexãoBD;
+import model.dao.login.RecuperSenhaModel;
 import controller.Ferramentas.EfeitoBtn;
 import controller.Main;
 import javafx.fxml.FXML;
@@ -69,44 +70,11 @@ import javafx.fxml.FXML;
 	    		
 	    		if(psfsNovaSenha.getText().equals(psfConfirmaNovaSenha.getText())) {
 	    			
-	    			//conferindo no banco de dados as informações 
-	    	    	Connection conecao = ConexãoBD.Conexao();
 	    			
-	    	    	String selectSql = "SELECT id_senha FROM perguntas WHERE nome_meio_mae = ? AND primeira_escola = ? AND apelido_infancia = ?";
-	                PreparedStatement selectPs = conecao.prepareStatement(selectSql);
-	                selectPs.setString(1,TxtPalavrasDeRecuperacao1.getText() );
-	                selectPs.setString(2, TxtPalavrasDeRecuperacao2.getText());
-	                selectPs.setString(3, TxtPalavrasDeRecuperacao3.getText());
-	                
-	                System.out.println(TxtPalavrasDeRecuperacao1.getText());
-	                System.out.println(TxtPalavrasDeRecuperacao2.getText());
-	                System.out.println(TxtPalavrasDeRecuperacao3.getText());
-	                
-	                ResultSet resultSet = selectPs.executeQuery();
-
-	                if (resultSet.next()) {
-	                    int idSenha = resultSet.getInt("id_senha");
-
-	                    String updateSql = "UPDATE funcionario SET senha = ? WHERE id = ?";
-	                    PreparedStatement updatePs = conecao.prepareStatement(updateSql);
-	                    updatePs.setString(1,psfsNovaSenha.getText()  );
-	                    updatePs.setInt(2, idSenha);
-
-	                    int lf = updatePs.executeUpdate();
-
-	                    if (lf > 0) {
-	                        JOptionPane.showMessageDialog(null, "Senha alterada com sucesso");
-	                    } else {
-	                        JOptionPane.showMessageDialog(null, "Senha não trocada");
-	                    }
-
-	                    updatePs.close();
-	                } else {
-	                    JOptionPane.showMessageDialog(null, "As respostas não correspondem ou ocorreu um erro");
-	                }
-
-	                selectPs.close();
-	                conecao.close();
+	    			RecuperSenhaModel.AlteraSenha(psfsNovaSenha.getText(), TxtPalavrasDeRecuperacao1.getText()
+	    					, TxtPalavrasDeRecuperacao2.getText(), TxtPalavrasDeRecuperacao3.getText());
+	    			
+	    			
 
 	            } else JOptionPane.showMessageDialog(null, "senha digitada no campo de confirmação não é igual a senha digitada no campo senha");
 	    			

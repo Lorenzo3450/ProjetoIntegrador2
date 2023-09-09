@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
 import model.dao.ConexãoBD;
+import model.dao.login.CadastroModel;
 import controller.Ferramentas.EfeitoBtn;
 import controller.Ferramentas.TrocaData;
 import controller.Main;
@@ -54,56 +55,29 @@ public class TelaDeCadastro2Controller {
     			TxtDataDeNascimento.getText() != "" && TxtNome.getText() != "" &&
     			TxtRuaCasaComplemento.getText() != "" && TxtTelefone.getText() != "") {
     		
+    		
+    		//metodo da classe cadastro model que realiza o cadastro
     
-				//cadastro no banco de dados os dados;
+    			CadastroModel.RealizaCadastro(TxtNome.getText(), TxtCpf.getText(), TxtDataDeNascimento.getText(), TxtTelefone.getText(),
+    					TelaDeCadastroController.email, TelaDeCadastroController.senha,  TxtRuaCasaComplemento.getText(), 
+    					TxtBairro.getText(),  TxtCep.getText(), TxtCidade.getText(),TelaDeCadastroController.txtr1,
+    					TelaDeCadastroController.txtr2,TelaDeCadastroController.txtr3);
     		
-    			Connection conecao = ConexãoBD.Conexao();
-    			
-    			String ComandoSql1 = " insert into funcionario (nome_completo,cpf,data_nasc,"
-    					+ "telefone, email, senha,cargo) values (?, ?, ?, ?, ?, ?,?)";
-    			
-    			String ComandoSql2 = "insert into endereco(logradouro,bairro,cep,cidade) values (?, ?, ?, ?)";
-    			
-    			String ComandoSql3 = "insert into perguntas(nome_meio_mae,primeira_escola,apelido_infancia) values (? , ?, ?)";
-    			
-    			
-    			
-    			PreparedStatement stmt1 = conecao.prepareStatement(ComandoSql1);
-    			PreparedStatement stmt2 = conecao.prepareStatement(ComandoSql2);
-    			PreparedStatement stmt3 = conecao.prepareStatement(ComandoSql3);
-    			
-    			stmt1.setString(1, TxtNome.getText());
-    			stmt1.setString(2, TxtCpf.getText());
-    			stmt1.setString(3, TrocaData.trocaData(TxtDataDeNascimento.getText()));
-    			stmt1.setString(4, TxtTelefone.getText());
-    			stmt1.setString(5, TelaDeCadastroController.email);
-    			stmt1.setString(6, TelaDeCadastroController.senha);
-    			stmt1.setString(7, "Não definido");
     		
-    			
-    			stmt2.setString(1, TxtRuaCasaComplemento.getText());
-    			stmt2.setString(2, TxtBairro.getText());
-    			stmt2.setString(3, TxtCep.getText());
-    			stmt2.setString(4, TxtCidade.getText());
-    			
-    			stmt3.setNString(1, TelaDeCadastroController.txtr1);
-    			stmt3.setNString(2, TelaDeCadastroController.txtr2);
-    			stmt3.setNString(3, TelaDeCadastroController.txtr3);
-
-    			stmt1.execute();
-    			stmt2.execute();
-    			stmt3.execute();
-    			
-    			stmt1.close();
-    			stmt2.close();
-    			stmt3.close();
-    			conecao.close();
+    			TxtNome.setText("");
+    			TxtCpf.setText("");
+    			TxtDataDeNascimento.setText("");
+    			TxtTelefone.setText("");
+				TxtRuaCasaComplemento.setText("");
+				TxtBairro.setText("");  
+				TxtCep.setText(""); 
+				TxtCidade.setText("");
     			
     			JOptionPane.showMessageDialog(null, "dados cadastrados com sucesso");
 
     			
     	
-    				//troca para tela de login
+    				
     				Main.Cena("Login");
     		
     		
