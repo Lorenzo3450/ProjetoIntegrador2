@@ -33,6 +33,10 @@ public class Main extends Application {
 	// telas gerente
 	private static Scene MenuPrincipalGerente;
 	private static Scene TabelaFuncionarios;
+	
+	//telas RH
+	private static Scene MenuPrincipalRH;
+	
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -72,12 +76,24 @@ public class Main extends Application {
 
 		Parent fxmlTabelaFuncionarios = FXMLLoader.load(getClass().getResource("/view/gerente/TabelaFuncionario.fxml"));
 		TabelaFuncionarios = new Scene(fxmlTabelaFuncionarios);
+		
+		//cenas do pacote RH
+		
+		Parent fxmlMenuPrincipalRH = FXMLLoader
+				.load(getClass().getResource("/view/RH/TelaPrincipalRH.fxml"));
+		MenuPrincipalRH = new Scene(fxmlMenuPrincipalRH);
+		
+		
+
+		this.primaryStage.setScene(MenuPrincipalRH);
+		this.primaryStage.show();
+		
 
 		// inicializa as cenas
 
 		// verifica a sessão do usuario para vê se ele já realizou login
 
-		if (MainModel.VerificaSessao()) {
+		/*if (MainModel.VerificaSessao()) {
 
 			// verifica o cargo do usuario
 
@@ -93,7 +109,7 @@ public class Main extends Application {
 		} else {
 			this.primaryStage.setScene(login);
 			this.primaryStage.show();
-		}
+		} */
 
 	}
 	
