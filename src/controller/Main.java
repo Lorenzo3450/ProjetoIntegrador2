@@ -30,9 +30,12 @@ public class Main extends Application {
 	// telas de cadastro
 	private static Scene cadastro;
 	private static Scene cadastro2;
+	
 	// telas gerente
 	private static Scene MenuPrincipalGerente;
 	private static Scene TabelaFuncionarios;
+	private static Scene RelatorioABC;
+	private static Scene GraficoDeLucrosDosMeses;
 	
 	//telas RH
 	private static Scene MenuPrincipalRH;
@@ -74,8 +77,18 @@ public class Main extends Application {
 				.load(getClass().getResource("/view/gerente/TelaPrincipalGerente.fxml"));
 		MenuPrincipalGerente = new Scene(fxmlMenuPrincipalGerente);
 
+		
+		
+		
 		Parent fxmlTabelaFuncionarios = FXMLLoader.load(getClass().getResource("/view/gerente/TabelaFuncionario.fxml"));
 		TabelaFuncionarios = new Scene(fxmlTabelaFuncionarios);
+		
+
+		Parent fxmlRelatorioABC = FXMLLoader.load(getClass().getResource("/view/gerente/RelatorioABC.fxml"));
+		RelatorioABC = new Scene(fxmlRelatorioABC);
+
+		Parent fxmlGraficoDeLucrosDosMeses = FXMLLoader.load(getClass().getResource("/view/gerente/GraficoDeLucroDosMeses.fxml"));
+		GraficoDeLucrosDosMeses = new Scene(fxmlGraficoDeLucrosDosMeses);
 		
 		//cenas do pacote RH
 		
@@ -84,16 +97,18 @@ public class Main extends Application {
 		MenuPrincipalRH = new Scene(fxmlMenuPrincipalRH);
 		
 		
-
-		this.primaryStage.setScene(MenuPrincipalRH);
+		this.primaryStage.setScene(GraficoDeLucrosDosMeses);
 		this.primaryStage.show();
 		
+		
+		/*
+
 
 		// inicializa as cenas
 
 		// verifica a sessão do usuario para vê se ele já realizou login
 
-		/*if (MainModel.VerificaSessao()) {
+		if (MainModel.VerificaSessao()) {
 
 			// verifica o cargo do usuario
 
@@ -101,16 +116,31 @@ public class Main extends Application {
 
 			if (cargo.equalsIgnoreCase("gerente")) {
 
+				
 				this.primaryStage.setScene(MenuPrincipalGerente);
 				this.primaryStage.show();
-
+				
+				
+				
+			}
+			if(cargo.equalsIgnoreCase("RH")) {
+				
+				this.primaryStage.setScene(MenuPrincipalRH);
+				this.primaryStage.show();
+				
+			}
+			
+			if(cargo.equalsIgnoreCase("Não definido")) {
+				this.primaryStage.setScene(login);
+				this.primaryStage.show();
+				
 			}
 
 		} else {
 			this.primaryStage.setScene(login);
 			this.primaryStage.show();
-		} */
-
+		} 
+*/
 	}
 	
 	

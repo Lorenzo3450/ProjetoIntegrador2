@@ -9,7 +9,7 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
-import controller.Ferramentas.Funcionario;
+import model.Funcionario;
 import model.dao.ConexãoBD;
 
 public class TabelaFuncionarioDao {

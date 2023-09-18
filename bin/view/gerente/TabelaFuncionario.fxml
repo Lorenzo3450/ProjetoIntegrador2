@@ -76,49 +76,64 @@
                   <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Vector.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="64.0" fitWidth="149.0" layoutX="1200.0" layoutY="44.0" onMouseClicked="#Filtro" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BtnFiltro" fitHeight="64.0" fitWidth="149.0" layoutX="870.0" layoutY="44.0" onMouseClicked="#Filtro" onMouseEntered="#EfeitoFiltro" onMouseExited="#SairFiltro" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Rectangle%204.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="74.0" layoutX="1220.0" layoutY="57.0" onMouseClicked="#Filtro" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="74.0" layoutX="884.0" layoutY="59.0" onMouseClicked="#Filtro" onMouseEntered="#EfeitoFiltro" onMouseExited="#SairFiltro" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Filtro.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="29.0" fitWidth="30.0" layoutX="1297.0" layoutY="57.0" onMouseClicked="#Filtro" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="39.0" fitWidth="30.0" layoutX="961.0" layoutY="58.0" onMouseClicked="#Filtro" onMouseEntered="#EfeitoFiltro" onMouseExited="#SairFiltro" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Add_Plus_Circle.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="64.0" fitWidth="306.0" layoutX="1372.0" layoutY="47.0" onMouseClicked="#RemoverFuncionario" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BtnRemoverFuncionario" fitHeight="64.0" fitWidth="306.0" layoutX="1372.0" layoutY="47.0" onMouseClicked="#RemoverFuncionario" onMouseEntered="#EfeitoRemoverFuncionario" onMouseExited="#SairRemoverFuncionario" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Rectangle%2049.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="187.0" fitWidth="238.0" layoutX="1383.0" layoutY="60.0" onMouseClicked="#RemoverFuncionario" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="187.0" fitWidth="238.0" layoutX="1383.0" layoutY="60.0" onMouseClicked="#RemoverFuncionario" onMouseEntered="#EfeitoRemoverFuncionario" onMouseExited="#SairRemoverFuncionario" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Remover%20funcionário.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="52.0" fitWidth="30.0" layoutX="1628.0" layoutY="56.0" onMouseClicked="#RemoverFuncionario" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="52.0" fitWidth="30.0" layoutX="1628.0" layoutY="56.0" onMouseClicked="#RemoverFuncionario" onMouseEntered="#EfeitoRemoverFuncionario" onMouseExited="#SairRemoverFuncionario" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Trash_Full.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="58.0" fitWidth="161.0" layoutX="1030.0" layoutY="46.0" onMouseClicked="#imprimir" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BtnImprimir" fitHeight="58.0" fitWidth="161.0" layoutX="1030.0" layoutY="46.0" onMouseClicked="#imprimir" onMouseEntered="#EfeitoImprimir" onMouseExited="#SairImprimir" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Rectangle%20104.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="39.0" fitWidth="30.0" layoutX="1129.0" layoutY="55.0" onMouseClicked="#imprimir" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="39.0" fitWidth="30.0" layoutX="1129.0" layoutY="55.0" onMouseClicked="#imprimir" onMouseEntered="#EfeitoImprimir" onMouseExited="#SairImprimir" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Printer.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="21.0" fitWidth="95.0" layoutX="1041.0" layoutY="60.0" onMouseClicked="#imprimir" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="21.0" fitWidth="95.0" layoutX="1041.0" layoutY="60.0" onMouseClicked="#imprimir" onMouseEntered="#EfeitoImprimir" onMouseExited="#SairImprimir" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Imprimir.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="BtnEditar" fitHeight="58.0" fitWidth="161.0" layoutX="1210.0" layoutY="47.0" onMouseClicked="#Editar" onMouseEntered="#EfeitoEditar" onMouseExited="#SairEditar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Rectangle%20104.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="37.0" layoutX="1301.0" layoutY="58.0" onMouseClicked="#Editar" onMouseEntered="#EfeitoEditar" onMouseExited="#SairEditar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Group%2037.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="80.0" layoutX="1219.0" layoutY="60.0" onMouseClicked="#Editar" onMouseEntered="#EfeitoEditar" onMouseExited="#SairEditar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Editar.png" />
                </image>
             </ImageView>
          </children>

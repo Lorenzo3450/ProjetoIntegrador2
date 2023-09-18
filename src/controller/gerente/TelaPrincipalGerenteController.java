@@ -94,6 +94,7 @@ public class TelaPrincipalGerenteController {
 
     
     
+   
 
     @FXML
     void AbrirSideBar(MouseEvent event) {
@@ -115,6 +116,8 @@ public class TelaPrincipalGerenteController {
     @FXML
     void AlterarDados(MouseEvent event) {
 
+    	
+    	
     }
 
     @FXML
@@ -186,7 +189,7 @@ public class TelaPrincipalGerenteController {
 
 
     @FXML
-    void FecharSideBar(MouseEvent event) {
+    public void FecharSideBar(MouseEvent event) {
 
     	
     	painelFechado.setVisible(true);
