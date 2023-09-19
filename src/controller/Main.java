@@ -36,6 +36,8 @@ public class Main extends Application {
 	private static Scene TabelaFuncionarios;
 	private static Scene RelatorioABC;
 	private static Scene GraficoDeLucrosDosMeses;
+	private static Scene GraficoDeLucrosDasSecoesProduto;
+	private static Scene TelaPrincipalGestor;
 	
 	//telas RH
 	private static Scene MenuPrincipalRH;
@@ -90,19 +92,27 @@ public class Main extends Application {
 		Parent fxmlGraficoDeLucrosDosMeses = FXMLLoader.load(getClass().getResource("/view/gerente/GraficoDeLucroDosMeses.fxml"));
 		GraficoDeLucrosDosMeses = new Scene(fxmlGraficoDeLucrosDosMeses);
 		
+		Parent fxmlGraficoDeLucrosDasSecoesProduto = FXMLLoader.load(getClass().getResource("/view/gerente/GraficoLucroSecoes.fxml"));
+		GraficoDeLucrosDasSecoesProduto = new Scene(fxmlGraficoDeLucrosDasSecoesProduto);
+		
 		//cenas do pacote RH
 		
 		Parent fxmlMenuPrincipalRH = FXMLLoader
 				.load(getClass().getResource("/view/RH/TelaPrincipalRH.fxml"));
 		MenuPrincipalRH = new Scene(fxmlMenuPrincipalRH);
 		
+		//cenas gestor
+	
+		Parent fxmlTelaPrincipal = FXMLLoader
+				.load(getClass().getResource("/view/gestor/TelaPrincipalGestor.fxml"));
+		TelaPrincipalGestor = new Scene(fxmlTelaPrincipal);
+
 		
-		this.primaryStage.setScene(GraficoDeLucrosDosMeses);
+		this.primaryStage.setScene(TelaPrincipalGestor);
 		this.primaryStage.show();
 		
 		
 		/*
-
 
 		// inicializa as cenas
 
@@ -139,14 +149,16 @@ public class Main extends Application {
 		} else {
 			this.primaryStage.setScene(login);
 			this.primaryStage.show();
-		} 
-*/
+		}  */
+
 	}
 	
 	
 	//método para as outras classes alterarem as cenas do sistema
 
 	public static void Cena(String a) throws Exception {
+		
+		//telas login
 		if (a.equals("Login")) {
 
 			primaryStage.setScene(login);
@@ -176,6 +188,8 @@ public class Main extends Application {
 			primaryStage.setScene(cadastro2);
 
 		}
+		
+		//telas gerente 
 
 		if (a.equals("TabelaFuncionarios")) {
 
@@ -188,6 +202,25 @@ public class Main extends Application {
 			primaryStage.setScene(MenuPrincipalGerente);
 
 		}
+		
+		if (a.equals("TelaRelatorioABC")) {
+
+			primaryStage.setScene(RelatorioABC);
+
+		}
+		
+		if (a.equals("GraficoMes")) {
+
+			primaryStage.setScene(GraficoDeLucrosDosMeses);
+
+		}
+		
+		if (a.equals("GraficoSecao")) {
+
+			primaryStage.setScene(GraficoDeLucrosDasSecoesProduto);
+
+		} 
+		
 
 	}
 

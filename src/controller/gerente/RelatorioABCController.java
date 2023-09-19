@@ -12,6 +12,9 @@ import model.dao.ConexãoBD;
 import model.dao.Gerente.RelatorioABCDao;
 
 import java.util.List;
+
+import controller.Main;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
@@ -187,8 +190,11 @@ public class RelatorioABCController {
     }
 
     @FXML
-    void vol1(MouseEvent event) {
+    void vol1(MouseEvent event) throws Exception {
 
+    	Main.Cena("TelaPrincipalGerente");
+
+    	
     }
 
 }

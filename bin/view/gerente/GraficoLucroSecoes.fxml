@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1015.0" prefWidth="1920.0" style="-fx-background-color: #DBDBDB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.gerente.GraficoDeLucrosDosMesesController">
+<AnchorPane prefHeight="1015.0" prefWidth="1920.0" style="-fx-background-color: #DBDBDB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.gerente.GraficoLucroSecoesController">
    <children>
       <Pane layoutX="10.0" layoutY="10.0" prefHeight="94.0" prefWidth="1920.0" style="-fx-background-color: #004391;" AnchorPane.bottomAnchor="923.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -16,7 +16,7 @@
                   <Image url="@../../../Imagens/imagens%20login/Super%20(1)%20(1)%201.png" />
                </image>
             </ImageView>
-            <Label layoutX="218.0" layoutY="11.0" text="- Grafico de Lucros dos meses do ano" textFill="WHITE">
+            <Label layoutX="218.0" layoutY="11.0" text="- Grafico de Lucros das Secoes do Super Mercado" textFill="WHITE">
                <font>
                   <Font size="48.0" />
                </font>

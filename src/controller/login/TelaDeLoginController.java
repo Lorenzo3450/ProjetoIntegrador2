@@ -13,11 +13,17 @@ import javafx.concurrent.Task;
 import javafx.concurrent.Task;
 import controller.Main;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import controller.Ferramentas.EfeitoBtn;
 
 public class TelaDeLoginController {
@@ -98,6 +104,36 @@ public class TelaDeLoginController {
 				});
 		        service.start();
 		        
+				}if(loguinModel.getCargo(txflogin.getText(), psfsenha.getText()).equalsIgnoreCase("Não definido")) {
+					
+					
+					
+
+					try {
+
+						   FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/login/FuncionarioNaoDefinidoView.fxml"));
+					        Parent root = loader.load();
+					      
+					        // Configuração do novo Stage
+					        Stage newStage = new Stage();
+					        newStage.initStyle(StageStyle.UNDECORATED); // Remove a barra de título
+					        newStage.setTitle("");
+					        newStage.initModality(Modality.APPLICATION_MODAL);
+					        newStage.setScene(new Scene(root));
+
+					        // Torna a janela arrastável (draggable)
+					        makeStageDraggable(newStage, root);
+
+					        // Exibe a nova cena em um novo Stage
+					        newStage.showAndWait();
+
+					    } catch (Exception e) {
+					        e.printStackTrace();
+					    }
+					
+					
+					
+					
 				}
 				
 			}else JOptionPane.showMessageDialog(null, "erro, Senha ou email incorreto !");
@@ -178,7 +214,28 @@ public class TelaDeLoginController {
     	
     }
 
-    
+    private void makeStageDraggable(Stage stage, Parent root) {
+	    final Delta dragDelta = new Delta();
+
+	    root.setOnMousePressed(event -> {
+	        // Quando o mouse é pressionado, calcula a diferença entre a posição atual do mouse
+	        // e a posição da janela
+	        dragDelta.x = stage.getX() - event.getScreenX();
+	        dragDelta.y = stage.getY() - event.getScreenY();
+	    });
+
+	    root.setOnMouseDragged(event -> {
+	        // Quando o mouse é arrastado, move a janela para a nova posição
+	        stage.setX(event.getScreenX() + dragDelta.x);
+	        stage.setY(event.getScreenY() + dragDelta.y);
+	    });
+	}
+
+	// Classe auxiliar para armazenar a diferença entre as coordenadas do mouse e da janela
+	class Delta {
+	    double x, y;
+	}
+	
 
     
 

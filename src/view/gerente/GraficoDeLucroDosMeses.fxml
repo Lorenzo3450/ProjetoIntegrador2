@@ -40,24 +40,24 @@
                   <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Rectangle%20103.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="BtnImprimir" fitHeight="58.0" fitWidth="161.0" layoutX="1532.0" layoutY="44.0" onMouseClicked="#imprimir" onMouseEntered="#EfeitoImprimir" onMouseExited="#SairImprimir" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BtnImprimir" fitHeight="58.0" fitWidth="161.0" layoutX="1562.0" layoutY="40.0" onMouseClicked="#imprimir" onMouseEntered="#EfeitoImprimir" onMouseExited="#SairImprimir" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Rectangle%20104.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="39.0" fitWidth="30.0" layoutX="1621.0" layoutY="56.0" onMouseClicked="#imprimir" onMouseEntered="#EfeitoImprimir" onMouseExited="#SairImprimir" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="39.0" fitWidth="30.0" layoutX="1654.0" layoutY="52.0" onMouseClicked="#imprimir" onMouseEntered="#EfeitoImprimir" onMouseExited="#SairImprimir" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Printer.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="21.0" fitWidth="95.0" layoutX="1541.0" layoutY="61.0" onMouseClicked="#imprimir" onMouseEntered="#EfeitoImprimir" onMouseExited="#SairImprimir" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="21.0" fitWidth="95.0" layoutX="1571.0" layoutY="57.0" onMouseClicked="#imprimir" onMouseEntered="#EfeitoImprimir" onMouseExited="#SairImprimir" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Imprimir.png" />
                </image>
             </ImageView>
-            <Label layoutX="192.0" layoutY="-28.0" prefHeight="43.0" prefWidth="111.0" text="Gráfico" textFill="WHITE">
+            <Label layoutX="192.0" layoutY="-28.0" prefHeight="43.0" prefWidth="111.0" text="Grafico" textFill="WHITE">
                <font>
-                  <Font size="29.0" />
+                  <Font size="32.0" />
                </font>
             </Label>
             <AnchorPane fx:id="PainelGrafico" layoutX="153.0" layoutY="104.0" prefHeight="599.0" prefWidth="1561.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;" />

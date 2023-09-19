@@ -1,4 +1,4 @@
-package controller.gerente;
+package controller.Gestor;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,7 +16,7 @@ import javafx.util.Duration;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 
-public class TelaPrincipalGerenteController {
+public class TelaPrincipalGestorController {
 
 	EfeitoBtn efeito = new EfeitoBtn();
 	
@@ -59,6 +59,10 @@ public class TelaPrincipalGerenteController {
 
     @FXML
     private ImageView btnfuncionario1;
+   
+    @FXML
+    private AnchorPane painelProduto;
+
 
     @FXML
     private AnchorPane painelABerto;
@@ -122,14 +126,17 @@ public class TelaPrincipalGerenteController {
     @FXML
     void AbrirSideBar(MouseEvent event) {
 
+    	System.out.println("oi");
+    	
+    	painelProduto.setVisible(false);
+    	painelProduto.setDisable(true);
     	painelRelatorio.setVisible(false);
     	painelRelatorio.setDisable(true);
     	painelFechado.setVisible(false);
     	painelFechado.setDisable(true);
     	painelPerfil.setVisible(false);
     	painelPerfil.setDisable(true);
-    	painelFuncionario.setVisible(false);
-    	painelFuncionario.setDisable(true);
+    
     	painelTabelas.setVisible(false);
     	painelTabelas.setDisable(true);
     	painelABerto.setVisible(true);
@@ -215,14 +222,15 @@ public class TelaPrincipalGerenteController {
     @FXML
     public void FecharSideBar(MouseEvent event) {
 
+    	painelProduto.setVisible(false);
+    	painelProduto.setDisable(true);
     	painelRelatorio.setVisible(false);
     	painelRelatorio.setDisable(true);
     	painelFechado.setVisible(true);
     	painelFechado.setDisable(false);
     	painelPerfil.setVisible(false);
     	painelPerfil.setDisable(true);
-    	painelFuncionario.setVisible(false);
-    	painelFuncionario.setDisable(true);
+
     	painelTabelas.setVisible(false);
     	painelTabelas.setDisable(true);
     	painelABerto.setVisible(true);
@@ -243,15 +251,15 @@ public class TelaPrincipalGerenteController {
     @FXML
     void IrParaFuncionarios(MouseEvent event) {
 
-    	
+    	painelProduto.setVisible(false);
+    	painelProduto.setDisable(true);
     	painelRelatorio.setVisible(false);
     	painelRelatorio.setDisable(true);
     	painelFechado.setVisible(false);
     	painelFechado.setDisable(true);
     	painelPerfil.setVisible(false);
     	painelPerfil.setDisable(true);
-    	painelFuncionario.setVisible(true);
-    	painelFuncionario.setDisable(false);
+
     	painelTabelas.setVisible(false);
     	painelTabelas.setDisable(true);
     	painelABerto.setVisible(true);
@@ -274,14 +282,15 @@ public class TelaPrincipalGerenteController {
     @FXML
     void IrParaPerfil(MouseEvent event) {
 
+    	painelProduto.setVisible(false);
+    	painelProduto.setDisable(true);
     	painelRelatorio.setVisible(false);
     	painelRelatorio.setDisable(true);
     	painelFechado.setVisible(false);
     	painelFechado.setDisable(true);
     	painelPerfil.setVisible(true);
     	painelPerfil.setDisable(false);
-    	painelFuncionario.setVisible(false);
-    	painelFuncionario.setDisable(true);
+    
     	painelTabelas.setVisible(false);
     	painelTabelas.setDisable(true);
     	painelABerto.setVisible(true);
@@ -292,6 +301,21 @@ public class TelaPrincipalGerenteController {
     @FXML
     void IrParaProduto(MouseEvent event) {
 
+    	painelProduto.setVisible(true);
+    	painelProduto.setDisable(false);
+    	painelRelatorio.setVisible(false);
+    	painelRelatorio.setDisable(true);
+    	painelFechado.setVisible(false);
+    	painelFechado.setDisable(true);
+    	painelPerfil.setVisible(false);
+    	painelPerfil.setDisable(true);
+    	
+    	painelTabelas.setVisible(false);
+    	painelTabelas.setDisable(true);
+    	painelABerto.setVisible(true);
+    	painelABerto.setDisable(false);
+    	
+    	
     }
 
     @FXML
@@ -302,14 +326,16 @@ public class TelaPrincipalGerenteController {
     @FXML
     void IrParaRelatorio(MouseEvent event) {
     	
+    
+    	painelProduto.setVisible(false);
+    	painelProduto.setDisable(true);
     	painelRelatorio.setVisible(true);
     	painelRelatorio.setDisable(false);
     	painelFechado.setVisible(false);
     	painelFechado.setDisable(true);
     	painelPerfil.setVisible(false);
     	painelPerfil.setDisable(true);
-    	painelFuncionario.setVisible(false);
-    	painelFuncionario.setDisable(true);
+    	
     	painelTabelas.setVisible(false);
     	painelTabelas.setDisable(true);
     	painelABerto.setVisible(true);
@@ -340,14 +366,15 @@ public class TelaPrincipalGerenteController {
     @FXML
     void IrParaTabela(MouseEvent event) {
     	
+    	painelProduto.setVisible(false);
+    	painelProduto.setDisable(true);
     	painelRelatorio.setVisible(false);
     	painelRelatorio.setDisable(true);
     	painelFechado.setVisible(false);
     	painelFechado.setDisable(true);
     	painelPerfil.setVisible(false);
     	painelPerfil.setDisable(true);
-    	painelFuncionario.setVisible(false);
-    	painelFuncionario.setDisable(true);
+
     	painelTabelas.setVisible(true);
     	painelTabelas.setDisable(false);
     	painelABerto.setVisible(true);
@@ -394,6 +421,10 @@ public class TelaPrincipalGerenteController {
     	
     }
     
+    @FXML
+    void IrParaAdicaoDeProduto(MouseEvent event) {
+
+    }
     
 
     @FXML
