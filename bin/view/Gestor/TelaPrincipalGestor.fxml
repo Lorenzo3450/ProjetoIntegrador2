@@ -205,7 +205,7 @@
             <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="930.0" layoutY="166.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="930.0" layoutY="171.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/tabela.png" />
          </image>
@@ -215,210 +215,6 @@
             <Font size="44.0" />
          </font>
       </Label>
-      <AnchorPane fx:id="painelPerfil" layoutX="10.0" layoutY="10.0" prefHeight="1015.0" prefWidth="1920.0" style="-fx-background-color: #B7CAE0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Pane layoutX="10.0" layoutY="10.0" prefHeight="94.0" prefWidth="1920.0" style="-fx-background-color: #004391;" AnchorPane.bottomAnchor="923.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <ImageView fitHeight="120.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Imagens/imagens%20login/Super%20(1)%20(1)%201.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="254.0" layoutY="-3.0" prefHeight="82.0" prefWidth="450.0" text=" Menu Gerente" textFill="WHITE">
-                     <font>
-                        <Font size="64.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="235.0" layoutY="-11.0" text="-" textFill="WHITE">
-                     <font>
-                        <Font size="72.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="1437.0" layoutY="-8.0" prefHeight="82.0" prefWidth="450.0" textFill="WHITE">
-                     <font>
-                        <Font size="64.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <ImageView fitHeight="299.0" fitWidth="1967.0" layoutX="6.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="622.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="94.0">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/kisspng-shelf-clip-art-5af5d795219cd7%203.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="299.0" fitWidth="1967.0" layoutX="16.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/kisspng-shelf-clip-art-5af5d795219cd7%203.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="299.0" fitWidth="1967.0" layoutX="32.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/kisspng-shelf-clip-art-5af5d795219cd7%203.png" />
-               </image>
-            </ImageView>
-            <AnchorPane layoutX="114.0" layoutY="93.0" prefHeight="921.0" prefWidth="230.0" style="-fx-background-color: #FFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1690.0" AnchorPane.topAnchor="94.0">
-               <children>
-                  <Label layoutX="227.0" prefHeight="921.0" prefWidth="2.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <ImageView fitHeight="45.0" fitWidth="81.0" layoutX="170.0" layoutY="1.0" onMouseClicked="#FecharSideBar" pickOnBounds="true" preserveRatio="true" rotate="90.0">
-                     <image>
-                        <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Caret_Down_SM2.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/User_Circle2.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="LblNome" layoutX="12.0" layoutY="230.0" prefHeight="55.0" prefWidth="202.0" textAlignment="CENTER">
-                     <font>
-                        <Font size="17.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="txfEmail" layoutX="5.0" layoutY="300.0" prefHeight="25.0" prefWidth="218.0" promptText="Email" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40; -fx-border-color: #004391;">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="txtSenha" layoutX="5.0" layoutY="350.0" prefHeight="25.0" prefWidth="218.0" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40; -fx-border-color: #004391;">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="txtTelefone" layoutX="5.0" layoutY="400.0" prefHeight="25.0" prefWidth="218.0" promptText="Telefone" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40; -fx-border-color: #004391;">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="txtCep" layoutX="5.0" layoutY="450.0" prefHeight="25.0" prefWidth="218.0" promptText="CEP" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40; -fx-border-color: #004391;">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="TxtCidade" layoutX="5.0" layoutY="500.0" prefHeight="25.0" prefWidth="218.0" promptText="cidade" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40; -fx-border-color: #004391;">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="txtBairro" layoutX="5.0" layoutY="550.0" prefHeight="25.0" prefWidth="218.0" promptText="Bairro" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40; -fx-border-color: #004391;">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="txtLongradouro" layoutX="5.0" layoutY="600.0" prefHeight="25.0" prefWidth="218.0" promptText="Longradouro" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40; -fx-border-color: #004391;">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </TextField>
-                  <ImageView fx:id="BtnAlterarDados" fitHeight="55.0" fitWidth="209.0" layoutX="42.0" layoutY="678.0" onMouseClicked="#AlterarDados" onMouseEntered="#Entrar6" onMouseExited="#Sair6" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="83.0" layoutY="685.0" onMouseClicked="#AlterarDados" onMouseEntered="#Entrar6" onMouseExited="#Sair6" prefHeight="36.0" prefWidth="68.0" text="Alterar" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="BtnEncerrarSessao" fitHeight="55.0" fitWidth="209.0" layoutX="42.0" layoutY="750.0" onMouseClicked="#EncerrarSessao" onMouseEntered="#Entrar7" onMouseExited="#Sair7" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="92.0" layoutY="755.0" onMouseClicked="#EncerrarSessao" onMouseEntered="#Entrar7" onMouseExited="#Sair7" prefHeight="39.0" prefWidth="54.0" text="Sair" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="133.0" layoutY="762.0" onMouseClicked="#EncerrarSessao" onMouseEntered="#Entrar7" onMouseExited="#Sair7" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/sair.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="133.0" layoutY="693.0" onMouseClicked="#AlterarDados" onMouseEntered="#Entrar6" onMouseExited="#Sair6" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/File_Document.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-            <ImageView fx:id="btnfuncionario1" fitHeight="156.0" fitWidth="514.0" layoutX="400.0" layoutY="135.0" onMouseClicked="#IrParaFuncionarios2" onMouseEntered="#Entrar" onMouseExited="#Sair" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="BtnProduto1" fitHeight="156.0" fitWidth="514.0" layoutX="900.0" layoutY="135.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="BtnVendas1" fitHeight="156.0" fitWidth="514.0" layoutX="1400.0" layoutY="135.0" onMouseClicked="#IrParaVendas2" onMouseEntered="#Entrar3" onMouseExited="#Sair3" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="BtnRelatorio1" fitHeight="156.0" fitWidth="514.0" layoutX="400.0" layoutY="441.0" onMouseClicked="#IrParaRelatorios2" onMouseEntered="#Entrar4" onMouseExited="#Sair4" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="430.0" layoutY="166.0" onMouseClicked="#IrParaFuncionarios2" onMouseEntered="#Entrar" onMouseExited="#Sair" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Vector.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="530.0" layoutY="166.0" onMouseClicked="#IrParaFuncionarios2" onMouseEntered="#Entrar" onMouseExited="#Sair" prefHeight="82.0" prefWidth="280.0" text="Funcionários" textFill="WHITE">
-               <font>
-                  <Font size="44.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="930.0" layoutY="163.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Vector%20(1).png" />
-               </image>
-            </ImageView>
-            <Label layoutX="1030.0" layoutY="166.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" prefHeight="82.0" prefWidth="280.0" text="Produtos" textFill="WHITE">
-               <font>
-                  <Font size="44.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="1430.0" layoutY="173.0" onMouseClicked="#IrParaVendas2" onMouseEntered="#Entrar3" onMouseExited="#Sair" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Vector%20(2).png" />
-               </image>
-            </ImageView>
-            <Label layoutX="1530.0" layoutY="166.0" onMouseClicked="#IrParaVendas2" onMouseEntered="#Entrar3" onMouseExited="#Sair3" prefHeight="82.0" prefWidth="280.0" text="Vendas" textFill="WHITE">
-               <font>
-                  <Font size="44.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="434.0" layoutY="470.0" onMouseClicked="#IrParaRelatorios2" onMouseEntered="#Entrar4" onMouseExited="#Sair4" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/File_Document.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="530.0" layoutY="471.0" onMouseClicked="#IrParaRelatorios2" onMouseEntered="#Entrar4" onMouseExited="#Sair4" prefHeight="82.0" prefWidth="280.0" text="Relatórios" textFill="WHITE">
-               <font>
-                  <Font size="44.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="BtnTabelas1" fitHeight="156.0" fitWidth="514.0" layoutX="900.0" layoutY="441.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="930.0" layoutY="470.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/tabela.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="1030.0" layoutY="471.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" prefHeight="82.0" prefWidth="280.0" text="Tabelas" textFill="WHITE">
-               <font>
-                  <Font size="44.0" />
-               </font>
-            </Label>
-            <Pane layoutX="10.0" layoutY="143.0" prefHeight="2.0" prefWidth="230.0" style="-fx-background-color: #000;" AnchorPane.leftAnchor="0.0" />
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="painelTabelas" layoutX="20.0" layoutY="20.0" prefHeight="1015.0" prefWidth="1920.0" style="-fx-background-color: #B7CAE0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Pane layoutX="10.0" layoutY="10.0" prefHeight="94.0" prefWidth="1920.0" style="-fx-background-color: #004391;" AnchorPane.bottomAnchor="923.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -428,7 +224,7 @@
                         <Image url="@../../../Imagens/imagens%20login/Super%20(1)%20(1)%201.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="254.0" layoutY="-3.0" prefHeight="82.0" prefWidth="450.0" text=" Menu Gerente" textFill="WHITE">
+                  <Label layoutX="254.0" layoutY="-3.0" prefHeight="82.0" prefWidth="450.0" text=" Menu Gestor" textFill="WHITE">
                      <font>
                         <Font size="64.0" />
                      </font>
@@ -582,12 +378,12 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <Label layoutX="60.0" layoutY="387.0" onMouseClicked="#IrParaProduto" text="Produtos">
+            <Label layoutX="60.0" layoutY="387.0" onMouseClicked="#IrParaProduto" text="Vendas">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="60.0" layoutY="335.0" onMouseClicked="#IrParaVendas" text="Vendas">
+            <Label layoutX="60.0" layoutY="335.0" onMouseClicked="#IrParaVendas" text="Produtos">
                <font>
                   <Font size="24.0" />
                </font>
@@ -622,12 +418,7 @@
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Caret_Down_SM2.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="btnfuncionario12" fitHeight="156.0" fitWidth="514.0" layoutX="400.0" layoutY="135.0" onMouseClicked="#IrParaFuncionarios2" onMouseEntered="#Entrar" onMouseExited="#Sair" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="BtnProduto12" fitHeight="156.0" fitWidth="514.0" layoutX="900.0" layoutY="135.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BtnProduto12" fitHeight="156.0" fitWidth="514.0" layoutX="400.0" layoutY="135.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
                </image>
@@ -642,22 +433,12 @@
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="430.0" layoutY="166.0" onMouseClicked="#IrParaFuncionarios2" onMouseEntered="#Entrar" onMouseExited="#Sair" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Vector.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="530.0" layoutY="166.0" onMouseClicked="#IrParaFuncionarios2" onMouseEntered="#Entrar" onMouseExited="#Sair" prefHeight="82.0" prefWidth="280.0" text="Funcionários" textFill="WHITE">
-               <font>
-                  <Font size="44.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="930.0" layoutY="163.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="430.0" layoutY="166.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Vector%20(1).png" />
                </image>
             </ImageView>
-            <Label layoutX="1030.0" layoutY="166.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" prefHeight="82.0" prefWidth="280.0" text="Produtos" textFill="WHITE">
+            <Label layoutX="530.0" layoutY="166.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" prefHeight="82.0" prefWidth="280.0" text="Produtos" textFill="WHITE">
                <font>
                   <Font size="44.0" />
                </font>
@@ -682,17 +463,17 @@
                   <Font size="44.0" />
                </font>
             </Label>
-            <ImageView fx:id="BtnTabelas12" fitHeight="156.0" fitWidth="514.0" layoutX="900.0" layoutY="441.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BtnTabelas12" fitHeight="156.0" fitWidth="514.0" layoutX="900.0" layoutY="135.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="930.0" layoutY="470.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="930.0" layoutY="171.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/tabela.png" />
                </image>
             </ImageView>
-            <Label layoutX="1030.0" layoutY="471.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" prefHeight="82.0" prefWidth="280.0" text="Tabelas" textFill="WHITE">
+            <Label layoutX="1030.0" layoutY="166.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" prefHeight="82.0" prefWidth="280.0" text="Tabelas" textFill="WHITE">
                <font>
                   <Font size="44.0" />
                </font>
@@ -722,7 +503,7 @@
                         <Image url="@../../../Imagens/imagens%20login/Super%20(1)%20(1)%201.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="254.0" layoutY="-3.0" prefHeight="82.0" prefWidth="450.0" text=" Menu Gerente" textFill="WHITE">
+                  <Label layoutX="254.0" layoutY="-3.0" prefHeight="82.0" prefWidth="450.0" text=" Menu Gestor" textFill="WHITE">
                      <font>
                         <Font size="64.0" />
                      </font>
@@ -876,12 +657,12 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <Label layoutX="60.0" layoutY="387.0" onMouseClicked="#IrParaProduto" text="Produtos">
+            <Label layoutX="60.0" layoutY="387.0" onMouseClicked="#IrParaProduto" text="Vendas">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="60.0" layoutY="335.0" onMouseClicked="#IrParaVendas" text="Vendas">
+            <Label layoutX="60.0" layoutY="335.0" onMouseClicked="#IrParaVendas" text="Produtos">
                <font>
                   <Font size="24.0" />
                </font>
@@ -916,12 +697,7 @@
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Caret_Down_SM2.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="btnfuncionario121" fitHeight="156.0" fitWidth="514.0" layoutX="400.0" layoutY="135.0" onMouseClicked="#IrParaFuncionarios2" onMouseEntered="#Entrar" onMouseExited="#Sair" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="BtnProduto121" fitHeight="156.0" fitWidth="514.0" layoutX="900.0" layoutY="135.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BtnProduto121" fitHeight="156.0" fitWidth="514.0" layoutX="400.0" layoutY="135.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
                </image>
@@ -936,6 +712,203 @@
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="430.0" layoutY="166.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Vector%20(1).png" />
+               </image>
+            </ImageView>
+            <Label layoutX="530.0" layoutY="166.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" prefHeight="82.0" prefWidth="280.0" text="Produtos" textFill="WHITE">
+               <font>
+                  <Font size="44.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="1430.0" layoutY="173.0" onMouseClicked="#IrParaVendas2" onMouseEntered="#Entrar3" onMouseExited="#Sair" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Vector%20(2).png" />
+               </image>
+            </ImageView>
+            <Label layoutX="1530.0" layoutY="166.0" onMouseClicked="#IrParaVendas2" onMouseEntered="#Entrar3" onMouseExited="#Sair3" prefHeight="82.0" prefWidth="280.0" text="Vendas" textFill="WHITE">
+               <font>
+                  <Font size="44.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="434.0" layoutY="470.0" onMouseClicked="#IrParaRelatorios2" onMouseEntered="#Entrar4" onMouseExited="#Sair4" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/File_Document.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="530.0" layoutY="471.0" onMouseClicked="#IrParaRelatorios2" onMouseEntered="#Entrar4" onMouseExited="#Sair4" prefHeight="82.0" prefWidth="280.0" text="Relatórios" textFill="WHITE">
+               <font>
+                  <Font size="44.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="BtnTabelas121" fitHeight="156.0" fitWidth="514.0" layoutX="900.0" layoutY="135.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="930.0" layoutY="171.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/tabela.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="1030.0" layoutY="166.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" prefHeight="82.0" prefWidth="280.0" text="Tabelas" textFill="WHITE">
+               <font>
+                  <Font size="44.0" />
+               </font>
+            </Label>
+            <Pane layoutY="546.0" prefHeight="2.0" prefWidth="230.0" style="-fx-background-color: #000;" />
+            <Pane layoutY="600.0" prefHeight="2.0" prefWidth="230.0" style="-fx-background-color: #000;" />
+            <Pane layoutY="650.0" prefHeight="2.0" prefWidth="230.0" style="-fx-background-color: #000;" />
+            <Pane layoutY="700.0" prefHeight="2.0" prefWidth="230.0" style="-fx-background-color: #000;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="painelPerfil" layoutX="10.0" layoutY="10.0" prefHeight="1015.0" prefWidth="1920.0" style="-fx-background-color: #B7CAE0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane layoutX="10.0" layoutY="10.0" prefHeight="94.0" prefWidth="1920.0" style="-fx-background-color: #004391;" AnchorPane.bottomAnchor="923.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="120.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imagens/imagens%20login/Super%20(1)%20(1)%201.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="254.0" layoutY="-3.0" prefHeight="82.0" prefWidth="450.0" text=" Menu Gestor" textFill="WHITE">
+                     <font>
+                        <Font size="64.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="235.0" layoutY="-11.0" text="-" textFill="WHITE">
+                     <font>
+                        <Font size="72.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1437.0" layoutY="-8.0" prefHeight="82.0" prefWidth="450.0" textFill="WHITE">
+                     <font>
+                        <Font size="64.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <ImageView fitHeight="299.0" fitWidth="1967.0" layoutX="6.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="622.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="94.0">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/kisspng-shelf-clip-art-5af5d795219cd7%203.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="299.0" fitWidth="1967.0" layoutX="16.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/kisspng-shelf-clip-art-5af5d795219cd7%203.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="299.0" fitWidth="1967.0" layoutX="32.0" layoutY="700.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/kisspng-shelf-clip-art-5af5d795219cd7%203.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="114.0" layoutY="93.0" prefHeight="921.0" prefWidth="230.0" style="-fx-background-color: #FFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1690.0" AnchorPane.topAnchor="94.0">
+               <children>
+                  <Label layoutX="227.0" prefHeight="921.0" prefWidth="2.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ImageView fitHeight="45.0" fitWidth="81.0" layoutX="170.0" layoutY="1.0" onMouseClicked="#FecharSideBar" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                     <image>
+                        <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Caret_Down_SM2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/User_Circle2.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="LblNome" layoutX="12.0" layoutY="230.0" prefHeight="55.0" prefWidth="202.0" textAlignment="CENTER">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txfEmail" layoutX="5.0" layoutY="300.0" prefHeight="25.0" prefWidth="218.0" promptText="Email" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40; -fx-border-color: #004391;">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtSenha" layoutX="5.0" layoutY="350.0" prefHeight="25.0" prefWidth="218.0" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40; -fx-border-color: #004391;">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtTelefone" layoutX="5.0" layoutY="400.0" prefHeight="25.0" prefWidth="218.0" promptText="Telefone" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40; -fx-border-color: #004391;">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtCep" layoutX="5.0" layoutY="450.0" prefHeight="25.0" prefWidth="218.0" promptText="CEP" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40; -fx-border-color: #004391;">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="TxtCidade" layoutX="5.0" layoutY="500.0" prefHeight="25.0" prefWidth="218.0" promptText="cidade" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40; -fx-border-color: #004391;">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtBairro" layoutX="5.0" layoutY="550.0" prefHeight="25.0" prefWidth="218.0" promptText="Bairro" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40; -fx-border-color: #004391;">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtLongradouro" layoutX="5.0" layoutY="600.0" prefHeight="25.0" prefWidth="218.0" promptText="Longradouro" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40; -fx-border-color: #004391;">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fx:id="BtnAlterarDados" fitHeight="55.0" fitWidth="209.0" layoutX="42.0" layoutY="678.0" onMouseClicked="#AlterarDados" onMouseEntered="#Entrar6" onMouseExited="#Sair6" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="83.0" layoutY="685.0" onMouseClicked="#AlterarDados" onMouseEntered="#Entrar6" onMouseExited="#Sair6" prefHeight="36.0" prefWidth="68.0" text="Alterar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="BtnEncerrarSessao" fitHeight="55.0" fitWidth="209.0" layoutX="42.0" layoutY="750.0" onMouseClicked="#EncerrarSessao" onMouseEntered="#Entrar7" onMouseExited="#Sair7" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="92.0" layoutY="755.0" onMouseClicked="#EncerrarSessao" onMouseEntered="#Entrar7" onMouseExited="#Sair7" prefHeight="39.0" prefWidth="54.0" text="Sair" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="133.0" layoutY="762.0" onMouseClicked="#EncerrarSessao" onMouseEntered="#Entrar7" onMouseExited="#Sair7" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/sair.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="133.0" layoutY="693.0" onMouseClicked="#AlterarDados" onMouseEntered="#Entrar6" onMouseExited="#Sair6" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/File_Document.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <ImageView fx:id="btnfuncionario1" fitHeight="156.0" fitWidth="514.0" layoutX="400.0" layoutY="135.0" onMouseClicked="#IrParaFuncionarios2" onMouseEntered="#Entrar" onMouseExited="#Sair" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="BtnProduto1" fitHeight="156.0" fitWidth="514.0" layoutX="900.0" layoutY="135.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="BtnVendas1" fitHeight="156.0" fitWidth="514.0" layoutX="1400.0" layoutY="135.0" onMouseClicked="#IrParaVendas2" onMouseEntered="#Entrar3" onMouseExited="#Sair3" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="BtnRelatorio1" fitHeight="156.0" fitWidth="514.0" layoutX="400.0" layoutY="441.0" onMouseClicked="#IrParaRelatorios2" onMouseEntered="#Entrar4" onMouseExited="#Sair4" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
+               </image>
+            </ImageView>
             <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="430.0" layoutY="166.0" onMouseClicked="#IrParaFuncionarios2" onMouseEntered="#Entrar" onMouseExited="#Sair" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Vector.png" />
@@ -946,7 +919,7 @@
                   <Font size="44.0" />
                </font>
             </Label>
-            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="930.0" layoutY="163.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="930.0" layoutY="171.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Vector%20(1).png" />
                </image>
@@ -976,7 +949,7 @@
                   <Font size="44.0" />
                </font>
             </Label>
-            <ImageView fx:id="BtnTabelas121" fitHeight="156.0" fitWidth="514.0" layoutX="900.0" layoutY="441.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BtnTabelas1" fitHeight="156.0" fitWidth="514.0" layoutX="900.0" layoutY="441.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
                </image>
@@ -991,10 +964,7 @@
                   <Font size="44.0" />
                </font>
             </Label>
-            <Pane layoutY="546.0" prefHeight="2.0" prefWidth="230.0" style="-fx-background-color: #000;" />
-            <Pane layoutY="600.0" prefHeight="2.0" prefWidth="230.0" style="-fx-background-color: #000;" />
-            <Pane layoutY="650.0" prefHeight="2.0" prefWidth="230.0" style="-fx-background-color: #000;" />
-            <Pane layoutY="700.0" prefHeight="2.0" prefWidth="230.0" style="-fx-background-color: #000;" />
+            <Pane layoutX="10.0" layoutY="143.0" prefHeight="2.0" prefWidth="230.0" style="-fx-background-color: #000;" AnchorPane.leftAnchor="0.0" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="painelFechado" layoutX="20.0" layoutY="20.0" prefHeight="1015.0" prefWidth="1920.0" style="-fx-background-color: #B7CAE0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -1085,22 +1055,22 @@
             <Pane layoutY="375.0" prefHeight="2.0" prefWidth="68.0" style="-fx-background-color: #000;" />
             <Pane layoutY="430.0" prefHeight="2.0" prefWidth="68.0" style="-fx-background-color: #000;" />
             <Pane layoutY="485.0" prefHeight="2.0" prefWidth="68.0" style="-fx-background-color: #000;" />
-            <ImageView fx:id="BtnProduto11" fitHeight="156.0" fitWidth="514.0" layoutX="400.0" layoutY="135.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BtnProduto" fitHeight="156.0" fitWidth="514.0" layoutX="400.0" layoutY="135.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="BtnVendas11" fitHeight="156.0" fitWidth="514.0" layoutX="1400.0" layoutY="135.0" onMouseClicked="#IrParaVendas2" onMouseEntered="#Entrar3" onMouseExited="#Sair3" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BtnVendas" fitHeight="156.0" fitWidth="514.0" layoutX="1400.0" layoutY="135.0" onMouseClicked="#IrParaVendas2" onMouseEntered="#Entrar3" onMouseExited="#Sair3" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="BtnRelatorio11" fitHeight="156.0" fitWidth="514.0" layoutX="400.0" layoutY="441.0" onMouseClicked="#IrParaRelatorios2" onMouseEntered="#Entrar4" onMouseExited="#Sair4" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BtnRelatorio" fitHeight="156.0" fitWidth="514.0" layoutX="400.0" layoutY="441.0" onMouseClicked="#IrParaRelatorios2" onMouseEntered="#Entrar4" onMouseExited="#Sair4" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="434.0" layoutY="163.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="430.0" layoutY="166.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Vector%20(1).png" />
                </image>
@@ -1130,12 +1100,12 @@
                   <Font size="44.0" />
                </font>
             </Label>
-            <ImageView fx:id="BtnTabelas11" fitHeight="156.0" fitWidth="514.0" layoutX="900.0" layoutY="135.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="BtnTabelas" fitHeight="156.0" fitWidth="514.0" layoutX="890.0" layoutY="132.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="930.0" layoutY="163.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="930.0" layoutY="171.0" onMouseClicked="#IrParaTabelas2" onMouseEntered="#Entrar5" onMouseExited="#Sair5" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/tabela.png" />
                </image>
@@ -1213,24 +1183,23 @@
                         <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Vector%20(4).png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="33.0" fitWidth="37.0" layoutX="24.0" layoutY="294.0" onMouseClicked="#IrParaProduto" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="33.0" fitWidth="37.0" layoutX="27.0" layoutY="352.0" onMouseClicked="#IrParaProduto" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Vector%20(3).png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="39.0" fitWidth="36.0" layoutX="26.0" layoutY="350.0" onMouseClicked="#IrParaRelatorio" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="39.0" fitWidth="36.0" layoutX="27.0" layoutY="406.0" onMouseClicked="#IrParaRelatorio" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/File_Document2.png" />
                      </image>
                   </ImageView>
-                  <Pane layoutY="451.0" prefHeight="55.0" prefWidth="106.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                   <Label layoutX="202.0" prefHeight="25.0" prefWidth="2.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <Label layoutX="72.0" layoutY="350.0" onMouseClicked="#IrParaRelatorio" text="Relatórios">
+                  <Label layoutX="75.0" layoutY="407.0" onMouseClicked="#IrParaRelatorio" text="Relatórios">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="45.0" fitWidth="81.0" layoutX="174.0" layoutY="345.0" onMouseClicked="#IrParaRelatorio" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+                  <ImageView fitHeight="45.0" fitWidth="81.0" layoutX="174.0" layoutY="402.0" onMouseClicked="#IrParaRelatorio" pickOnBounds="true" preserveRatio="true" rotate="270.0">
                      <image>
                         <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Caret_Down_SM2.png" />
                      </image>
@@ -1245,7 +1214,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="64.0" layoutY="293.0" onMouseClicked="#IrParaProduto" text="Produtos">
+                  <Label layoutX="73.0" layoutY="351.0" onMouseClicked="#IrParaProduto" text="Vendas">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -1255,7 +1224,7 @@
                         <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Caret_Down_SM2.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="45.0" fitWidth="81.0" layoutX="174.0" layoutY="288.0" onMouseClicked="#IrParaVendas" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+                  <ImageView fitHeight="45.0" fitWidth="81.0" layoutX="174.0" layoutY="346.0" onMouseClicked="#IrParaVendas" pickOnBounds="true" preserveRatio="true" rotate="270.0">
                      <image>
                         <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Caret_Down_SM2.png" />
                      </image>
@@ -1265,21 +1234,37 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="36.0" fitWidth="35.0" layoutX="23.0" layoutY="410.0" onMouseClicked="#IrParaTabela" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="36.0" fitWidth="35.0" layoutX="27.0" layoutY="461.0" onMouseClicked="#IrParaTabela" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/tabela2.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="77.0" layoutY="408.0" onMouseClicked="#IrParaTabela" text="Tabelas">
+                  <Label layoutX="75.0" layoutY="461.0" onMouseClicked="#IrParaTabela" text="Tabelas">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="45.0" fitWidth="81.0" layoutX="174.0" layoutY="405.0" onMouseClicked="#AbrirSideBar" pickOnBounds="true" preserveRatio="true" rotate="270.0">
+                  <ImageView fitHeight="45.0" fitWidth="81.0" layoutX="174.0" layoutY="456.0" onMouseClicked="#AbrirSideBar" pickOnBounds="true" preserveRatio="true" rotate="270.0">
                      <image>
                         <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Caret_Down_SM2.png" />
                      </image>
                   </ImageView>
+                  <Pane layoutX="20.0" layoutY="508.0" prefHeight="2.0" prefWidth="230.0" style="-fx-background-color: #000;" AnchorPane.leftAnchor="0.0" />
+                  <ImageView fitHeight="31.0" fitWidth="29.0" layoutX="3.0" layoutY="295.0" onMouseClicked="#IrParaTabelaProduto" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/tabela2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="29.0" fitWidth="24.0" layoutX="15.0" layoutY="310.0" onMouseClicked="#IrParaTabelaProduto" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Vector%20(4).png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="47.0" layoutY="298.0" onMouseClicked="#IrParaTabelaProduto" text="Tabela Produto">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <Pane layoutY="157.0" prefHeight="2.0" prefWidth="230.0" style="-fx-background-color: #000;" />
@@ -1314,7 +1299,7 @@
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="433.0" layoutY="171.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="78.0" fitWidth="88.0" layoutX="433.0" layoutY="166.0" onMouseClicked="#IrParaProdutos2" onMouseEntered="#Entrar2" onMouseExited="#Sair2" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Vector%20(1).png" />
                </image>

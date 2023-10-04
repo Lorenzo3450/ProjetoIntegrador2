@@ -1,0 +1,42 @@
+/* Estilo da tabela dentro do container */
+.table-view-container .styled-table {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 0.9em;
+    -fx-font-family: sans-serif;
+    -fx-min-width: 400px;
+    -fx-border-width: 1px; /* Largura da borda */
+    -fx-border-style: solid; /* Estilo da borda (por exemplo, solid, dashed, etc.) */
+    -fx-border-color: rgba(0, 0, 0, 0.15); /* Cor da borda */
+    -fx-max-width: infinity; /* A tabela deve ocupar todo o espaço disponível */
+    -fx-max-height: infinity; /* A tabela deve ocupar todo o espaço disponível */
+
+    /* Adicione o raio de borda para a parte superior esquerda */
+    -fx-background-radius: 10px 0 0 0;
+    -fx-border-radius: 10px 0 0 0;
+}
+
+/* Estilo do cabeçalho */
+.table-view .column-header {
+    -fx-background-color: #FCFF7F;
+    -fx-text-fill: #000;
+    -fx-alignment: CENTER_LEFT;
+    
+    /* Adicione uma borda em todos os lados do cabeçalho */
+    -fx-border-width: 1px; /* Adicione uma borda de 1 pixel em todos os lados */
+    -fx-border-color: black; /* Cor da borda */
+}
+
+/* Estilo das células da tabela */
+.table-row-cell {
+    -fx-border-width: 1px; /* Largura da borda */
+    -fx-border-style: solid; /* Estilo da borda */
+    -fx-border-color: black; /* Cor da borda */
+    -fx-background-color: white; /* Cor de fundo branco */
+      -fx-alignment: CENTER; 
+    
+    
+}
+
+
+

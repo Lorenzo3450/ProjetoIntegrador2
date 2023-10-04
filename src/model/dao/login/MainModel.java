@@ -70,5 +70,35 @@ public class MainModel {
 
 	        return "";
 	    }
+	    
+	    
+	    
+	    
 	}
+	
+	public static int verificaID() throws SQLException {
+
+		Connection conecao = ConexãoBD.Conexao();
+
+	    String ComandoSql = "SELECT idFuncionario FROM sessao where id=1 and sessao=1";
+	    PreparedStatement stmt = conecao.prepareStatement(ComandoSql);
+
+	    ResultSet rs = stmt.executeQuery();
+
+	    int id = 0;
+
+	    if (rs.next()) {
+	        id = rs.getInt("idFuncionario");
+	        return id;
+	    } else {
+	        stmt.close();
+	        conecao.close();
+	        return 0;
+	    }
+	    
+	    
+
+	  
+	}	
+	
 }

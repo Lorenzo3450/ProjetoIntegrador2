@@ -126,7 +126,7 @@ public class TelaPrincipalGestorController {
     @FXML
     void AbrirSideBar(MouseEvent event) {
 
-    	System.out.println("oi");
+    
     	
     	painelProduto.setVisible(false);
     	painelProduto.setDisable(true);
@@ -273,6 +273,13 @@ public class TelaPrincipalGestorController {
 
     	
     }
+    
+    @FXML
+    void IrParaTabelaProduto(MouseEvent event) throws Exception {
+    	
+    	Main.Cena("TabelaProdutos");
+    	
+    }
 
     @FXML
     void IrParaInico(MouseEvent event) {
@@ -317,6 +324,8 @@ public class TelaPrincipalGestorController {
     	
     	
     }
+    
+    
 
     @FXML
     void IrParaProdutos2(MouseEvent event) {
@@ -422,7 +431,9 @@ public class TelaPrincipalGestorController {
     }
     
     @FXML
-    void IrParaAdicaoDeProduto(MouseEvent event) {
+    void IrParaAdicaoDeProduto(MouseEvent event) throws Exception {
+    	
+    	Main.Cena("CadastraProduto");
 
     }
     

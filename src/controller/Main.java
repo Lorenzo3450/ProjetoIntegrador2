@@ -21,6 +21,8 @@ import javafx.scene.layout.BorderPane;
 
 public class Main extends Application {
 
+	public static int id;
+	
 	private static Stage primaryStage;
 	// tela de login e de carregamento e tela de recuperar a senha
 	private static Scene login;
@@ -37,12 +39,17 @@ public class Main extends Application {
 	private static Scene RelatorioABC;
 	private static Scene GraficoDeLucrosDosMeses;
 	private static Scene GraficoDeLucrosDasSecoesProduto;
-	private static Scene TelaPrincipalGestor;
+	private static Scene TelaDePerfil;
 	
 	//telas RH
 	private static Scene MenuPrincipalRH;
 	
+	//telas Gestor
+	private static Scene TelaPrincipalGestor;
+	private static Scene CadastraProduto;
+	private static Scene TabelaProdutos;
 
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
@@ -55,6 +62,7 @@ public class Main extends Application {
 
 	private void initMainStage() throws Exception {
 
+		
 		// todas as cenas do projeto
 
 		// cenas do pacote login
@@ -95,6 +103,10 @@ public class Main extends Application {
 		Parent fxmlGraficoDeLucrosDasSecoesProduto = FXMLLoader.load(getClass().getResource("/view/gerente/GraficoLucroSecoes.fxml"));
 		GraficoDeLucrosDasSecoesProduto = new Scene(fxmlGraficoDeLucrosDasSecoesProduto);
 		
+
+		Parent fxmlTelaDePerfil = FXMLLoader.load(getClass().getResource("/view/gerente/TelaDePerfil.fxml"));
+		TelaDePerfil = new Scene(fxmlTelaDePerfil);
+		
 		//cenas do pacote RH
 		
 		Parent fxmlMenuPrincipalRH = FXMLLoader
@@ -107,12 +119,14 @@ public class Main extends Application {
 				.load(getClass().getResource("/view/gestor/TelaPrincipalGestor.fxml"));
 		TelaPrincipalGestor = new Scene(fxmlTelaPrincipal);
 
+		Parent fxmlCadastraProduto = FXMLLoader.load(getClass().getResource("/view/gestor/TelaDeCadastrarProduto.fxml"));
+		CadastraProduto= new Scene(fxmlCadastraProduto);
 		
-		this.primaryStage.setScene(TelaPrincipalGestor);
-		this.primaryStage.show();
+		Parent fxmlTabelaProduto = FXMLLoader.load(getClass().getResource("/view/gestor/TabelaProdutos.fxml"));
+		TabelaProdutos= new Scene(fxmlTabelaProduto);
 		
 		
-		/*
+	
 
 		// inicializa as cenas
 
@@ -149,7 +163,7 @@ public class Main extends Application {
 		} else {
 			this.primaryStage.setScene(login);
 			this.primaryStage.show();
-		}  */
+		}  
 
 	}
 	
@@ -222,7 +236,34 @@ public class Main extends Application {
 		} 
 		
 
+		if (a.equals("MenuGestor")) {
+
+			primaryStage.setScene(TelaPrincipalGestor);
+
+		} 
+		
+		
+		if (a.equals("CadastraProduto")) {
+
+			primaryStage.setScene(CadastraProduto);
+
+		} 
+		
+		if (a.equals("TelaDePerfil")) {
+
+			primaryStage.setScene(TelaDePerfil);
+
+		} 
+		
+		if (a.equals("TabelaProdutos")) {
+
+			primaryStage.setScene(TabelaProdutos);
+
+		}
+		
 	}
+	
+
 
 	//metodo main
 	

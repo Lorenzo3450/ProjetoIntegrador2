@@ -18,6 +18,9 @@ import javafx.stage.Modality;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler; 
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -31,6 +34,7 @@ import java.util.List;
 import model.Funcionario;
 import model.dao.ConexãoBD;
 import model.dao.Gerente.TabelaFuncionarioDao;
+import controller.Ferramentas.EditButtonCell;
 import controller.Ferramentas.EfeitoBtn;
 import controller.Main;
 
@@ -60,9 +64,13 @@ public class TabelaFuncionarioController {
 
 	@FXML
 	private TableView<Funcionario> tableView;
+	
+    @FXML
+    private TableColumn<Funcionario, Void> imageColumn;
 
 	@FXML
 	private TableColumn<Funcionario, String> nomeCompletoColumn;
+	
 
 	@FXML
 	private TableColumn<Funcionario, String> cpfColumn;
@@ -85,6 +93,10 @@ public class TabelaFuncionarioController {
 	// inicializa a tabelafuncionario
 	@FXML
 	private void initialize() {
+		
+	
+	
+		
 		tableView.getItems().clear();
 		nomeCompletoColumn.setCellValueFactory(cellData -> cellData.getValue().nomeCompletoProperty());
 		cpfColumn.setCellValueFactory(cellData -> cellData.getValue().cpfProperty());
@@ -102,6 +114,20 @@ public class TabelaFuncionarioController {
 		cargoColumn.setCellValueFactory(cellData -> cellData.getValue().cargoProperty());
 		salarioColumn.setCellValueFactory(cellData -> cellData.getValue().salarioProperty().asObject());
 
+		imageColumn.setCellFactory(param -> {
+		    EditButtonCell cell = new EditButtonCell();
+		    
+		    // Configure a ação do botão personalizado para chamar o método Editar
+		    cell.setEditarAction(event -> {
+		        Funcionario funcionario = cell.getTableRow().getItem();
+		        if (funcionario != null) {
+		            Editar(funcionario);
+		        }
+		    });
+		    
+		    return cell;
+		});
+		
 		try {
 			tableView.getItems().addAll(TabelaFuncionarioDao.inicializatabela());
 		} catch (SQLException e) {
@@ -225,15 +251,17 @@ public class TabelaFuncionarioController {
 	}
 
 	@FXML
-	void Editar(MouseEvent event) {
+	public void Editar(Funcionario funcionario) {
 		
 
 		try {
 
-			   FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/gerente/EditaFuncionario.fxml"));
+			  
+		        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/gerente/EditaFuncionario.fxml"));
 		        Parent root = loader.load();
 		        EditaFuncionarioController EditaFuncionarioController = loader.getController();
-		        EditaFuncionarioController.setTabelaFuncionarioController(this); 
+		        EditaFuncionarioController.setTabelaFuncionarioController(this);
+		        EditaFuncionarioController.setFuncionario(funcionario); // Configura o funcionário a ser editado
 		        
 		        // Configuração do novo Stage
 		        Stage newStage = new Stage();

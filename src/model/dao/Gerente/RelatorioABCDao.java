@@ -38,7 +38,7 @@ public class RelatorioABCDao {
 
                 double faturamento = valorVendaUnidade * quantidadeVendida;
 
-                Produto produto = new Produto(descricao, validade, quantidade, valorCompraUnidade, valorVendaUnidade, marca, codigo, 0, quantidadeVendida, faturamento);
+                Produto produto = new Produto(descricao, validade, quantidade, valorCompraUnidade, valorVendaUnidade, marca, codigo, 0, quantidadeVendida, faturamento,0);
                 
                 produtos.add(produto);
             }

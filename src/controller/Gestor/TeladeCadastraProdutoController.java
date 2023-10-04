@@ -1,17 +1,16 @@
 package controller.Gestor;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
-import javafx.event.ActionEvent;
+import controller.Main;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
+import model.Gestor.TelaDeCadastrarProdutoDao;
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class TeladeCadastraProdutoController {
 
@@ -28,79 +27,99 @@ public class TeladeCadastraProdutoController {
     private TextField TxtDescricao;
 
     @FXML
-    private TextField TxtEstoqueMinimo;
-
-    @FXML
-    private TextField TxtFornecedor;
-
-    @FXML
-    private TextField TxtLucroPorcentagem;
-
-    @FXML
-    private TextField TxtLucroReais;
-
-    @FXML
     private TextField TxtPrecoUnidade;
 
     @FXML
-    private TextField TxtPrecoVenda;
-
-    @FXML
-    private TextField TxtUnidade;
+    private TextField TxtQuantidadeTotal;
 
     @FXML
     private TextField TxtValidade;
 
+    @FXML
+    private TextField TxtVendidoUnidade;
+    
+    @FXML
+    private TextField TxtEstoqueMinimo;
+
+    
+    @FXML
+    void Vol1(MouseEvent event) throws Exception {
+    	
+    	Main.Cena("MenuGestor");
+    	
+    }
 
     @FXML
-    void Salvar(ActionEvent event) {
+    void Salvar(MouseEvent event) {
+        // Obtenha os valores dos campos de entrada
         String codigoDeBarras = TxtCodigoDeBarras.getText();
-        String dataCompra = TxtDataCompra.getText();
         String descricao = TxtDescricao.getText();
-
-        // Valide os campos aqui, se necessário
+        String precoUnidade = TxtPrecoUnidade.getText();
+        String quantidadeTotal = TxtQuantidadeTotal.getText();
+        String validade = TxtValidade.getText();
+        String vendidoUnidade = TxtVendidoUnidade.getText();
+        String Estoque_Minimo = TxtEstoqueMinimo.getText();
 
         try {
-            // Conectar ao banco de dados (substitua as informações de conexão conforme necessário)
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/seubanco", "seuusuario", "suasenha");
+            // Obtenha a data da compra como uma string do campo de entrada
+            String dataCompraStr = TxtDataCompra.getText();
 
-            // Preparar a consulta SQL para inserir os dados na tabela de produtos
-            String sql = "INSERT INTO produtos (codigo_de_barras, data_compra, descricao) VALUES (?, ?, ?)";
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, codigoDeBarras);
-            stmt.setString(2, dataCompra);
-            stmt.setString(3, descricao);
+            // Formate a data da compra para o formato "yyyy-MM-dd"
+            SimpleDateFormat sdfInput = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat sdfOutput = new SimpleDateFormat("yyyy-MM-dd");
 
-            // Execute a consulta SQL
-            int rowsAffected = stmt.executeUpdate();
+            Date dataCompra = sdfInput.parse(dataCompraStr);
+            String dataCompraFormatada = sdfOutput.format(dataCompra);
 
-            if (rowsAffected > 0) {
-                mostrarAlerta("Produto salvo com sucesso.");
-            } else {
-                mostrarAlerta("Erro ao salvar o produto.");
-            }
+            // Formate a data da validade para o formato "yyyy-MM-dd"
+            Date validadeDate = sdfInput.parse(validade);
+            String validadeFormatada = sdfOutput.format(validadeDate);
 
-            // Fechar a conexão com o banco de dados
-            conn.close();
-        } catch (SQLException e) {
+            // Crie uma instância do DAO
+            TelaDeCadastrarProdutoDao produtoDao = new TelaDeCadastrarProdutoDao();
+
+            // Chame o método de cadastro de produto
+            produtoDao.cadastraProduto(codigoDeBarras, dataCompraFormatada, descricao, precoUnidade, quantidadeTotal, validadeFormatada, vendidoUnidade, Estoque_Minimo);
+
+            // Exiba uma mensagem de sucesso
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Cadastro de Produto");
+            alert.setHeaderText(null);
+            alert.setContentText("Produto cadastrado com sucesso!");
+            alert.showAndWait();
+
+            // Limpe os campos após o cadastro
+            LimparCampos();
+
+        } catch (ParseException e) {
+            // Em caso de erro na conversão de data, exiba uma mensagem de erro
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setHeaderText(null);
+            alert.setContentText("Formato de data inválido. Use o formato dd/MM/yyyy.");
+            alert.showAndWait();
+        } catch (Exception e) {
+            // Em caso de erro, exiba uma mensagem de erro
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setHeaderText(null);
+            alert.setContentText("Ocorreu um erro ao cadastrar o produto.");
+            alert.showAndWait();
             e.printStackTrace();
-            mostrarAlerta("Erro ao salvar o produto: " + e.getMessage());
         }
     }
 
-    private void mostrarAlerta(String mensagem) {
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Informação");
-        alert.setHeaderText(null);
-        alert.setContentText(mensagem);
-        alert.showAndWait();
+    
+    
+    // Método para limpar os campos após o cadastro
+    private void LimparCampos() {
+        TxtCodigoDeBarras.clear();
+        TxtDataCompra.clear();
+        TxtDescricao.clear();
+        TxtPrecoUnidade.clear();
+        TxtQuantidadeTotal.clear();
+        TxtValidade.clear();
+        TxtVendidoUnidade.clear();
+        TxtEstoqueMinimo.clear();
     }
-    
-    
-    
-    @FXML
-    void Vol1(MouseEvent event) {
-
-    }
-
 }

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1015.0" prefWidth="1920.0" style="-fx-background-color: #DBDBDB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.gerente.GraficoDeLucrosDosMesesController">
+   <children>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="94.0" prefWidth="1920.0" style="-fx-background-color: #004391;" AnchorPane.bottomAnchor="923.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="120.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Super%20(1)%20(1)%201.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="218.0" layoutY="11.0" text="- Grafico de Lucros das Seções" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fitHeight="922.0" fitWidth="2028.0" layoutX="6.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-108.0" AnchorPane.topAnchor="93.0">
+         <image>
+            <Image url="@../../../Imagens/imagens%20cadastro2/Rectangle%202.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="60.0" layoutY="220.0" prefHeight="788.0" prefWidth="1696.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="220.0">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="274.0" layoutX="116.0" layoutY="-46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Rectangle%209.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="745.0" fitWidth="1685.0" layoutX="118.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="118.0" AnchorPane.rightAnchor="-113.25" AnchorPane.topAnchor="26.0">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Rectangle%20103.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="BtnImprimir" fitHeight="58.0" fitWidth="161.0" layoutX="1562.0" layoutY="40.0" onMouseClicked="#imprimir" onMouseEntered="#EfeitoImprimir" onMouseExited="#SairImprimir" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Rectangle%20104.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="30.0" layoutX="1654.0" layoutY="52.0" onMouseClicked="#imprimir" onMouseEntered="#EfeitoImprimir" onMouseExited="#SairImprimir" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Printer.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="95.0" layoutX="1571.0" layoutY="57.0" onMouseClicked="#imprimir" onMouseEntered="#EfeitoImprimir" onMouseExited="#SairImprimir" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/Tabela%20funcionario/Imprimir.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="192.0" layoutY="-28.0" prefHeight="43.0" prefWidth="111.0" text="Grafico" textFill="WHITE">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="PainelGrafico" layoutX="153.0" layoutY="104.0" prefHeight="599.0" prefWidth="1561.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="114.0" fitWidth="157.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagens/imagens%20cadastro2/Rectangle%2024.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="99.0" fitWidth="74.0" layoutX="20.0" layoutY="160.0" onMouseClicked="#vol1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagens/imagens%20cadastro2/Arrow_Undo_Up_Left.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

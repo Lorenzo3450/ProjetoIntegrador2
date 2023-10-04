@@ -1,68 +1,252 @@
 package model;
 
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.StringProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.*;
+
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class Produto {
-    private StringProperty descricao;
-    private ObjectProperty<LocalDate> validade;
-    private IntegerProperty quantidade;
-    private DoubleProperty valorCompraUnidade;
-    private DoubleProperty valorVendaUnidade;
-    private StringProperty marca;
-    private StringProperty codigo;
-    private IntegerProperty quantidadeAdquirida;
-    private IntegerProperty quantidadeVendida;
-    private DoubleProperty faturamento;
-    private StringProperty porcentagem;
-    private StringProperty curva;  
-    private StringProperty porcentagemAcumulada;
+    private final StringProperty descricao;
+    private final ObjectProperty<LocalDate> validade;
+    private final IntegerProperty quantidade;
+    private final DoubleProperty valorCompraUnidade;
+    private final DoubleProperty valorVendaUnidade;
+    private final StringProperty marca;
+    private final StringProperty codigo;
+    private final IntegerProperty quantidadeAdquirida;
+    private final IntegerProperty quantidadeVendida;
+    private final DoubleProperty faturamento;
+    private final StringProperty porcentagem;
+    private final StringProperty curva;
+    private final StringProperty porcentagemAcumulada;
+    private final IntegerProperty estoqueMinimoProperty;
+    private Date DataCompra;
+    private Date Validade;
+    private float ValorCompradoUnidade;
+    private float ValorVendidoUnidade;
+    private String MarcaProduto;
+    private String CodigoProduto;
+    private int IdFornecedor;
+    private int setQuantidadeVendida;
+    private int IdSecao; 
+    private int estoqueMinimo;
+    
+    
+    public int getIdSecao() {
+		return IdSecao;
+	}
 
 
 
-    public Produto(String descricao, LocalDate validade, int quantidade, double valorCompraUnidade,
-            double valorVendaUnidade, String marca, String codigo, int quantidadeAdquirida,
-            int quantidadeVendida, double faturamento) {
- this.descricao = new SimpleStringProperty(descricao);
- this.validade = new SimpleObjectProperty<>(validade);
- this.quantidade = new SimpleIntegerProperty(quantidade);
- this.valorCompraUnidade = new SimpleDoubleProperty(valorCompraUnidade);
- this.valorVendaUnidade = new SimpleDoubleProperty(valorVendaUnidade);
- this.marca = new SimpleStringProperty(marca);
- this.codigo = new SimpleStringProperty(codigo);
- this.quantidadeAdquirida = new SimpleIntegerProperty(quantidadeAdquirida);
- this.quantidadeVendida = new SimpleIntegerProperty(quantidadeVendida);
- this.faturamento = new SimpleDoubleProperty(faturamento);
- this.curva = new SimpleStringProperty(""); // Inicialize o campo curva aqui
- this.porcentagem = new SimpleStringProperty("");
- this.porcentagemAcumulada = new SimpleStringProperty("");
-
-}
 
 
-    public String getPorcentagemAcumulada() {
-        return porcentagemAcumulada.get();
+
+	public void setIdSecao(int idSecao) {
+		IdSecao = idSecao;
+	}
+
+
+
+
+
+
+	public int getEstoqueMinimo() {
+		return estoqueMinimo;
+	}
+
+
+
+
+
+
+	public void setEstoqueMinimo(int estoqueMinimo) {
+	    this.estoqueMinimo = estoqueMinimo;
+	}
+
+
+
+
+
+
+	public String getCodigoProduto() {
+		return CodigoProduto;
+	}
+
+
+
+
+
+
+	public void setCodigoProduto(String codigoProduto) {
+		CodigoProduto = codigoProduto;
+	}
+
+
+
+
+
+
+	public int getIdFornecedor() {
+		return IdFornecedor;
+	}
+
+
+
+
+
+
+	public void setIdFornecedor(int idFornecedor) {
+		IdFornecedor = idFornecedor;
+	}
+
+
+
+
+
+
+	public int getSetQuantidadeVendida() {
+		return setQuantidadeVendida;
+	}
+
+
+
+
+
+
+	public void setSetQuantidadeVendida(int setQuantidadeVendida) {
+		this.setQuantidadeVendida = setQuantidadeVendida;
+	}
+
+
+
+
+
+
+	public float getValorVendidoUnidade() {
+		return ValorVendidoUnidade;
+	}
+
+
+
+
+
+
+	public void setValorVendidoUnidade(float valorVendidoUnidade) {
+		ValorVendidoUnidade = valorVendidoUnidade;
+	}
+
+
+
+
+
+
+	public String getMarcaProduto() {
+		return MarcaProduto;
+	}
+
+
+
+
+
+
+	public void setMarcaProduto(String marcaProduto) {
+		MarcaProduto = marcaProduto;
+	}
+
+
+
+
+
+
+	public float getValorCompradoUnidade() {
+		return ValorCompradoUnidade;
+	}
+
+
+
+
+
+
+	public void setValorCompradoUnidade(float valorCompradoUnidade) {
+		ValorCompradoUnidade = valorCompradoUnidade;
+	}
+
+
+
+
+
+
+	public void setValidade(Date validade) {
+		Validade = validade;
+	}
+
+
+
+
+
+
+	public Date getDataCompra() {
+		return DataCompra;
+	}
+
+
+
+
+
+
+	public void setDataCompra(Date dataCompra) {
+		DataCompra = dataCompra;
+	}
+
+
+
+
+
+	public Produto(
+		    String descricao, LocalDate validade, int quantidade, double valorCompraUnidade,
+		    double valorVendaUnidade, String marca, String codigo, int quantidadeAdquirida,
+		    int quantidadeVendida, double faturamento, int estoqueMinimo
+		) {
+		    this.descricao = new SimpleStringProperty(descricao);
+		    this.validade = new SimpleObjectProperty<>(validade);
+		    this.quantidade = new SimpleIntegerProperty(quantidade);
+		    this.valorCompraUnidade = new SimpleDoubleProperty(valorCompraUnidade);
+		    this.valorVendaUnidade = new SimpleDoubleProperty(valorVendaUnidade);
+		    this.marca = new SimpleStringProperty(marca);
+		    this.codigo = new SimpleStringProperty(codigo);
+		    this.quantidadeAdquirida = new SimpleIntegerProperty(quantidadeAdquirida);
+		    this.quantidadeVendida = new SimpleIntegerProperty(quantidadeVendida);
+		    this.faturamento = new SimpleDoubleProperty(faturamento);
+		    this.curva = new SimpleStringProperty("");
+		    this.porcentagem = new SimpleStringProperty("");
+		    this.porcentagemAcumulada = new SimpleStringProperty("");
+		    this.estoqueMinimoProperty = new SimpleIntegerProperty(estoqueMinimo);
+		}
+
+
+
+
+
+    public String getPorcentagem() {
+        return porcentagem.get();
     }
 
-    public StringProperty porcentagemAcumuladaProperty() {
-        return porcentagemAcumulada;
-    }
-
-    public void setPorcentagemAcumulada(String porcentagemAcumulada) {
-        this.porcentagemAcumulada.set(porcentagemAcumulada);
+    public StringProperty porcentagemProperty() {
+        return porcentagem;
     }
     
+    public IntegerProperty estoqueMinimoProperty() {
+        return estoqueMinimoProperty;
+    }
 
-    // Métodos getters e setters para os campos
+    public void setPorcentagem(String porcentagem) {
+        this.porcentagem.set(porcentagem);
+    }
 
-    public String getDescricao() {
+
+
+
+	public String getDescricao() {
         return descricao.get();
     }
 
@@ -82,9 +266,7 @@ public class Produto {
         return validade;
     }
 
-    public void setValidade(LocalDate validade) {
-        this.validade.set(validade);
-    }
+ 
 
     public int getQuantidade() {
         return quantidade.get();
@@ -182,17 +364,7 @@ public class Produto {
         this.faturamento.set(faturamento);
     }
 
-    public String getPorcentagem() {
-        return porcentagem.get();
-    }
-
-    public StringProperty porcentagemProperty() {
-        return porcentagem;
-    }
-
-    public void setPorcentagem(String porcentagem) {
-        this.porcentagem.set(porcentagem);
-    }
+   
     
     public String getCurva() {
         return curva.get();
@@ -205,9 +377,22 @@ public class Produto {
     public void setCurva(String curva) {
         this.curva.set(curva);
     }
+
+    public String getPorcentagemAcumulada() {
+        return porcentagemAcumulada.get();
+    }
+
+    public StringProperty porcentagemAcumuladaProperty() {
+        return porcentagemAcumulada;
+    }
+
+    public void setPorcentagemAcumulada(String porcentagemAcumulada) {
+        this.porcentagemAcumulada.set(porcentagemAcumulada);
+    }
     
-
-
+    
+    
+    
 
     @Override
     public String toString() {
@@ -223,7 +408,22 @@ public class Produto {
                 ", quantidadeVendida=" + quantidadeVendida.get() +
                 ", faturamento=" + faturamento.get() +
                 ", porcentagem=" + porcentagem.get() +
-                ", curva='" + curva.get() + '\'' + // Inclua a curva na representação
+                ", curva='" + curva.get() + '\'' +
+                ", porcentagemAcumulada='" + porcentagemAcumulada.get() + '\'' +
                 '}';
     }
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+

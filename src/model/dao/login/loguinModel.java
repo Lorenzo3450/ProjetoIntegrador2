@@ -28,11 +28,15 @@ public class loguinModel {
 		if (rs.next()) {
 
 			String ComandoSql2 = "SELECT id FROM funcionario WHERE email=? AND senha=?";
-
+			String ComandoSql3 = "SELECT idFuncionario FROM sessao WHERE id=1";
+			
+			
 			PreparedStatement stmt2 = conecao.prepareStatement(ComandoSql2);
+			PreparedStatement stmt3 = conecao.prepareStatement(ComandoSql3);
 			stmt2.setString(1, email);
 			stmt2.setString(2, senha);
 			ResultSet rs2 = stmt2.executeQuery();
+			ResultSet rs3 = stmt3.executeQuery();
 
 			int idFuncionario = rs.getInt("id");
 

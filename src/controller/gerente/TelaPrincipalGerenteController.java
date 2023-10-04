@@ -126,8 +126,6 @@ public class TelaPrincipalGerenteController {
     	painelRelatorio.setDisable(true);
     	painelFechado.setVisible(false);
     	painelFechado.setDisable(true);
-    	painelPerfil.setVisible(false);
-    	painelPerfil.setDisable(true);
     	painelFuncionario.setVisible(false);
     	painelFuncionario.setDisable(true);
     	painelTabelas.setVisible(false);
@@ -137,30 +135,7 @@ public class TelaPrincipalGerenteController {
     	
     }
 
-    @FXML
-    void AlterarDados(MouseEvent event) {
 
-    	
-    	
-    }
-
-    @FXML
-    void EncerrarSessao(MouseEvent event) throws Exception {
-
-    	Connection conecao = ConexãoBD.Conexao();
-    	String updateSql ="UPDATE sessao SET sessao = ? WHERE id = 1";
-        PreparedStatement updatePs = conecao.prepareStatement(updateSql);
-        updatePs.setInt(1, 0);
-        int lf = updatePs.executeUpdate();
-        
-        updatePs.close();
-        conecao.close();
-        
-        Main.Cena("Login");
-    	
-    	
-    }
-    
     @FXML
     void Entrar(MouseEvent event) {
 
@@ -196,20 +171,7 @@ public class TelaPrincipalGerenteController {
     	
     }
     
-    @FXML
-    void Entrar6(MouseEvent event) {
-    	
-    	BtnAlterarDados.setEffect(efeito.Efeito());
-    	
-    }
-
-    @FXML
-    void Entrar7(MouseEvent event) {
-
-    	BtnEncerrarSessao.setEffect(efeito.Efeito());
-    	
-    }
-
+   
 
 
     @FXML
@@ -219,8 +181,6 @@ public class TelaPrincipalGerenteController {
     	painelRelatorio.setDisable(true);
     	painelFechado.setVisible(true);
     	painelFechado.setDisable(false);
-    	painelPerfil.setVisible(false);
-    	painelPerfil.setDisable(true);
     	painelFuncionario.setVisible(false);
     	painelFuncionario.setDisable(true);
     	painelTabelas.setVisible(false);
@@ -248,8 +208,6 @@ public class TelaPrincipalGerenteController {
     	painelRelatorio.setDisable(true);
     	painelFechado.setVisible(false);
     	painelFechado.setDisable(true);
-    	painelPerfil.setVisible(false);
-    	painelPerfil.setDisable(true);
     	painelFuncionario.setVisible(true);
     	painelFuncionario.setDisable(false);
     	painelTabelas.setVisible(false);
@@ -272,20 +230,9 @@ public class TelaPrincipalGerenteController {
     }
 
     @FXML
-    void IrParaPerfil(MouseEvent event) {
+    void IrParaPerfil(MouseEvent event) throws Exception {
 
-    	painelRelatorio.setVisible(false);
-    	painelRelatorio.setDisable(true);
-    	painelFechado.setVisible(false);
-    	painelFechado.setDisable(true);
-    	painelPerfil.setVisible(true);
-    	painelPerfil.setDisable(false);
-    	painelFuncionario.setVisible(false);
-    	painelFuncionario.setDisable(true);
-    	painelTabelas.setVisible(false);
-    	painelTabelas.setDisable(true);
-    	painelABerto.setVisible(true);
-    	painelABerto.setDisable(false);
+    	Main.Cena("TelaDePerfil");
     	
     }
 
@@ -306,8 +253,6 @@ public class TelaPrincipalGerenteController {
     	painelRelatorio.setDisable(false);
     	painelFechado.setVisible(false);
     	painelFechado.setDisable(true);
-    	painelPerfil.setVisible(false);
-    	painelPerfil.setDisable(true);
     	painelFuncionario.setVisible(false);
     	painelFuncionario.setDisable(true);
     	painelTabelas.setVisible(false);
@@ -344,8 +289,6 @@ public class TelaPrincipalGerenteController {
     	painelRelatorio.setDisable(true);
     	painelFechado.setVisible(false);
     	painelFechado.setDisable(true);
-    	painelPerfil.setVisible(false);
-    	painelPerfil.setDisable(true);
     	painelFuncionario.setVisible(false);
     	painelFuncionario.setDisable(true);
     	painelTabelas.setVisible(true);
@@ -353,6 +296,14 @@ public class TelaPrincipalGerenteController {
     	painelABerto.setVisible(true);
     	painelABerto.setDisable(false);
 
+    }
+    
+
+    @FXML
+    void FechaRelatorio(MouseEvent event) {
+
+    AbrirSideBar(event);
+    	
     }
 
     @FXML

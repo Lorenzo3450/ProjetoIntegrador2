@@ -49,27 +49,27 @@
             <DropShadow height="7.0" radius="3.0" spread="0.07" width="7.0" />
          </effect>
       </ImageView>
-      <TextField fx:id="TxtCodigoDeBarras" layoutX="340.0" layoutY="154.0" prefHeight="65.0" prefWidth="551.0" promptText="Código de barras" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+      <TextField fx:id="TxtCodigoDeBarras" layoutX="355.0" layoutY="154.0" prefHeight="65.0" prefWidth="551.0" promptText="Código de barras" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <TextField fx:id="TxtDescricao" layoutX="340.0" layoutY="269.0" prefHeight="65.0" prefWidth="551.0" promptText="Descrição" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+      <TextField fx:id="TxtDescricao" layoutX="355.0" layoutY="269.0" prefHeight="65.0" prefWidth="551.0" promptText="Descrição" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
          <font>
             <Font size="31.0" />
          </font>
       </TextField>
-      <TextField fx:id="TxtValidade" layoutX="940.0" layoutY="269.0" prefHeight="65.0" prefWidth="551.0" promptText="Validade" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+      <TextField fx:id="TxtValidade" layoutX="955.0" layoutY="269.0" prefHeight="65.0" prefWidth="551.0" promptText="Validade" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <TextField fx:id="TxtEstoqueMinimo" layoutX="940.0" layoutY="154.0" prefHeight="65.0" prefWidth="551.0" promptText="Estoque mínimo" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+      <TextField fx:id="TxtQuantidadeTotal" layoutX="955.0" layoutY="154.0" prefHeight="65.0" prefWidth="551.0" promptText="Quantidade total comprada" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <Separator layoutX="257.0" layoutY="343.0" prefHeight="28.0" prefWidth="1355.0" />
+      <Separator layoutX="257.0" layoutY="354.0" prefHeight="28.0" prefWidth="1355.0" />
       <Separator layoutX="255.0" layoutY="713.0" prefHeight="28.0" prefWidth="1355.0" />
       <ImageView fx:id="BtnSalvar" fitHeight="102.0" fitWidth="287.0" layoutX="807.0" layoutY="791.0" onMouseClicked="#Salvar" pickOnBounds="true">
          <image>
@@ -86,37 +86,22 @@
             <Image url="@../../../Imagens/Gestor/SaveSalvar.png" />
          </image>
       </ImageView>
-      <TextField fx:id="TxtFornecedor" layoutX="290.0" layoutY="400.0" prefHeight="65.0" prefWidth="415.0" promptText="Fornecedor" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+      <TextField fx:id="TxtDataCompra" layoutX="355.0" layoutY="412.0" prefHeight="65.0" prefWidth="551.0" promptText="Data da compra" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <TextField fx:id="TxtDataCompra" layoutX="721.0" layoutY="400.0" prefHeight="65.0" prefWidth="415.0" promptText="Data da compra" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+      <TextField fx:id="TxtPrecoUnidade" layoutX="725.0" layoutY="515.0" prefHeight="65.0" prefWidth="415.0" promptText="Preço Comprado Unid" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <TextField fx:id="TxtLucroPorcentagem" layoutX="1150.0" layoutY="400.0" prefHeight="65.0" prefWidth="415.0" promptText="Lucro(%)" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+      <TextField fx:id="TxtVendidoUnidade" layoutX="725.0" layoutY="615.0" prefHeight="65.0" prefWidth="415.0" promptText="Preço Vendido Unid" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <TextField fx:id="TxtPrecoVenda" layoutX="290.0" layoutY="508.0" prefHeight="65.0" prefWidth="415.0" promptText="Preço de Venda" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="TxtPrecoUnidade" layoutX="721.0" layoutY="518.0" prefHeight="65.0" prefWidth="415.0" promptText="Preço Comprando Unid" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="TxtLucroReais" layoutX="1150.0" layoutY="518.0" prefHeight="65.0" prefWidth="415.0" promptText="Lucro (R$)" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="TxtUnidade" layoutX="721.0" layoutY="630.0" prefHeight="65.0" prefWidth="415.0" promptText="Preço Vendido Unid" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+      <TextField fx:id="TxtEstoqueMinimo" layoutX="955.0" layoutY="412.0" prefHeight="65.0" prefWidth="551.0" promptText="Estoque minimo" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
          <font>
             <Font size="30.0" />
          </font>

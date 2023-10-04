@@ -17,7 +17,7 @@ public class Funcionario {
     private DoubleProperty salarioProperty;
     private ObjectProperty<LocalDate> DataNascimentoProperty;
     private IntegerProperty idProperty;
-
+    private Endereco endereco;
 	
 
 	   
@@ -150,5 +150,15 @@ public class Funcionario {
     public DoubleProperty salarioProperty() {
         return salarioProperty;
     }
+    
+    
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+    
 
 }

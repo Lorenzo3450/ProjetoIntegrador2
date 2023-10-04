@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1015.0" prefWidth="1920.0" style="-fx-background-color: #B7CAE0;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.gerente.TelaDePerfilController">
+   <children>
+      <Pane layoutX="-2.0" prefHeight="70.0" prefWidth="1920.0" style="-fx-background-color: #003491;">
+         <children>
+            <ImageView fitHeight="61.0" fitWidth="110.0" layoutX="4.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Super%20(1)%20(1)%201.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="108.0" layoutY="8.0" prefHeight="53.0" prefWidth="512.0" text="- Perfil do funcionário" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="81.0" layoutY="85.0" prefHeight="57.0" prefWidth="354.0" text="Informações do perfil" textFill="#003491" AnchorPane.leftAnchor="181.0">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imgFoto" fitHeight="110.0" fitWidth="124.0" layoutX="109.0" layoutY="128.0" onMouseClicked="#trocaFoto" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/User_CircleCirculo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="TxtNome" layoutX="250.0" layoutY="184.0" prefHeight="28.0" prefWidth="408.0" promptText="Nome" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #003491; -fx-border-radius: 10;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Label fx:id="lblTrocarFoto" layoutX="254.0" layoutY="161.0" onMouseClicked="#trocaFoto" prefHeight="25.0" prefWidth="163.0" text="Alterar foto de perfil" textFill="#003491">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="57.0" fitWidth="53.0" layoutX="669.0" layoutY="176.0" onMouseClicked="#RealizarAlteração" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Note_EditNota.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="TxtEmail" layoutX="91.0" layoutY="254.0" prefHeight="46.0" prefWidth="440.0" promptText="Email" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #003491; -fx-border-radius: 10;" AnchorPane.leftAnchor="91.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TxtSenha" layoutX="566.0" layoutY="254.0" prefHeight="46.0" prefWidth="490.0" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #003491; -fx-border-radius: 10;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Label layoutX="81.0" layoutY="314.0" prefHeight="57.0" prefWidth="354.0" text="Dados pessoais" textFill="#003491">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TxtDataNascimento" layoutX="91.0" layoutY="462.0" prefHeight="46.0" prefWidth="440.0" promptText="Data de nascimento" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #003491; -fx-border-radius: 10;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TxtTelefone" layoutX="566.0" layoutY="375.0" prefHeight="46.0" prefWidth="490.0" promptText="Telefone" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #003491; -fx-border-radius: 10;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TxtCPF" layoutX="91.0" layoutY="375.0" prefHeight="46.0" prefWidth="440.0" promptText="CPF" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #003491; -fx-border-radius: 10;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Label layoutX="81.0" layoutY="512.0" prefHeight="57.0" prefWidth="354.0" text="Endereço" textFill="#003491">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TxtCidade" layoutX="91.0" layoutY="573.0" prefHeight="46.0" prefWidth="436.0" promptText="Cidade" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #003491; -fx-border-radius: 10;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TxtBairro" layoutX="564.0" layoutY="573.0" prefHeight="46.0" prefWidth="486.0" promptText="Bairro" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #003491; -fx-border-radius: 10;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TxtCep" layoutX="566.0" layoutY="672.0" prefHeight="46.0" prefWidth="486.0" promptText="CEP" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #003491; -fx-border-radius: 10;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TxtLongradouro" layoutX="91.0" layoutY="672.0" prefHeight="46.0" prefWidth="436.0" promptText="Longradouro" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #003491; -fx-border-radius: 10;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="89.0" fitWidth="87.0" layoutX="-6.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagens/imagens%20cadastro2/Rectangle%2024.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="53.0" fitWidth="53.0" layoutX="6.0" layoutY="128.0" onMouseClicked="#vol1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagens/imagens%20cadastro2/Arrow_Undo_Up_Left.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="BtnEncerrarSessao" fitHeight="70.0" fitWidth="200.0" layoutX="462.0" layoutY="782.0" onMouseClicked="#EncerrarSessao" onMouseEntered="#Entrar7" onMouseExited="#Sair7" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="40.0" layoutX="589.0" layoutY="795.0" onMouseClicked="#EncerrarSessao" onMouseEntered="#Entrar7" onMouseExited="#Sair7" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/sair.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="487.0" layoutY="786.0" onMouseClicked="#EncerrarSessao" onMouseEntered="#Entrar7" onMouseExited="#Sair7" prefHeight="46.0" prefWidth="80.0" text="Sair" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

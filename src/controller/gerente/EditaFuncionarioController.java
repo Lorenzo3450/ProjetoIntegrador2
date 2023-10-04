@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import model.Funcionario;
 import model.dao.Gerente.EditaFuncionarioDao;
 import javafx.scene.control.MenuItem;
 
@@ -36,6 +37,7 @@ public class EditaFuncionarioController {
 
     private TabelaFuncionarioController tabelaFuncionarioController;
 
+    private static Funcionario funcionario;
    
 
     @FXML
@@ -126,5 +128,13 @@ public class EditaFuncionarioController {
     	BtnAlteracao.setEffect(null);
     	
     }
+
+
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+		TxtFieldCPF.setText(this.funcionario.getCpf());
+		
+		
+	}
 
 }
