@@ -9,91 +9,96 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1015.0" prefWidth="1920.0" style="-fx-background-color: #DBDBDB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.TelaDeLoginController">
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #DBDBDB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.TelaDeLoginController">
    <children>
-      <Pane layoutX="10.0" layoutY="10.0" prefHeight="94.0" prefWidth="1920.0" style="-fx-background-color: #004391;" AnchorPane.bottomAnchor="923.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="88.0" prefWidth="1522.0" style="-fx-background-color: #004391;" AnchorPane.bottomAnchor="762.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="120.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="121.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20login/Super%20(1)%20(1)%201.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="257.0" layoutX="214.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="169.0" layoutX="167.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20login/-%20Login.png" />
                </image>
             </ImageView>
          </children>
       </Pane>
-      <ImageView fitHeight="926.0" fitWidth="1949.0" layoutX="6.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-14.0" AnchorPane.topAnchor="96.0">
+      <ImageView fitHeight="809.0" fitWidth="1619.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-45.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-97.0" AnchorPane.topAnchor="86.0">
          <image>
             <Image url="@../../../Imagens/imagens%20login/Rectangle%201.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="192.0" layoutY="354.0" prefHeight="777.0" prefWidth="1535.0" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="200.0">
+      <AnchorPane layoutX="192.0" layoutY="354.0" prefHeight="471.35" prefWidth="983.0" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="191.5" AnchorPane.rightAnchor="191.5" AnchorPane.topAnchor="200.0">
          <children>
-            <ImageView fitHeight="780.0" fitWidth="1113.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-61.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="212.0" AnchorPane.topAnchor="0.0">
+            <ImageView fitHeight="697.0" fitWidth="1042.0" layoutX="175.0" layoutY="-54.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-31.0" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="-78.0" AnchorPane.topAnchor="-54.0">
                <image>
                   <Image url="@../../../Imagens/imagens%20login/Rectangle%207.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="175.0" fitWidth="487.0" layoutX="504.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="498.0" AnchorPane.leftAnchor="520.0" AnchorPane.rightAnchor="533.0" AnchorPane.topAnchor="42.0">
+            <ImageView fitHeight="104.49" fitWidth="289.14" layoutX="501.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="507.79000213623044" AnchorPane.leftAnchor="501.0" AnchorPane.rightAnchor="364.7184753417969" AnchorPane.topAnchor="0.0">
                <image>
                   <Image url="@../../../Imagens/imagens%20login/Login.png" />
                </image>
             </ImageView>
-            <Pane layoutX="385.0" layoutY="240.0" prefHeight="4.0" prefWidth="720.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="405.0" />
-            <TextField fx:id="txflogin" layoutX="322.0" layoutY="320.0" prefHeight="70.0" prefWidth="864.0" promptText="Email" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40;" AnchorPane.leftAnchor="342.0">
+            <Pane layoutX="290.0" layoutY="129.0" prefHeight="2.42" prefWidth="720.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="290.0">
+               <!-- Mantenha a proporção (prefHeight/prefWidth) de 2.42/720.0 -->
+            </Pane>
+            <TextField fx:id="txflogin" layoutX="397.0" layoutY="176.0" prefHeight="54.65" prefWidth="481.75" promptText="Email" style="-fx-background-color: #FFFFFF; -fx-border-radius: 32.79; -fx-background-radius: 32.79;" AnchorPane.leftAnchor="397.0">
                <font>
-                  <Font size="36.0" />
+                  <Font size="31.67" />
                </font>
             </TextField>
-            <Label layoutX="357.0" layoutY="535.0" text="Esqueceu a senha ?" textFill="#efefef" AnchorPane.leftAnchor="377.0">
+            <Label layoutX="433.0" layoutY="403.0" text="Esqueceu a senha ?" textFill="#efefef" AnchorPane.leftAnchor="433.0">
                <font>
-                  <Font size="24.0" />
+                  <Font size="21.33" />
                </font>
             </Label>
-            <Label layoutX="589.0" layoutY="535.0" onMouseClicked="#cliqueRecuperarSenha" text="Recuperar senha" textFill="#faff00" AnchorPane.leftAnchor="589.0">
+            <Label layoutX="626.0" layoutY="403.0" onMouseClicked="#cliqueRecuperarSenha" text="Recuperar senha" textFill="#faff00" AnchorPane.leftAnchor="626.0">
                <font>
-                  <Font size="24.0" />
+                  <Font size="21.33" />
                </font>
             </Label>
-            <ImageView fx:id="imbtn" fitHeight="114.0" fitWidth="243.0" layoutX="645.0" layoutY="632.0" onMouseClicked="#Log1" onMouseEntered="#entrar1" onMouseExited="#sair1" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="665.0">
+       
+                 
+            <ImageView fx:id="imbtn" fitHeight="95.82" fitWidth="203.22" layoutX="555.0" layoutY="481.0" onMouseClicked="#Log1" onMouseEntered="#entrar1" onMouseExited="#sair1" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="555.0">
                <image>
                   <Image url="@../../../Imagens/imagens%20login/Rectangle%205.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imlogar" fitHeight="60.0" fitWidth="158.0" layoutX="689.0" layoutY="650.0" onMouseClicked="#Log1" onMouseEntered="#entrar1" onMouseExited="#sair1" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="695.0">
+            <ImageView fx:id="imlogar" fitHeight="50.47" fitWidth="131.43" layoutX="591.0" layoutY="495.0" onMouseClicked="#Log1" onMouseEntered="#entrar1" onMouseExited="#sair1" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="591.0">
                <image>
                   <Image url="@../../../Imagens/imagens%20login/Logar.png" />
                </image>
             </ImageView>
-            <Label layoutX="377.0" layoutY="575.0" text="Não possui login?" textFill="#efefef">
+            <Label layoutX="440.0" layoutY="443.0" text="Não possui login?" textFill="#efefef">
                <font>
-                  <Font size="24.0" />
+                  <Font size="21.33" />
                </font>
             </Label>
-            <Label fx:id="cadastro1" layoutX="570.0" layoutY="575.0" onMouseClicked="#clique" text="Cadastre-se" textFill="#faff00">
+            <Label fx:id="cadastro1" layoutX="626.0" layoutY="443.0" onMouseClicked="#clique" text="Cadastre-se" textFill="#faff00">
                <font>
-                  <Font size="24.0" />
+                  <Font size="21.33" />
                </font>
             </Label>
-            <TextField fx:id="txtsenha" layoutX="342.0" layoutY="440.0" prefHeight="70.0" prefWidth="864.0" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40;">
+            <TextField fx:id="txtsenha" layoutX="409.0" layoutY="306.0" prefHeight="54.65" prefWidth="481.75" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-border-radius: 32.79; -fx-background-radius: 32.79;">
                <font>
-                  <Font size="36.0" />
+                  <Font size="31.67" />
                </font>
             </TextField>
-            <ImageView fx:id="ImEsconde" fitHeight="67.0" fitWidth="68.0" layoutX="1106.0" layoutY="445.0" onMouseClicked="#EscondeSenhaSenha" pickOnBounds="true" preserveRatio="true">
+
+            <ImageView fx:id="ImEsconde" fitHeight="32.79" fitWidth="32.79" layoutX="909.0" layoutY="323.0" onMouseClicked="#EscondeSenhaSenha" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20login/aberto.png" />
                </image>
             </ImageView>
-            <PasswordField fx:id="psfsenha" layoutX="322.0" layoutY="440.0" prefHeight="70.0" prefWidth="864.0" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;" AnchorPane.leftAnchor="342.0">
+            <PasswordField fx:id="psfsenha" layoutX="416.0" layoutY="306.0" prefHeight="54.65" prefWidth="481.75" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-background-radius: 32.79; -fx-border-radius: 32.79;" AnchorPane.leftAnchor="416.0">
                <font>
-                  <Font size="36.0" />
+                  <Font size="31.67" />
                </font>
             </PasswordField>
-            <ImageView fx:id="ImMostra" fitHeight="67.0" fitWidth="68.0" layoutX="1106.0" layoutY="445.0" onMouseClicked="#MostrarSenha" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="ImMostra" fitHeight="32.79" fitWidth="32.79" layoutX="909.0" layoutY="323.0" onMouseClicked="#MostrarSenha" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20login/fechado.png" />
                </image>

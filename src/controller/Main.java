@@ -126,13 +126,14 @@ public class Main extends Application {
 		TabelaProdutos= new Scene(fxmlTabelaProduto);
 		
 		
-	
+		this.primaryStage.setScene(login);
+		this.primaryStage.show();
 
 		// inicializa as cenas
 
 		// verifica a sessão do usuario para vê se ele já realizou login
 
-		if (MainModel.VerificaSessao()) {
+	/*	if (MainModel.VerificaSessao()) {
 
 			// verifica o cargo do usuario
 
@@ -164,7 +165,7 @@ public class Main extends Application {
 			this.primaryStage.setScene(login);
 			this.primaryStage.show();
 		}  
-
+*/
 	}
 	
 	
