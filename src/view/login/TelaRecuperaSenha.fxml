@@ -61,7 +61,7 @@
                   <Font size="14.0" />
                </font>
             </PasswordField>
-            <Button layoutX="490.0" layoutY="486.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="218.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" text="Redefinir" textFill="#002147">
+            <Button layoutX="479.0" layoutY="486.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="218.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" text="Redefinir" textFill="#002147">
                <font>
                   <Font size="22.0" />
                </font>
