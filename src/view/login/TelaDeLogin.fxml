@@ -21,9 +21,9 @@
       </ImageView>
       <Rectangle fill="#002147" height="18.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1366.0" />
       <Rectangle fill="#002147" height="68.0" layoutX="666.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="34.0" />
-      <Pane layoutX="370.0" layoutY="69.0" prefHeight="601.0" prefWidth="625.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
+      <Pane layoutX="370.0" layoutY="84.0" prefHeight="577.0" prefWidth="625.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
          <children>
-            <ImageView fitHeight="120.0" fitWidth="249.0" layoutX="244.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="122.0" fitWidth="132.0" layoutX="244.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../Group%204%201%20(2).png" />
                </image>
@@ -33,40 +33,40 @@
                   <Font name="Arial Bold" size="64.0" />
                </font>
             </Text>
-            <Line endX="224.6390380859375" endY="3.0517578125E-5" layoutX="260.0" layoutY="222.0" startX="-117.36099243164062" startY="3.0517578125E-5" stroke="WHITE" strokeWidth="3.0" />
-            <TextField fx:id="txflogin" layoutX="53.0" layoutY="245.0" prefHeight="50.0" prefWidth="524.0" promptText="Email" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 20; -fx-font-size: 20; -fx-padding: 10;">
+            <Line endX="224.6390380859375" endY="3.0517578125E-5" layoutX="260.0" layoutY="218.0" startX="-117.36099243164062" startY="3.0517578125E-5" stroke="WHITE" strokeWidth="3.0" />
+            <TextField fx:id="txflogin" layoutX="53.0" layoutY="245.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="524.0" promptText="Email" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 15; -fx-font-size: 20; -fx-padding: 10;">
                <font>
                   <Font size="20.0" />
                </font>
             </TextField>
-            <TextField fx:id="txflogin1" layoutX="53.0" layoutY="327.0" prefHeight="50.0" prefWidth="524.0" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 20; -fx-font-size: 20; -fx-padding: 10;">
+            <TextField fx:id="txflogin1" layoutX="53.0" layoutY="320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="524.0" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 15; -fx-font-size: 20; -fx-padding: 10;">
                <font>
                   <Font size="50.0" />
                </font>
             </TextField>
-            <Button layoutX="229.0" layoutY="444.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="173.0" style="-fx-background-color: #ffffff; -fx-text-fill: #002147; -fx-font-size: 25; -fx-background-radius: 20; -fx-font-weight: bold;" text="Entrar">
+            <Button layoutX="229.0" layoutY="428.0" mnemonicParsing="false" onMouseEntered="#entrar1" prefHeight="45.0" prefWidth="173.0" style="-fx-background-color: #ffffff; -fx-text-fill: #002147; -fx-font-size: 25; -fx-background-radius: 20; -fx-font-weight: bold;" text="Entrar">
                <font>
                   <Font name="Arial Bold" size="25.0" />
                </font>
             </Button>
-            <Text fill="WHITE" layoutX="64.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esqueceu sua senha?">
+            <Text fill="WHITE" layoutX="65.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esqueceu sua senha?">
                <font>
                   <Font name="Arial" size="16.0" />
                </font>
             </Text>
-            <Label layoutX="229.0" layoutY="386.0" text="Recuperar senha" textFill="#faff00">
+            <Label layoutX="230.0" layoutY="376.0" text="Recuperar senha" textFill="#faff00">
                <font>
-                  <Font size="16.0" />
+                  <Font name="Arial" size="16.0" />
                </font>
             </Label>
-            <Text fill="WHITE" layoutX="192.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Não possui login?">
+            <Text fill="WHITE" layoutX="197.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Não possui login?">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Label layoutX="351.0" layoutY="518.0" style="-fx-font-weight: bold; -fx-font-size: 18;" text="Cadastre-se" textFill="#faff00">
+            <Label layoutX="339.0" layoutY="498.0" style="-fx-font-weight: bold; -fx-font-size: 16;" text="Cadastre-se" textFill="#faff00">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="16.0" />
                </font>
             </Label>
          </children>
@@ -74,4 +74,4 @@
    </children>
 </AnchorPane>
 
-</AnchorPane>
+         
