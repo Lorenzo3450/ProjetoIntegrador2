@@ -1,119 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="1015.0" prefWidth="1920.0" style="-fx-background-color: #DBDBDB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.TelaDeCadastro2Controller">
+<AnchorPane prefHeight="720.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane layoutX="30.0" layoutY="30.0" prefHeight="94.0" prefWidth="1920.0" style="-fx-background-color: #004391;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="760.0" fitWidth="1366.0" layoutY="-10.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../../Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201%20(1).png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="667.0" layoutY="-14.0" prefHeight="84.0" prefWidth="34.0" style="-fx-background-color: #002147;">
+         <effect>
+            <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect></Pane>
+      <Pane layoutX="67.0" layoutY="69.0" prefHeight="639.0" prefWidth="1228.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
          <children>
-            <ImageView fitHeight="120.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="122.0" fitWidth="132.0" layoutX="549.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Imagens/imagens%20cadastro2/Super%20(1)%20(1)%201.png" />
+                  <Image url="@../../../../../../Group%204%201%20(3).png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="56.0" fitWidth="288.0" layoutX="209.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20cadastro2/-%20Cadastro.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <ImageView fitHeight="922.0" layoutX="10.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="401.2613525390625" AnchorPane.topAnchor="95.0">
-         <image>
-            <Image url="@../../../Imagens/imagens%20cadastro2/Rectangle%202.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="114.0" fitWidth="157.0" layoutX="47.0" layoutY="150.0" onMouseClicked="#vol1" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0">
-         <image>
-            <Image url="@../../../Imagens/imagens%20cadastro2/Rectangle%2024.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="99.0" fitWidth="74.0" layoutX="20.0" layoutY="160.0" onMouseClicked="#vol1" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../Imagens/imagens%20cadastro2/Arrow_Undo_Up_Left.png" />
-         </image>
-      </ImageView>
-      <AnchorPane layoutX="122.0" layoutY="135.0" prefHeight="818.0" prefWidth="2254.0" AnchorPane.leftAnchor="162.0" AnchorPane.rightAnchor="100.0">
-         <children>
-            <ImageView fitHeight="804.0" fitWidth="1887.0" layoutX="162.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="509.0" AnchorPane.topAnchor="12.0">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20cadastro2/Rectangle%207.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="142.0" fitWidth="421.0" layoutX="593.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20cadastro2/Cadastro.png" />
-               </image>
-            </ImageView>
-            <Pane layoutX="450.0" layoutY="153.0" prefHeight="4.0" prefWidth="720.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;" />
-            <TextField fx:id="TxtNome" layoutX="20.0" layoutY="243.0" prefHeight="60.0" prefWidth="750.0" promptText="Nome" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;" AnchorPane.topAnchor="243.0">
+            <Label layoutX="631.0" layoutY="215.0" prefHeight="38.0" prefWidth="355.0" text="Preencha as informações abaixo em caso " textFill="#faff00">
                <font>
-                  <Font size="24.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="TxtCpf" layoutX="790.0" layoutY="243.0" prefHeight="60.0" prefWidth="750.0" promptText="CPF" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="TxtDataDeNascimento" layoutX="20.0" layoutY="340.0" onKeyTyped="#Formataçãodata" prefHeight="60.0" prefWidth="750.0" promptText="Data de Nascimento" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="TxtTelefone" layoutX="790.0" layoutY="340.0" onKeyTyped="#FortmataçaoTelefone" prefHeight="60.0" prefWidth="750.0" promptText="Telefone" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </TextField>
-            <Pane layoutX="20.0" layoutY="483.0" prefHeight="2.0" prefWidth="1494.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;" />
-            <Label layoutX="700.0" layoutY="424.0" text="Endereço" textFill="#faff00">
-               <font>
-                  <Font size="36.0" />
+                  <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="TxtCidade" layoutX="20.0" layoutY="520.0" prefHeight="60.0" prefWidth="750.0" promptText="Cidade" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+            <Label layoutX="632.0" layoutY="239.0" prefHeight="38.0" prefWidth="355.0" style="-fx-font-family: Arial;" text="de esquecimento de senha" textFill="#faff00">
                <font>
-                  <Font size="24.0" />
+                  <Font size="14.0" />
                </font>
-            </TextField>
-            <TextField fx:id="TxtBairro" layoutX="20.0" layoutY="610.0" prefHeight="60.0" prefWidth="750.0" promptText="Bairro" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+            </Label>
+            <Line endX="224.6390380859375" endY="3.0517578125E-5" layoutX="561.0" layoutY="210.0" startX="-117.36099243164062" startY="3.0517578125E-5" stroke="WHITE" strokeWidth="3.0" />
+            <Line endX="224.6390380859375" endY="3.0517578125E-5" layoutX="392.0" layoutY="211.0" startX="224.63909912109375" startY="330.0" stroke="WHITE" strokeWidth="3.0" />
+            <Label layoutX="476.0" layoutY="132.0" prefHeight="74.0" prefWidth="279.0" text="Cadastro" textFill="WHITE">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Arial Bold" size="64.0" />
                </font>
-            </TextField>
-            <TextField fx:id="TxtRuaCasaComplemento" layoutX="790.0" layoutY="520.0" prefHeight="60.0" prefWidth="750.0" promptText="Rua, casa/complemento" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+            </Label>
+            <TextField layoutX="63.0" layoutY="308.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
                <font>
-                  <Font size="24.0" />
+                  <Font size="20.0" />
                </font>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </TextField>
-            <TextField fx:id="TxtCep" layoutX="790.0" layoutY="610.0" prefHeight="60.0" prefWidth="750.0" promptText="CEP" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+            <Text fill="WHITE" layoutX="72.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Arial" size="20.0" />
                </font>
+            </Text>
+            <TextField layoutX="63.0" layoutY="397.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </TextField>
-            <ImageView fx:id="Btnfinal" fitHeight="101.0" fitWidth="294.0" layoutX="658.0" layoutY="699.0" onMouseClicked="#BtnFinalizar" onMouseEntered="#Entrar1" onMouseExited="#Sair1" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20cadastro2/Rectangle%208.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="37.0" fitWidth="170.0" layoutX="686.0" layoutY="724.0" onMouseClicked="#BtnFinalizar" onMouseEntered="#Entrar1" onMouseExited="#Sair1" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20cadastro2/Finalizar.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="56.0" layoutX="864.0" layoutY="712.0" onMouseClicked="#BtnFinalizar" onMouseEntered="#Entrar1" onMouseExited="#Sair1" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20cadastro2/Check.png" />
-               </image>
-            </ImageView>
+            <Text fill="WHITE" layoutX="72.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <TextField layoutX="63.0" layoutY="484.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TextField>
+            <Text fill="WHITE" layoutX="72.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmar senha">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <TextField layoutX="648.0" layoutY="309.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TextField>
+            <Text fill="WHITE" layoutX="657.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Primeira escola que estudou">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <TextField layoutX="650.0" layoutY="397.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TextField>
+            <Text fill="WHITE" layoutX="659.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do meio da mãe">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <TextField layoutX="650.0" layoutY="484.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TextField>
+            <Text fill="WHITE" layoutX="659.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apelido">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <Button layoutX="516.0" layoutY="564.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="198.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 18;" text="Finalizar" textFill="#002147">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
          </children>
-      </AnchorPane>
+         <effect>
+            <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Pane>
+      <Pane layoutY="-1.0" prefHeight="20.0" prefWidth="1366.0" style="-fx-background-color: #002147;" />
    </children>
 </AnchorPane>
+
