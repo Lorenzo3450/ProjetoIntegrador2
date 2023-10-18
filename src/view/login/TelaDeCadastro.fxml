@@ -1,140 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="1015.0" prefWidth="1920.0" style="-fx-background-color: #DBDBDB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.TelaDeCadastroController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1366.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="966.0" fitWidth="2670.0" layoutX="2.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-752.0" AnchorPane.topAnchor="94.0">
+      <ImageView fitHeight="760.0" fitWidth="1366.0" layoutY="-10.0" pickOnBounds="true">
          <image>
-            <Image url="@../../../Imagens/imagens%20cadastro/Rectangle%202.png" />
+            <Image url="@../../../../../../Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201%20(1).png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="175.0" layoutY="166.0" prefHeight="886.0" prefWidth="1714.0" AnchorPane.bottomAnchor="8.0" AnchorPane.topAnchor="166.0">
+      <Pane layoutX="666.0" layoutY="10.0" prefHeight="49.0" prefWidth="34.0" style="-fx-background-color: #002147;">
+         <effect>
+            <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect></Pane>
+      <Pane layoutX="98.0" layoutY="38.0" prefHeight="667.0" prefWidth="1169.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
          <children>
-            <ImageView fitHeight="872.0" fitWidth="1723.0" layoutX="-52.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="-52.0" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="-22.0">
+            <ImageView fitHeight="122.0" fitWidth="132.0" layoutX="516.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Imagens/imagens%20cadastro2/Rectangle%207.png" />
+                  <Image url="@../../../../../../Group%204%201%20(3).png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="142.0" fitWidth="421.0" layoutX="563.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="752.4491958618164" AnchorPane.leftAnchor="563.0" AnchorPane.rightAnchor="730.0" AnchorPane.topAnchor="48.0">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20cadastro/Cadastro.png" />
-               </image>
-            </ImageView>
-            <Pane layoutX="424.0" layoutY="180.0" prefHeight="4.0" prefWidth="720.0" style="-fx-background-color: #FFFFFF;" />
-            <TextField fx:id="TxtEmail" layoutX="20.0" layoutY="240.0" prefHeight="40.0" prefWidth="750.0" promptText="Email do usuário" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40;">
+            <Label layoutX="444.0" layoutY="128.0" prefHeight="74.0" prefWidth="279.0" text="Cadastro" textFill="WHITE">
                <font>
-                  <Font size="36.0" />
-               </font>
-            </TextField>
-            <Label layoutX="87.0" layoutY="568.0" text="Já possui login ?" textFill="#efefef">
-               <font>
-                  <Font size="24.0" />
+                  <Font name="Arial Bold" size="64.0" />
                </font>
             </Label>
-            <Label fx:id="Logar" layoutX="270.0" layoutY="568.0" onMouseClicked="#clique" text="Logar" textFill="#faff00">
+            <TextField layoutX="48.0" layoutY="251.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
                <font>
-                  <Font size="24.0" />
+                  <Font size="20.0" />
                </font>
-            </Label>
-            <ImageView fx:id="imbtn" fitHeight="99.0" fitWidth="297.0" layoutX="656.0" layoutY="652.0" onMouseClicked="#Continuar1" onMouseEntered="#Entrar1" onMouseExited="#Sair1" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20cadastro2/Rectangle%208.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="870.0" layoutY="668.0" onMouseClicked="#Continuar1" onMouseEntered="#Entrar1" onMouseExited="#Sair1" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20cadastro/Arrow_Right_SM.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="672.0" layoutY="676.0" onMouseClicked="#Continuar1" onMouseEntered="#Entrar1" onMouseExited="#Sair1" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20cadastro/Continuar.png" />
-               </image>
-            </ImageView>
-            <TextField fx:id="TxtPalavrasDeRecuperacao1" layoutX="820.0" layoutY="240.0" prefHeight="40.0" prefWidth="750.0" promptText="Nome do meio da Mãe" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40;">
-               <font>
-                  <Font size="36.0" />
-               </font>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </TextField>
-            <Pane layoutX="585.0" layoutY="381.0" prefHeight="8.0" prefWidth="408.0" rotate="90.0" style="-fx-background-color: #FFFFFF;" />
-            <TextField fx:id="TxtPalavrasDeRecuperacao2" layoutX="820.0" layoutY="360.0" prefHeight="40.0" prefWidth="750.0" promptText="Primeira escola que estudou" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40;">
+            <TextField layoutX="595.0" layoutY="338.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
                <font>
-                  <Font size="36.0" />
+                  <Font size="20.0" />
                </font>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </TextField>
-            <TextField fx:id="TxtPalavrasDeRecuperacao3" layoutX="820.0" layoutY="480.0" prefHeight="40.0" prefWidth="750.0" promptText="Apelido de infância" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40;">
+            <TextField layoutX="595.0" layoutY="251.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
                <font>
-                  <Font size="36.0" />
+                  <Font size="20.0" />
                </font>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </TextField>
-            <Label fx:id="Logar1" layoutX="853.0" layoutY="198.0" onMouseClicked="#clique" prefHeight="35.0" prefWidth="735.0" text="Prencha as informações abaixo para caso de esqueça a sua senha" textFill="#faff00">
+            <TextField layoutX="48.0" layoutY="338.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
                <font>
-                  <Font size="24.0" />
+                  <Font size="20.0" />
                </font>
-            </Label>
-            <TextField fx:id="txtsenha" layoutX="20.0" layoutY="360.0" prefHeight="40.0" prefWidth="750.0" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40;">
-               <font>
-                  <Font size="36.0" />
-               </font>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </TextField>
-            <TextField fx:id="txtsenha2" layoutX="20.0" layoutY="480.0" prefHeight="40.0" prefWidth="750.0" promptText="Confirmar Senha" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40;">
+            <Button layoutX="484.0" layoutY="599.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="198.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 18;" text="Continuar" textFill="#002147">
                <font>
-                  <Font size="36.0" />
+                  <Font name="Arial Bold" size="25.0" />
                </font>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Line endX="224.6390380859375" endY="3.0517578125E-5" layoutX="529.0" layoutY="211.0" startX="-117.36099243164062" startY="3.0517578125E-5" stroke="WHITE" strokeWidth="3.0" />
+            <Line endX="375.111083984375" endY="3.0517578125E-5" layoutX="520.0" layoutY="404.0" startX="-242.66665649414062" startY="3.0517578125E-5" stroke="WHITE" strokeWidth="3.0" />
+            <Text fill="WHITE" layoutX="55.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" CPF">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="603.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Primeira escola que estudou">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="61.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apelido">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="604.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do meio da mãe">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <TextField layoutX="48.0" layoutY="447.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </TextField>
-            <ImageView fx:id="ImEsconde" fitHeight="67.0" fitWidth="68.0" layoutX="679.0" layoutY="365.0" onMouseClicked="#EscondeSenhaSenha" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20login/aberto.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="ImEsconde1" fitHeight="67.0" fitWidth="68.0" layoutX="679.0" layoutY="485.0" onMouseClicked="#EscondeSenhaSenha2" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20login/aberto.png" />
-               </image>
-            </ImageView>
-            <PasswordField fx:id="psfConfirma" layoutX="20.0" layoutY="480.0" prefHeight="40.0" prefWidth="750.0" promptText="Confirmar Senha" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+            <TextField layoutX="595.0" layoutY="534.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
                <font>
-                  <Font size="36.0" />
+                  <Font size="20.0" />
                </font>
-            </PasswordField>
-            <PasswordField fx:id="psfsenha" layoutX="20.0" layoutY="360.0" prefHeight="40.0" prefWidth="750.0" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;">
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TextField>
+            <TextField layoutX="595.0" layoutY="447.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
                <font>
-                  <Font size="36.0" />
+                  <Font size="20.0" />
                </font>
-            </PasswordField>
-            <ImageView fx:id="ImMostra" fitHeight="67.0" fitWidth="68.0" layoutX="679.0" layoutY="365.0" onMouseClicked="#MostrarSenha" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20login/fechado.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="ImMostra1" fitHeight="67.0" fitWidth="68.0" layoutX="679.0" layoutY="485.0" onMouseClicked="#MostrarSenha2" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20login/fechado.png" />
-               </image>
-            </ImageView>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TextField>
+            <TextField layoutX="48.0" layoutY="534.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TextField>
+            <Text fill="WHITE" layoutX="61.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logradouro">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="603.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bairro">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="63.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="604.0" layoutY="521.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
          </children>
-      </AnchorPane>
-      <Pane layoutX="20.0" layoutY="20.0" prefHeight="94.0" prefWidth="1920.0" style="-fx-background-color: #004391;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <ImageView fitHeight="120.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20login/Super%20(1)%20(1)%201.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="257.0" layoutX="214.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20cadastro/-%20Cadastro.png" />
-               </image>
-            </ImageView>
-         </children>
+         <effect>
+            <DropShadow height="1.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
       </Pane>
+      <Pane layoutY="-1.0" prefHeight="18.0" prefWidth="1366.0" style="-fx-background-color: #002147;">
+         <effect>
+            <DropShadow height="1.0" radius="0.0" width="0.0">
+               <color>
+                  <Color red="0.03999999910593033" green="0.03999999910593033" blue="0.03999999910593033" />
+               </color>
+            </DropShadow>
+         </effect></Pane>
    </children>
 </AnchorPane>
