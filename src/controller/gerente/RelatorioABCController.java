@@ -1,12 +1,17 @@
 package controller.gerente;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import model.Produto;
 import model.dao.ConexãoBD;
 import model.dao.Gerente.RelatorioABCDao;
@@ -15,6 +20,7 @@ import java.util.List;
 
 import controller.Main;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
@@ -196,5 +202,33 @@ public class RelatorioABCController {
 
     	
     }
+    
+    @FXML
+    void AbrirSideBar(MouseEvent event) {
+
+    	 try {
+    	        // Carregue a cena da barra lateral a partir do arquivo FXML
+    	        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/gerente/SideBarGerente.fxml"));
+    	        AnchorPane sideBarRoot = loader.load();
+
+    	        // Crie uma nova janela para exibir a cena da barra lateral
+    	        Stage sideBarStage = new Stage();
+    	        sideBarStage.initStyle(StageStyle.UNDECORATED);
+    	        Scene sideBarScene = new Scene(sideBarRoot);
+    	        sideBarStage.setScene(sideBarScene);
+
+    	        sideBarStage.setX(0);
+    	        sideBarStage.setY(0);
+    	        // Exiba a janela da barra lateral
+    	        sideBarStage.show();
+    	    } catch (IOException e) {
+    	        e.printStackTrace();
+    	    }
+    	
+    	
+    }
+    
+    
+    
 
 }

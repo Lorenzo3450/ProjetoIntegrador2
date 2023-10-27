@@ -79,31 +79,12 @@ public class TelaDeLoginController {
 				if(loguinModel.getCargo(txflogin.getText(), psfsenha.getText()).equalsIgnoreCase("gerente")) {
 	            txflogin.setText("");
 	            psfsenha.setText("");
-				txtsenha.setText("");
+				
 			
-				
-				
-				
-                 
-				Main.Cena("loading");
+	            Main.Cena("TelaPrincipalGerente");
 
-		        Service<Void> service = new Service<>() {
-		            @Override
-		            protected Task<Void> createTask() {
-		                return new DelayedTask();
-		            }
-		        };
-		        
-		        service.setOnSucceeded(e -> {
-					try {
-						Main.Cena("TelaPrincipalGerente");
-					} catch (Exception e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				});
-		        service.start();
-		        
+				
+				
 				}if(loguinModel.getCargo(txflogin.getText(), psfsenha.getText()).equalsIgnoreCase("Não definido")) {
 					
 					
@@ -132,6 +113,13 @@ public class TelaDeLoginController {
 					    }
 					
 					
+					
+					
+				}if(loguinModel.getCargo(txflogin.getText(), psfsenha.getText()).equalsIgnoreCase("Atendente de caixa")) {
+					
+					Main.Cena("TelaDeVenda");
+					
+
 					
 					
 				}

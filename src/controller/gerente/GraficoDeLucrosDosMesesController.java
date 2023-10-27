@@ -2,8 +2,10 @@ package controller.gerente;
 
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.print.PrinterJob;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
@@ -16,8 +18,10 @@ import model.Produto;
 import model.dao.ConexãoBD;
 import model.dao.Gerente.GraficoDeLucrosDosMesesDao;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
-
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
@@ -76,9 +80,9 @@ public class GraficoDeLucrosDosMesesController {
         yAxis.setLabel("Lucro");
         BarChart<String, Number> barChart = new BarChart<>(xAxis, yAxis);
         barChart.setTitle("");
-        barChart.setPrefWidth(1600); 
-        barChart.setPrefHeight(600);
-        barChart.setBarGap(-70); // Defina barGap como 0 para eliminar o espaço entre barras
+        barChart.setPrefWidth(1100); 
+        barChart.setPrefHeight(400);
+        barChart.setBarGap(-40); // Defina barGap como 0 para eliminar o espaço entre barras
         barChart.setCategoryGap(40); // Defina categoryGap para ajustar o espaço entre as categorias (meses)
      
      
@@ -217,5 +221,31 @@ public class GraficoDeLucrosDosMesesController {
     	Main.Cena("TelaPrincipalGerente");
     	
     }
+    
+    @FXML
+    void AbrirSideBar(MouseEvent event) {
+
+    	 try {
+    	        // Carregue a cena da barra lateral a partir do arquivo FXML
+    	        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/gerente/SideBarGerente.fxml"));
+    	        AnchorPane sideBarRoot = loader.load();
+
+    	        // Crie uma nova janela para exibir a cena da barra lateral
+    	        Stage sideBarStage = new Stage();
+    	        sideBarStage.initStyle(StageStyle.UNDECORATED);
+    	        Scene sideBarScene = new Scene(sideBarRoot);
+    	        sideBarStage.setScene(sideBarScene);
+
+    	        sideBarStage.setX(0);
+    	        sideBarStage.setY(0);
+    	        // Exiba a janela da barra lateral
+    	        sideBarStage.show();
+    	    } catch (IOException e) {
+    	        e.printStackTrace();
+    	    }
+    	
+    	
+    }
+    
 
 }

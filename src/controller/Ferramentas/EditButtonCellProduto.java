@@ -11,7 +11,7 @@ import model.Produto;
 
 public class EditButtonCellProduto extends TableCell<Produto, Void> {
     private final Button editButton = new Button();
-    private final ImageView imageView = new ImageView(new Image("file:///F:/Projeto_Integrador/ProjetoIntegrador/Imagens/imagens%20gerente/Tabela%20funcionario/Group%2037.png"));
+    private final ImageView imageView = new ImageView(new Image("file:///C:/Users/rainn/Downloads/ProjetoIntegradorProjetoIntegrador/Imagens/imagens%20gerente/Tabela%20funcionario/Group%2037.png"));
     private EventHandler<ActionEvent> editarAction; // Adiciona o evento de edição
 
     public EditButtonCellProduto() {

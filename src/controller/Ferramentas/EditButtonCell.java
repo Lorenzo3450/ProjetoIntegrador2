@@ -10,7 +10,7 @@ import model.Funcionario;
 
 public class EditButtonCell extends TableCell<Funcionario, Void> {
     private final Button editButton = new Button();
-    private final ImageView imageView = new ImageView(new Image("file:///F:/Projeto_Integrador/ProjetoIntegrador/Imagens/imagens%20gerente/Tabela%20funcionario/Group%2037.png"));
+    private final ImageView imageView = new ImageView(new Image("file:///F:/ProjetoIntegrador/ProjetoIntegrador/Imagens/imagens%20gerente/Tabela%20funcionario/Group%2037.png"));
     private EventHandler<ActionEvent> editarAction; // Adiciona o evento de edição
 
     public EditButtonCell() {

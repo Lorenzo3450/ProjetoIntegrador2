@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import controller.Ferramentas.EfeitoBtn;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -21,8 +22,7 @@ public class EditaFuncionarioController {
 	private String textoSelecionado = "";
 
     @FXML
-    private ImageView BtnAlteracao;
-
+    private Button BtnAlteracao;
     @FXML
     private MenuButton MenuButton;
 

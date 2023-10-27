@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -22,6 +23,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler; 
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -374,6 +376,34 @@ public class TabelaFuncionarioController {
 	class Delta {
 	    double x, y;
 	}
+	
+	 @FXML
+	    void AbrirSideBar(MouseEvent event) {
+
+	    	 try {
+	    	        // Carregue a cena da barra lateral a partir do arquivo FXML
+	    	        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/gerente/SideBarGerente.fxml"));
+	    	        AnchorPane sideBarRoot = loader.load();
+
+	    	        // Crie uma nova janela para exibir a cena da barra lateral
+	    	        Stage sideBarStage = new Stage();
+	    	        sideBarStage.initStyle(StageStyle.UNDECORATED);
+	    	        Scene sideBarScene = new Scene(sideBarRoot);
+	    	        sideBarStage.setScene(sideBarScene);
+
+	    	        sideBarStage.setX(0);
+	    	        sideBarStage.setY(0);
+	    	        // Exiba a janela da barra lateral
+	    	        sideBarStage.show();
+	    	    } catch (IOException e) {
+	    	        e.printStackTrace();
+	    	    }
+	    	
+	    	
+	    }
+	    
+	    
+	
 	
 	
 }

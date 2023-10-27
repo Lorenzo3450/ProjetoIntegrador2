@@ -114,17 +114,17 @@
             <Image url="@../../../Imagens/imagens%20cadastro2/Arrow_Undo_Up_Left.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="BtnEncerrarSessao" fitHeight="70.0" fitWidth="200.0" layoutX="462.0" layoutY="782.0" onMouseClicked="#EncerrarSessao" onMouseEntered="#Entrar7" onMouseExited="#Sair7" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="BtnEncerrarSessao" fitHeight="70.0" fitWidth="200.0" layoutX="747.0" layoutY="172.0" onMouseClicked="#EncerrarSessao" onMouseEntered="#Entrar7" onMouseExited="#Sair7" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Rectangle%20182.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="40.0" layoutX="589.0" layoutY="795.0" onMouseClicked="#EncerrarSessao" onMouseEntered="#Entrar7" onMouseExited="#Sair7" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="35.0" fitWidth="40.0" layoutX="874.0" layoutY="185.0" onMouseClicked="#EncerrarSessao" onMouseEntered="#Entrar7" onMouseExited="#Sair7" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/sair.png" />
          </image>
       </ImageView>
-      <Label layoutX="487.0" layoutY="786.0" onMouseClicked="#EncerrarSessao" onMouseEntered="#Entrar7" onMouseExited="#Sair7" prefHeight="46.0" prefWidth="80.0" text="Sair" textFill="WHITE">
+      <Label layoutX="772.0" layoutY="176.0" onMouseClicked="#EncerrarSessao" onMouseEntered="#Entrar7" onMouseExited="#Sair7" prefHeight="46.0" prefWidth="80.0" text="Sair" textFill="WHITE">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>

@@ -1,14 +1,20 @@
 package controller.gerente;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.print.PrinterJob;
+import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import model.dao.ConexãoBD;
 import model.dao.Gerente.GraficoDeLucroSecoesDao;
 import model.Secao;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
@@ -161,8 +167,8 @@ public class GraficoLucroSecoesController {
             }
 
             // Definir as dimensões do gráfico (aumente conforme necessário)
-            graficoPizza.setMinWidth(1500); // Largura em pixels
-            graficoPizza.setMinHeight(600); // Altura em pixels
+            graficoPizza.setMinWidth(1100); // Largura em pixels
+            graficoPizza.setMinHeight(400); // Altura em pixels
 
             // Adicionar o gráfico de pizza ao PainelGrafico
             PainelGrafico.getChildren().add(graficoPizza);
@@ -189,6 +195,30 @@ public class GraficoLucroSecoesController {
         return total;
     }
     
+    @FXML
+    void AbrirSideBar(MouseEvent event) {
+
+    	 try {
+    	        // Carregue a cena da barra lateral a partir do arquivo FXML
+    	        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/gerente/SideBarGerente.fxml"));
+    	        AnchorPane sideBarRoot = loader.load();
+
+    	        // Crie uma nova janela para exibir a cena da barra lateral
+    	        Stage sideBarStage = new Stage();
+    	        sideBarStage.initStyle(StageStyle.UNDECORATED);
+    	        Scene sideBarScene = new Scene(sideBarRoot);
+    	        sideBarStage.setScene(sideBarScene);
+
+    	        sideBarStage.setX(0);
+    	        sideBarStage.setY(0);
+    	        // Exiba a janela da barra lateral
+    	        sideBarStage.show();
+    	    } catch (IOException e) {
+    	        e.printStackTrace();
+    	    }
+    	
+    	
+    }
     
     
     

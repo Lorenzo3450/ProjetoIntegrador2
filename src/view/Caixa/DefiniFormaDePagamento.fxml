@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1336.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Caixa.DefiniFormaDePagamentoController">
+   <children>
+      <ImageView fx:id="ImagemDeFundo" fitHeight="720.0" fitWidth="1366.0" layoutY="60.0" pickOnBounds="true" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <image>
+            <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="PainelDeCima" layoutX="10.0" layoutY="10.0" prefHeight="59.0" prefWidth="1366.0" style="-fx-background-color: #002147;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="Logo" fitHeight="57.0" fitWidth="62.0" layoutX="60.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Group%204%201.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="36.0" layoutX="14.0" layoutY="17.0" onMouseClicked="#AbrirSideBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Vector.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="TextoDoPainelDeCima" layoutX="132.0" layoutY="14.0" text="- Frente de Caixa" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PainelPrincipal" layoutX="96.0" layoutY="96.0" prefHeight="551.0" prefWidth="1184.0" style="-fx-background-color: #002147; -fx-background-radius: 20;">
+         <children>
+            <Label fx:id="Lbl" layoutX="160.0" layoutY="161.0" prefHeight="35.0" prefWidth="169.0" text="1- PIX" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="65.0" />
+               </font>
+            </Label>
+            <Label fx:id="Lbl1" layoutX="160.0" layoutY="333.0" prefHeight="76.0" prefWidth="246.0" text="3- Debito" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="65.0" />
+               </font>
+            </Label>
+            <Label fx:id="Lbl2" layoutX="734.0" layoutY="161.0" prefHeight="76.0" prefWidth="281.0" text="2- Credito" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="65.0" />
+               </font>
+            </Label>
+            <Label fx:id="Lbl3" layoutX="734.0" layoutY="333.0" prefHeight="76.0" prefWidth="319.0" text="4- Dinheiro" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="65.0" />
+               </font>
+            </Label>
+            <Label fx:id="Lbl4" layoutX="160.0" layoutY="30.0" prefHeight="76.0" prefWidth="887.0" text="Selecione a forma de pagamento" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="65.0" />
+               </font>
+            </Label>
+            <Label fx:id="Lbl5" layoutX="219.0" layoutY="113.0" prefHeight="2.0" prefWidth="769.0" style="-fx-background-color: #ffffff;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

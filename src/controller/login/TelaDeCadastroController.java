@@ -1,5 +1,7 @@
 package controller.login;
 
+
+
 import javax.swing.JOptionPane;
 
 import controller.Ferramentas.EfeitoBtn;
@@ -10,6 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Button;
 
 public class TelaDeCadastroController {
 	
@@ -61,7 +64,7 @@ public class TelaDeCadastroController {
     private ImageView imSeta;
 
     @FXML
-    private ImageView imbtn;
+    private Button  imbtn;
 
     @FXML
     private PasswordField psfConfirma;
