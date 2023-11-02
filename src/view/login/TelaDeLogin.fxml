@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -14,64 +18,115 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.TelaDeLoginController">
    <children>
-      <ImageView fitHeight="760.0" fitWidth="1366.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagemTijolos" fitHeight="760.0" fitWidth="1366.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
+            <Image url="@../../../../../../Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201%20(1).png" />
          </image>
       </ImageView>
-      <Rectangle fill="#002147" height="18.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1366.0" />
-      <Rectangle fill="#002147" height="68.0" layoutX="666.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="34.0" />
-      <Pane layoutX="370.0" layoutY="84.0" prefHeight="577.0" prefWidth="625.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
+      <Rectangle fx:id="Pane1" fill="#002147" height="18.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1366.0" />
+      <Rectangle fx:id="Pane2" fill="#002147" height="84.0" layoutX="666.0" layoutY="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="34.0">
+         <effect>
+            <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect></Rectangle>
+      <Pane fx:id="PanePrincipal" layoutX="370.0" layoutY="84.0" prefHeight="633.0" prefWidth="625.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
          <children>
-            <ImageView fitHeight="122.0" fitWidth="132.0" layoutX="244.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Logo" fitHeight="122.0" fitWidth="132.0" layoutX="244.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../Group%204%201%20(2).png" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="225.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+            <Text fx:id="txtLogin" fill="WHITE" layoutX="225.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
                <font>
                   <Font name="Arial Bold" size="64.0" />
                </font>
             </Text>
-            <Line endX="224.6390380859375" endY="3.0517578125E-5" layoutX="260.0" layoutY="218.0" startX="-117.36099243164062" startY="3.0517578125E-5" stroke="WHITE" strokeWidth="3.0" />
-            <TextField fx:id="txflogin" layoutX="53.0" layoutY="245.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="524.0" promptText="Email" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 15; -fx-font-size: 20; -fx-padding: 10;">
+            <Line fx:id="Linha1" endX="224.6390380859375" endY="3.0517578125E-5" layoutX="260.0" layoutY="218.0" startX="-117.36099243164062" startY="3.0517578125E-5" stroke="WHITE" strokeWidth="3.0" />
+            <TextField fx:id="txfEmail" layoutX="53.0" layoutY="286.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="524.0" style="-fx-prompt-text-fill: #002147; -fx-text-fill: #002147; -fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-border-radius: 15; -fx-font-size: 20; -fx-padding: 10; -fx-font-family: Arial;">
+     
                <font>
-                  <Font size="20.0" />
+                  <Font name="Arial" size="20.0" />
                </font>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </TextField>
-            <TextField fx:id="txflogin1" layoutX="53.0" layoutY="320.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="524.0" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 15; -fx-font-size: 20; -fx-padding: 10;">
-               <font>
-                  <Font size="50.0" />
-               </font>
-            </TextField>
-            <Button layoutX="229.0" layoutY="428.0" mnemonicParsing="false" onMouseEntered="#entrar1" prefHeight="45.0" prefWidth="173.0" style="-fx-background-color: #ffffff; -fx-text-fill: #002147; -fx-font-size: 25; -fx-background-radius: 20; -fx-font-weight: bold;" text="Entrar">
+            <Button fx:id="ButtonEntrar" layoutX="229.0" layoutY="490.0" mnemonicParsing="false" onMouseClicked="#Log1" onMouseEntered="#entrar1" prefHeight="45.0" prefWidth="173.0" style="-fx-background-color: #ffffff; -fx-text-fill: #002147; -fx-font-size: 25; -fx-background-radius: 20; -fx-font-weight: bold;" text="Entrar">
                <font>
                   <Font name="Arial Bold" size="25.0" />
                </font>
             </Button>
-            <Text fill="WHITE" layoutX="65.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esqueceu sua senha?">
+            <Text fx:id="txtEsqueceuSenha" fill="WHITE" layoutX="65.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esqueceu sua senha?">
                <font>
                   <Font name="Arial" size="16.0" />
                </font>
             </Text>
-            <Label layoutX="230.0" layoutY="376.0" text="Recuperar senha" textFill="#faff00">
+            <Label fx:id="cliqueRecuperarSenha" layoutX="230.0" layoutY="438.0" text="Recuperar senha" textFill="#faff00">
                <font>
                   <Font name="Arial" size="16.0" />
                </font>
             </Label>
-            <Text fill="WHITE" layoutX="197.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Não possui login?">
+            <Text fx:id="txtNaoPossuiLogin" fill="WHITE" layoutX="197.0" layoutY="576.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Não possui login?">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Label layoutX="339.0" layoutY="498.0" style="-fx-font-weight: bold; -fx-font-size: 16;" text="Cadastre-se" textFill="#faff00">
+            <Label fx:id="cadastreSe" layoutX="339.0" layoutY="561.0" style="-fx-font-weight: bold; -fx-font-size: 16;" text="Cadastre-se" textFill="#faff00">
                <font>
                   <Font name="Arial" size="16.0" />
                </font>
             </Label>
+            <Text fx:id="txtEmail" fill="WHITE" layoutX="64.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtSenha" fill="WHITE" layoutX="65.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="senha" layoutX="53.0" layoutY="382.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15; -fx-border-radius: 15; -fx-padding: 10;">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow height="1.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </PasswordField>
+            <ImageView fx:id="MostraSenha" fitHeight="34.0" fitWidth="25.0" layoutX="530.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../ver_updated.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="EscondeSenha" fitHeight="34.0" fitWidth="25.0" layoutX="530.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../olho_updated.png" />
+               </image>
+            </ImageView>
          </children>
+         <effect>
+            <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
       </Pane>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
-
-         
