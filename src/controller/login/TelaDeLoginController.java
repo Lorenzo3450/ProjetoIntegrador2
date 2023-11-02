@@ -1,6 +1,9 @@
 package controller.login;
 
 import java.sql.Connection;
+
+
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -10,17 +13,21 @@ import model.dao.ConexãoBD;
 import model.dao.login.loguinModel;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
-import javafx.concurrent.Task;
 import controller.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -28,37 +35,64 @@ import controller.Ferramentas.EfeitoBtn;
 
 public class TelaDeLoginController {
 
-	  @FXML
-	    private ImageView ImEsconde;
+    @FXML
+    private Button ButtonEntrar;
 
-	    @FXML
-	    private ImageView ImMostra;
-		
-    	EfeitoBtn efeito = new EfeitoBtn();
+    @FXML
+    private Line Linha1;
+
+    @FXML
+    private ImageView Logo;
+
+    @FXML
+    private Rectangle Pane1;
+
+    @FXML
+    private Rectangle Pane2;
+
+    @FXML
+    private Pane PanePrincipal;
+
+    @FXML
+    private Label cadastreSe;
+
+    @FXML
+    private Label cliqueRecuperarSenha;
+
+    @FXML
+    private ImageView imagemTijolos;
+
+    @FXML
+    private PasswordField senha;
+
+    @FXML
+    private TextField txfEmail;
+
+    @FXML
+    private Text txtEmail;
+
+    @FXML
+    private Text txtEsqueceuSenha;
+
+    @FXML
+    private Text txtLogin;
+
+    @FXML
+    private Text txtNaoPossuiLogin;
+
+    @FXML
+    private Text txtSenha;	
+    
+
+    @FXML
+    private ImageView MostraSenha;
+    
+    @FXML
+    private ImageView EscondeSenha;
+    
+    EfeitoBtn efeito = new EfeitoBtn();
+    
 	
-    	@FXML
-        private ImageView TxtSenha;
-
-    	 @FXML
-    	    private TextField txtsenha;
-    	
-	 	@FXML
-	    private Label cadastro;
-
-	    @FXML
-	    private ImageView imbtn;
-
-	    
-	    @FXML
-	    private ImageView imlogar;
-
-	    @FXML
-	    private PasswordField psfsenha;
-
-	    @FXML
-	    private TextField txflogin;
-	    
-	   
 	  
 	    public class DelayedTask extends Task<Void> {
 	        @Override
@@ -72,14 +106,26 @@ public class TelaDeLoginController {
 	    @FXML
 	    void Log1(MouseEvent event) throws Exception{
 
+	    	TextField textField = new TextField();
+
+	    	// Adicione um ouvinte para lidar com o foco do campo de entrada
+	    	textField.focusedProperty().addListener((observable, oldValue, newValue) -> {
+	    	    if (newValue) {
+	    	        // O campo de entrada está focado, aplique a animação CSS
+	    	        textField.getStyleClass().add("focused");
+	    	    } else {
+	    	        // O campo de entrada não está focado, remova a animação CSS
+	    	        textField.getStyleClass().remove("focused");
+	    	    }
+	    	});
+
 	    	
-	    	
-			if(loguinModel.ValidaLogin(txflogin.getText(), psfsenha.getText())) {
+			if(loguinModel.ValidaLogin(txfEmail.getText(), senha.getText())) {
 				
-				if(loguinModel.getCargo(txflogin.getText(), psfsenha.getText()).equalsIgnoreCase("gerente")) {
-	            txflogin.setText("");
-	            psfsenha.setText("");
-				txtsenha.setText("");
+				if(loguinModel.getCargo(txfEmail.getText(), senha.getText()).equalsIgnoreCase("gerente")) {
+	            txfEmail.setText("");
+	            senha.setText("");
+				txtSenha.setText("");
 			
 				
 				
@@ -104,7 +150,7 @@ public class TelaDeLoginController {
 				});
 		        service.start();
 		        
-				}if(loguinModel.getCargo(txflogin.getText(), psfsenha.getText()).equalsIgnoreCase("Não definido")) {
+				}if(loguinModel.getCargo(txfEmail.getText(), senha.getText()).equalsIgnoreCase("Não definido")) {
 					
 					
 					
@@ -158,18 +204,16 @@ public class TelaDeLoginController {
 
     	
     	Main.Cena("Cadastro");
-    	psfsenha.setText("");
-    	txflogin.setText("");
-    	imlogar.requestFocus();
+    	senha.setText("");
+    	txfEmail.setText("");
+    	ButtonEntrar.requestFocus();
     	
     }
 
-    
     @FXML
     void entrar1(MouseEvent event) {
-    	
-    	
-    	imbtn.setEffect(efeito.Efeito());
+  
+    	ButtonEntrar.setEffect(efeito.Efeito());
     	
     }
     
@@ -178,39 +222,39 @@ public class TelaDeLoginController {
     @FXML
     void sair1(MouseEvent event) {
     	
-    	imbtn.setEffect(null);
+    	ButtonEntrar.setEffect(null);
 
     }
     
     @FXML
     void EscondeSenhaSenha(MouseEvent event) {
 
-    txtsenha.setVisible(false);
-   	 String senha = String.valueOf(psfsenha.getText());
-   	ImMostra.setVisible(true);
-    ImMostra.setDisable(false);
+    txtSenha.setVisible(false);
+   	 String Senha = String.valueOf(senha.getText());
+   	MostraSenha.setVisible(true);
+    MostraSenha.setDisable(false);
     
-    ImEsconde.setVisible(false);
-    ImEsconde.setDisable(true);
-   	 txtsenha.setText(senha);
-       psfsenha.setVisible(true);
+    EscondeSenha.setVisible(false);
+    EscondeSenha.setDisable(true);
+   	 txtSenha.setText(Senha);
+       senha.setVisible(true);
     	
     }
     
     @FXML
     void MostrarSenha(MouseEvent event) {
 
-    	String senha = String.valueOf(psfsenha.getText());
+    	String Senha = String.valueOf(senha.getText());
 
-    	txtsenha.setText(senha);
-    	txtsenha.setVisible(true);
-        ImMostra.setVisible(false);
-        ImMostra.setDisable(true);
+    	txtSenha.setText(Senha);
+    	txtSenha.setVisible(true);
+        MostraSenha.setVisible(false);
+        MostraSenha.setDisable(true);
         
-        ImEsconde.setVisible(true);
-        ImEsconde.setDisable(false);
+        EscondeSenha.setVisible(true);
+        EscondeSenha.setDisable(false);
         
-        psfsenha.setVisible(false);
+        senha.setVisible(false);
     	
     }
 
@@ -235,9 +279,5 @@ public class TelaDeLoginController {
 	class Delta {
 	    double x, y;
 	}
-	
-
-    
-
     
 }
