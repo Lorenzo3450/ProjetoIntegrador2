@@ -1,6 +1,7 @@
-	package controller.login;
+package controller.login;
 
 	import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,67 +13,105 @@ import model.dao.login.RecuperSenhaModel;
 import controller.Ferramentas.EfeitoBtn;
 import controller.Main;
 import javafx.fxml.FXML;
-	import javafx.scene.control.PasswordField;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 	import javafx.scene.control.TextField;
 	import javafx.scene.image.ImageView;
 	import javafx.scene.input.KeyEvent;
 	import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Line;
+import javafx.scene.text.Text;
 
 	public class TelaRecuperaSenhaController {
 
 		EfeitoBtn efeito = new EfeitoBtn();
 		
-	    @FXML
-	    private ImageView Btnfinal;
+		 @FXML
+		    private PasswordField ConfirmarSen;
 
-	    @FXML
-	    private ImageView ImEsconde;
+		    @FXML
+		    private ImageView EscondeSenha;
 
-	    @FXML
-	    private ImageView ImEsconde1;
+		    @FXML
+		    private ImageView EscondeSenha2;
 
-	    @FXML
-	    private ImageView ImMostra;
+		    @FXML
+		    private ImageView MostraSenha;
 
-	    @FXML
-	    private ImageView ImMostra1;
-	    
-	    @FXML
-	    private TextField TxtCpf;
+		    @FXML
+		    private ImageView MostraSenha2;
 
-	    @FXML
-	    private TextField TxtPalavrasDeRecuperacao1;
+		    @FXML
+		    private Line linha1;
 
-	    @FXML
-	    private TextField TxtPalavrasDeRecuperacao2;
+		    @FXML
+		    private Line linha2;
 
-	    @FXML
-	    private TextField TxtPalavrasDeRecuperacao3;
+		    @FXML
+		    private ImageView logo;
 
-	    @FXML
-	    private PasswordField psfConfirmaNovaSenha;
+		    @FXML
+		    private Pane paneColuna;
 
-	    @FXML
-	    private PasswordField psfsNovaSenha;
-	    
-	    @FXML
-	    private TextField txtSenha;
+		    @FXML
+		    private Pane panePrincipal;
 
-	    @FXML
-	    private TextField txtSenha1;
+		    @FXML
+		    private Pane paneTeto;
 
+		    @FXML
+		    private Label redefinirSenha;
+
+		    @FXML
+		    private PasswordField senha;
+
+		    @FXML
+		    private TextField txfApelido;
+
+		    @FXML
+		    private TextField txfCPF;
+
+		    @FXML
+		    private TextField txfNomeMae;
+
+		    @FXML
+		    private TextField txfPrimeiraEscola;
+
+		    @FXML
+		    private Text txtApelido;
+
+		    @FXML
+		    private Text txtCPF;
+
+		    @FXML
+		    private Text txtConfirmarSen;
+
+		    @FXML
+		    private Text txtNomeMae;
+
+		    @FXML
+		    private Text txtNovaSenha;
+
+		    @FXML
+		    private Text txtPrimeiraEscola;
+		    
+		    @FXML
+		    private Button buttonFinalizar;
+		    
 	    @FXML
 	    void BtnFinalizar(MouseEvent event) throws SQLException {
 	    	
-	    	if(TxtPalavrasDeRecuperacao1.getText() !=""&& TxtPalavrasDeRecuperacao2.getText() !=""
-    			&& TxtPalavrasDeRecuperacao3.getText() !=""&& TxtCpf.getText() != "" &&
-    			psfConfirmaNovaSenha.getText() != "" && psfsNovaSenha.getText() != ""){
+	    	if(txtPrimeiraEscola.getText() !=""&& txtNomeMae.getText() !=""
+    			&& txtApelido.getText() !=""&& txtCPF.getText() != "" &&
+    			ConfirmarSen.getText() != "" && senha.getText() != ""){
 	    		
-	    		if(psfsNovaSenha.getText().equals(psfConfirmaNovaSenha.getText())) {
+	    		if(senha.getText().equals(ConfirmarSen.getText())) {
 	    			
 	    			
-	    			RecuperSenhaModel.AlteraSenha(psfsNovaSenha.getText(), TxtPalavrasDeRecuperacao1.getText()
-	    					, TxtPalavrasDeRecuperacao2.getText(), TxtPalavrasDeRecuperacao3.getText());
+	    			RecuperSenhaModel.AlteraSenha(senha.getText(), txtPrimeiraEscola.getText()
+	    					, txtNomeMae.getText(), txtApelido.getText());
 	    			
 	    			
 
@@ -89,64 +128,64 @@ import javafx.fxml.FXML;
 	    @FXML
 	    void EscondeSenhaSenha(MouseEvent event) {
 
-	    	txtSenha.setVisible(false);
-	       	 String senha = String.valueOf(psfsNovaSenha.getText());
-	       	ImMostra.setVisible(true);
-	        ImMostra.setDisable(false);
+	    	txtNovaSenha.setVisible(false);
+	       	 String Senha = String.valueOf(senha.getText());
+	       	MostraSenha.setVisible(true);
+	        MostraSenha.setDisable(false);
 	        
-	        ImEsconde.setVisible(false);
-	        ImEsconde.setDisable(true);
-	       	 txtSenha.setText(senha);
-	           psfsNovaSenha.setVisible(true);
+	        EscondeSenha.setVisible(false);
+	        EscondeSenha.setDisable(true);
+	       	 txtNovaSenha.setText(Senha);
+	           senha.setVisible(true);
 	    	
 	    }
 
 	    @FXML
 	    void EscondeSenhaSenha1(MouseEvent event) {
 
-	    	txtSenha1.setVisible(false);
-	       	 String senha = String.valueOf(psfConfirmaNovaSenha.getText());
-	       	ImMostra1.setVisible(true);
-	        ImMostra1.setDisable(false);
+	    	txtConfirmarSen.setVisible(false);
+	       	 String Senha = String.valueOf(senha.getText());
+	       	MostraSenha2.setVisible(true);
+	       	MostraSenha2.setDisable(false);
 	        
-	        ImEsconde1.setVisible(false);
-	        ImEsconde1.setDisable(true);
-	       	 txtSenha1.setText(senha);
-	           psfConfirmaNovaSenha.setVisible(true);
+	       	EscondeSenha2.setVisible(false);
+	       	EscondeSenha2.setDisable(true);
+	       	txtConfirmarSen.setText(Senha);
+	        ConfirmarSen.setVisible(true);
 	    	
 	    }
 
 	    @FXML
 	    void MostrarSenha(MouseEvent event) {
 
-	    	String senha = String.valueOf(psfsNovaSenha.getText());
+	    	String Senha = String.valueOf(senha.getText());
 
-	    	txtSenha.setText(senha);
-	    	txtSenha.setVisible(true);
-	        ImMostra.setVisible(false);
-	        ImMostra.setDisable(true);
+	    	txtNovaSenha.setText(Senha);
+	    	txtNovaSenha.setVisible(true);
+	        MostraSenha.setVisible(false);
+	        MostraSenha.setDisable(true);
 	        
-	        ImEsconde.setVisible(true);
-	        ImEsconde.setDisable(false);
+	        EscondeSenha.setVisible(true);
+	        EscondeSenha.setDisable(false);
 	        
-	        psfsNovaSenha.setVisible(false);
+	        senha.setVisible(false);
 	    	
 	    }
 
 	    @FXML
 	    void MostrarSenha1(MouseEvent event) {
 
-	    	String senha = String.valueOf(psfConfirmaNovaSenha.getText());
+	    	String Senha = String.valueOf(senha.getText());
 
-	    	txtSenha1.setText(senha);
-	    	txtSenha1.setVisible(true);
-	        ImMostra1.setVisible(false);
-	        ImMostra1.setDisable(true);
+	    	txtConfirmarSen.setText(Senha);
+	    	txtConfirmarSen.setVisible(true);
+	        MostraSenha2.setVisible(false);
+	        MostraSenha2.setDisable(true);
 	        
-	        ImEsconde1.setVisible(true);
-	        ImEsconde1.setDisable(false);
+	        EscondeSenha2.setVisible(true);
+	        EscondeSenha2.setDisable(false);
 	        
-	        psfConfirmaNovaSenha.setVisible(false);
+	        ConfirmarSen.setVisible(false);
 	    	
 	    	
 	    }
@@ -156,7 +195,7 @@ import javafx.fxml.FXML;
 	    @FXML
 	    void Entrar1(MouseEvent event) {
 
-	    	Btnfinal.setEffect(efeito.Efeito());
+	    	buttonFinalizar.setEffect(efeito.Efeito());
 	    	
 	    }
 
@@ -164,7 +203,7 @@ import javafx.fxml.FXML;
 	    @FXML
 	    void Sair1(MouseEvent event) {
 
-	    	Btnfinal.setEffect(null);
+	    	buttonFinalizar.setEffect(null);
 	    	
 	    }
 
