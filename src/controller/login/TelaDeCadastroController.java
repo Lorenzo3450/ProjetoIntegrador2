@@ -1,202 +1,209 @@
 package controller.login;
 
+import java.sql.Connection;
+
+import java.sql.PreparedStatement;
+
 import javax.swing.JOptionPane;
 
+import model.dao.ConexãoBD;
+import model.dao.login.CadastroModel;
 import controller.Ferramentas.EfeitoBtn;
+import controller.Ferramentas.TrocaData;
 import controller.Main;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Line;
+import javafx.scene.text.Text;
 
 public class TelaDeCadastroController {
-	
-	
-	public static String email,senha,txtr1,txtr2,txtr3;
-	
+
 	EfeitoBtn efeito = new EfeitoBtn();
+	
+	  @FXML
+	    private Line Linha1;
 
-    @FXML
-    private Label Logar;
-    
-    @FXML
-    private ImageView ImEsconde;
+	    @FXML
+	    private Line Linha2;
 
-    @FXML
-    private ImageView ImEsconde1;
+	    @FXML
+	    private ImageView Logo;
 
-    @FXML
-    private ImageView ImMostra;
+	    @FXML
+	    private Pane Pane1;
 
-    @FXML
-    private ImageView ImMostra1;
-    
-    @FXML
-    private TextField txtsenha;
+	    @FXML
+	    private Pane Pane2;
 
-    @FXML
-    private TextField txtsenha2;
+	    @FXML
+	    private Pane PanePrincipal;
 
-    
-    
-    @FXML
-    private TextField TxtPalavrasDeRecuperacao1;
+	    @FXML
+	    private Button buttonContinuar;
 
-    @FXML
-    private TextField TxtPalavrasDeRecuperacao2;
+	    @FXML
+	    private ImageView imagemTijolos;
+	    
+	    @FXML
+	    private ImageView txfDataNascimento;
 
-    @FXML
-    private TextField TxtPalavrasDeRecuperacao3;
+	    @FXML
+	    private TextField txfApelido;
 
+	    @FXML
+	    private TextField txfBairro;
 
-    @FXML
-    private TextField TxtEmail;
+	    @FXML
+	    private TextField txfCEP;
 
-    @FXML
-     private ImageView imContinuar;
+	    @FXML
+	    private TextField txfCPF;
 
-    @FXML
-    private ImageView imSeta;
+	    @FXML
+	    private TextField txfCidade;
 
-    @FXML
-    private ImageView imbtn;
+	    @FXML
+	    private TextField txfLogradouro;
 
-    @FXML
-    private PasswordField psfConfirma;
+	    @FXML
+	    private TextField txfNome;
 
+	    @FXML
+	    private TextField txfTelefone;
+	    
+	    @FXML
+	    private Text txtDataNascimento;
+
+	    @FXML
+	    private Text txtBairro;
+
+	    @FXML
+	    private Text txtCEP;
+
+	    @FXML
+	    private Text txtCPF;
+
+	    @FXML
+	    private Label txtCadastro;
+
+	    @FXML
+	    private Text txtCidade;
+
+	    @FXML
+	    private Text txtLogradouro;
+
+	    @FXML
+	    private Text txtTelefone;
+
+	    @FXML
+	    private Text txtNome;
     @FXML
-    private PasswordField psfsenha;
-    
-   
-    @FXML
-    void Continuar1(MouseEvent event) throws Exception {
-    	//verifica se todos os campos estão prenchidos
-    	if(psfsenha.getText() != "" && TxtEmail.getText() != "" && psfConfirma.getText() != "" 
-    			&& TxtPalavrasDeRecuperacao1.getText() !=""&& TxtPalavrasDeRecuperacao2.getText() !=""
-    			&& TxtPalavrasDeRecuperacao3.getText() !="") {
+    void BtnFinalizar(MouseEvent event) throws Exception {
+    	
+    	if(txtBairro.getText() != "" && txtCEP.getText() != "" && 
+    			txtCidade.getText() != "" && txtCPF.getText() != "" &&
+    			txtDataNascimento.getText() != "" && txtNome.getText() != "" &&
+    			txtLogradouro.getText() != "" && txtTelefone.getText() != "") {
     		
-    		//verifica se a senha digitada no campo de senha é igual ao campo confirma senha
     		
-    		if(psfsenha.getText().equals( psfConfirma.getText())) {
+    		//metodo da classe cadastro model que realiza o cadastro
+    
+    			CadastroModel.RealizaCadastro(txtNome.getText(), txtCPF.getText(), txtDataNascimento.getText(), txtTelefone.getText(),
+    					TelaDeCadastro2Controller.email, TelaDeCadastro2Controller.Senha,  txtLogradouro.getText(), 
+    					txtBairro.getText(),  txtCEP.getText(), txtCidade.getText(),TelaDeCadastro2Controller.txtr1,
+    					TelaDeCadastro2Controller.txtr2,TelaDeCadastro2Controller.txtr3);
+    		
+    		
+    			txtNome.setText("");
+    			txtCPF.setText("");
+    			txtDataNascimento.setText("");
+    			txtTelefone.setText("");
+				txtLogradouro.setText("");
+				txtBairro.setText("");  
+				txtCEP.setText(""); 
+				txtCidade.setText("");
     			
-    			email=TxtEmail.getText();
-    			senha=psfsenha.getText();
-    			txtr1= TxtPalavrasDeRecuperacao1.getText();
-    			txtr2=  TxtPalavrasDeRecuperacao2.getText();
-    			txtr3=  TxtPalavrasDeRecuperacao3.getText();
+    			JOptionPane.showMessageDialog(null, "dados cadastrados com sucesso");
+
     			
-    			psfsenha.setText("");
-    			TxtEmail.setText("");
-    			psfConfirma.setText("");
-    			TxtPalavrasDeRecuperacao1.setText("");
-    			TxtPalavrasDeRecuperacao2.setText("");
-    			TxtPalavrasDeRecuperacao3.setText("");
-    			
-    			Main.Cena("Cadastro2");
+    	
+    				
+    				Main.Cena("Login");
     		
     		
-    		}else JOptionPane.showMessageDialog(null, "senha digitada no campo de confirmação não é igual a senha digitada no campo senha ");
-    	
-    	}else JOptionPane.showMessageDialog(null, "Preencha todos os campos");
+    	}else JOptionPane.showMessageDialog(null, "Prencha todos os campos");
     	
 
     }
 
-
-    @FXML
-    void clique(MouseEvent event) throws Exception{
-
-    	Main.Cena("Login");
-    	
-    }
-    
     
 
     @FXML
-    void EscondeSenhaSenha(MouseEvent event) {
+    void vol1(MouseEvent event) throws Exception {
 
-    	 txtsenha.setVisible(false);
-       	 String senha = String.valueOf(psfsenha.getText());
-       	ImMostra.setVisible(true);
-        ImMostra.setDisable(false);
-        
-        ImEsconde.setVisible(false);
-        ImEsconde.setDisable(true);
-       	 txtsenha.setText(senha);
-           psfsenha.setVisible(true);
+    	Main.Cena("Cadastro");
     	
     }
 
-    @FXML
-    void EscondeSenhaSenha2(MouseEvent event) {
-
-    	 txtsenha2.setVisible(false);
-       	 String senha = String.valueOf(psfsenha.getText());
-       	ImMostra1.setVisible(true);
-        ImMostra1.setDisable(false);
-        
-        ImEsconde1.setVisible(false);
-        ImEsconde1.setDisable(true);
-       	 txtsenha.setText(senha);
-           psfConfirma.setVisible(true);
-    	
-    }
-
-    @FXML
-    void MostrarSenha(MouseEvent event) {
-
-
-    	String senha = String.valueOf(psfsenha.getText());
-
-    	txtsenha.setText(senha);
-    	txtsenha.setVisible(true);
-        ImMostra.setVisible(false);
-        ImMostra.setDisable(true);
-        
-        ImEsconde.setVisible(true);
-        ImEsconde.setDisable(false);
-        
-        psfsenha.setVisible(false);
-    	
-    	
-    }
-
-    @FXML
-    void MostrarSenha2(MouseEvent event) {
-    
-
-    	String senha = String.valueOf(psfsenha.getText());
-
-    	txtsenha2.setText(senha);
-    	txtsenha2.setVisible(true);
-        ImMostra1.setVisible(false);
-        ImMostra1.setDisable(true);
-        
-        ImEsconde1.setVisible(true);
-        ImEsconde1.setDisable(false);
-        
-        psfConfirma.setVisible(false);
-    	
-    	
-    }
-    
-    
-  
-    
     @FXML
     void Entrar1(MouseEvent event) {
-    	
-    	imbtn.setEffect(efeito.Efeito());
+
+    	buttonContinuar.setEffect(efeito.Efeito());
     	
     }
 
     @FXML
     void Sair1(MouseEvent event) {
+
+    	buttonContinuar.setEffect(null);
     	
-    	imbtn.setEffect(null);
+    }
+    
+  
+    @FXML
+    void Formataçãodata(KeyEvent event) {
+
+    	if(txtDataNascimento.getText().length()==2) {
+      		
+    		txtDataNascimento.setText(txtDataNascimento.getText()+"/");
+    		txtDataNascimento.setCaretPosition(4);
+    		
+    	}
+    	
+    	if(txtDataNascimento.getText().length()==5) {
+      		
+    		txtDataNascimento.setText(txtDataNascimento.getText()+"/");
+    		txtDataNascimento.setCaretPosition(6);
+    		
+    	}
+    	
     }
 
+    @FXML
+    void FortmataçaoTelefone(KeyEvent event) {
 
+    	if(txtTelefone.getText().length()==2) {
+      		
+    		txtTelefone.setText("("+txtTelefone.getText()+")");
+    		txtTelefone.setCaretPosition(4);;
+  		
+    	}
+    	
+    	if(txtTelefone.getText().length()==9) {
+      		
+    		txtTelefone.setText(txtTelefone.getText()+"-");
+    		txtTelefone.setCaretPosition(10);;
+  		
+    	}
+    	
+    }
+
+    
+ 
 }
