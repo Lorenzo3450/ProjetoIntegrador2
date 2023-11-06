@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.Avatar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -12,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="720.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.gerente.TelaDePerfilController">
    <children>
       <ImageView fx:id="ImagemDeFundo" fitHeight="720.0" fitWidth="1366.0" layoutY="2.0" pickOnBounds="true">
          <image>
@@ -40,7 +39,6 @@
       </AnchorPane>
       <AnchorPane fx:id="PainelDaFoto" layoutX="64.0" layoutY="105.0" prefHeight="580.0" prefWidth="485.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
          <children>
-            <Avatar fx:id="FotoDoPerfil" layoutX="155.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" radius="75.0" />
             <Label fx:id="LabelAlterarfoto" layoutX="160.0" layoutY="208.0" style="-fx-text-fill: #ffffff; -fx-background-image: &quot;C:\Users\janet\Downloads\AlterarFoto.png&quot;;" text="Alterar foto do perfil">
                <font>
                   <Font name="Arial" size="16.0" />
@@ -52,6 +50,11 @@
                </image>
             </ImageView>
             <PasswordField fx:id="senha" layoutX="37.0" layoutY="479.0" prefHeight="39.0" prefWidth="408.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-border-radius: 10;" />
+            <ImageView fx:id="FotoDoPerfil" fitHeight="132.0" fitWidth="171.0" layoutX="167.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/PerfilIcon.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="PainelDosDados" layoutX="572.0" layoutY="105.0" prefHeight="580.0" prefWidth="730.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
@@ -163,7 +166,7 @@
                   </DropShadow>
                </effect>
             </TextField>
-            <Text fx:id="txtRua_Casa" fill="WHITE" layoutX="40.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rua, Casa">
+            <Text fx:id="txtLogradouro" fill="WHITE" layoutX="40.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logradouro">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
@@ -227,4 +230,3 @@
       </Text>
    </children>
 </AnchorPane>
-
