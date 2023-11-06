@@ -13,14 +13,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1366.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1366.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.TelaDeCadastroController">
    <children>
-      <ImageView fitHeight="760.0" fitWidth="1366.0" layoutY="-10.0" pickOnBounds="true">
+      <ImageView fx:id="imagemTijolos" fitHeight="760.0" fitWidth="1366.0" layoutY="-10.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201%20(1).png" />
          </image>
       </ImageView>
-      <Pane layoutX="666.0" layoutY="10.0" prefHeight="49.0" prefWidth="34.0" style="-fx-background-color: #002147;">
+      <Pane fx:id="Pane2" layoutX="666.0" layoutY="10.0" prefHeight="49.0" prefWidth="34.0" style="-fx-background-color: #002147;">
          <effect>
             <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
                <color>
@@ -28,19 +28,19 @@
                </color>
             </DropShadow>
          </effect></Pane>
-      <Pane layoutX="98.0" layoutY="38.0" prefHeight="667.0" prefWidth="1169.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
+      <Pane fx:id="PanePrincipal" layoutX="98.0" layoutY="38.0" prefHeight="667.0" prefWidth="1169.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
          <children>
-            <ImageView fitHeight="122.0" fitWidth="132.0" layoutX="516.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Logo" fitHeight="122.0" fitWidth="132.0" layoutX="516.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../../Group%204%201%20(3).png" />
                </image>
             </ImageView>
-            <Label layoutX="444.0" layoutY="128.0" prefHeight="74.0" prefWidth="279.0" text="Cadastro" textFill="WHITE">
+            <Label fx:id="txtCadastro" layoutX="444.0" layoutY="128.0" prefHeight="74.0" prefWidth="279.0" text="Cadastro" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="64.0" />
                </font>
             </Label>
-            <TextField layoutX="48.0" layoutY="251.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+            <TextField fx:id="txfNome" layoutX="48.0" layoutY="251.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -52,7 +52,7 @@
                   </DropShadow>
                </effect>
             </TextField>
-            <TextField layoutX="595.0" layoutY="338.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+            <TextField fx:id="txfTelefone" layoutX="595.0" layoutY="338.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -64,7 +64,7 @@
                   </DropShadow>
                </effect>
             </TextField>
-            <TextField layoutX="595.0" layoutY="251.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+            <TextField fx:id="txfDataNascimento" layoutX="595.0" layoutY="251.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -76,7 +76,7 @@
                   </DropShadow>
                </effect>
             </TextField>
-            <TextField layoutX="48.0" layoutY="338.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+            <TextField fx:id="txfCPF" layoutX="48.0" layoutY="338.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -88,7 +88,7 @@
                   </DropShadow>
                </effect>
             </TextField>
-            <Button layoutX="484.0" layoutY="599.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="198.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 18;" text="Continuar" textFill="#002147">
+            <Button fx:id="buttonContinuar" layoutX="484.0" layoutY="599.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="198.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 18;" text="Continuar" textFill="#002147">
                <font>
                   <Font name="Arial Bold" size="25.0" />
                </font>
@@ -100,29 +100,29 @@
                   </DropShadow>
                </effect>
             </Button>
-            <Line endX="224.6390380859375" endY="3.0517578125E-5" layoutX="529.0" layoutY="211.0" startX="-117.36099243164062" startY="3.0517578125E-5" stroke="WHITE" strokeWidth="3.0" />
-            <Line endX="375.111083984375" endY="3.0517578125E-5" layoutX="520.0" layoutY="404.0" startX="-242.66665649414062" startY="3.0517578125E-5" stroke="WHITE" strokeWidth="3.0" />
-            <Text fill="WHITE" layoutX="55.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" CPF">
+            <Line fx:id="Linha1" endX="224.6390380859375" endY="3.0517578125E-5" layoutX="529.0" layoutY="211.0" startX="-117.36099243164062" startY="3.0517578125E-5" stroke="WHITE" strokeWidth="3.0" />
+            <Line fx:id="Linha2" endX="375.111083984375" endY="3.0517578125E-5" layoutX="520.0" layoutY="404.0" startX="-242.66665649414062" startY="3.0517578125E-5" stroke="WHITE" strokeWidth="3.0" />
+            <Text fx:id="txtNome" fill="WHITE" layoutX="55.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="603.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Primeira escola que estudou">
+            <Text fx:id="txtDataNascimento" fill="WHITE" layoutX="603.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de nascimento">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="61.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apelido">
+            <Text fx:id="txtCPF" fill="WHITE" layoutX="61.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="604.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do meio da mãe">
+            <Text fx:id="txtTelefone" fill="WHITE" layoutX="604.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
             </Text>
-            <TextField layoutX="48.0" layoutY="447.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+            <TextField fx:id="txfLogradouro" layoutX="48.0" layoutY="447.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -134,7 +134,7 @@
                   </DropShadow>
                </effect>
             </TextField>
-            <TextField layoutX="595.0" layoutY="534.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+            <TextField fx:id="txfCEP" layoutX="595.0" layoutY="534.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -146,7 +146,7 @@
                   </DropShadow>
                </effect>
             </TextField>
-            <TextField layoutX="595.0" layoutY="447.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+            <TextField fx:id="txfBairro" layoutX="595.0" layoutY="447.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -158,7 +158,7 @@
                   </DropShadow>
                </effect>
             </TextField>
-            <TextField layoutX="48.0" layoutY="534.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+            <TextField fx:id="txfCidade" layoutX="48.0" layoutY="534.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -170,22 +170,22 @@
                   </DropShadow>
                </effect>
             </TextField>
-            <Text fill="WHITE" layoutX="61.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logradouro">
+            <Text fx:id="txtLogradouro" fill="WHITE" layoutX="61.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logradouro">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="603.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bairro">
+            <Text fx:id="txtBairro" fill="WHITE" layoutX="603.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bairro">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="63.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade">
+            <Text fx:id="txtCidade" fill="WHITE" layoutX="63.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="604.0" layoutY="521.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP">
+            <Text fx:id="txtCEP" fill="WHITE" layoutX="604.0" layoutY="521.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP">
                <font>
                   <Font name="Arial" size="20.0" />
                </font>
@@ -199,7 +199,7 @@
             </DropShadow>
          </effect>
       </Pane>
-      <Pane layoutY="-1.0" prefHeight="18.0" prefWidth="1366.0" style="-fx-background-color: #002147;">
+      <Pane fx:id="Pane1" layoutY="-1.0" prefHeight="18.0" prefWidth="1366.0" style="-fx-background-color: #002147;">
          <effect>
             <DropShadow height="1.0" radius="0.0" width="0.0">
                <color>
