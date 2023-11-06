@@ -1,11 +1,17 @@
 package controller.gerente;
 
 import javafx.fxml.FXML;
+
+
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
+
+import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -27,46 +33,98 @@ import controller.Ferramentas.EfeitoBtn;
 
 public class TelaDePerfilController {
 
-	EfeitoBtn efeito = new EfeitoBtn();
+    @FXML
+    private ImageView AlterarFotoIcon;
+    
+    @FXML
+    private ImageView FotoDoPerfil;
 
     @FXML
-    private ImageView BtnEncerrarSessao;
+    private ImageView ImagemDeFundo;
 
     @FXML
-    private TextField TxtBairro;
+    private Label LabelAlterarfoto;
 
     @FXML
-    private TextField TxtCPF;
+    private ImageView Logo;
 
     @FXML
-    private TextField TxtCep;
+    private AnchorPane PainelDaFoto;
 
     @FXML
-    private TextField TxtCidade;
+    private AnchorPane PainelDeCima;
 
     @FXML
-    private TextField TxtDataNascimento;
+    private AnchorPane PainelDosDados;
 
     @FXML
-    private TextField TxtEmail;
+    private ImageView abrirSideBar;
 
     @FXML
-    private TextField TxtLongradouro;
+    private PasswordField senha;
 
     @FXML
-    private TextField TxtNome;
+    private TextField txfBairro;
 
     @FXML
-    private TextField TxtSenha;
+    private TextField txfCEP;
 
     @FXML
-    private TextField TxtTelefone;
+    private TextField txfCPF;
 
     @FXML
-    private ImageView imgFoto;
+    private TextField txfCidade;
 
     @FXML
-    private Label lblTrocarFoto;
+    private TextField txfDataNascimento;
+
+    @FXML
+    private TextField txfEmail;
+
+    @FXML
+    private TextField txfNome;
+
+    @FXML
+    private TextField txfRua_Casa;
+
+    @FXML
+    private TextField txfTelefone;
+
+    @FXML
+    private Text txtBairro;
+
+    @FXML
+    private Text txtCEP;
+
+    @FXML
+    private Text txtCPF;
+
+    @FXML
+    private Text txtCidade;
+
+    @FXML
+    private Text txtDadosPesssoais;
+
+    @FXML
+    private Text txtDataNascimento;
+
+    @FXML
+    private Text txtEmail;
+
+    @FXML
+    private Text txtEndereço;
+
+    @FXML
+    private Text txtNome;
+
+    @FXML
+    private Text txtLogradouro;
+
+    @FXML
+    private Text txtSenha;
+
+    @FXML
+    private Text txtTelefone;
 
  
     @FXML
@@ -78,17 +136,17 @@ public class TelaDePerfilController {
         if (!funcionarios.isEmpty()) {
             Funcionario funcionario = funcionarios.get(0); // Supondo que você obtenha apenas um funcionário
             funcionario.setId(idFuncionario);
-            TxtNome.setText(funcionario.getNomeCompleto());
-            TxtCPF.setText(funcionario.getCpf());
-            TxtDataNascimento.setText(funcionario.getDataNascimento().toString());
-            TxtTelefone.setText(funcionario.getTelefone());
-            TxtEmail.setText(funcionario.getEmail());
-            TxtSenha.setText(funcionario.getSenha());
+            txtNome.setText(funcionario.getNomeCompleto());
+            txtCPF.setText(funcionario.getCpf());
+            txtDataNascimento.setText(funcionario.getDataNascimento().toString());
+            txtTelefone.setText(funcionario.getTelefone());
+            txtEmail.setText(funcionario.getEmail());
+            txtSenha.setText(funcionario.getSenha());
             // Preencha os campos de endereço
-            TxtLongradouro.setText(funcionario.getEndereco().getLogradouro());
-            TxtBairro.setText(funcionario.getEndereco().getBairro());
-            TxtCep.setText(funcionario.getEndereco().getCep());
-            TxtCidade.setText(funcionario.getEndereco().getCidade());
+            txtLogradouro.setText(funcionario.getEndereco().getLogradouro());
+            txtBairro.setText(funcionario.getEndereco().getBairro());
+            txtCEP.setText(funcionario.getEndereco().getCep());
+            txtCidade.setText(funcionario.getEndereco().getCidade());
 
             // Exemplo: TxtBairro.setText(funcionario.getEndereco().getBairro());
         }
@@ -103,7 +161,7 @@ public class TelaDePerfilController {
         // Mostrar o diálogo de seleção de arquivo
         File selectedFile = fileChooser.showOpenDialog(new Stage());
         if (selectedFile != null) {
-            imgFoto.setImage(new Image(selectedFile.toURI().toString()));     
+            FotoDoPerfil.setImage(new Image(selectedFile.toURI().toString()));     
         }
     }
     
@@ -136,14 +194,6 @@ public class TelaDePerfilController {
     }
 
     @FXML
-    void Entrar7(MouseEvent event) {
-
-    	BtnEncerrarSessao.setEffect(efeito.Efeito());
-    	
-    }
-
-
-    @FXML
     void RealizarAlteração(MouseEvent event) throws SQLException {
         int idFuncionario = MainModel.verificaID();
         List<Funcionario> funcionarios = TelaDePerfilDao.getFuncionarioComEndereco(idFuncionario);
@@ -152,20 +202,20 @@ public class TelaDePerfilController {
             Funcionario funcionario = funcionarios.get(0);
 
             // Atualize as informações do funcionário com os valores dos campos TextField
-            funcionario.setNomeCompleto(TxtNome.getText());
-            funcionario.setCpf(TxtCPF.getText());
-            funcionario.setDataNascimento(LocalDate.parse(TxtDataNascimento.getText()));
-            funcionario.setTelefone(TxtTelefone.getText());
-            funcionario.setEmail(TxtEmail.getText());
-            funcionario.setSenha(TxtSenha.getText());
+            funcionario.setNomeCompleto(txtNome.getText());
+            funcionario.setCpf(txtCPF.getText());
+            funcionario.setDataNascimento(LocalDate.parse(txtDataNascimento.getText()));
+            funcionario.setTelefone(txtTelefone.getText());
+            funcionario.setEmail(txtEmail.getText());
+            funcionario.setSenha(txtSenha.getText());
             funcionario.setId(idFuncionario);
 
             // Atualize as informações do endereço
             Endereco endereco = funcionario.getEndereco();
-            endereco.setLogradouro(TxtLongradouro.getText());
-            endereco.setBairro(TxtBairro.getText());
-            endereco.setCep(TxtCep.getText());
-            endereco.setCidade(TxtCidade.getText());
+            endereco.setLogradouro(txtLogradouro.getText());
+            endereco.setBairro(txtBairro.getText());
+            endereco.setCep(txtCEP.getText());
+            endereco.setCidade(txtCidade.getText());
 
             // Agora, chame o método para atualizar o funcionário no banco de dados
             boolean atualizacaoSucesso = TelaDePerfilDao.atualizarFuncionario(funcionario);
@@ -178,13 +228,6 @@ public class TelaDePerfilController {
                 System.out.println("Falha na atualização das informações.");
             }
         }
-    }
-    
-    @FXML
-    void Sair7(MouseEvent event) {
-
-    	BtnEncerrarSessao.setEffect(null);
-    	
     }
     
     
