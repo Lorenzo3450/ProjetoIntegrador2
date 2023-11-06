@@ -1,76 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="720.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.TelaRecuperaSenhaController">
    <children>
-      <ImageView fitHeight="712.0" fitWidth="1366.0" layoutY="-10.0" pickOnBounds="true">
+      <ImageView fitHeight="760.0" fitWidth="1366.0" layoutY="-10.0" pickOnBounds="true">
          <image>
-            <Image url="@../../Imagens/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201Parede.png" />
+            <Image url="@../../../../../../Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201%20(1).png" />
          </image>
       </ImageView>
-      <Pane layoutX="65.0" layoutY="69.0" prefHeight="576.0" prefWidth="1228.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
+      <Pane fx:id="paneColuna" layoutX="677.0" layoutY="-4.0" prefHeight="84.0" prefWidth="34.0" style="-fx-background-color: #002147;">
+         <effect>
+            <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Pane>
+      <Pane fx:id="panePrincipal" layoutX="77.0" layoutY="69.0" prefHeight="627.0" prefWidth="1228.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
          <children>
-            <ImageView fitHeight="122.0" fitWidth="132.0" layoutX="500.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logo" fitHeight="122.0" fitWidth="132.0" layoutX="549.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Imagens/Group%204%201Spmdg.png" />
+                  <Image url="@../../../../../../Group%204%201%20(3).png" />
                </image>
             </ImageView>
-            <Label layoutX="369.0" layoutY="128.0" prefHeight="46.0" prefWidth="534.0" text="Redefinir senha" textFill="WHITE">
+            <Label fx:id="redefinirSenha" layoutX="372.0" layoutY="129.0" prefHeight="74.0" prefWidth="485.0" text="Redefinir senha" textFill="WHITE">
                <font>
-                  <Font name="Calibri" size="65.0" />
+                  <Font name="Arial Bold" size="64.0" />
                </font>
             </Label>
-            <Separator layoutX="402.0" layoutY="207.0" prefWidth="350.0" style="-fx-background-color: #FFFFFF;" />
-            <TextField layoutX="54.0" layoutY="232.0" prefHeight="49.0" prefWidth="514.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="CPF">
+            <Button fx:id="buttonFinalizar" layoutX="517.0" layoutY="534.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="198.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 18;" text="Finalizar" textFill="#002147">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Arial Bold" size="25.0" />
                </font>
-            </TextField>
-            <PasswordField layoutX="50.0" layoutY="410.0" prefHeight="49.0" prefWidth="514.0" promptText="Nova senha" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </PasswordField>
-            <TextField layoutX="631.0" layoutY="317.0" prefHeight="49.0" prefWidth="514.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Nome do meio da mãe">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </TextField>
-            <TextField layoutX="631.0" layoutY="232.0" prefHeight="49.0" prefWidth="514.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Primeira escola que estudou">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </TextField>
-            <TextField layoutX="50.0" layoutY="317.0" prefHeight="49.0" prefWidth="514.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Apelido">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </TextField>
-            <PasswordField layoutX="631.0" layoutY="410.0" prefHeight="49.0" prefWidth="514.0" promptText="Confirmar nova senha" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </PasswordField>
-            <Button layoutX="479.0" layoutY="486.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="218.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" text="Redefinir" textFill="#002147">
-               <font>
-                  <Font size="22.0" />
-               </font>
+               <effect>
+                  <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </Button>
          </children>
+         <effect>
+            <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
       </Pane>
-      <Pane layoutX="618.0" layoutY="-31.0" prefHeight="107.0" prefWidth="52.0" style="-fx-background-color: #002147;" />
-      <Pane layoutY="-1.0" prefHeight="20.0" prefWidth="1366.0" style="-fx-background-color: #002147;" />
-      <Separator layoutX="412.0" layoutY="450.0" prefWidth="450.0" style="-fx-background-color: #FFFFFF;" />
+      <Pane fx:id="paneTeto" prefHeight="20.0" prefWidth="1366.0" style="-fx-background-color: #002147;" />
+      <Line fx:id="linha1" endX="224.6390380859375" endY="3.0517578125E-5" layoutX="634.0" layoutY="280.0" startX="-117.36099243164062" startY="3.0517578125E-5" stroke="WHITE" strokeWidth="3.0" />
+      <TextField fx:id="txfCPF" layoutX="156.0" layoutY="324.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <effect>
+            <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextField>
+      <Text fx:id="txtCPF" fill="WHITE" layoutX="165.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txfPrimeiraEscola" layoutX="710.0" layoutY="324.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <effect>
+            <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextField>
+      <Text fx:id="txtPrimeiraEscola" fill="WHITE" layoutX="719.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Primeira escola que estudou">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txfApelido" layoutX="155.0" layoutY="413.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <effect>
+            <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextField>
+      <Text fx:id="txtApelido" fill="WHITE" layoutX="164.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apelido">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txfNomeMae" layoutX="709.0" layoutY="413.0" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-font-family: Arial, Helvetica, sans-serif; -fx-font-size: 20;">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <effect>
+            <DropShadow height="0.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextField>
+      <Text fx:id="txtNomeMae" fill="WHITE" layoutX="718.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do meio da mãe">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <Line fx:id="linha2" endX="328.00006103515625" endY="3.0517578125E-5" layoutX="659.0" layoutY="483.0" startX="-265.3333435058594" startY="3.0517578125E-5" stroke="WHITE" strokeWidth="3.0" />
+      <Text fx:id="txtNovaSenha" fill="WHITE" layoutX="164.0" layoutY="513.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nova senha">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtConfirmarSen" fill="WHITE" layoutX="718.0" layoutY="513.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmar nova senha">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="senha" layoutX="155.0" layoutY="526.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15; -fx-border-radius: 15; -fx-padding: 10;">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+         <effect>
+            <DropShadow height="1.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </PasswordField>
+      <ImageView fx:id="MostraSenha" fitHeight="34.0" fitWidth="25.0" layoutX="632.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../ver_updated.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="EscondeSenha" fitHeight="34.0" fitWidth="25.0" layoutX="632.0" layoutY="544.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../olho_updated.png" />
+         </image>
+      </ImageView>
+      <PasswordField fx:id="ConfirmarSen" layoutX="709.0" layoutY="526.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="524.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15; -fx-border-radius: 15; -fx-padding: 10;">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+         <effect>
+            <DropShadow height="1.0" offsetX="7.0" offsetY="7.0" radius="0.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </DropShadow>
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </PasswordField>
+      <ImageView fx:id="MostraSenha2" fitHeight="34.0" fitWidth="25.0" layoutX="1186.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../ver_updated.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="EscondeSenha2" fitHeight="34.0" fitWidth="25.0" layoutX="1186.0" layoutY="544.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../olho_updated.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
-
