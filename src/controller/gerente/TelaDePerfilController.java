@@ -15,6 +15,7 @@ import javax.imageio.ImageIO;
 import controller.Main;
 import controller.Ferramentas.EfeitoBtn;
 import javafx.embed.swing.SwingFXUtils;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -22,54 +23,80 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
+import model.DesignSistema;
 import model.Endereco;
 import model.Funcionario;
 import model.PerfilGeralModel;
 import model.dao.ConexãoBD;
+import model.dao.Gerente.PersonalizaSistemaDao;
 import model.dao.Gerente.TelaDePerfilDao;
 import model.dao.login.MainModel;
 
 public class TelaDePerfilController {
-    @FXML
-    private Button BtnEncerrarSessao;
 
     EfeitoBtn efeito = new EfeitoBtn();
     
     @FXML
-    private TextField TxtBairro;
+    private Button BtnEncerrarSessao;
 
     @FXML
-    private TextField TxtCPF;
+    private Pane barracima;
 
     @FXML
-    private TextField TxtCep;
-
-    @FXML
-    private TextField TxtCidade;
-
-    @FXML
-    private TextField TxtDataNascimento;
-
-    @FXML
-    private TextField TxtEmail;
-
-    @FXML
-    private TextField TxtLongradouro;
-
-    @FXML
-    private TextField TxtNome;
-
-    @FXML
-    private TextField TxtSenha;
-
-    @FXML
-    private TextField TxtTelefone;
+    private AnchorPane painelprincipal;
 
     @FXML
     private ImageView imgFoto;
+
+    @FXML
+    private Label lblInformacoes;
+
+    @FXML
+    private Label lblInformacoes2;
+
+    @FXML
+    private Label lblInformacoes3;
+
+    @FXML
+    private Label lblPerfil;
+
+    @FXML
+    private ImageView logo;
+
+    @FXML
+    private TextField txtBairro;
+
+    @FXML
+    private TextField txtCPF;
+
+    @FXML
+    private TextField txtCep;
+
+    @FXML
+    private TextField txtCidade;
+
+    @FXML
+    private TextField txtEmail;
+
+    @FXML
+    private TextField txtLogradouro;
+
+    @FXML
+    private TextField txtNascimento;
+
+    @FXML
+    private TextField txtNome;
+
+    @FXML
+    private TextField txtSenha;
+
+    @FXML
+    private TextField txtTelefone;
 
     @FXML
     private Label lblTrocarFoto;
@@ -95,19 +122,34 @@ public class TelaDePerfilController {
             Funcionario funcionario = funcionarios.get(0);
             funcionario.setId(idFuncionario);
 
-            TxtNome.setText(funcionario.getNomeCompleto());
-            TxtCPF.setText(funcionario.getCpf());
-            TxtDataNascimento.setText(funcionario.getDataNascimento().toString());
-            TxtTelefone.setText(funcionario.getTelefone());
-            TxtEmail.setText(funcionario.getEmail());
-            TxtSenha.setText(funcionario.getSenha());
-            TxtLongradouro.setText(funcionario.getEndereco().getLogradouro());
-            TxtBairro.setText(funcionario.getEndereco().getBairro());
-            TxtCep.setText(funcionario.getEndereco().getCep());
-            TxtCidade.setText(funcionario.getEndereco().getCidade());
+            txtNome.setText(funcionario.getNomeCompleto());
+            txtCPF.setText(funcionario.getCpf());
+            txtNascimento.setText(funcionario.getDataNascimento().toString());
+            txtTelefone.setText(funcionario.getTelefone());
+            txtEmail.setText(funcionario.getEmail());
+            txtSenha.setText(funcionario.getSenha());
+            txtLogradouro.setText(funcionario.getEndereco().getLogradouro());
+            txtBairro.setText(funcionario.getEndereco().getBairro());
+            txtCep.setText(funcionario.getEndereco().getCep());
+            txtCidade.setText(funcionario.getEndereco().getCidade());
         }
+        DesignSistema design = null;
+        try {
+            design = PersonalizaSistemaDao.buscaDesign();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Lidere com erros de consulta aqui, se necessário
+        }
+   	
+        Image Fundo = new Image(design.getFundoImagem());
+        Image Logo = new Image(design.getLogoImagem());
+        
+   	AlterarComponentes(Fundo, Logo, design.getCorSecundaria(), design.getTipoFonte(),design.getCorSecundaria() , design.getTipoFonte(), design.getCorPrincipal()
+   			, design.getCorSecundaria(), design.getCorTerciaria());
+   	
     }
 
+   
     @FXML
     void trocaFoto(MouseEvent event) throws IOException {
         FileChooser fileChooser = new FileChooser();
@@ -172,19 +214,19 @@ public class TelaDePerfilController {
         if (!funcionarios.isEmpty()) {
             Funcionario funcionario = funcionarios.get(0);
 
-            funcionario.setNomeCompleto(TxtNome.getText());
-            funcionario.setCpf(TxtCPF.getText());
-            funcionario.setDataNascimento(LocalDate.parse(TxtDataNascimento.getText()));
-            funcionario.setTelefone(TxtTelefone.getText());
-            funcionario.setEmail(TxtEmail.getText());
-            funcionario.setSenha(TxtSenha.getText());
+            funcionario.setNomeCompleto(txtNome.getText());
+            funcionario.setCpf(txtCPF.getText());
+            funcionario.setDataNascimento(LocalDate.parse(txtNascimento.getText()));
+            funcionario.setTelefone(txtTelefone.getText());
+            funcionario.setEmail(txtEmail.getText());
+            funcionario.setSenha(txtSenha.getText());
             funcionario.setId(idFuncionario);
 
             Endereco endereco = funcionario.getEndereco();
-            endereco.setLogradouro(TxtLongradouro.getText());
-            endereco.setBairro(TxtBairro.getText());
-            endereco.setCep(TxtCep.getText());
-            endereco.setCidade(TxtCidade.getText());
+            endereco.setLogradouro(txtLogradouro.getText());
+            endereco.setBairro(txtBairro.getText());
+            endereco.setCep(txtCep.getText());
+            endereco.setCidade(txtCidade.getText());
 
             boolean atualizacaoSucesso = TelaDePerfilDao.atualizarFuncionario(funcionario);
 
@@ -231,5 +273,66 @@ public class TelaDePerfilController {
             }
         }
     }
-}
+    
+    public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
+			String corPrincipal,String corSecundaria,String corTercearia) {
+		
+		
 
+
+		painelprincipal.setStyle(painelprincipal.getStyle()+"-fx-background-color:"+corPrincipal);
+
+		barracima.setStyle(barracima.getStyle()+"-fx-background-color:"+corPrincipal);
+
+		BtnEncerrarSessao.setStyle(BtnEncerrarSessao.getStyle()+"-fx-background-color:"+btn+";");
+		BtnEncerrarSessao.setStyle(BtnEncerrarSessao.getStyle()+"-fx-text-fill:"+letraBtn);
+
+		logo.setImage(logo); //ta dando erro aqui
+
+		lblTrocarFoto.setStyle(lblTrocarFoto.getStyle()+";"+"-fx-text-fill:"+corSecundaria);
+
+		lblPerfil.setStyle(lblPerfil.getStyle()+";"+"-fx-text-fill:"+corSecundaria);
+
+		lblInformacoes.setStyle(lblInformacoes.getStyle()+"-fx-text-fill:"+corSecundaria);
+
+		lblInformacoes2.setStyle(lblInformacoes2.getStyle()+"-fx-text-fill:"+corTercearia);
+
+		lblInformacoes3.setStyle(lblInformacoes3.getStyle()+"--fx-text-fill:"+corTercearia);
+  
+		txtSenha.setStyle(txtSenha.getStyle()+"-fx-background-color:"+txtf+";");
+		txtSenha.setStyle(txtSenha.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+		txtNome.setStyle(txtNome.getStyle()+"-fx-background-color:"+txtf+";");
+		txtNome.setStyle(txtNome.getStyle()+"-fx-text-fill:"+letraTxtf);
+		
+		txtBairro.setStyle(txtBairro.getStyle()+"-fx-background-color:"+txtf+";");
+		txtBairro.setStyle(txtBairro.getStyle()+"-fx-text-fill:"+letraTxtf);
+		
+		txtCep.setStyle(txtCep.getStyle()+"-fx-background-color:"+txtf+";");
+		txtCep.setStyle(txtCep.getStyle()+"-fx-text-fill:"+letraTxtf);
+		
+		txtCidade.setStyle(txtCidade.getStyle()+"-fx-background-color:"+txtf+";");
+		txtCidade.setStyle(txtCidade.getStyle()+"-fx-text-fill:"+letraTxtf);
+		
+		txtCPF.setStyle(txtCPF.getStyle()+"-fx-background-color:"+txtf+";");
+		txtCPF.setStyle(txtCPF.getStyle()+"-fx-text-fill:"+letraTxtf);
+		
+		txtEmail.setStyle(txtEmail.getStyle()+"-fx-background-color:"+txtf+";");
+		txtEmail.setStyle(txtEmail.getStyle()+"-fx-text-fill:"+letraTxtf);
+		
+		txtLogradouro.setStyle(txtLogradouro.getStyle()+"-fx-background-color:"+txtf+";");
+		txtLogradouro.setStyle(txtLogradouro.getStyle()+"-fx-text-fill:"+letraTxtf);
+		
+		txtNascimento.setStyle(txtNascimento.getStyle()+"-fx-background-color:"+txtf+";");
+		txtNascimento.setStyle(txtNascimento.getStyle()+"-fx-text-fill:"+letraTxtf);
+		
+		txtTelefone.setStyle(txtTelefone.getStyle()+"-fx-background-color:"+txtf+";");
+		txtTelefone.setStyle(txtTelefone.getStyle()+"-fx-text-fill:"+letraTxtf);
+		
+		
+		
+		
+		
+	}
+   
+}
