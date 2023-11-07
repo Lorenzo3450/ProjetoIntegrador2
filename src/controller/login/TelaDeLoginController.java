@@ -16,11 +16,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Line;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -30,34 +36,56 @@ public class TelaDeLoginController {
 
 	  @FXML
 	    private ImageView ImEsconde;
-
+	  
+	  	
+	  
 	    @FXML
 	    private ImageView ImMostra;
 		
     	EfeitoBtn efeito = new EfeitoBtn();
 	
-    	@FXML
-        private ImageView TxtSenha;
 
     	 @FXML
-    	    private TextField txtsenha;
-    	
-	 	@FXML
-	    private Label cadastro;
+ 	    private TextField txtsenha;
+ 	
+        @FXML
+        private ImageView Logo;
 
-	    @FXML
-	    private ImageView imbtn;
+        @FXML
+        private Pane PainelPrincipal;
 
-	    
-	    @FXML
-	    private ImageView imlogar;
+        @FXML
+        private AnchorPane barraDeCima;
 
-	    @FXML
-	    private PasswordField psfsenha;
+        @FXML
+        private Button btnEntrar;
 
-	    @FXML
-	    private TextField txflogin;
-	    
+        @FXML
+        private Line divisor;
+
+        @FXML
+        private ImageView fundo;
+
+        @FXML
+        private Text lbl1;
+
+        @FXML
+        private Text lbl2;
+
+        @FXML
+        private Text lbl3;
+
+        @FXML
+        private Label lblCadastreSe;
+
+        @FXML
+        private Label lblRecuperaSenha;
+
+        @FXML
+        private PasswordField psfsenha;
+
+        @FXML
+        private TextField txflogin;
 	   
 	  
 	    public class DelayedTask extends Task<Void> {
@@ -148,7 +176,7 @@ public class TelaDeLoginController {
     	Main.Cena("Cadastro");
     	psfsenha.setText("");
     	txflogin.setText("");
-    	imlogar.requestFocus();
+    	 btnEntrar.requestFocus();
     	
     }
 
@@ -157,7 +185,7 @@ public class TelaDeLoginController {
     void entrar1(MouseEvent event) {
     	
     	
-    	imbtn.setEffect(efeito.Efeito());
+    	 btnEntrar.setEffect(efeito.Efeito());
     	
     }
     
@@ -166,7 +194,7 @@ public class TelaDeLoginController {
     @FXML
     void sair1(MouseEvent event) {
     	
-    	imbtn.setEffect(null);
+    	 btnEntrar.setEffect(null);
 
     }
     
@@ -225,6 +253,47 @@ public class TelaDeLoginController {
 	}
 	
 
+	public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
+			String corPrincipal,String corSecundaria,String corTercearia) {
+		
+		
+
+		txtsenha.setStyle("-fx-background-color:"+txtf);
+		txtsenha.setStyle("-fx-text-fill:"+letraTxtf);
+		
+		Logo.setImage(logo);
+
+		PainelPrincipal.setStyle("-fx-background-color:"+corPrincipal);
+
+		barraDeCima.setStyle("-fx-background-color:"+corPrincipal);
+
+		btnEntrar.setStyle("-fx-background-color:"+btn);
+		btnEntrar.setStyle("-fx-text-fill:"+letraBtn);
+
+		divisor.setStyle("-fx-background-color:"+corSecundaria);
+
+		this.fundo.setImage(fundo);
+
+		lbl1.setStyle("-fx-background-color:"+corSecundaria);
+
+		lbl2.setStyle("-fx-background-color:"+corSecundaria);
+
+		lbl3.setStyle("-fx-background-color:"+corSecundaria);
+
+		lblCadastreSe.setStyle("-fx-background-color:"+corTercearia);
+
+		lblRecuperaSenha.setStyle("-fx-background-color:"+corTercearia);
+
+		psfsenha.setStyle("-fx-background-color:"+txtf);
+		psfsenha.setStyle("-fx-text-fill:"+letraTxtf);
+
+		txflogin.setStyle("-fx-background-color:"+txtf);
+		txflogin.setStyle("-fx-text-fill:"+letraTxtf);
+		
+		
+		
+		
+	}
     
 
     

@@ -12,68 +12,67 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.TelaDeCadastro2Controller">
    <children>
-      <ImageView fitHeight="712.0" fitWidth="1366.0" layoutY="-10.0" pickOnBounds="true">
+      <ImageView fx:id="fundo" fitHeight="712.0" fitWidth="1366.0" layoutY="10.0" pickOnBounds="true">
          <image>
             <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="65.0" layoutY="69.0" prefHeight="576.0" prefWidth="1228.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
+      <Pane fx:id="PainelPrincipal" layoutX="65.0" layoutY="69.0" prefHeight="576.0" prefWidth="1228.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
          <children>
-            <ImageView fitHeight="122.0" fitWidth="132.0" layoutX="500.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Logo" fitHeight="122.0" fitWidth="132.0" layoutX="500.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20login/Group%204%201.png" />
                </image>
             </ImageView>
-            <Label layoutX="454.0" layoutY="128.0" prefHeight="46.0" prefWidth="534.0" text="Cadastro" textFill="WHITE">
+            <Label fx:id="lbl1" layoutX="454.0" layoutY="128.0" prefHeight="46.0" prefWidth="534.0" text="Cadastro" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="65.0" />
                </font>
             </Label>
-            <Separator layoutX="402.0" layoutY="207.0" prefWidth="350.0" style="-fx-background-color: #FFFFFF;" />
-            <TextField fx:id="TxtNome" layoutX="54.0" layoutY="232.0" prefHeight="43.0" prefWidth="514.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Nome">
+            <Separator fx:id="divisor" layoutX="402.0" layoutY="207.0" prefWidth="350.0" style="-fx-background-color: #FFFFFF;" />
+            <TextField fx:id="TxtNome" layoutX="54.0" layoutY="232.0" prefHeight="43.0" prefWidth="514.0" promptText="Nome" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <Button layoutX="492.0" layoutY="514.0" mnemonicParsing="false" onAction="#BtnFinalizar" prefHeight="50.0" prefWidth="205.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" text="Finalizar" textFill="#002147">
+            <Button fx:id="Btnfinal" layoutX="492.0" layoutY="514.0" mnemonicParsing="false" onMouseClicked="#BtnFinalizar" prefHeight="50.0" prefWidth="205.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" text="Finalizar" textFill="#002147">
                <font>
                   <Font size="22.0" />
                </font>
             </Button>
-            <TextField fx:id="TxtCidade" layoutX="614.0" layoutY="383.0" prefHeight="43.0" prefWidth="514.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Cidade">
+            <TextField fx:id="TxtCidade" layoutX="614.0" layoutY="383.0" prefHeight="43.0" prefWidth="514.0" promptText="Cidade" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="TxtDataDeNascimento" layoutX="630.0" layoutY="231.0" prefHeight="43.0" prefWidth="514.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Data de nascimento">
+            <TextField fx:id="TxtDataDeNascimento" layoutX="630.0" layoutY="231.0" prefHeight="43.0" prefWidth="514.0" promptText="Data de nascimento" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="TxtBairo" layoutX="54.0" layoutY="383.0" prefHeight="43.0" prefWidth="514.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Bairro">
+            <TextField fx:id="TxtBairo" layoutX="54.0" layoutY="383.0" prefHeight="43.0" prefWidth="514.0" promptText="Bairro" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="TxtCep" layoutX="630.0" layoutY="301.0" prefHeight="43.0" prefWidth="514.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="CEP">
+            <TextField fx:id="TxtCep" layoutX="630.0" layoutY="301.0" prefHeight="43.0" prefWidth="514.0" promptText="CEP" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="TxtTelefone" layoutX="54.0" layoutY="300.0" prefHeight="43.0" prefWidth="514.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Número de telefone">
+            <TextField fx:id="TxtTelefone" layoutX="54.0" layoutY="300.0" prefHeight="43.0" prefWidth="514.0" promptText="Número de telefone" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="TxtRuaCasaComplemeto" layoutX="320.0" layoutY="451.0" prefHeight="43.0" prefWidth="514.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Rua, casa">
+            <TextField fx:id="TxtRuaCasaComplemeto" layoutX="320.0" layoutY="451.0" prefHeight="43.0" prefWidth="514.0" promptText="Rua, casa" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
          </children>
       </Pane>
-      <Pane layoutX="618.0" layoutY="-31.0" prefHeight="107.0" prefWidth="52.0" style="-fx-background-color: #002147;" />
-      <Pane layoutY="-1.0" prefHeight="20.0" prefWidth="1366.0" style="-fx-background-color: #002147;" />
-      <Separator layoutX="412.0" layoutY="429.0" prefWidth="450.0" style="-fx-background-color: #FFFFFF;" />
+      <Pane fx:id="barraDeCima" layoutY="-1.0" prefHeight="20.0" prefWidth="1366.0" style="-fx-background-color: #002147;" />
+      <Separator fx:id="divisor2" layoutX="412.0" layoutY="429.0" prefWidth="450.0" style="-fx-background-color: #FFFFFF;" />
    </children>
 </AnchorPane>

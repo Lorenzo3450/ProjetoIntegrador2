@@ -85,7 +85,7 @@ public class SideBarController {
     void IrParaGraficoMes(MouseEvent event) throws Exception {
 
     	System.out.println("mes");
-
+    	FecharSideBar(event);
     	Main.Cena("GraficoMes");
     	
     }
@@ -94,12 +94,12 @@ public class SideBarController {
     void IrParaGraficoSecao(MouseEvent event) throws Exception {
 
     	Main.Cena("GraficoSecao");
-    	
+    	FecharSideBar(event);
     }
 
     @FXML
     void IrParaInicio(MouseEvent event) throws Exception {
-    	
+    	FecharSideBar(event);
     	Main.Cena("TelaPrincipalGerente");
     	
     }
@@ -107,7 +107,9 @@ public class SideBarController {
     @FXML
     void IrParaPerfil(MouseEvent event) throws Exception {
 
+    	FecharSideBar(event);
     	Main.Cena("TelaDePerfil");
+    	
     	
     }
 
@@ -118,7 +120,7 @@ public class SideBarController {
 
     @FXML
     void IrParaRelatorioABC(MouseEvent event) throws Exception {
-
+    	FecharSideBar(event);
     	Main.Cena("TelaRelatorioABC");
     	
     }
@@ -138,6 +140,7 @@ public class SideBarController {
     @FXML
     void IrParaTabelaFuncionario(MouseEvent event) throws Exception {
 
+    	FecharSideBar(event);
     	Main.Cena("TabelaFuncionarios");
 
     	System.out.println("funci");

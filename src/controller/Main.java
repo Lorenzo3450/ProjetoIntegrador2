@@ -41,7 +41,7 @@ public class Main extends Application {
 	private static Scene GraficoDeLucrosDasSecoesProduto;
 	private static Scene TelaDePerfil;
 	private static Scene SideBar;
-	
+	private static Scene PersonalizaSistema;
 	
 	//telas RH
 	private static Scene MenuPrincipalRH;
@@ -117,6 +117,10 @@ public class Main extends Application {
 		Parent fxmlSideBar = FXMLLoader.load(getClass().getResource("/view/gerente/SideBarGerente.fxml"));
 		SideBar = new Scene(fxmlSideBar);
 		
+		Parent fxmlPersonalizaSistema = FXMLLoader.load(getClass().getResource("/view/gerente/PersonalizaSistema.fxml"));
+		PersonalizaSistema = new Scene(fxmlPersonalizaSistema);
+		
+		
 		//cenas do pacote RH
 		
 		Parent fxmlMenuPrincipalRH = FXMLLoader
@@ -147,7 +151,11 @@ public class Main extends Application {
 		PagamentoEmDinheiro= new Scene(fxmlPagamentoEmDinheiro);
 		
 		
+		this.primaryStage.setScene(PersonalizaSistema);
+		this.primaryStage.show();
+		
 
+		/*
 
 		// inicializa as cenas
 
@@ -188,7 +196,7 @@ public class Main extends Application {
 		} else {
 			this.primaryStage.setScene(login);
 			this.primaryStage.show();
-		}  
+		} */ 
 
 	}
 	

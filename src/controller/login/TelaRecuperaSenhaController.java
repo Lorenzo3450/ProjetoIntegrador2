@@ -12,21 +12,27 @@ import model.dao.login.RecuperSenhaModel;
 import controller.Ferramentas.EfeitoBtn;
 import controller.Main;
 import javafx.fxml.FXML;
-	import javafx.scene.control.PasswordField;
-	import javafx.scene.control.TextField;
-	import javafx.scene.image.ImageView;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.Separator;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 	import javafx.scene.input.KeyEvent;
 	import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 
 	public class TelaRecuperaSenhaController {
 
 		EfeitoBtn efeito = new EfeitoBtn();
 		
-	    @FXML
-	    private ImageView Btnfinal;
 
+		@FXML
+		private ImageView ImEsconde;
+		  
 	    @FXML
-	    private ImageView ImEsconde;
+	    private Button Btnfinal;
 
 	    @FXML
 	    private ImageView ImEsconde1;
@@ -36,7 +42,13 @@ import javafx.fxml.FXML;
 
 	    @FXML
 	    private ImageView ImMostra1;
-	    
+
+	    @FXML
+	    private ImageView Logo;
+
+	    @FXML
+	    private Pane PainelPrincipal;
+
 	    @FXML
 	    private TextField TxtCpf;
 
@@ -50,16 +62,32 @@ import javafx.fxml.FXML;
 	    private TextField TxtPalavrasDeRecuperacao3;
 
 	    @FXML
+	    private Pane barraDeCima;
+
+	    @FXML
+	    private Separator divisor;
+
+	    @FXML
+	    private Separator divisor2;
+
+	    @FXML
+	    private ImageView fundo;
+
+	    @FXML
+	    private Label lbl1;
+
+	    @FXML
 	    private PasswordField psfConfirmaNovaSenha;
 
 	    @FXML
 	    private PasswordField psfsNovaSenha;
-	    
+
 	    @FXML
 	    private TextField txtSenha;
 
 	    @FXML
 	    private TextField txtSenha1;
+
 
 	    @FXML
 	    void BtnFinalizar(MouseEvent event) throws SQLException {
@@ -175,8 +203,75 @@ import javafx.fxml.FXML;
 	    	
 	    }
 
-	}
+	
+	
+	
+	public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
+			String corPrincipal,String corSecundaria,String corTercearia) {
+    	
+    	
 
+    	Btnfinal.setStyle("-fx-background-color:"+btn);;
+    	Btnfinal.setStyle("-fx-text-fill:"+letraBtn);;
+    	
+    	Logo.setImage(logo);
+
+    	PainelPrincipal.setStyle("-fx-background-color:"+corPrincipal);
+
+  
+
+        barraDeCima.setStyle("-fx-background-color:"+corPrincipal);
+
+        divisor.setStyle("-fx-background-color:"+corSecundaria);
+
+        divisor2.setStyle("-fx-background-color:"+corSecundaria);
+
+        this.fundo.setImage(fundo);
+
+        lbl1.setStyle("-fx-background-color:"+corSecundaria);
+        lbl1.setStyle("-fx-text-fill:"+letraTxtf);
+        
+
+
+	   
+        TxtCpf.setStyle("-fx-background-color:"+txtf);
+
+        TxtPalavrasDeRecuperacao1.setStyle("-fx-background-color:"+txtf);
+
+        TxtPalavrasDeRecuperacao2.setStyle("-fx-background-color:"+txtf);
+
+        TxtPalavrasDeRecuperacao3.setStyle("-fx-background-color:"+txtf);
+
+        psfConfirmaNovaSenha.setStyle("-fx-background-color:"+txtf);
+
+	  	psfsNovaSenha.setStyle("-fx-background-color:"+txtf);
+	  	
+	  	txtSenha.setStyle("-fx-background-color:"+txtf);
+
+	  	txtSenha1.setStyle("-fx-background-color:"+txtf);
+	  	
+        
+        
+	    TxtCpf.setStyle("-fx-text-fill:"+letraTxtf);
+
+        TxtPalavrasDeRecuperacao1.setStyle("-fx-text-fill:"+letraTxtf);
+
+        TxtPalavrasDeRecuperacao2.setStyle("-fx-text-fill:"+letraTxtf);
+
+        TxtPalavrasDeRecuperacao3.setStyle("-fx-text-fill:"+letraTxtf);
+
+        psfConfirmaNovaSenha.setStyle("-fx-text-fill:"+letraTxtf);
+
+	  	psfsNovaSenha.setStyle("-fx-text-fill:"+letraTxtf);
+	  	
+	  	txtSenha.setStyle("-fx-text-fill:"+letraTxtf);
+
+	  	txtSenha1.setStyle("-fx-text-fill:"+letraTxtf);
+	  	
+	  	
+    }
+
+	}
 	
 	
 

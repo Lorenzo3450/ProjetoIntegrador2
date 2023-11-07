@@ -11,20 +11,59 @@ import controller.Ferramentas.EfeitoBtn;
 import controller.Ferramentas.TrocaData;
 import controller.Main;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 
 public class TelaDeCadastro2Controller {
 
 	EfeitoBtn efeito = new EfeitoBtn();
 	
+
+    @FXML
+    private Button Btnfinal;
+
+    @FXML
+    private ImageView Logo;
+
+    @FXML
+    private Pane PainelPrincipal;
+
+    @FXML
+    private TextField TxtBairo;
+
+
+    @FXML
+    private TextField TxtRuaCasaComplemeto;
+
+  
+
+    @FXML
+    private Pane barraDeCima;
+
+    @FXML
+    private Separator divisor;
+
+    @FXML
+    private Separator divisor2;
+
+    @FXML
+    private ImageView fundo;
+
+    @FXML
+    private Label lbl1;
+	
+	
     @FXML
     private TextField TxtBairro;
     
-    @FXML
-    private ImageView Btnfinal;
+
 
     @FXML
     private TextField TxtCep;
@@ -145,6 +184,62 @@ public class TelaDeCadastro2Controller {
     		TxtTelefone.positionCaret(10);
   		
     	}
+    	
+    }
+    
+    
+    public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
+			String corPrincipal,String corSecundaria,String corTercearia) {
+    	
+    	
+
+    	Btnfinal.setStyle("-fx-background-color:"+btn);;
+    	Btnfinal.setStyle("-fx-text-fill:"+letraBtn);;
+    	
+    	Logo.setImage(logo);
+
+    	PainelPrincipal.setStyle("-fx-background-color:"+corPrincipal);
+
+        TxtBairo.setStyle("-fx-background-color:"+txtf);
+
+        TxtCep.setStyle("-fx-background-color:"+txtf);
+
+        TxtCidade.setStyle("-fx-background-color:"+txtf);
+
+        TxtDataDeNascimento.setStyle("-fx-background-color:"+txtf);
+
+        TxtNome.setStyle("-fx-background-color:"+txtf);
+
+        TxtRuaCasaComplemeto.setStyle("-fx-background-color:"+txtf);
+
+        TxtTelefone.setStyle("-fx-background-color:"+txtf);
+        
+        
+        TxtBairo.setStyle("-fx-text-fill:"+letraTxtf);
+
+        TxtCep.setStyle("-fx-text-fill:"+letraTxtf);
+
+        TxtCidade.setStyle("-fx-text-fill:"+letraTxtf);
+
+        TxtDataDeNascimento.setStyle("-fx-text-fill:"+letraTxtf);
+
+        TxtNome.setStyle("-fx-text-fill:"+letraTxtf);
+
+        TxtRuaCasaComplemeto.setStyle("-fx-text-fill:"+letraTxtf);
+
+        TxtTelefone.setStyle("-fx-text-fill:"+letraTxtf);
+        
+
+        barraDeCima.setStyle("-fx-background-color:"+corPrincipal);
+
+        divisor.setStyle("-fx-background-color:"+corSecundaria);
+
+        divisor2.setStyle("-fx-background-color:"+corSecundaria);
+
+        this.fundo.setImage(fundo);
+
+        lbl1.setStyle("-fx-background-color:"+corSecundaria);
+        lbl1.setStyle("-fx-text-fill:"+letraTxtf);
     	
     }
 

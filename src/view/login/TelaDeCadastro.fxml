@@ -12,40 +12,40 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.TelaDeCadastroController">
    <children>
-      <ImageView fitHeight="712.0" fitWidth="1366.0" layoutY="-10.0" pickOnBounds="true">
+      <ImageView fx:id="fundo" fitHeight="712.0" fitWidth="1366.0" layoutY="-10.0" pickOnBounds="true">
          <image>
             <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="65.0" layoutY="69.0" prefHeight="576.0" prefWidth="1228.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
+      <Pane fx:id="PainelPrincipal" layoutX="65.0" layoutY="69.0" prefHeight="576.0" prefWidth="1228.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
          <children>
-            <ImageView fitHeight="122.0" fitWidth="132.0" layoutX="500.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Logo" fitHeight="122.0" fitWidth="132.0" layoutX="500.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20login/Group%204%201.png" />
                </image>
             </ImageView>
-            <Label layoutX="454.0" layoutY="128.0" prefHeight="46.0" prefWidth="534.0" text="Cadastro" textFill="WHITE">
+            <Label fx:id="lbl" layoutX="454.0" layoutY="128.0" prefHeight="46.0" prefWidth="534.0" text="Cadastro" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="65.0" />
                </font>
             </Label>
-            <Separator layoutX="402.0" layoutY="207.0" prefWidth="350.0" style="-fx-background-color: #FFFFFF;" />
-            <TextField fx:id="TxtEmail" layoutX="54.0" layoutY="286.0" prefHeight="43.0" prefWidth="482.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Email">
+            <Separator fx:id="divisor2" layoutX="402.0" layoutY="207.0" prefWidth="350.0" style="-fx-background-color: #FFFFFF;" />
+            <TextField fx:id="TxtEmail" layoutX="54.0" layoutY="286.0" prefHeight="43.0" prefWidth="482.0" promptText="Email" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="TxtPalavrasDeRecuperacao2" layoutX="631.0" layoutY="353.0" prefHeight="43.0" prefWidth="482.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Nome do meio da mãe">
+            <TextField fx:id="TxtPalavrasDeRecuperacao2" layoutX="631.0" layoutY="353.0" prefHeight="43.0" prefWidth="482.0" promptText="Nome do meio da mãe" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="TxtPalavrasDeRecuperacao1" layoutX="631.0" layoutY="286.0" prefHeight="43.0" prefWidth="482.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Primeira escola que estudou">
+            <TextField fx:id="TxtPalavrasDeRecuperacao1" layoutX="631.0" layoutY="286.0" prefHeight="43.0" prefWidth="482.0" promptText="Primeira escola que estudou" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="txtsenha" layoutX="54.0" layoutY="354.0" prefHeight="43.0" prefWidth="482.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Senha">
+            <TextField fx:id="txtsenha" layoutX="54.0" layoutY="354.0" prefHeight="43.0" prefWidth="482.0" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
                <font>
                   <Font size="14.0" />
                </font>
@@ -55,30 +55,29 @@
                   <Font size="22.0" />
                </font>
             </Button>
-            <TextField fx:id="txtsenha2" layoutX="54.0" layoutY="420.0" prefHeight="43.0" prefWidth="482.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Confirmar senha">
+            <TextField fx:id="txtsenha2" layoutX="54.0" layoutY="420.0" prefHeight="43.0" prefWidth="482.0" promptText="Confirmar senha" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="TxtPalavrasDeRecuperacao3" layoutX="630.0" layoutY="424.0" prefHeight="43.0" prefWidth="482.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Apelido">
+            <TextField fx:id="TxtPalavrasDeRecuperacao3" layoutX="630.0" layoutY="424.0" prefHeight="43.0" prefWidth="482.0" promptText="Apelido" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <Label layoutX="645.0" layoutY="215.0" prefHeight="38.0" prefWidth="355.0" text="Preencha as informações abaixo em caso de" textFill="#faff00">
+            <Label fx:id="lbl2" layoutX="645.0" layoutY="215.0" prefHeight="38.0" prefWidth="355.0" text="Preencha as informações abaixo em caso de" textFill="#faff00">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <Separator layoutX="584.0" layoutY="208.0" orientation="VERTICAL" prefHeight="250.0" />
-            <Label layoutX="646.0" layoutY="239.0" prefHeight="38.0" prefWidth="355.0" text="esquecimento de senha" textFill="#faff00">
+            <Separator fx:id="divisor" layoutX="584.0" layoutY="208.0" orientation="VERTICAL" prefHeight="250.0" />
+            <Label fx:id="lbl2" layoutX="646.0" layoutY="239.0" prefHeight="38.0" prefWidth="355.0" text="esquecimento de senha" textFill="#faff00">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="618.0" layoutY="-31.0" prefHeight="107.0" prefWidth="52.0" style="-fx-background-color: #002147;" />
-      <Pane layoutY="-1.0" prefHeight="20.0" prefWidth="1366.0" style="-fx-background-color: #002147;" />
+      <Pane fx:id="barraDeCima" layoutY="-1.0" prefHeight="20.0" prefWidth="1366.0" style="-fx-background-color: #002147;" />
    </children>
 </AnchorPane>

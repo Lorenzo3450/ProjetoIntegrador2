@@ -68,9 +68,7 @@ public class TelaDePerfilController {
     @FXML
     private Label lblTrocarFoto;
 
- 
-    @FXML
-    private void initialize() throws SQLException {
+    public void inicializarCena() throws SQLException {
         int idFuncionario = MainModel.verificaID();
         List<Funcionario> funcionarios = TelaDePerfilDao.getFuncionarioComEndereco(idFuncionario);
         
@@ -93,6 +91,8 @@ public class TelaDePerfilController {
             // Exemplo: TxtBairro.setText(funcionario.getEndereco().getBairro());
         }
     }
+    
+
     
     @FXML
     void trocaFoto(MouseEvent event) {

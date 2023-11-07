@@ -7,9 +7,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.print.PrinterJob;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.Separator;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -22,6 +25,7 @@ import javafx.stage.StageStyle;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler; 
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.effect.ColorAdjust;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -38,31 +42,50 @@ import model.dao.ConexãoBD;
 import model.dao.Gerente.TabelaFuncionarioDao;
 import controller.Ferramentas.EditButtonCell;
 import controller.Ferramentas.EfeitoBtn;
+import controller.Ferramentas.EfeitoImage;
 import controller.Main;
 
 public class TabelaFuncionarioController {
 
 	private static Scene filtrofuncionario;
-
+	
 	EfeitoBtn efeito = new EfeitoBtn();
 
-	@FXML
-	private ImageView BtnEditar;
+    @FXML
+    private Separator divisor;
+	
+    @FXML
+    private ImageView BtnFiltro;
 
-	@FXML
-	private ImageView BtnFiltro;
+    @FXML
+    private ImageView BtnImprimir;
 
-	@FXML
-	private ImageView BtnImprimir;
+    @FXML
+    private ImageView BtnPesquisar;
 
-	@FXML
-	private ImageView BtnPesquisar;
+    @FXML
+    private ImageView ImagemDeFundo;
 
-	@FXML
-	private ImageView BtnRemoverFuncionario;
+    @FXML
+    private ImageView Logo;
 
-	@FXML
-	private TextField TxtPesquisa;
+    @FXML
+    private AnchorPane PainelDeCima;
+
+    @FXML
+    private AnchorPane PainelPrincipal;
+
+    @FXML
+    private Label TextoDoPainelDeCima;
+
+    @FXML
+    private Label TextoDoPainelDeCima1;
+
+    @FXML
+    private Label TextoDoPainelDeCima11;
+
+    @FXML
+    private TextField TxtPesquisa;
 
 	@FXML
 	private TableView<Funcionario> tableView;
@@ -93,12 +116,28 @@ public class TabelaFuncionarioController {
 	private TableColumn<Funcionario, Double> salarioColumn;
 
 	// inicializa a tabelafuncionario
+	
+
+	
 	@FXML
 	private void initialize() {
 		
 	
 	
 		
+		ColorAdjust colorAdjust = new ColorAdjust();
+	
+		String hexColor = "#002147";
+		double[] hueValues = EfeitoImage.hexToHue(hexColor);
+		
+		colorAdjust.setHue(hueValues[0]); // Componente vermelho
+		colorAdjust.setSaturation(hueValues[1]); // Componente verde
+		colorAdjust.setBrightness(hueValues[2]); // Componente azul    
+		
+		
+        BtnFiltro.setEffect(colorAdjust);
+		BtnImprimir.setEffect(colorAdjust);
+        
 		tableView.getItems().clear();
 		nomeCompletoColumn.setCellValueFactory(cellData -> cellData.getValue().nomeCompletoProperty());
 		cpfColumn.setCellValueFactory(cellData -> cellData.getValue().cpfProperty());
@@ -298,12 +337,7 @@ public class TabelaFuncionarioController {
 
 	// efeitos dos botões
 
-	@FXML
-	void EfeitoEditar(MouseEvent event) {
 
-		BtnEditar.setEffect(efeito.Efeito());
-
-	}
 
 	@FXML
 	void EfeitoFiltro(MouseEvent event) {
@@ -319,19 +353,7 @@ public class TabelaFuncionarioController {
 
 	}
 
-	@FXML
-	void EfeitoRemoverFuncionario(MouseEvent event) {
 
-		BtnRemoverFuncionario.setEffect(efeito.Efeito());
-
-	}
-
-	@FXML
-	void SairEditar(MouseEvent event) {
-
-		BtnEditar.setEffect(null);
-
-	}
 
 	@FXML
 	void SairFiltro(MouseEvent event) {
@@ -347,12 +369,7 @@ public class TabelaFuncionarioController {
 
 	}
 
-	@FXML
-	void SairRemoverFuncionario(MouseEvent event) {
-
-		BtnRemoverFuncionario.setEffect(null);
-
-	}
+	
 
 	
 	private void makeStageDraggable(Stage stage, Parent root) {
@@ -402,8 +419,46 @@ public class TabelaFuncionarioController {
 	    	
 	    }
 	    
-	    
+	   
+	  public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
+				String corPrincipal,String corSecundaria,String corTercearia) {
+		  
+		  
+
+		  
+
 	
+
+		    ImagemDeFundo.setImage(fundo);
+
+		    Logo.setImage(logo);;
+
+		    PainelDeCima.setStyle("-fx-background-color:"+corPrincipal);
+
+		    PainelPrincipal.setStyle("-fx-background-color:"+corPrincipal);
+
+		    TextoDoPainelDeCima.setStyle("-fx-background-color:"+corSecundaria);
+		    
+		    TextoDoPainelDeCima.setStyle("-fx-text-fill:"+letraTxtf);
+
+
+		    TextoDoPainelDeCima1.setStyle("-fx-background-color:"+corSecundaria);
+
+		    TextoDoPainelDeCima11.setStyle("-fx-background-color:"+corSecundaria);
+
+		    TxtPesquisa.setStyle("-fx-background-color:"+corSecundaria);
+
+		 
+		    TextoDoPainelDeCima1.setStyle("-fx-text-fill:"+letraTxtf);
+
+		    TextoDoPainelDeCima11.setStyle("-fx-text-fill:"+letraTxtf);
+
+		    TxtPesquisa.setStyle("-fx-text-fill:"+letraTxtf);
+		    
+
+		  
+		  
+	  }
 	
 	
 }

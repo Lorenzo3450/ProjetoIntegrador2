@@ -9,9 +9,12 @@ import controller.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.control.Button;
 
 public class TelaDeCadastroController {
@@ -36,12 +39,38 @@ public class TelaDeCadastroController {
     @FXML
     private ImageView ImMostra1;
     
+   
+    @FXML
+    private ImageView Logo;
+
+    @FXML
+    private Pane PainelPrincipal;
+
+   
+    @FXML
+    private Pane barraDeCima;
+
+    @FXML
+    private Separator divisor;
+
+    @FXML
+    private Separator divisor2;
+
+    @FXML
+    private ImageView fundo;
+
+  
+    @FXML
+    private Label lbl;
+
+    @FXML
+    private Label lbl2;
+
     @FXML
     private TextField txtsenha;
 
     @FXML
     private TextField txtsenha2;
-
     
     
     @FXML
@@ -200,6 +229,56 @@ public class TelaDeCadastroController {
     	
     	imbtn.setEffect(null);
     }
+    
+
+	public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
+			String corPrincipal,String corSecundaria,String corTercearia) {
+		
+		Logo.setImage(logo);
+
+		PainelPrincipal.setStyle("-fx-background-color:"+corPrincipal);
+
+		TxtEmail.setStyle("-fx-background-color:"+txtf);
+		TxtEmail.setStyle("-fx-text-fill:"+letraTxtf);
+		
+		TxtPalavrasDeRecuperacao1.setStyle("-fx-background-color:"+txtf);
+
+	    TxtPalavrasDeRecuperacao2.setStyle("-fx-background-color:"+txtf);
+
+	    TxtPalavrasDeRecuperacao3.setStyle("-fx-background-color:"+txtf);
+	    
+	    TxtPalavrasDeRecuperacao1.setStyle("-fx-text-fill:"+letraTxtf);
+
+	    TxtPalavrasDeRecuperacao2.setStyle("-fx-text-fill:"+letraTxtf);
+
+	    TxtPalavrasDeRecuperacao3.setStyle("-fx-text-fill:"+letraTxtf);
+
+	    barraDeCima.setStyle("-fx-background-color:"+corPrincipal);
+
+	    divisor.setStyle("-fx-background-color:"+corSecundaria);
+
+	    divisor2.setStyle("-fx-background-color:"+corSecundaria);
+
+	    this.fundo.setImage(fundo);
+	    
+	    imbtn.setStyle("-fx-background-color:"+btn);
+	    imbtn.setStyle("-fx-text-fill:"+letraBtn);
+	    
+	    lbl.setStyle("-fx-background-color:"+corSecundaria);
+	    
+	    lbl2.setStyle("-fx-background-color:"+corTercearia);
+
+	    txtsenha.setStyle("-fx-background-color:"+txtf);
+
+	    txtsenha2.setStyle("-fx-background-color:"+txtf);
+		
+	    txtsenha.setStyle("-fx-text-fill:"+letraTxtf);
+
+	    txtsenha2.setStyle("-fx-text-fill:"+letraTxtf);
+		
+		
+		
+	}
 
 
 }
