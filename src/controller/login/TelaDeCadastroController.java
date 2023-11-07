@@ -2,6 +2,8 @@ package controller.login;
 
 
 
+import java.sql.SQLException;
+
 import javax.swing.JOptionPane;
 
 import controller.Ferramentas.EfeitoBtn;
@@ -15,6 +17,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import model.DesignSistema;
+import model.dao.Gerente.PersonalizaSistemaDao;
 import javafx.scene.control.Button;
 
 public class TelaDeCadastroController {
@@ -101,6 +105,26 @@ public class TelaDeCadastroController {
     @FXML
     private PasswordField psfsenha;
     
+    
+    @FXML
+	private void initialize() {
+    	
+    	 DesignSistema design = null;
+         try {
+             design = PersonalizaSistemaDao.buscaDesign();
+         } catch (SQLException e) {
+             e.printStackTrace();
+             // Lidere com erros de consulta aqui, se necessário
+         }
+    	
+         Image Fundo = new Image(design.getFundoImagem());
+         Image Logo = new Image(design.getLogoImagem());
+         
+    	AlterarComponentes(Fundo, Logo, design.getCorSecundaria(), design.getTipoFonte(),design.getCorSecundaria() , design.getTipoFonte(), design.getCorPrincipal()
+    			, design.getCorSecundaria(), design.getCorTerciaria());
+    	
+    }
+   
    
     @FXML
     void Continuar1(MouseEvent event) throws Exception {
@@ -231,54 +255,44 @@ public class TelaDeCadastroController {
     }
     
 
-	public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
-			String corPrincipal,String corSecundaria,String corTercearia) {
-		
-		Logo.setImage(logo);
+    public void AlterarComponentes(Image fundo, Image logo, String txtf, String letraTxtf, String btn, String letraBtn,
+            String corPrincipal, String corSecundaria, String corTercearia) {
 
-		PainelPrincipal.setStyle("-fx-background-color:"+corPrincipal);
+        Logo.setImage(logo);
 
-		TxtEmail.setStyle("-fx-background-color:"+txtf);
-		TxtEmail.setStyle("-fx-text-fill:"+letraTxtf);
-		
-		TxtPalavrasDeRecuperacao1.setStyle("-fx-background-color:"+txtf);
+        PainelPrincipal.setStyle(PainelPrincipal.getStyle()+"-fx-background-color:" + corPrincipal);
 
-	    TxtPalavrasDeRecuperacao2.setStyle("-fx-background-color:"+txtf);
+        TxtEmail.setStyle(TxtEmail.getStyle() + "-fx-background-color:" + txtf + ";");
+        TxtEmail.setStyle(TxtEmail.getStyle() + "-fx-text-fill:" + letraTxtf + ";");
 
-	    TxtPalavrasDeRecuperacao3.setStyle("-fx-background-color:"+txtf);
-	    
-	    TxtPalavrasDeRecuperacao1.setStyle("-fx-text-fill:"+letraTxtf);
+        TxtPalavrasDeRecuperacao1.setStyle(TxtPalavrasDeRecuperacao1.getStyle() + "-fx-background-color:" + txtf + ";");
+        TxtPalavrasDeRecuperacao2.setStyle(TxtPalavrasDeRecuperacao2.getStyle() + "-fx-background-color:" + txtf + ";");
+        TxtPalavrasDeRecuperacao3.setStyle(TxtPalavrasDeRecuperacao3.getStyle() + "-fx-background-color:" + txtf + ";");
+        
+        TxtPalavrasDeRecuperacao1.setStyle(TxtPalavrasDeRecuperacao1.getStyle() + "-fx-text-fill:" + letraTxtf + ";");
+        TxtPalavrasDeRecuperacao2.setStyle(TxtPalavrasDeRecuperacao2.getStyle() + "-fx-text-fill:" + letraTxtf + ";");
+        TxtPalavrasDeRecuperacao3.setStyle(TxtPalavrasDeRecuperacao3.getStyle() + "-fx-text-fill:" + letraTxtf + ";");
 
-	    TxtPalavrasDeRecuperacao2.setStyle("-fx-text-fill:"+letraTxtf);
+        barraDeCima.setStyle(barraDeCima.getStyle() + "-fx-background-color:" + corPrincipal);
 
-	    TxtPalavrasDeRecuperacao3.setStyle("-fx-text-fill:"+letraTxtf);
+        divisor.setStyle(divisor.getStyle() + "-fx-background-color:" + corSecundaria);
+        divisor2.setStyle(divisor2.getStyle() + "-fx-background-color:" + corSecundaria);
 
-	    barraDeCima.setStyle("-fx-background-color:"+corPrincipal);
+        this.fundo.setImage(fundo);
 
-	    divisor.setStyle("-fx-background-color:"+corSecundaria);
+        imbtn.setStyle(imbtn.getStyle() + "-fx-background-color:" + btn + ";");
+        imbtn.setStyle(imbtn.getStyle() + "-fx-text-fill:" + letraBtn + ";");
 
-	    divisor2.setStyle("-fx-background-color:"+corSecundaria);
+        lbl.setStyle(lbl.getStyle() + "-fx-text-fill:" + corSecundaria + ";");
+        lbl2.setStyle(lbl2.getStyle() + "-fx-text-fill:" + corTercearia + ";");
 
-	    this.fundo.setImage(fundo);
-	    
-	    imbtn.setStyle("-fx-background-color:"+btn);
-	    imbtn.setStyle("-fx-text-fill:"+letraBtn);
-	    
-	    lbl.setStyle("-fx-background-color:"+corSecundaria);
-	    
-	    lbl2.setStyle("-fx-background-color:"+corTercearia);
+        txtsenha.setStyle(txtsenha.getStyle() + "-fx-background-color:" + txtf + ";");
+        txtsenha2.setStyle(txtsenha2.getStyle() + "-fx-background-color:" + txtf + ";");
 
-	    txtsenha.setStyle("-fx-background-color:"+txtf);
+        txtsenha.setStyle(txtsenha.getStyle() + "-fx-text-fill:" + letraTxtf + ";");
+        txtsenha2.setStyle(txtsenha2.getStyle() + "-fx-text-fill:" + letraTxtf + ";");
+    }
 
-	    txtsenha2.setStyle("-fx-background-color:"+txtf);
-		
-	    txtsenha.setStyle("-fx-text-fill:"+letraTxtf);
-
-	    txtsenha2.setStyle("-fx-text-fill:"+letraTxtf);
-		
-		
-		
-	}
 
 
 }

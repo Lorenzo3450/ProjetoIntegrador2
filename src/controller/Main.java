@@ -151,7 +151,7 @@ public class Main extends Application {
 		PagamentoEmDinheiro= new Scene(fxmlPagamentoEmDinheiro);
 		
 		
-		this.primaryStage.setScene(PersonalizaSistema);
+		this.primaryStage.setScene(cadastro);
 		this.primaryStage.show();
 		
 

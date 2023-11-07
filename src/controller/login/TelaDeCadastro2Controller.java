@@ -2,10 +2,13 @@ package controller.login;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
+import model.DesignSistema;
 import model.dao.ConexãoBD;
+import model.dao.Gerente.PersonalizaSistemaDao;
 import model.dao.login.CadastroModel;
 import controller.Ferramentas.EfeitoBtn;
 import controller.Ferramentas.TrocaData;
@@ -85,6 +88,27 @@ public class TelaDeCadastro2Controller {
 
     @FXML
     private TextField TxtTelefone;
+    
+    
+    @FXML
+	private void initialize() {
+    	
+    	 DesignSistema design = null;
+         try {
+             design = PersonalizaSistemaDao.buscaDesign();
+         } catch (SQLException e) {
+             e.printStackTrace();
+             // Lidere com erros de consulta aqui, se necessário
+         }
+    	
+         Image Fundo = new Image(design.getFundoImagem());
+         Image Logo = new Image(design.getLogoImagem());
+         
+    	AlterarComponentes(Fundo, Logo, design.getCorSecundaria(), design.getTipoFonte(),design.getCorSecundaria() , design.getTipoFonte(), design.getCorPrincipal()
+    			, design.getCorSecundaria(), design.getCorTerciaria());
+    	
+    }
+   
 
     @FXML
     void BtnFinalizar(MouseEvent event) throws Exception {
@@ -187,61 +211,42 @@ public class TelaDeCadastro2Controller {
     	
     }
     
-    
-    public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
-			String corPrincipal,String corSecundaria,String corTercearia) {
-    	
-    	
+    public void AlterarComponentes(Image fundo, Image logo, String txtf, String letraTxtf, String btn, String letraBtn,
+            String corPrincipal, String corSecundaria, String corTercearia) {
 
-    	Btnfinal.setStyle("-fx-background-color:"+btn);;
-    	Btnfinal.setStyle("-fx-text-fill:"+letraBtn);;
-    	
-    	Logo.setImage(logo);
+        Btnfinal.setStyle( Btnfinal.getStyle()+"-fx-background-color:" + btn + ";");
+        Btnfinal.setStyle( Btnfinal.getStyle()+"-fx-text-fill:" + letraBtn + ";");
 
-    	PainelPrincipal.setStyle("-fx-background-color:"+corPrincipal);
+        Logo.setImage(logo);
 
-        TxtBairo.setStyle("-fx-background-color:"+txtf);
+        PainelPrincipal.setStyle("-fx-background-color:" + corPrincipal);
 
-        TxtCep.setStyle("-fx-background-color:"+txtf);
+        TxtBairo.setStyle(TxtBairo.getStyle() + "-fx-background-color:" + txtf + ";");
+        TxtCep.setStyle(TxtCep.getStyle() + "-fx-background-color:" + txtf + ";");
+        TxtCidade.setStyle(TxtCidade.getStyle() + "-fx-background-color:" + txtf + ";");
+        TxtDataDeNascimento.setStyle(TxtDataDeNascimento.getStyle() + "-fx-background-color:" + txtf + ";");
+        TxtNome.setStyle(TxtNome.getStyle() + "-fx-background-color:" + txtf + ";");
+        TxtRuaCasaComplemeto.setStyle(TxtRuaCasaComplemeto.getStyle() + "-fx-background-color:" + txtf + ";");
+        TxtTelefone.setStyle(TxtTelefone.getStyle() + "-fx-background-color:" + txtf + ";");
 
-        TxtCidade.setStyle("-fx-background-color:"+txtf);
+        TxtBairo.setStyle(TxtBairo.getStyle() + "-fx-text-fill:" + letraTxtf + ";");
+        TxtCep.setStyle(TxtCep.getStyle() + "-fx-text-fill:" + letraTxtf + ";");
+        TxtCidade.setStyle(TxtCidade.getStyle() + "-fx-text-fill:" + letraTxtf + ";");
+        TxtDataDeNascimento.setStyle(TxtDataDeNascimento.getStyle() + "-fx-text-fill:" + letraTxtf + ";");
+        TxtNome.setStyle(TxtNome.getStyle() + "-fx-text-fill:" + letraTxtf + ";");
+        TxtRuaCasaComplemeto.setStyle(TxtRuaCasaComplemeto.getStyle() + "-fx-text-fill:" + letraTxtf + ";");
+        TxtTelefone.setStyle(TxtTelefone.getStyle() + "-fx-text-fill:" + letraTxtf + ";");
 
-        TxtDataDeNascimento.setStyle("-fx-background-color:"+txtf);
-
-        TxtNome.setStyle("-fx-background-color:"+txtf);
-
-        TxtRuaCasaComplemeto.setStyle("-fx-background-color:"+txtf);
-
-        TxtTelefone.setStyle("-fx-background-color:"+txtf);
-        
-        
-        TxtBairo.setStyle("-fx-text-fill:"+letraTxtf);
-
-        TxtCep.setStyle("-fx-text-fill:"+letraTxtf);
-
-        TxtCidade.setStyle("-fx-text-fill:"+letraTxtf);
-
-        TxtDataDeNascimento.setStyle("-fx-text-fill:"+letraTxtf);
-
-        TxtNome.setStyle("-fx-text-fill:"+letraTxtf);
-
-        TxtRuaCasaComplemeto.setStyle("-fx-text-fill:"+letraTxtf);
-
-        TxtTelefone.setStyle("-fx-text-fill:"+letraTxtf);
-        
-
-        barraDeCima.setStyle("-fx-background-color:"+corPrincipal);
-
-        divisor.setStyle("-fx-background-color:"+corSecundaria);
-
-        divisor2.setStyle("-fx-background-color:"+corSecundaria);
+        barraDeCima.setStyle(barraDeCima.getStyle() + "-fx-background-color:" + corPrincipal);
+        divisor.setStyle(divisor.getStyle() + "-fx-background-color:" + corSecundaria);
+        divisor2.setStyle(divisor2.getStyle() + "-fx-background-color:" + corSecundaria);
 
         this.fundo.setImage(fundo);
 
-        lbl1.setStyle("-fx-background-color:"+corSecundaria);
-        lbl1.setStyle("-fx-text-fill:"+letraTxtf);
-    	
+        lbl1.setStyle(lbl1.getStyle() + "-fx-background-color:" + corSecundaria + ";");
+        lbl1.setStyle(lbl1.getStyle() + "-fx-text-fill:" + letraTxtf + ";");
     }
+
 
     
  

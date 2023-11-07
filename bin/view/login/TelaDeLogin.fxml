@@ -13,14 +13,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="barraDeCima" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.TelaDeLoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.TelaDeLoginController">
    <children>
       <ImageView fx:id="fundo" fitHeight="706.0" fitWidth="1366.0" layoutY="19.0" pickOnBounds="true">
          <image>
             <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
          </image>
       </ImageView>
-      <Rectangle fill="#002147" height="18.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1366.0" />
+      <Rectangle fx:id="barraDeCima" fill="#002147" height="18.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1366.0" />
       <Pane fx:id="PainelPrincipal" layoutX="370.0" layoutY="84.0" prefHeight="577.0" prefWidth="625.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
          <children>
             <ImageView fx:id="Logo" fitHeight="122.0" fitWidth="132.0" layoutX="244.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">

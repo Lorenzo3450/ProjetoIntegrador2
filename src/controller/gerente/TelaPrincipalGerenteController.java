@@ -1,6 +1,7 @@
 package controller.gerente;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +13,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model.DesignSistema;
+import model.dao.Gerente.PersonalizaSistemaDao;
 
 public class TelaPrincipalGerenteController {
 
@@ -26,9 +29,33 @@ public class TelaPrincipalGerenteController {
 
     @FXML
     private Label TextoDoPainelDeCima;
+    
+    
+    @FXML
+	private void initialize() {
+    	
+    	 DesignSistema design = null;
+         try {
+             design = PersonalizaSistemaDao.buscaDesign();
+         } catch (SQLException e) {
+             e.printStackTrace();
+             // Lidere com erros de consulta aqui, se necessário
+         }
+    	
+         Image Fundo = new Image(design.getFundoImagem());
+         Image Logo = new Image(design.getLogoImagem());
+         
+    	AlterarComponentes(Fundo, Logo, design.getCorSecundaria(), design.getTipoFonte(),design.getCorSecundaria() , design.getTipoFonte(), design.getCorPrincipal()
+    			, design.getCorSecundaria(), design.getCorTerciaria());
+    	
+    }
+   
 
     @FXML
     void AbrirSideBar(MouseEvent event) {
+    	
+    	
+    	
 
     	 try {
     	        // Carregue a cena da barra lateral a partir do arquivo FXML

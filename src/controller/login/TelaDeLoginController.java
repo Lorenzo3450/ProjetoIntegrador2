@@ -3,10 +3,13 @@ package controller.login;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
+import model.DesignSistema;
 import model.dao.ConexãoBD;
+import model.dao.Gerente.PersonalizaSistemaDao;
 import model.dao.login.loguinModel;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
@@ -26,6 +29,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -55,7 +59,7 @@ public class TelaDeLoginController {
         private Pane PainelPrincipal;
 
         @FXML
-        private AnchorPane barraDeCima;
+        private Rectangle barraDeCima;
 
         @FXML
         private Button btnEntrar;
@@ -86,6 +90,25 @@ public class TelaDeLoginController {
 
         @FXML
         private TextField txflogin;
+        
+        @FXML
+    	private void initialize() {
+        	
+        	 DesignSistema design = null;
+             try {
+                 design = PersonalizaSistemaDao.buscaDesign();
+             } catch (SQLException e) {
+                 e.printStackTrace();
+                 // Lidere com erros de consulta aqui, se necessário
+             }
+        	
+             Image Fundo = new Image(design.getFundoImagem());
+             Image Logo = new Image(design.getLogoImagem());
+             
+        	AlterarComponentes(Fundo, Logo, design.getCorSecundaria(), design.getTipoFonte(),design.getCorSecundaria() , design.getTipoFonte(), design.getCorPrincipal()
+        			, design.getCorSecundaria(), design.getCorTerciaria());
+        	
+        }
 	   
 	  
 	    public class DelayedTask extends Task<Void> {
@@ -256,39 +279,39 @@ public class TelaDeLoginController {
 	public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
 			String corPrincipal,String corSecundaria,String corTercearia) {
 		
-		
+		/*
 
 		txtsenha.setStyle("-fx-background-color:"+txtf);
 		txtsenha.setStyle("-fx-text-fill:"+letraTxtf);
-		
+		*/
 		Logo.setImage(logo);
 
-		PainelPrincipal.setStyle("-fx-background-color:"+corPrincipal);
+		PainelPrincipal.setStyle(PainelPrincipal.getStyle()+"-fx-background-color:"+corPrincipal);
 
-		barraDeCima.setStyle("-fx-background-color:"+corPrincipal);
+		barraDeCima.setStyle(barraDeCima.getStyle()+"-fx-background-color:"+corPrincipal);
 
-		btnEntrar.setStyle("-fx-background-color:"+btn);
-		btnEntrar.setStyle("-fx-text-fill:"+letraBtn);
+		btnEntrar.setStyle(btnEntrar.getStyle()+"-fx-background-color:"+btn+";");
+		btnEntrar.setStyle(btnEntrar.getStyle()+"-fx-text-fill:"+letraBtn);
 
-		divisor.setStyle("-fx-background-color:"+corSecundaria);
+		divisor.setStyle(divisor.getStyle()+"-fx-background-color:"+corSecundaria);
 
 		this.fundo.setImage(fundo);
 
-		lbl1.setStyle("-fx-background-color:"+corSecundaria);
+		lbl1.setStyle(lbl1.getStyle()+";"+"-fx-text-fill:"+corSecundaria);
 
-		lbl2.setStyle("-fx-background-color:"+corSecundaria);
+		lbl2.setStyle(lbl2.getStyle()+";"+"-fx-text-fill:"+corSecundaria);
 
-		lbl3.setStyle("-fx-background-color:"+corSecundaria);
+		lbl3.setStyle(lbl3.getStyle()+"-fx-text-fill:"+corSecundaria);
 
-		lblCadastreSe.setStyle("-fx-background-color:"+corTercearia);
+		lblCadastreSe.setStyle(lblCadastreSe.getStyle()+"-fx-text-fill:"+corTercearia);
 
-		lblRecuperaSenha.setStyle("-fx-background-color:"+corTercearia);
+		lblRecuperaSenha.setStyle(lblRecuperaSenha.getStyle()+"--fx-text-fill:"+corTercearia);
 
-		psfsenha.setStyle("-fx-background-color:"+txtf);
-		psfsenha.setStyle("-fx-text-fill:"+letraTxtf);
+		psfsenha.setStyle(psfsenha.getStyle()+"-fx-background-color:"+txtf+";");
+		psfsenha.setStyle(psfsenha.getStyle()+"-fx-text-fill:"+letraTxtf);
 
-		txflogin.setStyle("-fx-background-color:"+txtf);
-		txflogin.setStyle("-fx-text-fill:"+letraTxtf);
+		txflogin.setStyle(txflogin.getStyle()+"-fx-background-color:"+txtf+";");
+		txflogin.setStyle(txflogin.getStyle()+"-fx-text-fill:"+letraTxtf);
 		
 		
 		
