@@ -133,20 +133,7 @@ public class TelaDePerfilController {
             txtCep.setText(funcionario.getEndereco().getCep());
             txtCidade.setText(funcionario.getEndereco().getCidade());
         }
-        DesignSistema design = null;
-        try {
-            design = PersonalizaSistemaDao.buscaDesign();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            // Lidere com erros de consulta aqui, se necessário
-        }
-   	
-        Image Fundo = new Image(design.getFundoImagem());
-        Image Logo = new Image(design.getLogoImagem());
-        
-   	AlterarComponentes(Fundo, Logo, design.getCorSecundaria(), design.getTipoFonte(),design.getCorSecundaria() , design.getTipoFonte(), design.getCorPrincipal()
-   			, design.getCorSecundaria(), design.getCorTerciaria());
-   	
+
     }
 
    
@@ -239,6 +226,11 @@ public class TelaDePerfilController {
     }
 
     @FXML
+    void irParaPersonalizacao(MouseEvent event) throws Exception {
+         Main.Cena("PersonalizaSistema");
+    }
+    
+    @FXML
     void Sair7(MouseEvent event) {
         BtnEncerrarSessao.setEffect(null);
     }
@@ -274,65 +266,6 @@ public class TelaDePerfilController {
         }
     }
     
-    public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
-			String corPrincipal,String corSecundaria,String corTercearia) {
-		
-		
-
-
-		painelprincipal.setStyle(painelprincipal.getStyle()+"-fx-background-color:"+corPrincipal);
-
-		barracima.setStyle(barracima.getStyle()+"-fx-background-color:"+corPrincipal);
-
-		BtnEncerrarSessao.setStyle(BtnEncerrarSessao.getStyle()+"-fx-background-color:"+btn+";");
-		BtnEncerrarSessao.setStyle(BtnEncerrarSessao.getStyle()+"-fx-text-fill:"+letraBtn);
-
-		logo.setImage(logo); //ta dando erro aqui
-
-		lblTrocarFoto.setStyle(lblTrocarFoto.getStyle()+";"+"-fx-text-fill:"+corSecundaria);
-
-		lblPerfil.setStyle(lblPerfil.getStyle()+";"+"-fx-text-fill:"+corSecundaria);
-
-		lblInformacoes.setStyle(lblInformacoes.getStyle()+"-fx-text-fill:"+corSecundaria);
-
-		lblInformacoes2.setStyle(lblInformacoes2.getStyle()+"-fx-text-fill:"+corTercearia);
-
-		lblInformacoes3.setStyle(lblInformacoes3.getStyle()+"--fx-text-fill:"+corTercearia);
-  
-		txtSenha.setStyle(txtSenha.getStyle()+"-fx-background-color:"+txtf+";");
-		txtSenha.setStyle(txtSenha.getStyle()+"-fx-text-fill:"+letraTxtf);
-
-		txtNome.setStyle(txtNome.getStyle()+"-fx-background-color:"+txtf+";");
-		txtNome.setStyle(txtNome.getStyle()+"-fx-text-fill:"+letraTxtf);
-		
-		txtBairro.setStyle(txtBairro.getStyle()+"-fx-background-color:"+txtf+";");
-		txtBairro.setStyle(txtBairro.getStyle()+"-fx-text-fill:"+letraTxtf);
-		
-		txtCep.setStyle(txtCep.getStyle()+"-fx-background-color:"+txtf+";");
-		txtCep.setStyle(txtCep.getStyle()+"-fx-text-fill:"+letraTxtf);
-		
-		txtCidade.setStyle(txtCidade.getStyle()+"-fx-background-color:"+txtf+";");
-		txtCidade.setStyle(txtCidade.getStyle()+"-fx-text-fill:"+letraTxtf);
-		
-		txtCPF.setStyle(txtCPF.getStyle()+"-fx-background-color:"+txtf+";");
-		txtCPF.setStyle(txtCPF.getStyle()+"-fx-text-fill:"+letraTxtf);
-		
-		txtEmail.setStyle(txtEmail.getStyle()+"-fx-background-color:"+txtf+";");
-		txtEmail.setStyle(txtEmail.getStyle()+"-fx-text-fill:"+letraTxtf);
-		
-		txtLogradouro.setStyle(txtLogradouro.getStyle()+"-fx-background-color:"+txtf+";");
-		txtLogradouro.setStyle(txtLogradouro.getStyle()+"-fx-text-fill:"+letraTxtf);
-		
-		txtNascimento.setStyle(txtNascimento.getStyle()+"-fx-background-color:"+txtf+";");
-		txtNascimento.setStyle(txtNascimento.getStyle()+"-fx-text-fill:"+letraTxtf);
-		
-		txtTelefone.setStyle(txtTelefone.getStyle()+"-fx-background-color:"+txtf+";");
-		txtTelefone.setStyle(txtTelefone.getStyle()+"-fx-text-fill:"+letraTxtf);
-		
-		
-		
-		
-		
-	}
+   
    
 }
