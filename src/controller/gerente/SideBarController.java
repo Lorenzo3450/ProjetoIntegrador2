@@ -18,7 +18,7 @@ import model.dao.Gerente.PersonalizaSistemaDao;
 
 public class SideBarController {
 
-	@FXML
+    @FXML
     private ImageView Funcionario3;
 
     @FXML
@@ -46,6 +46,9 @@ public class SideBarController {
     private ImageView Produto3;
 
     @FXML
+    private ImageView Produtos2;
+
+    @FXML
     private ImageView Relatorio3;
 
     @FXML
@@ -56,6 +59,9 @@ public class SideBarController {
 
     @FXML
     private ImageView Vendas3;
+
+    @FXML
+    private ImageView carrinho2;
 
     @FXML
     private ImageView fechar1;
@@ -115,6 +121,9 @@ public class SideBarController {
     private Label lblProdutos1;
 
     @FXML
+    private Label lblProdutos2;
+
+    @FXML
     private Label lblRelatorio1;
 
     @FXML
@@ -124,7 +133,13 @@ public class SideBarController {
     private Label lblRelatorioABC;
 
     @FXML
+    private Label lblRelatorios2;
+
+    @FXML
     private Label lblVendas1;
+
+    @FXML
+    private Label lblVendas2;
 
     @FXML
     private Label lblperfil1;
@@ -146,6 +161,9 @@ public class SideBarController {
 
     @FXML
     private ImageView relatorio;
+
+    @FXML
+    private ImageView relatorios2;
 
     @FXML
     private Separator separato1;
@@ -184,7 +202,17 @@ public class SideBarController {
     private ImageView seta31;
 
     @FXML
+    private ImageView setas31;
+
+    @FXML
+    private ImageView setas32;
+
+    @FXML
+    private ImageView setas33;
+
+    @FXML
     private ImageView vendas1;
+
     
     @FXML
     private Stage stage;
