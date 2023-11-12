@@ -1,18 +1,31 @@
 	package model.dao.Gerente;
+import java.sql.Blob;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-	import java.sql.Connection;
-	import java.sql.PreparedStatement;
-	import java.sql.ResultSet;
-	import java.sql.SQLException;
-	import java.util.ArrayList;
-	import java.util.List;
-	import model.Endereco;
-	import model.Funcionario;
-	import model.dao.ConexãoBD;
+import model.Endereco;
+import model.Funcionario;
+import model.PerfilGeralModel;
+import model.dao.ConexãoBD;
 
 	public class TelaDePerfilDao {
 
 	
+	    private Connection conex;
+		private PerfilGeralModel pgm;
+
+
+		public TelaDePerfilDao(Connection conex, PerfilGeralModel pgm  ) {
+	        this.conex = conex;
+	        this.pgm =new PerfilGeralModel();
+	    }
+	  
+		
+		
 	    public static List<Funcionario> getFuncionarioComEndereco(int idFuncionario) {
 	        List<Funcionario> funcionarios = new ArrayList<>();
 	        
@@ -94,7 +107,70 @@
 	        return false;
 	    }
 	    
+	    public byte[] carregarFoto(int idFuncionario) {
+	        try {
+	            conex = new ConexãoBD().Conexao();
+	            // Consulta para obter a imagem do usuário com base no ID
+	            String sql = "SELECT foto_perfil FROM funcionario WHERE id = ?";
+	            PreparedStatement statement = conex.prepareStatement(sql);
+	            statement.setInt(1, idFuncionario);
+	            ResultSet resultSet = statement.executeQuery();
+	            if (resultSet.next()) {
+	                // Obtém os dados da imagem da coluna "foto_perfil"
+	                Blob blob = resultSet.getBlob("foto_perfil");
+
+	                if (blob != null) {
+	                    // Lê os dados da imagem como um array de bytes
+	                    byte[] imageData = blob.getBytes(1, (int) blob.length());
+	                    return imageData;
+	                }
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            // Trate as exceções aqui, se necessário.
+	        } finally {
+	            try {
+	                if (conex != null) {
+	                    conex.close();
+	                }
+	            } catch (SQLException e) {
+	                e.printStackTrace();
+	                // Trate as exceções aqui, se necessário.
+	            }
+	        }
+
+	        return null; // Retorna null se a imagem não for encontrada ou se ocorrer um erro
+	    }
 	    
+	    public boolean salvarFotoPerfil(PerfilGeralModel perfilGeral) {
+	        try {
+	            conex = new ConexãoBD().Conexao();
+
+	            // Execute uma instrução SQL para salvar a imagem no banco de dados
+	            String sql = "UPDATE funcionario SET foto_perfil = ? WHERE id = ?";
+	            PreparedStatement ps = conex.prepareStatement(sql);
+	            ps.setBytes(1, perfilGeral.getFotoPerfil());
+	            ps.setInt(2, perfilGeral.getId());
+	            ps.executeUpdate();
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	            // Trate as exceções aqui, se necessário.
+	        }
+			return true;
+	    }
+
+
+
+		public void salvarFotoPerfil(int idFuncionario, byte[] imageData) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+
+
+
+
 	  
 	}
 	
