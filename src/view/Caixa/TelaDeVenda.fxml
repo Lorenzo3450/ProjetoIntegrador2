@@ -16,7 +16,7 @@
             <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="56.0" layoutY="98.0" prefHeight="577.0" prefWidth="1226.0" style="-fx-background-color: #002147; -fx-border-radius: 40; -fx-background-radius: 40;">
+      <AnchorPane fx:id="PainelPrincipal" layoutX="56.0" layoutY="98.0" prefHeight="577.0" prefWidth="1226.0" style="-fx-background-color: #002147; -fx-border-radius: 40; -fx-background-radius: 40;">
          <children>
             <TextField fx:id="txtCodigoDeBarra" layoutX="684.0" layoutY="36.0" prefHeight="35.0" prefWidth="498.0" style="-fx-border-radius: 20; -fx-background-radius: 10; -fx-background-color: #FFFFFF;" />
             <TextField fx:id="txtDescricao" editable="false" layoutX="684.0" layoutY="120.0" prefHeight="35.0" prefWidth="498.0" style="-fx-border-radius: 20; -fx-background-radius: 10; -fx-background-color: #FFFFFF;" />

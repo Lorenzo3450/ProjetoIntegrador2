@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -188,6 +190,27 @@ public class PersonalizaSistemaController {
     @FXML
     private Label TextoDoPainelDeCima111111;
     
+    @FXML
+	private void initialize() {
+    	
+    	 DesignSistema design = null;
+         try {
+             design = PersonalizaSistemaDao.buscaDesign();
+         } catch (SQLException e) {
+             e.printStackTrace();
+             // Lidere com erros de consulta aqui, se necessário
+         }
+         if(design!=null) {
+
+         Image Fundo = new Image(design.getFundoImagem());
+         Image Logo = new Image(design.getLogoImagem());
+         
+    	AlterarComponentes(Fundo, Logo, design.getCorSecundaria(), design.getTipoFonte(),design.getCorSecundaria() , design.getTipoFonte(), design.getCorPrincipal()
+    			, design.getCorSecundaria(), design.getCorTerciaria());
+         }
+    }
+
+    
     
     @FXML
     void AbrirSideBar(MouseEvent event) {
@@ -332,16 +355,43 @@ public class PersonalizaSistemaController {
         	   try {
         	    	
         	       PersonalizaSistemaDao.atualizaDesign(design);
-        	        System.out.println("Design salvo com sucesso.");
+        	       JOptionPane.showMessageDialog(null,"Design salvo com sucesso.");
         	    } catch (SQLException e) {
         	        e.printStackTrace();
-        	        System.out.println("Erro ao salvar o design.");
+        	        JOptionPane.showMessageDialog(null,"Erro ao salvar o design.");
         	  }
         	} else {
         	    System.out.println("Preencha todos os campos antes de salvar.");
         	}
 
 }
+   
+   
+   
+	public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
+			String corPrincipal,String corSecundaria,String corTercearia) {
+		
+		
+		Fundo2.setImage(fundo);;
+		Fundo21.setImage(fundo);
+		ImagemDeFundo.setImage(fundo);
+		
+		Logo.setImage(logo);
+		Logo2.setImage(logo);
+		Logo21.setImage(logo);
+		
+		
+		PainelDeCima.setStyle(PainelDeCima.getStyle()+"-fx-background-color:"+corPrincipal);
+		PainelDeCima1.setStyle(PainelDeCima1.getStyle()+"-fx-background-color:"+corPrincipal);
+		
+		
+		PainelPrincipal.setStyle(PainelPrincipal.getStyle()+"-fx-background-color:"+corPrincipal);
+		PainelPrincipal1.setStyle(PainelPrincipal1.getStyle()+"-fx-background-color:"+corPrincipal);
+		PainelPrincipal11.setStyle(PainelPrincipal11.getStyle()+"-fx-background-color:"+corPrincipal);
+
+
+		
+	}
     
     
     }

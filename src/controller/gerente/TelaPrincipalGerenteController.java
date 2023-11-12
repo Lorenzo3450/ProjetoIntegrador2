@@ -42,12 +42,14 @@ public class TelaPrincipalGerenteController {
              // Lidere com erros de consulta aqui, se necessário
          }
     	
+         if(design!=null) {
+         
          Image Fundo = new Image(design.getFundoImagem());
          Image Logo = new Image(design.getLogoImagem());
          
     	AlterarComponentes(Fundo, Logo, design.getCorSecundaria(), design.getTipoFonte(),design.getCorSecundaria() , design.getTipoFonte(), design.getCorPrincipal()
     			, design.getCorSecundaria(), design.getCorTerciaria());
-    	
+         }
     }
    
 

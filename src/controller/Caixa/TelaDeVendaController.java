@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -16,8 +17,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model.DesignSistema;
 import model.Produto2;
 import model.dao.Caixa.TelaDeVendaDao;
+import model.dao.Gerente.PersonalizaSistemaDao;
+
 import java.text.DecimalFormat;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyCodeCombination;
@@ -27,11 +31,15 @@ import controller.Main;
 
 public class TelaDeVendaController {
 
+	DecimalFormat formato = new DecimalFormat("#.##");
+	
+    @FXML
+    private AnchorPane PainelPrincipal;
+	
     @FXML
     private AnchorPane Painel;
 	
-	DecimalFormat formato = new DecimalFormat("#.##");
-
+	
     @FXML
     private ImageView ImagemDeFundo;
 
@@ -78,7 +86,21 @@ public class TelaDeVendaController {
     
     public void initialize() {
     	
-    	
+    	 DesignSistema design = null;
+         try {
+             design = PersonalizaSistemaDao.buscaDesign();
+         } catch (SQLException e) {
+             e.printStackTrace();
+             // Lidere com erros de consulta aqui, se necessário
+         }
+         if(design!=null) {
+
+         Image Fundo = new Image(design.getFundoImagem());
+         Image Logo = new Image(design.getLogoImagem());
+         
+    	AlterarComponentes(Fundo, Logo, design.getCorSecundaria(), design.getTipoFonte(),design.getCorSecundaria() , design.getTipoFonte(), design.getCorPrincipal()
+    			, design.getCorSecundaria(), design.getCorTerciaria());
+         }
 
     	   Painel.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
     	        if (event.getCode() == KeyCode.F12) {
@@ -242,7 +264,32 @@ public class TelaDeVendaController {
     }
     
     
-   
+    public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
+			String corPrincipal,String corSecundaria,String corTercearia) {
+
+    	 
+    		PainelPrincipal.setStyle(PainelPrincipal.getStyle()+"-fx-background-color:"+corPrincipal);
+    		
+    	   
+    		
+    		
+    	   ImagemDeFundo.setImage(fundo);
+
+    	   Logo.setImage(logo);
+
+    	    
+    	    PainelDeCima.setStyle("-fx-background-color:"+corPrincipal);;
+
+    	   
+    	    
+    	   
+
+    	  
+
+    	
+    	
+    	
+    }
     
     
 

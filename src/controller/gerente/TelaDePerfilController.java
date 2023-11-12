@@ -1,6 +1,7 @@
 package controller.gerente;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -30,7 +31,7 @@ public class TelaDePerfilController {
 	EfeitoBtn efeito = new EfeitoBtn();
 
     @FXML
-    private ImageView BtnEncerrarSessao;
+    private Button BtnEncerrarSessao;
 
     @FXML
     private TextField TxtBairro;
@@ -187,5 +188,13 @@ public class TelaDePerfilController {
     	
     }
     
+    
+    @FXML
+    void IrParaPersolizaSistema(MouseEvent event) throws Exception {
+    	
+    	Main.Cena("PersonalizaSistema");
+    	
+    }
+
     
 }

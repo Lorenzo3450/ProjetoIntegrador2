@@ -101,13 +101,14 @@ import javafx.scene.layout.Pane;
                  e.printStackTrace();
                  // Lidere com erros de consulta aqui, se necessário
              }
-        	
+             if(design!=null) {
+
              Image Fundo = new Image(design.getFundoImagem());
              Image Logo = new Image(design.getLogoImagem());
              
         	AlterarComponentes(Fundo, Logo, design.getCorSecundaria(), design.getTipoFonte(),design.getCorSecundaria() , design.getTipoFonte(), design.getCorPrincipal()
         			, design.getCorSecundaria(), design.getCorTerciaria());
-        	
+             }
         }
 	   
 	    
@@ -245,7 +246,7 @@ import javafx.scene.layout.Pane;
 
 	        this.fundo.setImage(fundo);
 
-	        lbl1.setStyle(lbl1.getStyle() + ";-fx-background-color:" + corSecundaria);
+	      
 	        lbl1.setStyle(lbl1.getStyle() + ";-fx-text-fill:" + letraTxtf);
 
 	        TxtCpf.setStyle(TxtCpf.getStyle() + "-fx-background-color:" + txtf);

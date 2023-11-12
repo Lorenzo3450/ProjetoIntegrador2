@@ -137,11 +137,6 @@
                   <Font size="13.0" />
                </font>
             </TextField>
-            <Button fx:id="btnSalvar" layoutX="122.0" layoutY="472.0" mnemonicParsing="false" onMouseClicked="#Salvar" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Salvar" textFill="#002147">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="PainelPrincipal1" layoutX="839.0" layoutY="94.0" prefHeight="605.0" prefWidth="483.0" style="-fx-background-color: #002147; -fx-background-radius: 20;">
@@ -204,6 +199,11 @@
                   </AnchorPane>
                </children>
             </Pane>
+            <Button fx:id="btnSalvar" layoutX="321.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#Salvar" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Salvar" textFill="#002147">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

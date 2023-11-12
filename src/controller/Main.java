@@ -151,11 +151,7 @@ public class Main extends Application {
 		PagamentoEmDinheiro= new Scene(fxmlPagamentoEmDinheiro);
 		
 		
-		this.primaryStage.setScene(cadastro);
-		this.primaryStage.show();
 		
-
-		/*
 
 		// inicializa as cenas
 
@@ -196,7 +192,7 @@ public class Main extends Application {
 		} else {
 			this.primaryStage.setScene(login);
 			this.primaryStage.show();
-		} */ 
+		} 
 
 	}
 	
@@ -309,6 +305,13 @@ public class Main extends Application {
 		if (a.equals("PagamentoDinheiro")) {
 
 			primaryStage.setScene(PagamentoEmDinheiro);
+
+		}
+		
+		
+		if (a.equals("PersonalizaSistema")) {
+
+			primaryStage.setScene(PersonalizaSistema);
 
 		}
 		

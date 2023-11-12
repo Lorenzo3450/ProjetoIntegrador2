@@ -1,18 +1,37 @@
 package controller.gerente;
 
+import java.sql.SQLException;
+
 import controller.Main;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.Separator;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model.DesignSistema;
+import model.dao.Gerente.PersonalizaSistemaDao;
 
 public class SideBarController {
 
+	@FXML
+    private ImageView Funcionario3;
+
     @FXML
-    private ImageView Logo;
+    private ImageView Funcionarios1;
+
+    @FXML
+    private ImageView Inicio2;
+
+    @FXML
+    private ImageView Inicio3;
+
+    @FXML
+    private Label LblVendas3;
 
     @FXML
     private ImageView Logo1;
@@ -21,7 +40,94 @@ public class SideBarController {
     private ImageView Logo11;
 
     @FXML
-    private ImageView Logo111;
+    private ImageView Perfil2;
+
+    @FXML
+    private ImageView Produto3;
+
+    @FXML
+    private ImageView Relatorio3;
+
+    @FXML
+    private ImageView RelatorioABC;
+
+    @FXML
+    private ImageView TabelaFuncionario;
+
+    @FXML
+    private ImageView Vendas3;
+
+    @FXML
+    private ImageView fechar1;
+
+    @FXML
+    private ImageView fechar12;
+
+    @FXML
+    private ImageView fechar2;
+
+    @FXML
+    private ImageView funcionarios1;
+
+    @FXML
+    private ImageView graficoMeses;
+
+    @FXML
+    private ImageView graficoSessoes;
+
+    @FXML
+    private ImageView inicio1;
+
+    @FXML
+    private Label lblFuncionario;
+
+    @FXML
+    private Label lblFuncionarios1;
+
+    @FXML
+    private Label lblFuncionarios2;
+
+    @FXML
+    private Label lblGraficoMeses;
+
+    @FXML
+    private Label lblGraficoSessoes;
+
+    @FXML
+    private Label lblInicio;
+
+    @FXML
+    private Label lblInicio1;
+
+    @FXML
+    private Label lblInicio2;
+
+    @FXML
+    private Label lblPerfil2;
+
+    @FXML
+    private Label lblPerfil3;
+
+    @FXML
+    private Label lblProduto3;
+
+    @FXML
+    private Label lblProdutos1;
+
+    @FXML
+    private Label lblRelatorio1;
+
+    @FXML
+    private Label lblRelatorio3;
+
+    @FXML
+    private Label lblRelatorioABC;
+
+    @FXML
+    private Label lblVendas1;
+
+    @FXML
+    private Label lblperfil1;
 
     @FXML
     private AnchorPane painelABerto;
@@ -31,6 +137,54 @@ public class SideBarController {
 
     @FXML
     private AnchorPane painelRelatorio;
+
+    @FXML
+    private ImageView perfil;
+
+    @FXML
+    private ImageView produto1;
+
+    @FXML
+    private ImageView relatorio;
+
+    @FXML
+    private Separator separato1;
+
+    @FXML
+    private Separator separato2;
+
+    @FXML
+    private Separator separato3;
+
+    @FXML
+    private ImageView seta11;
+
+    @FXML
+    private ImageView seta12;
+
+    @FXML
+    private ImageView seta13;
+
+    @FXML
+    private ImageView seta14;
+
+    @FXML
+    private ImageView seta21;
+
+    @FXML
+    private ImageView seta22;
+
+    @FXML
+    private ImageView seta23;
+
+    @FXML
+    private ImageView seta24;
+
+    @FXML
+    private ImageView seta31;
+
+    @FXML
+    private ImageView vendas1;
     
     @FXML
     private Stage stage;
@@ -42,6 +196,23 @@ public class SideBarController {
     @FXML
     void initialize() {
         
+
+   	 DesignSistema design = null;
+        try {
+            design = PersonalizaSistemaDao.buscaDesign();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Lidere com erros de consulta aqui, se necessário
+        }
+        if(design!=null) {
+
+        Image Fundo = new Image(design.getFundoImagem());
+        Image Logo = new Image(design.getLogoImagem());
+        
+   	AlterarComponentes(Fundo, Logo, design.getCorSecundaria(), design.getTipoFonte(),design.getCorSecundaria() , design.getTipoFonte(), design.getCorPrincipal()
+   			, design.getCorSecundaria(), design.getCorTerciaria());
+        }
+    	
     	AbrirSideBar(null);
     	
     	  if (stage != null) {
@@ -152,4 +323,22 @@ public class SideBarController {
 
     }
 
+    public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
+			String corPrincipal,String corSecundaria,String corTercearia) {
+    	
+
+    	Logo1.setImage(logo);
+
+    	Logo11.setImage(logo);
+	
+    	painelABerto.setStyle(painelABerto.getStyle()+"-fx-background-color:"+corPrincipal);
+
+    	painelFuncionario.setStyle(painelFuncionario.getStyle()+"-fx-background-color:"+corPrincipal);
+
+        painelRelatorio.setStyle(painelRelatorio.getStyle()+"-fx-background-color:"+corPrincipal);
+    	
+    	
+    }
+    
+    
 }
