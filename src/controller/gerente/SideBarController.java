@@ -3,10 +3,12 @@ package controller.gerente;
 import java.sql.SQLException;
 
 import controller.Main;
+import controller.Ferramentas.EfeitoImage;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Separator;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -354,6 +356,15 @@ public class SideBarController {
     public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
 			String corPrincipal,String corSecundaria,String corTercearia) {
     	
+    	ColorAdjust colorAdjust = new ColorAdjust();
+    	
+		String hexColor = corSecundaria;
+		double[] hueValues = EfeitoImage.hexToHue(hexColor);
+		
+		colorAdjust.setHue(hueValues[0]); // Componente vermelho
+		colorAdjust.setSaturation(hueValues[1]); // Componente verde
+		colorAdjust.setBrightness(hueValues[2]); // Componente azul   
+    	
 
     	Logo1.setImage(logo);
 
@@ -364,6 +375,180 @@ public class SideBarController {
     	painelFuncionario.setStyle(painelFuncionario.getStyle()+"-fx-background-color:"+corPrincipal);
 
         painelRelatorio.setStyle(painelRelatorio.getStyle()+"-fx-background-color:"+corPrincipal);
+        
+        
+        
+        Funcionario3.setEffect(colorAdjust);
+
+        Funcionarios1.setEffect(colorAdjust);
+
+        Inicio2.setEffect(colorAdjust);
+
+        Inicio3.setEffect(colorAdjust);
+
+       
+
+
+        Perfil2.setEffect(colorAdjust);
+
+        Produto3.setEffect(colorAdjust);
+
+        Produtos2.setEffect(colorAdjust);
+
+        Relatorio3.setEffect(colorAdjust);
+
+        RelatorioABC.setEffect(colorAdjust);
+
+        TabelaFuncionario.setEffect(colorAdjust);
+
+        Vendas3.setEffect(colorAdjust);
+
+        carrinho2.setEffect(colorAdjust);
+
+        fechar1.setEffect(colorAdjust);
+
+        fechar12.setEffect(colorAdjust);
+
+        fechar2.setEffect(colorAdjust);
+
+        funcionarios1.setEffect(colorAdjust);
+
+        graficoMeses.setEffect(colorAdjust);
+
+        graficoSessoes.setEffect(colorAdjust);
+
+        inicio1.setEffect(colorAdjust);
+
+        lblFuncionario.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblFuncionarios1.setStyle(lblFuncionarios1.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblFuncionarios2.setStyle(lblFuncionarios2.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblGraficoMeses.setStyle(lblGraficoMeses.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblGraficoSessoes.setStyle(lblGraficoSessoes.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblInicio.setStyle(lblInicio.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblInicio1.setStyle(lblInicio1.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblInicio2.setStyle(lblInicio2.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblPerfil2.setStyle(lblPerfil2.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblPerfil3.setStyle(lblPerfil3.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblProduto3.setStyle(lblProduto3.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblProdutos1.setStyle(lblProdutos1.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblProdutos2.setStyle(lblProdutos2.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblRelatorio1.setStyle(lblRelatorio1.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblRelatorio3.setStyle(lblRelatorio3.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblRelatorioABC.setStyle(lblRelatorioABC.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblRelatorios2.setStyle(lblRelatorios2.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblVendas1.setStyle(lblVendas1.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        lblVendas2.setStyle(lblVendas2.getStyle()+"-fx-text-fill:"+txtf+";");
+
+        LblVendas3.setStyle(lblVendas2.getStyle()+"-fx-text-fill:"+txtf+";");
+        
+        lblperfil1.setStyle(lblperfil1.getStyle()+"-fx-text-fill:"+txtf+";");
+        
+        
+        //
+        
+        lblFuncionario.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblFuncionarios1.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblFuncionarios2.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblGraficoMeses.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblGraficoSessoes.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblInicio.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblInicio1.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblInicio2.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblPerfil2.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblPerfil3.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblProduto3.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblProdutos1.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblProdutos2.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblRelatorio1.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblRelatorio3.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblRelatorioABC.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblRelatorios2.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblVendas1.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        lblVendas2.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+        LblVendas3.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+        
+        lblperfil1.setStyle(lblFuncionario.getStyle()+"-fx-text-fill:"+letraTxtf);
+        
+        
+
+        perfil.setEffect(colorAdjust);
+
+        produto1.setEffect(colorAdjust);
+
+        relatorio.setEffect(colorAdjust);
+
+        relatorios2.setEffect(colorAdjust);
+
+        separato1.setStyle(separato1.getStyle()+"-fx-background-color:"+corSecundaria);
+
+        separato2.setStyle(separato2.getStyle()+"-fx-background-color:"+corSecundaria);
+
+        separato3.setStyle(separato3.getStyle()+"-fx-background-color:"+corSecundaria);
+
+        seta11.setEffect(colorAdjust);
+
+        seta12.setEffect(colorAdjust);
+
+        seta13.setEffect(colorAdjust);
+
+        seta14.setEffect(colorAdjust);
+
+        seta21.setEffect(colorAdjust);
+
+        seta22.setEffect(colorAdjust);
+
+        seta23.setEffect(colorAdjust);
+
+        seta24.setEffect(colorAdjust);
+
+        seta31.setEffect(colorAdjust);
+
+        setas31.setEffect(colorAdjust);
+
+        setas32.setEffect(colorAdjust);
+
+        setas33.setEffect(colorAdjust);
+
+        vendas1.setEffect(colorAdjust);
+
+        
     	
     	
     }
