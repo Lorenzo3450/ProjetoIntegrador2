@@ -8,5 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Mysql"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ADFD"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Gmail"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
