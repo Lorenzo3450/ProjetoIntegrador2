@@ -7,26 +7,34 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
+import model.DesignSistema;
 import model.dao.ConexãoBD;
+import model.dao.Gerente.PersonalizaSistemaDao;
 import model.dao.login.RecuperSenhaModel;
 import controller.Ferramentas.EfeitoBtn;
 import controller.Main;
 import javafx.fxml.FXML;
-	import javafx.scene.control.PasswordField;
-	import javafx.scene.control.TextField;
-	import javafx.scene.image.ImageView;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.Separator;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 	import javafx.scene.input.KeyEvent;
 	import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 
 	public class TelaRecuperaSenhaController {
 
 		EfeitoBtn efeito = new EfeitoBtn();
 		
-	    @FXML
-	    private ImageView Btnfinal;
 
+		@FXML
+		private ImageView ImEsconde;
+		  
 	    @FXML
-	    private ImageView ImEsconde;
+	    private Button Btnfinal;
 
 	    @FXML
 	    private ImageView ImEsconde1;
@@ -36,7 +44,13 @@ import javafx.fxml.FXML;
 
 	    @FXML
 	    private ImageView ImMostra1;
-	    
+
+	    @FXML
+	    private ImageView Logo;
+
+	    @FXML
+	    private Pane PainelPrincipal;
+
 	    @FXML
 	    private TextField TxtCpf;
 
@@ -50,17 +64,54 @@ import javafx.fxml.FXML;
 	    private TextField TxtPalavrasDeRecuperacao3;
 
 	    @FXML
+	    private Pane barraDeCima;
+
+	    @FXML
+	    private Separator divisor;
+
+	    @FXML
+	    private Separator divisor2;
+
+	    @FXML
+	    private ImageView fundo;
+
+	    @FXML
+	    private Label lbl1;
+
+	    @FXML
 	    private PasswordField psfConfirmaNovaSenha;
 
 	    @FXML
 	    private PasswordField psfsNovaSenha;
-	    
+
 	    @FXML
 	    private TextField txtSenha;
 
 	    @FXML
 	    private TextField txtSenha1;
 
+
+
+	    @FXML
+    	private void initialize() {
+        	
+        	 DesignSistema design = null;
+             try {
+                 design = PersonalizaSistemaDao.buscaDesign();
+             } catch (SQLException e) {
+                 e.printStackTrace();
+                 // Lidere com erros de consulta aqui, se necessário
+             }
+        	if(design!=null) {
+             Image Fundo = new Image(design.getFundoImagem());
+             Image Logo = new Image(design.getLogoImagem());
+             
+        	AlterarComponentes(Fundo, Logo, design.getCorSecundaria(), design.getTipoFonte(),design.getCorSecundaria() , design.getTipoFonte(), design.getCorPrincipal()
+        			, design.getCorSecundaria(), design.getCorTerciaria());
+        	}
+        }
+	   
+	    
 	    @FXML
 	    void BtnFinalizar(MouseEvent event) throws SQLException {
 	    	
@@ -175,8 +226,64 @@ import javafx.fxml.FXML;
 	    	
 	    }
 
+
+	    public void AlterarComponentes(Image fundo, Image logo, String txtf, String letraTxtf, String btn, String letraBtn,
+	            String corPrincipal, String corSecundaria, String corTercearia) {
+
+	        Btnfinal.setStyle(Btnfinal.getStyle() + "-fx-background-color:" + btn + ";");
+	        Btnfinal.setStyle(Btnfinal.getStyle() + "-fx-text-fill:" + letraBtn + ";");
+
+	        Logo.setImage(logo);
+
+	        PainelPrincipal.setStyle(PainelPrincipal.getStyle() + "-fx-background-color:" + corPrincipal);
+
+	        barraDeCima.setStyle(barraDeCima.getStyle() + "-fx-background-color:" + corPrincipal);
+
+	        divisor.setStyle(divisor.getStyle() + "-fx-background-color:" + corSecundaria);
+
+	        divisor2.setStyle(divisor2.getStyle() + "-fx-background-color:" + corSecundaria);
+
+	        this.fundo.setImage(fundo);
+
+	      
+	        lbl1.setStyle(lbl1.getStyle() + ";-fx-text-fill:" + letraTxtf);
+
+	        TxtCpf.setStyle(TxtCpf.getStyle() + "-fx-background-color:" + txtf);
+
+	        TxtPalavrasDeRecuperacao1.setStyle(TxtPalavrasDeRecuperacao1.getStyle() + "-fx-background-color:" + txtf);
+
+	        TxtPalavrasDeRecuperacao2.setStyle(TxtPalavrasDeRecuperacao2.getStyle() + "-fx-background-color:" + txtf);
+
+	        TxtPalavrasDeRecuperacao3.setStyle(TxtPalavrasDeRecuperacao3.getStyle() + "-fx-background-color:" + txtf);
+
+	        psfConfirmaNovaSenha.setStyle(psfConfirmaNovaSenha.getStyle() + "-fx-background-color:" + txtf);
+
+	        psfsNovaSenha.setStyle(psfsNovaSenha.getStyle() + "-fx-background-color:" + txtf);
+
+	        txtSenha.setStyle(txtSenha.getStyle() + "-fx-background-color:" + txtf);
+
+	        txtSenha1.setStyle(txtSenha1.getStyle() + "-fx-background-color:" + txtf);
+
+	        TxtCpf.setStyle(TxtCpf.getStyle() + "-fx-text-fill:" + letraTxtf);
+
+	        TxtPalavrasDeRecuperacao1.setStyle(TxtPalavrasDeRecuperacao1.getStyle() + "-fx-text-fill:" + letraTxtf);
+
+	        TxtPalavrasDeRecuperacao2.setStyle(TxtPalavrasDeRecuperacao2.getStyle() + "-fx-text-fill:" + letraTxtf);
+
+	        TxtPalavrasDeRecuperacao3.setStyle(TxtPalavrasDeRecuperacao3.getStyle() + "-fx-text-fill:" + letraTxtf);
+
+	        psfConfirmaNovaSenha.setStyle(psfConfirmaNovaSenha.getStyle() + "-fx-text-fill:" + letraTxtf);
+
+	        psfsNovaSenha.setStyle(psfsNovaSenha.getStyle() + "-fx-text-fill:" + letraTxtf);
+
+	        txtSenha.setStyle(txtSenha.getStyle() + "-fx-text-fill:" + letraTxtf);
+
+	        txtSenha1.setStyle(txtSenha1.getStyle() + "-fx-text-fill:" + letraTxtf);
+	    }
+
+    
+    
+
 	}
-
 	
 	
-

@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="painelprincipal" prefHeight="720.0" prefWidth="1335.0" style="-fx-background-color: #778899;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.gerente.TelaDePerfilController">
+<AnchorPane fx:id="painelprincipal" prefHeight="720.0" prefWidth="1335.0" style="-fx-background-color: #778899;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.gerente.TelaDePerfilController">
    <children>
       <Pane fx:id="barracima" layoutX="-7.0" prefHeight="56.0" prefWidth="1370.0" style="-fx-background-color: #002147;">
          <children>
             <ImageView fx:id="logo" fitHeight="55.0" fitWidth="57.0" layoutX="13.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../ArquivosEclipse/SistemaSupermercado/Imagens/Group%204%201Spmdg.png" />
+                  <Image url="@../../../Imagens/imagens%20login/Group%204%201.png" />
                </image>
             </ImageView>
             <Label fx:id="lblPerfil" layoutX="75.0" layoutY="1.0" text="-Perfil do usuário" textFill="WHITE">
@@ -25,14 +25,14 @@
             </Label>
          </children>
       </Pane>
-      <Label fx:id="lblInformacoes" layoutX="37.0" layoutY="79.0" prefHeight="57.0" prefWidth="354.0" text="Informações do perfil" textFill="#05254a">
+      <Label fx:id="lblInformacoes" layoutX="55.0" layoutY="80.0" prefHeight="57.0" prefWidth="354.0" text="Informações do perfil" textFill="#05254a">
          <font>
             <Font name="System Italic" size="24.0" />
          </font>
       </Label>
       <ImageView fx:id="imgFoto" fitHeight="100.0" fitWidth="100.0" layoutX="90.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../ArquivosEclipse/SistemaSupermercado/Imagens/User_CircleCirculo.png" />
+            <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/User_Circle2.png" />
          </image>
       </ImageView>
       <TextField fx:id="txtNome" layoutX="206.0" layoutY="178.0" prefHeight="28.0" prefWidth="408.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #05254a; -fx-border-radius: 10;" text="Nome">
@@ -47,7 +47,7 @@
       </Label>
       <ImageView fitHeight="57.0" fitWidth="53.0" layoutX="624.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../ArquivosEclipse/SistemaSupermercado/Imagens/Note_EditNota.png" />
+            <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/Note_EditNota.png" />
          </image>
       </ImageView>
       <TextField fx:id="txtEmail" layoutX="47.0" layoutY="242.0" prefHeight="33.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #05254a; -fx-border-radius: 10;" text="Email">
@@ -116,5 +116,6 @@
          </image>
       </ImageView>
       <Button fx:id="BtnEncerrarSessao" layoutX="1135.0" layoutY="484.0" mnemonicParsing="false" onMouseClicked="#EncerrarSessao" prefHeight="56.0" prefWidth="138.0" style="-fx-background-color: #002147; -fx-background-radius: 20;" text="Encerrar" textFill="WHITE" />
+      <Button layoutX="1051.0" layoutY="165.0" mnemonicParsing="false" onMouseClicked="#irParaPersonalizacao" prefHeight="56.0" prefWidth="138.0" style="-fx-background-color: #002147; -fx-background-radius: 20;" text="Personalizar sistema" textFill="WHITE" />
    </children>
 </AnchorPane>

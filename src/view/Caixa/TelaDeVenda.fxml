@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1336.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Caixa.TelaDeVendaController">
+   <children>
+      <ImageView fx:id="ImagemDeFundo" fitHeight="720.0" fitWidth="1366.0" layoutY="60.0" pickOnBounds="true" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <image>
+            <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="PainelPrincipal" layoutX="56.0" layoutY="98.0" prefHeight="577.0" prefWidth="1226.0" style="-fx-background-color: #002147; -fx-border-radius: 40; -fx-background-radius: 40;">
+         <children>
+            <TextField fx:id="txtCodigoDeBarra" layoutX="684.0" layoutY="36.0" prefHeight="35.0" prefWidth="498.0" style="-fx-border-radius: 20; -fx-background-radius: 10; -fx-background-color: #FFFFFF;" />
+            <TextField fx:id="txtDescricao" editable="false" layoutX="684.0" layoutY="120.0" prefHeight="35.0" prefWidth="498.0" style="-fx-border-radius: 20; -fx-background-radius: 10; -fx-background-color: #FFFFFF;" />
+            <TextField fx:id="txtQuantida" editable="false" layoutX="684.0" layoutY="195.0" prefHeight="35.0" prefWidth="150.0" style="-fx-border-radius: 20; -fx-background-radius: 10; -fx-background-color: #FFFFFF;" />
+            <TextField fx:id="TxtPrecoUnitario" editable="false" layoutX="855.0" layoutY="195.0" prefHeight="35.0" prefWidth="150.0" style="-fx-border-radius: 20; -fx-background-radius: 10; -fx-background-color: #FFFFFF;" />
+            <TextField fx:id="txtPrecoTotal" editable="false" layoutX="1033.0" layoutY="195.0" prefHeight="35.0" prefWidth="150.0" style="-fx-border-radius: 20; -fx-background-radius: 10; -fx-background-color: #FFFFFF;" />
+            <TextField editable="false" layoutX="43.0" layoutY="330.0" prefHeight="56.0" prefWidth="612.0" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-background-color: #FFFFFF;" />
+            <ListView fx:id="lvListagem" layoutX="45.0" layoutY="28.0" prefHeight="277.0" prefWidth="599.0" />
+            <Label fx:id="txt" layoutX="693.0" layoutY="6.0" text="codigo de barras" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="txt1" layoutX="693.0" layoutY="86.0" text="Descrição" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="txt2" layoutX="701.0" layoutY="167.0" text="Quantidade" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="txt3" layoutX="862.0" layoutY="167.0" text="preço unitário" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="txt4" layoutX="1050.0" layoutY="167.0" text="preço total" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="txt5" layoutX="691.0" layoutY="265.0" prefHeight="45.0" prefWidth="214.0" style="-fx-background-radius: 20; -fx-background-color: #FFFFFF;" text="    Adicionar (Enter)" textFill="#002147">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="txt51" layoutX="938.0" layoutY="266.0" prefHeight="45.0" prefWidth="245.0" style="-fx-background-radius: 20; -fx-background-color: #FFFFFF;" text=" Remover Produto (F2)" textFill="#002147" wrapText="true">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <Label fx:id="Lbl5" layoutX="687.0" layoutY="328.0" prefHeight="1.0" prefWidth="491.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Label fx:id="txt52" layoutX="691.0" layoutY="353.0" prefHeight="45.0" prefWidth="214.0" style="-fx-background-radius: 20; -fx-background-color: #FFFFFF;" text="    Pagamento (F1)" textFill="#002147">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="txt511" layoutX="938.0" layoutY="353.0" prefHeight="45.0" prefWidth="245.0" style="-fx-background-radius: 20; -fx-background-color: #FFFFFF;" text="         Cancelar (F3)" textFill="#002147" wrapText="true">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <TextField editable="false" layoutX="43.0" layoutY="410.0" prefHeight="56.0" prefWidth="612.0" style="-fx-border-radius: 20; -fx-background-radius: 20;" />
+            <TextField editable="false" layoutX="45.0" layoutY="490.0" prefHeight="56.0" prefWidth="612.0" style="-fx-border-radius: 20; -fx-background-radius: 20;" />
+            <TextField fx:id="txtSubTotal" editable="false" layoutX="540.0" layoutY="330.0" prefHeight="56.0" prefWidth="115.0" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-background-color: #FFFFFF;" />
+            <TextField fx:id="txtDesconto" editable="false" layoutX="540.0" layoutY="410.0" prefHeight="56.0" prefWidth="115.0" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-background-color: #FFFFFF;" />
+            <TextField fx:id="txtTotal" layoutX="548.0" layoutY="490.0" prefHeight="56.0" prefWidth="115.0" style="-fx-border-radius: 20; -fx-background-radius: 20; -fx-background-color: #FFFFFF;" />
+            <Label fx:id="txt53" layoutX="60.0" layoutY="336.0" prefHeight="45.0" prefWidth="214.0" style="-fx-background-radius: 20; -fx-background-color: #FFFFFF;" text="Subtotal" textFill="#002147">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="txt531" layoutX="60.0" layoutY="416.0" prefHeight="45.0" prefWidth="214.0" style="-fx-background-radius: 20; -fx-background-color: #FFFFFF;" text="Desconto" textFill="#002147">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="txt5311" layoutX="60.0" layoutY="496.0" prefHeight="45.0" prefWidth="214.0" style="-fx-background-radius: 20; -fx-background-color: #FFFFFF;" text="Total a Pagar" textFill="#002147">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PainelDeCima" layoutX="10.0" layoutY="10.0" prefHeight="59.0" prefWidth="1366.0" style="-fx-background-color: #002147;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="Logo" fitHeight="57.0" fitWidth="62.0" layoutX="60.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Group%204%201.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="36.0" layoutX="14.0" layoutY="17.0" onMouseClicked="#AbrirSideBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Vector.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="TextoDoPainelDeCima" layoutX="132.0" layoutY="14.0" text="- Frente de Caixa" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -16,7 +16,7 @@ public class ConexãoBD {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 				
-			return DriverManager.getConnection("jdbc:mysql://localhost/projetopi","root","12343050lo");
+			return DriverManager.getConnection("jdbc:mysql://localhost/projetopi","root","ga01briel02");
 			
 		
 			

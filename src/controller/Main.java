@@ -40,6 +40,8 @@ public class Main extends Application {
 	private static Scene GraficoDeLucrosDosMeses;
 	private static Scene GraficoDeLucrosDasSecoesProduto;
 	private static Scene TelaDePerfil;
+	private static Scene SideBar;
+	private static Scene PersonalizaSistema;
 	
 	//telas RH
 	private static Scene MenuPrincipalRH;
@@ -48,7 +50,12 @@ public class Main extends Application {
 	private static Scene TelaPrincipalGestor;
 	private static Scene CadastraProduto;
 	private static Scene TabelaProdutos;
-
+	
+	//Telas de caixa
+	private static Scene FrenteDeCaixa;
+	private static Scene DefiniFormaPagamento;
+	private static Scene PagamentoEmDinheiro;
+	
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -89,11 +96,11 @@ public class Main extends Application {
 
 		
 		
-		
+
+
 		Parent fxmlTabelaFuncionarios = FXMLLoader.load(getClass().getResource("/view/gerente/TabelaFuncionario.fxml"));
 		TabelaFuncionarios = new Scene(fxmlTabelaFuncionarios);
 		
-
 		Parent fxmlRelatorioABC = FXMLLoader.load(getClass().getResource("/view/gerente/RelatorioABC.fxml"));
 		RelatorioABC = new Scene(fxmlRelatorioABC);
 
@@ -106,6 +113,13 @@ public class Main extends Application {
 
 		Parent fxmlTelaDePerfil = FXMLLoader.load(getClass().getResource("/view/gerente/TelaDePerfil.fxml"));
 		TelaDePerfil = new Scene(fxmlTelaDePerfil);
+		
+		Parent fxmlSideBar = FXMLLoader.load(getClass().getResource("/view/gerente/SideBarGerente.fxml"));
+		SideBar = new Scene(fxmlSideBar);
+		
+		Parent fxmlPersonalizaSistema = FXMLLoader.load(getClass().getResource("/view/gerente/PersonalizaSistema.fxml"));
+		PersonalizaSistema = new Scene(fxmlPersonalizaSistema);
+		
 		
 		//cenas do pacote RH
 		
@@ -125,8 +139,19 @@ public class Main extends Application {
 		Parent fxmlTabelaProduto = FXMLLoader.load(getClass().getResource("/view/gestor/TabelaProdutos.fxml"));
 		TabelaProdutos= new Scene(fxmlTabelaProduto);
 		
+		//Telas caixa
 		
-	
+		Parent fxmlFrenteDeCaixa = FXMLLoader.load(getClass().getResource("/view/Caixa/TelaDeVenda.fxml"));
+		FrenteDeCaixa= new Scene(fxmlFrenteDeCaixa);
+		
+		Parent fxmlDefiniFormaPagamento = FXMLLoader.load(getClass().getResource("/view/Caixa/DefiniFormaDePagamento.fxml"));
+		DefiniFormaPagamento= new Scene(fxmlDefiniFormaPagamento);
+		
+		Parent fxmlPagamentoEmDinheiro = FXMLLoader.load(getClass().getResource("/view/Caixa/PagamentoEmDinheiro.fxml"));
+		PagamentoEmDinheiro= new Scene(fxmlPagamentoEmDinheiro);
+		
+		
+		
 
 		// inicializa as cenas
 
@@ -158,12 +183,16 @@ public class Main extends Application {
 				this.primaryStage.setScene(login);
 				this.primaryStage.show();
 				
+			} if(cargo.equalsIgnoreCase("Atendente de caixa")) {
+				this.primaryStage.setScene(FrenteDeCaixa);
+				this.primaryStage.show();
+				
 			}
 
 		} else {
 			this.primaryStage.setScene(login);
 			this.primaryStage.show();
-		}  
+		} 
 
 	}
 	
@@ -260,6 +289,32 @@ public class Main extends Application {
 			primaryStage.setScene(TabelaProdutos);
 
 		}
+		
+		if (a.equals("TelaDeVenda")) {
+
+			primaryStage.setScene(FrenteDeCaixa);
+
+		}
+		
+		if (a.equals("DefiniFormaDePagamento")) {
+
+			primaryStage.setScene(DefiniFormaPagamento);
+
+		}
+		
+		if (a.equals("PagamentoDinheiro")) {
+
+			primaryStage.setScene(PagamentoEmDinheiro);
+
+		}
+		
+		
+		if (a.equals("PersonalizaSistema")) {
+
+			primaryStage.setScene(PersonalizaSistema);
+
+		}
+		
 		
 	}
 	

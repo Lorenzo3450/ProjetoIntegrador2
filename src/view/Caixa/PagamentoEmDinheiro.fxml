@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1336.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Caixa.PagamentoEmDinheiroController">
+   <children>
+      <ImageView fx:id="ImagemDeFundo" fitHeight="720.0" fitWidth="1366.0" layoutY="60.0" pickOnBounds="true" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <image>
+            <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="56.0" layoutY="98.0" prefHeight="577.0" prefWidth="1226.0" style="-fx-background-color: #002147; -fx-border-radius: 40; -fx-background-radius: 40;">
+         <children>
+            <TextField fx:id="txtSubTotal" layoutX="437.0" layoutY="46.0" prefHeight="100.0" prefWidth="713.0" style="-fx-border-radius: 20; -fx-background-radius: 5;" />
+            <Label layoutX="34.0" layoutY="49.0" prefHeight="94.0" prefWidth="277.0" text="Subtotal" textFill="#fcff7f">
+               <font>
+                  <Font name="Calibri" size="64.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtTotalRecebido" layoutX="437.0" layoutY="201.0" prefHeight="100.0" prefWidth="713.0" style="-fx-border-radius: 20; -fx-background-radius: 5;" />
+            <Label layoutX="20.0" layoutY="204.0" prefHeight="94.0" prefWidth="399.0" text="Total Recebido" textFill="#fcff7f">
+               <font>
+                  <Font name="Calibri" size="64.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="343.0" prefHeight="94.0" prefWidth="399.0" text="Troco " textFill="#fcff7f">
+               <font>
+                  <Font name="Calibri" size="64.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtTroco" layoutX="437.0" layoutY="337.0" prefHeight="100.0" prefWidth="713.0" style="-fx-border-radius: 20; -fx-background-radius: 5;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PainelDeCima" layoutX="10.0" layoutY="10.0" prefHeight="59.0" prefWidth="1366.0" style="-fx-background-color: #002147;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="Logo" fitHeight="57.0" fitWidth="62.0" layoutX="60.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Group%204%201.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="36.0" layoutX="14.0" layoutY="17.0" onMouseClicked="#AbrirSideBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Vector.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="TextoDoPainelDeCima" layoutX="132.0" layoutY="14.0" text="- Frente de Caixa" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

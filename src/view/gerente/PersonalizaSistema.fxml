@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1336.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.gerente.PersonalizaSistemaController">
+   <children>
+      <ImageView fx:id="ImagemDeFundo" fitHeight="720.0" fitWidth="1366.0" layoutY="60.0" pickOnBounds="true" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <image>
+            <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="PainelDeCima" layoutX="10.0" layoutY="10.0" prefHeight="59.0" prefWidth="1366.0" style="-fx-background-color: #002147;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="Logo" fitHeight="57.0" fitWidth="62.0" layoutX="60.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Group%204%201.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgSideBar" fitHeight="31.0" fitWidth="36.0" layoutX="14.0" layoutY="17.0" onMouseClicked="#AbrirSideBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Vector.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="TextoDoPainelDeCima" layoutX="132.0" layoutY="14.0" text="Personalização do sistema" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PainelPrincipal" layoutX="37.0" layoutY="94.0" prefHeight="605.0" prefWidth="755.0" style="-fx-background-color: #002147; -fx-background-radius: 20;">
+         <children>
+            <ImageView fx:id="Logo2" fitHeight="85.0" fitWidth="87.0" layoutX="150.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Group%204%201.png" />
+               </image>
+            </ImageView>
+            <Separator fx:id="divisor" layoutX="45.0" layoutY="227.0" prefHeight="0.0" prefWidth="669.0" style="-fx-background-color: #ffffff;" />
+            <Separator fx:id="divisor1" layoutX="88.0" layoutY="301.0" prefHeight="3.0" prefWidth="583.0" rotate="90.0" style="-fx-background-color: #ffffff;" />
+            <Line fx:id="linha2" endX="31.0" layoutX="223.0" layoutY="59.0" startX="-99.0" stroke="WHITE" />
+            <Line fx:id="linha1" endX="28.62451171875" endY="8.998046875" layoutX="155.0" layoutY="111.0" rotate="90.0" startX="-92.015625" startY="8.515625" stroke="WHITE" />
+            <Line fx:id="linha4" endX="31.0" layoutX="223.0" layoutY="180.0" startX="-99.0" stroke="WHITE" />
+            <Line fx:id="linha3" endX="28.62451171875" endY="8.998046875" layoutX="286.0" layoutY="111.0" rotate="90.0" startX="-92.015625" startY="8.515625" stroke="WHITE" />
+            <Label fx:id="TextoDoPainelDeCima1" layoutX="145.0" layoutY="195.0" text="Alterar logo" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="btnLogo" fitHeight="16.0" fitWidth="16.0" layoutX="224.0" layoutY="196.0" onMouseClicked="#AlterarLogo" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/alterar.png" />
+               </image>
+            </ImageView>
+            <Line fx:id="linha9" endX="194.66665649414062" layoutX="134.0" layoutY="312.0" startX="-100.0" stroke="WHITE" />
+            <Line fx:id="linha11" endX="194.66665649414062" layoutX="134.0" layoutY="537.0" startX="-100.0" stroke="WHITE" />
+            <Label fx:id="TextoDoPainelDeCima11" layoutX="148.0" layoutY="265.0" text="Texto" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="30.0" />
+               </font>
+            </Label>
+            <Line fx:id="linha10" endX="138.09344482421875" endY="16.83464241027832" layoutX="7.0" layoutY="408.0" rotate="-90.0" startX="-85.33465576171875" startY="16.343433380126953" stroke="WHITE" />
+            <Line fx:id="linha12" endX="138.09344482421875" endY="16.83464241027832" layoutX="302.0" layoutY="408.0" rotate="90.0" startX="-85.33465576171875" startY="16.343433380126953" stroke="WHITE" />
+            <Line fx:id="linha13" endX="194.66665649414062" layoutX="510.0" layoutY="312.0" startX="-100.0" stroke="WHITE" />
+            <Line fx:id="linha16" endX="194.66665649414062" layoutX="510.0" layoutY="537.0" startX="-100.0" stroke="WHITE" />
+            <Line fx:id="linha14" endX="138.09344482421875" endY="16.83464241027832" layoutX="383.0" layoutY="408.0" rotate="90.0" startX="-85.33465576171875" startY="16.343433380126953" stroke="WHITE" />
+            <Separator fx:id="linha15" layoutX="703.0" layoutY="312.0" orientation="VERTICAL" prefHeight="226.0" prefWidth="1.0" />
+            <Label fx:id="TextoDoPainelDeCima111" layoutX="506.0" layoutY="250.0" text="Cores" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="30.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="Fundo2" fitHeight="80.0" fitWidth="100.0" layoutX="486.0" layoutY="81.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
+               </image>
+            </ImageView>
+            <Line fx:id="linha5" endX="31.0" layoutX="570.0" layoutY="59.0" startX="-99.0" stroke="WHITE" />
+            <Line fx:id="linha8" endX="31.0" layoutX="570.0" layoutY="180.0" startX="-99.0" stroke="WHITE" />
+            <Line fx:id="linha6" endX="28.62451171875" endY="8.998046875" layoutX="502.0" layoutY="111.0" rotate="90.0" startX="-92.015625" startY="8.515625" stroke="WHITE" />
+            <Line fx:id="linha7" endX="28.62451171875" endY="8.998046875" layoutX="633.0" layoutY="111.0" rotate="90.0" startX="-92.015625" startY="8.515625" stroke="WHITE" />
+            <Label fx:id="TextoDoPainelDeCima12" layoutX="490.0" layoutY="195.0" text="Alterar fundo" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="BtnFundo" fitHeight="16.0" fitWidth="16.0" layoutX="578.0" layoutY="196.0" onMouseClicked="#AlterarFundo" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/alterar.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="53.0" layoutY="407.0" text="Fonte" textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <TextField fx:id="TxtFonte" layoutX="126.0" layoutY="415.0" onKeyPressed="#PressionarEnter" prefHeight="27.0" prefWidth="150.0" promptText="Digite a fonte" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40;">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+            <Label layoutX="437.0" layoutY="340.0" text="Cor 1" textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="437.0" layoutY="410.0" text="Cor 2" textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="437.0" layoutY="480.0" text="Cor 3" textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Txtcor1" layoutX="506.0" layoutY="345.0" onKeyPressed="#PressionarEnter2" prefHeight="27.0" prefWidth="181.0" promptText="Digite o código hexadecimal funcinário" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40;">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="Txtcor2" layoutX="507.0" layoutY="417.0" onKeyPressed="#PressionarEnter3" prefHeight="27.0" prefWidth="181.0" promptText="Digite o código hexadecimal" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40;">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="Txtcor3" layoutX="512.0" layoutY="487.0" onKeyPressed="#PressionarEnter4" prefHeight="27.0" prefWidth="181.0" promptText="Digite o código hexadecimal" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40;">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PainelPrincipal1" layoutX="839.0" layoutY="94.0" prefHeight="605.0" prefWidth="483.0" style="-fx-background-color: #002147; -fx-background-radius: 20;">
+         <children>
+            <Label fx:id="TextoDoPainelDeCima121" layoutX="30.0" layoutY="19.0" text="Pre-visualização" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="29.0" />
+               </font>
+            </Label>
+            <Pane layoutX="23.0" layoutY="155.0" prefHeight="341.0" prefWidth="430.0" style="-fx-border-color: #FFFFFF;">
+               <children>
+                  <ImageView fx:id="Fundo21" fitHeight="339.0" fitWidth="428.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane fx:id="PainelDeCima1" layoutX="1.0" layoutY="1.0" prefHeight="24.0" prefWidth="428.0" style="-fx-background-color: #002147;">
+                     <children>
+                        <Label fx:id="TextoDoPainelDeCima1211" layoutX="35.0" layoutY="5.0" text="Pre-visualização" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="Logo21" fitHeight="27.0" fitWidth="31.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../Imagens/imagens%20login/Group%204%201.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="PainelPrincipal11" layoutX="34.0" layoutY="58.0" prefHeight="261.0" prefWidth="371.0" style="-fx-background-color: #002147; -fx-background-radius: 20;">
+                     <children>
+                        <Label fx:id="TextoDoPainelDeCima1111" layoutX="113.0" layoutY="26.0" text="SuperSmiding" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="30.0" />
+                           </font>
+                        </Label>
+                        <Line fx:id="linha81" endX="125.0" layoutX="178.0" layoutY="67.0" startX="-99.0" stroke="WHITE" />
+                        <TextField fx:id="Txtcor11" editable="false" layoutX="104.0" layoutY="101.0" onKeyPressed="#PressionarEnter" prefHeight="27.0" prefWidth="181.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-background-radius: 10;" text="Seja bem-vindo">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btnVisualizacao" layoutX="139.0" layoutY="168.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Logar" textFill="#002147">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="TextoDoPainelDeCima11111" layoutX="108.0" layoutY="130.0" text="esqueceu a senha?" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="11.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="TextoDoPainelDeCima111111" layoutX="197.0" layoutY="130.0" text="Recuperar senha " textFill="#fcff7f">
+                           <font>
+                              <Font name="Calibri" size="11.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Button fx:id="btnSalvar" layoutX="321.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#Salvar" prefHeight="39.0" prefWidth="126.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Salvar" textFill="#002147">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

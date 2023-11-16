@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -7,98 +8,64 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="1015.0" prefWidth="1920.0" style="-fx-background-color: #DBDBDB;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.TelaDeLoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.TelaDeLoginController">
    <children>
-      <Pane layoutX="10.0" layoutY="10.0" prefHeight="94.0" prefWidth="1920.0" style="-fx-background-color: #004391;" AnchorPane.bottomAnchor="923.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <ImageView fitHeight="120.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20login/Super%20(1)%20(1)%201.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="257.0" layoutX="214.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20login/-%20Login.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <ImageView fitHeight="926.0" fitWidth="1949.0" layoutX="6.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-14.0" AnchorPane.topAnchor="96.0">
+      <ImageView fx:id="fundo" fitHeight="706.0" fitWidth="1366.0" layoutY="19.0" pickOnBounds="true">
          <image>
-            <Image url="@../../../Imagens/imagens%20login/Rectangle%201.png" />
+            <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="192.0" layoutY="354.0" prefHeight="777.0" prefWidth="1535.0" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="200.0">
+      <Rectangle fx:id="barraDeCima" fill="#002147" height="18.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1366.0" />
+      <Pane fx:id="PainelPrincipal" layoutX="370.0" layoutY="84.0" prefHeight="577.0" prefWidth="625.0" style="-fx-background-color: #002147; -fx-background-radius: 40;">
          <children>
-            <ImageView fitHeight="780.0" fitWidth="1113.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-61.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="212.0" AnchorPane.topAnchor="0.0">
+            <ImageView fx:id="Logo" fitHeight="122.0" fitWidth="132.0" layoutX="244.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Imagens/imagens%20login/Rectangle%207.png" />
+                  <Image url="@../../../Imagens/imagens%20login/Group%204%201.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="175.0" fitWidth="487.0" layoutX="504.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="498.0" AnchorPane.leftAnchor="520.0" AnchorPane.rightAnchor="533.0" AnchorPane.topAnchor="42.0">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20login/Login.png" />
-               </image>
-            </ImageView>
-            <Pane layoutX="385.0" layoutY="240.0" prefHeight="4.0" prefWidth="720.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="405.0" />
-            <TextField fx:id="txflogin" layoutX="322.0" layoutY="320.0" prefHeight="70.0" prefWidth="864.0" promptText="Email" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40;" AnchorPane.leftAnchor="342.0">
+            <Text fx:id="lbl2" fill="WHITE" layoutX="225.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
                <font>
-                  <Font size="36.0" />
+                  <Font name="Arial Bold" size="64.0" />
+               </font>
+            </Text>
+            <Line fx:id="divisor" endX="224.6390380859375" endY="3.0517578125E-5" layoutX="260.0" layoutY="218.0" startX="-117.36099243164062" startY="3.0517578125E-5" stroke="WHITE" strokeWidth="3.0" />
+            <TextField fx:id="txflogin" layoutX="53.0" layoutY="245.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="524.0" promptText="Email" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 15; -fx-font-size: 20; -fx-padding: 10;">
+               <font>
+                  <Font size="20.0" />
                </font>
             </TextField>
-            <Label layoutX="357.0" layoutY="535.0" text="Esqueceu a senha ?" textFill="#efefef" AnchorPane.leftAnchor="377.0">
+            <Button fx:id="btnEntrar" layoutX="229.0" layoutY="428.0" mnemonicParsing="false" onMouseClicked="#Log1" onMouseEntered="#entrar1" onMouseExited="#sair1" prefHeight="45.0" prefWidth="173.0" style="-fx-background-color: #ffffff; -fx-text-fill: #002147; -fx-font-size: 25; -fx-background-radius: 20; -fx-font-weight: bold;" text="Entrar">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Arial Bold" size="25.0" />
+               </font>
+            </Button>
+            <Text fx:id="lbl1" fill="WHITE" layoutX="65.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esqueceu sua senha?">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Text>
+            <Label fx:id="lblRecuperaSenha" layoutX="230.0" layoutY="376.0" onMouseClicked="#cliqueRecuperarSenha" text="Recuperar senha" textFill="#faff00">
+               <font>
+                  <Font name="Arial" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="589.0" layoutY="535.0" onMouseClicked="#cliqueRecuperarSenha" text="Recuperar senha" textFill="#faff00" AnchorPane.leftAnchor="589.0">
+            <Text fx:id="lbl3" fill="WHITE" layoutX="197.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Não possui login?">
                <font>
-                  <Font size="24.0" />
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <Label fx:id="lblCadastreSe" layoutX="339.0" layoutY="498.0" onMouseClicked="#clique" style="-fx-font-weight: bold; -fx-font-size: 16;" text="Cadastre-se" textFill="#faff00">
+               <font>
+                  <Font name="Arial" size="16.0" />
                </font>
             </Label>
-            <ImageView fx:id="imbtn" fitHeight="114.0" fitWidth="243.0" layoutX="645.0" layoutY="632.0" onMouseClicked="#Log1" onMouseEntered="#entrar1" onMouseExited="#sair1" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="665.0">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20login/Rectangle%205.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="imlogar" fitHeight="60.0" fitWidth="158.0" layoutX="689.0" layoutY="650.0" onMouseClicked="#Log1" onMouseEntered="#entrar1" onMouseExited="#sair1" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="695.0">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20login/Logar.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="377.0" layoutY="575.0" text="Não possui login?" textFill="#efefef">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="cadastro1" layoutX="570.0" layoutY="575.0" onMouseClicked="#clique" text="Cadastre-se" textFill="#faff00">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtsenha" layoutX="342.0" layoutY="440.0" prefHeight="70.0" prefWidth="864.0" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 40;">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </TextField>
-            <ImageView fx:id="ImEsconde" fitHeight="67.0" fitWidth="68.0" layoutX="1106.0" layoutY="445.0" onMouseClicked="#EscondeSenhaSenha" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20login/aberto.png" />
-               </image>
-            </ImageView>
-            <PasswordField fx:id="psfsenha" layoutX="322.0" layoutY="440.0" prefHeight="70.0" prefWidth="864.0" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-border-radius: 40;" AnchorPane.leftAnchor="342.0">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </PasswordField>
-            <ImageView fx:id="ImMostra" fitHeight="67.0" fitWidth="68.0" layoutX="1106.0" layoutY="445.0" onMouseClicked="#MostrarSenha" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagens/imagens%20login/fechado.png" />
-               </image>
-            </ImageView>
+            <PasswordField fx:id="psfsenha" layoutX="53.0" layoutY="308.0" prefHeight="45.0" prefWidth="524.0" promptText="Senha" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 15; -fx-font-size: 20; -fx-padding: 10;" />
          </children>
-      </AnchorPane>
+      </Pane>
    </children>
 </AnchorPane>

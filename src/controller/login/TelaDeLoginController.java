@@ -1,6 +1,7 @@
 package controller.login;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
@@ -12,55 +13,73 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ColorPicker;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model.DesignSistema;
 import model.LoginModel;
 import model.PerfilGeralModel;
+import model.dao.Gerente.PersonalizaSistemaDao;
 import model.dao.Gerente.TelaDePerfilDao;
 import model.dao.login.LoginDAO;
 
 public class TelaDeLoginController {
-	
-    @FXML
-    private ImageView pcl1;
 
 	@FXML
 	private ImageView ImEsconde;
 
 	@FXML
 	private ImageView ImMostra;
-    
-	   @FXML
-	    private ColorPicker colorPicker; // Adicione o ColorPicker ao seu FXML
-	    
-	@FXML
-    private Pane p1;
-    
-	EfeitoBtn efeito = new EfeitoBtn();
 
-	@FXML
-	private ImageView TxtSenha;
+	EfeitoBtn efeito = new EfeitoBtn();
 
 	@FXML
 	private TextField txtsenha;
 
 	@FXML
-	private Label cadastro;
+	private ImageView Logo;
 
 	@FXML
-	private ImageView imbtn;
+	private Pane PainelPrincipal;
 
 	@FXML
-	private ImageView imlogar;
+	private Rectangle barraDeCima;
+
+	@FXML
+	private Button btnEntrar;
+
+	@FXML
+	private Line divisor;
+
+	@FXML
+	private ImageView fundo;
+
+	@FXML
+	private Text lbl1;
+
+	@FXML
+	private Text lbl2;
+
+	@FXML
+	private Text lbl3;
+
+	@FXML
+	private Label lblCadastreSe;
+
+	@FXML
+	private Label lblRecuperaSenha;
 
 	@FXML
 	private PasswordField psfsenha;
@@ -91,20 +110,39 @@ public class TelaDeLoginController {
 		}
 	}
 
+	 @FXML
+ 	private void initialize() {
+     	
+     	 DesignSistema design = null;
+          try {
+              design = PersonalizaSistemaDao.buscaDesign();
+          } catch (SQLException e) {
+              e.printStackTrace();
+              // Lidere com erros de consulta aqui, se necessário
+          }
+     	  if(design!=null) {
+          Image Fundo = new Image(design.getFundoImagem());
+          Image Logo = new Image(design.getLogoImagem());
+          
+     	AlterarComponentes(Fundo, Logo, design.getCorSecundaria(), design.getTipoFonte(),design.getCorSecundaria() , design.getTipoFonte(), design.getCorPrincipal()
+     			, design.getCorSecundaria(), design.getCorTerciaria());
+     	  }
+     }
+	 
 	@FXML
 	void Log1(MouseEvent event) throws Exception {
 
 		if (LoginDAO.ValidaLogin(txflogin.getText(), psfsenha.getText())) {
-             
-            pgd = new TelaDePerfilDao(conex, pgm);
+
+			pgd = new TelaDePerfilDao(conex, pgm);
 			String email = txflogin.getText();
 			String senha = String.valueOf(psfsenha.getText());
 			idFuncionario = LoginDAO.obterIdFuncionario(email, senha);
-			 FXMLLoader loader2 = new FXMLLoader(getClass().getResource("/view/gerente/TelaDePerfil.fxml"));
-	            Parent root2 = loader2.load();
+			FXMLLoader loader2 = new FXMLLoader(getClass().getResource("/view/gerente/TelaDePerfil.fxml"));
+			Parent root2 = loader2.load();
 
-			  TelaDePerfilController perfilGeralController = loader2.getController();
-	            perfilGeralController.setIdFuncionario(idFuncionario);
+			TelaDePerfilController perfilGeralController = loader2.getController();
+			perfilGeralController.setIdFuncionario(idFuncionario);
 
 			if (LoginDAO.getCargo(txflogin.getText(), psfsenha.getText()).equalsIgnoreCase("gerente")) {
 				txflogin.setText("");
@@ -165,21 +203,20 @@ public class TelaDeLoginController {
 		Main.Cena("Cadastro");
 		psfsenha.setText("");
 		txflogin.setText("");
-		imlogar.requestFocus();
 
 	}
 
 	@FXML
 	void entrar1(MouseEvent event) {
 
-		imbtn.setEffect(efeito.Efeito());
+		btnEntrar.setEffect(efeito.Efeito());
 
 	}
 
 	@FXML
 	void sair1(MouseEvent event) {
 
-		imbtn.setEffect(null);
+		btnEntrar.setEffect(null);
 
 	}
 
@@ -238,35 +275,47 @@ public class TelaDeLoginController {
 	class Delta {
 		double x, y;
 	}
+	public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
+			String corPrincipal,String corSecundaria,String corTercearia) {
+		
+		/*
 
-	@FXML
-	void alterarCor(MouseEvent event) {
-			
-	    // Crie um ColorPicke	    
+		txtsenha.setStyle("-fx-background-color:"+txtf);
+		txtsenha.setStyle("-fx-text-fill:"+letraTxtf);
+		*/
+		Logo.setImage(logo);
 
-	    // Defina a posição do ColorPicker
-	    colorPicker.show();
-	    // Defina a ação a ser executada quando uma cor for selecionada
-	    colorPicker.setOnAction(e -> {
-	        Color selectedColor = colorPicker.getValue();
-	        
-	        // Altere a cor dos componentes da tela de login
-	        p1.setStyle("-fx-background-color:" + toHex(selectedColor));
-	        // Substitua "pnl1" pelo nome do componente que deseja alterar a cor de fundo
-	        // Você pode repetir este processo para outros componentes
+		PainelPrincipal.setStyle(PainelPrincipal.getStyle()+"-fx-background-color:"+corPrincipal);
 
-	        // Feche o ColorPicker após a seleção
-	        colorPicker.hide();
-	    });
+		barraDeCima.setStyle(barraDeCima.getStyle()+"-fx-background-color:"+corPrincipal);
 
+		btnEntrar.setStyle(btnEntrar.getStyle()+"-fx-background-color:"+btn+";");
+		btnEntrar.setStyle(btnEntrar.getStyle()+"-fx-text-fill:"+letraBtn);
+
+		divisor.setStyle(divisor.getStyle()+"-fx-background-color:"+corSecundaria);
+
+		this.fundo.setImage(fundo);
+
+		lbl1.setStyle(lbl1.getStyle()+";"+"-fx-text-fill:"+corSecundaria);
+
+		lbl2.setStyle(lbl2.getStyle()+";"+"-fx-text-fill:"+corSecundaria);
+
+		lbl3.setStyle(lbl3.getStyle()+"-fx-text-fill:"+corSecundaria);
+
+		lblCadastreSe.setStyle(lblCadastreSe.getStyle()+"-fx-text-fill:"+corTercearia);
+
+		lblRecuperaSenha.setStyle(lblRecuperaSenha.getStyle()+"--fx-text-fill:"+corTercearia);
+
+		psfsenha.setStyle(psfsenha.getStyle()+"-fx-background-color:"+txtf+";");
+		psfsenha.setStyle(psfsenha.getStyle()+"-fx-text-fill:"+letraTxtf);
+
+		txflogin.setStyle(txflogin.getStyle()+"-fx-background-color:"+txtf+";");
+		txflogin.setStyle(txflogin.getStyle()+"-fx-text-fill:"+letraTxtf);
+		
+		
+		
+		
 	}
-
-	private String toHex(Color color) {
-	    int r = (int) (color.getRed() * 255);
-	    int g = (int) (color.getGreen() * 255);
-	    int b = (int) (color.getBlue() * 255);
-	    return String.format("#%02X%02X%02X", r, g, b);
-	}
-
-
+    
+    
 }
