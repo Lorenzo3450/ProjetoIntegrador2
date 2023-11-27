@@ -82,7 +82,7 @@ public class TelaDeVendaController {
     int nItem=0;
 
     
-    // Outros campos anotados com @FXML
+
     
     public void initialize() {
     	
@@ -102,18 +102,18 @@ public class TelaDeVendaController {
     			, design.getCorSecundaria(), design.getCorTerciaria());
          }
 
-    	   Painel.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
-    	        if (event.getCode() == KeyCode.F12) {
-    	           try {
+         Painel.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
+ 	        if (event.getCode() == KeyCode.F1) {
+ 	           try {
 					Main.Cena("DefiniFormaDePagamento");
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-    	            System.out.println("Tecla F12 foi pressionada");
-    	        }
-    	    });
-    	
+ 	            System.out.println("Tecla F12 foi pressionada");
+ 	        }
+ 	    });
+ 	
     
     	
     	

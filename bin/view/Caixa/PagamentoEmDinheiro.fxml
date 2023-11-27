@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1336.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Caixa.PagamentoEmDinheiroController">
+<AnchorPane fx:id="Painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1336.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Caixa.PagamentoEmDinheiroController">
    <children>
       <ImageView fx:id="ImagemDeFundo" fitHeight="720.0" fitWidth="1366.0" layoutY="60.0" pickOnBounds="true" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <image>
@@ -16,7 +16,7 @@
       </ImageView>
       <AnchorPane layoutX="56.0" layoutY="98.0" prefHeight="577.0" prefWidth="1226.0" style="-fx-background-color: #002147; -fx-border-radius: 40; -fx-background-radius: 40;">
          <children>
-            <TextField fx:id="txtSubTotal" layoutX="437.0" layoutY="46.0" prefHeight="100.0" prefWidth="713.0" style="-fx-border-radius: 20; -fx-background-radius: 5;" />
+            <TextField fx:id="txtSubTotal" editable="false" focusTraversable="false" layoutX="437.0" layoutY="46.0" prefHeight="100.0" prefWidth="713.0" style="-fx-border-radius: 20; -fx-background-radius: 5;" />
             <Label layoutX="34.0" layoutY="49.0" prefHeight="94.0" prefWidth="277.0" text="Subtotal" textFill="#fcff7f">
                <font>
                   <Font name="Calibri" size="64.0" />
@@ -33,7 +33,7 @@
                   <Font name="Calibri" size="64.0" />
                </font>
             </Label>
-            <TextField fx:id="txtTroco" layoutX="437.0" layoutY="337.0" prefHeight="100.0" prefWidth="713.0" style="-fx-border-radius: 20; -fx-background-radius: 5;" />
+            <TextField fx:id="txtTroco" editable="false" focusTraversable="false" layoutX="437.0" layoutY="337.0" prefHeight="100.0" prefWidth="713.0" style="-fx-border-radius: 20; -fx-background-radius: 5;" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="PainelDeCima" layoutX="10.0" layoutY="10.0" prefHeight="59.0" prefWidth="1366.0" style="-fx-background-color: #002147;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

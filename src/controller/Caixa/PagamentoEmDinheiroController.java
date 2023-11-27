@@ -2,6 +2,7 @@ package controller.Caixa;
 
 import java.io.IOException;
 
+import controller.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,6 +21,10 @@ public class PagamentoEmDinheiroController {
     @FXML
     private ImageView ImagemDeFundo;
 
+
+    @FXML
+    private AnchorPane Painel;
+    
     @FXML
     private ImageView Logo;
 
@@ -46,6 +51,20 @@ public class PagamentoEmDinheiroController {
        
     	subtotal=TelaDeVendaController.subtotal;
     	txtTotalRecebido.requestFocus();
+    	
+    	   Painel.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
+    	        if (event.getCode() == KeyCode.F1) {
+    	           try {
+   				
+   				} catch (Exception e) {
+   					// TODO Auto-generated catch block
+   					e.printStackTrace();
+   				}
+    	            System.out.println("Tecla F12 foi pressionada");
+    	        }
+    	    });
+     
+    	
     }
     
     

@@ -18,7 +18,8 @@ public class Funcionario {
     private ObjectProperty<LocalDate> DataNascimentoProperty;
     private IntegerProperty idProperty;
     private Endereco endereco;
-	
+	private String EmailDeTrabalho;
+	private String SenhaEmail;
 
 	   
 	    public Funcionario() {
@@ -44,7 +45,27 @@ public class Funcionario {
         return this.nomeCompletoProperty.get();
     }
 
-    public int getIdade() {
+    public String getEmailDeTrabalho() {
+		return EmailDeTrabalho;
+	}
+
+
+	public void setEmailDeTrabalho(String emailDeTrabalho) {
+		EmailDeTrabalho = emailDeTrabalho;
+	}
+
+
+	public String getSenhaEmail() {
+		return SenhaEmail;
+	}
+
+
+	public void setSenhaEmail(String senhaEmail) {
+		SenhaEmail = senhaEmail;
+	}
+
+
+	public int getIdade() {
 		return this.idadeProperty.get();
 	}
 

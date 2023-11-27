@@ -1,9 +1,21 @@
-package controller.gerente;
+package controller.Gestor;
 
+import java.io.File;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+
+import controller.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -18,29 +30,11 @@ import javafx.stage.FileChooser.ExtensionFilter;
 import model.Endereco;
 import model.Funcionario;
 import model.InformacoesDoSuperMercado;
-import model.InformacoesPessoais;
 import model.dao.ConexãoBD;
 import model.dao.Gerente.TelaDePerfilDao;
 import model.dao.login.MainModel;
 
-import java.io.File;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.time.LocalDate;
-import java.util.List;
-
-import controller.Main;
-import controller.Ferramentas.EfeitoBtn;
-
 public class TelaDePerfilController {
-
-	EfeitoBtn efeito = new EfeitoBtn();
-
-    @FXML
-    private Button BtnEncerrarSessao;
-
 
     @FXML
     private ImageView ImagemDeFundo;
@@ -59,15 +53,6 @@ public class TelaDePerfilController {
 
     @FXML
     private Label TextoDoPainelDeCima;
-
-    @FXML
-    private TextField TxtEmailSuperM;
-
-    @FXML
-    private TextField TxtNomeSuperM;
-
-    @FXML
-    private TextField TxtSenhaEmailSM;
 
     @FXML
     private ImageView btnLogo;
@@ -100,16 +85,7 @@ public class TelaDePerfilController {
     private Label lbl41;
 
     @FXML
-    private Label lbl411;
-
-    @FXML
-    private Label lbl4111;
-
-    @FXML
     private Label lbl42;
-
-    @FXML
-    private Label lbl43;
 
     @FXML
     private Label lbl44;
@@ -127,8 +103,8 @@ public class TelaDePerfilController {
     private Label lbl44211;
 
     @FXML
-    private Label lbl442111;
-    
+    private Label lbl442112;
+
     @FXML
     private Label lblEmail;
 
@@ -166,6 +142,9 @@ public class TelaDePerfilController {
     private TextField txtEmail;
 
     @FXML
+    private TextField txtEmailComercial;
+
+    @FXML
     private TextField txtLogradouro;
 
     @FXML
@@ -178,22 +157,16 @@ public class TelaDePerfilController {
     private TextField txtSenha;
 
     @FXML
-    private TextField txtTelefone;
-    
-    @FXML
-    private TextField txtEmailComercial;
-    
-    @FXML
     private TextField txtSenhaEmail;
-    
-    
-    
+
+    @FXML
+    private TextField txtTelefone;
 
     @FXML
     public void initialize() throws SQLException {
         int idFuncionario = MainModel.verificaID();
         List<Funcionario> funcionarios = TelaDePerfilDao.getFuncionarioComEndereco(idFuncionario);
-        List<InformacoesDoSuperMercado> Spms = TelaDePerfilDao.getSM();
+
         
         if (!funcionarios.isEmpty()) {
             Funcionario funcionario = funcionarios.get(0); 
@@ -209,22 +182,12 @@ public class TelaDePerfilController {
             txtBairro.setText(funcionario.getEndereco().getBairro());
             txtCep.setText(funcionario.getEndereco().getCep());
             txtCidade.setText(funcionario.getEndereco().getCidade());
+            
             if(txtEmailComercial !=null && txtSenhaEmail != null) {
-            	 txtEmailComercial.setText(funcionario.getEmailDeTrabalho());
-                 txtSenhaEmail.setText(funcionario.getSenhaEmail());
-            }
-            
+           	 txtEmailComercial.setText(funcionario.getEmailDeTrabalho());
+                txtSenhaEmail.setText(funcionario.getSenhaEmail());
+           }
            
-            
-            
-            if(!Spms.isEmpty()) {
-            
-            InformacoesDoSuperMercado Spm = Spms.get(0);
-
-            TxtEmailSuperM.setText(Spm.getEmail());
-            TxtNomeSuperM.setText(Spm.getNome());
-            TxtSenhaEmailSM.setText(Spm.getSenha());
-            }
             
         }
         
@@ -275,12 +238,7 @@ public class TelaDePerfilController {
     	
     }
 
-    @FXML
-    void Entrar7(MouseEvent event) {
 
-    	BtnEncerrarSessao.setEffect(efeito.Efeito());
-    	
-    }
 
 
     @FXML
@@ -301,6 +259,7 @@ public class TelaDePerfilController {
             funcionario.setId(idFuncionario);
             funcionario.setEmailDeTrabalho(txtEmailComercial.getText());
             funcionario.setSenhaEmail(txtSenhaEmail.getText());
+            
 
             // Atualize as informações do endereço
             Endereco endereco = funcionario.getEndereco();
@@ -309,33 +268,24 @@ public class TelaDePerfilController {
             endereco.setCep(txtCep.getText());
             endereco.setCidade(txtCidade.getText());
             
-            InformacoesDoSuperMercado informacoesDoSuperMercado = new InformacoesDoSuperMercado(TxtEmailSuperM.getText()
-            		, TxtSenhaEmailSM.getText(),TxtNomeSuperM.getText());
-            
-            
+
             
             
 
             // Agora, chame o método para atualizar o funcionário no banco de dados
-            boolean atualizacaoSucesso = TelaDePerfilDao.atualizarFuncionario(funcionario,informacoesDoSuperMercado);
+            boolean atualizacaoSucesso = TelaDePerfilDao.atualizarPadrao(funcionario);
 
             if (atualizacaoSucesso) {
                 // Atualização bem-sucedida, você pode exibir uma mensagem de sucesso
-                System.out.println("As informações foram atualizadas com sucesso.");
+                JOptionPane.showMessageDialog(null, "As informações foram atualizadas com sucesso.");
             } else {
-                // Trate o caso em que a atualização falhou
-                System.out.println("Falha na atualização das informações.");
+            	 JOptionPane.showMessageDialog(null, "Falha na atualização das informações.");
+                
             }
         }
     }
     
-    @FXML
-    void Sair7(MouseEvent event) {
 
-    	BtnEncerrarSessao.setEffect(null);
-    	
-    }
-    
     
     @FXML
     void IrParaPersolizaSistema(MouseEvent event) throws Exception {
@@ -368,6 +318,6 @@ public class TelaDePerfilController {
 	    	    }
 	    	
 	    	
-	    }
-    
+	    } 
+
 }

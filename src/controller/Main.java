@@ -50,6 +50,7 @@ public class Main extends Application {
 	private static Scene TelaPrincipalGestor;
 	private static Scene CadastraProduto;
 	private static Scene TabelaProdutos;
+	private static Scene TelaDeEnviarMensagem;
 	
 	//Telas de caixa
 	private static Scene FrenteDeCaixa;
@@ -139,6 +140,9 @@ public class Main extends Application {
 		Parent fxmlTabelaProduto = FXMLLoader.load(getClass().getResource("/view/gestor/TabelaProdutos.fxml"));
 		TabelaProdutos= new Scene(fxmlTabelaProduto);
 		
+		Parent fxmlEnviaMensagem = FXMLLoader.load(getClass().getResource("/view/gestor/TelaDeEnviarMensagem.fxml"));
+		TelaDeEnviarMensagem = new Scene(fxmlEnviaMensagem);
+		
 		//Telas caixa
 		
 		Parent fxmlFrenteDeCaixa = FXMLLoader.load(getClass().getResource("/view/Caixa/TelaDeVenda.fxml"));
@@ -150,9 +154,16 @@ public class Main extends Application {
 		Parent fxmlPagamentoEmDinheiro = FXMLLoader.load(getClass().getResource("/view/Caixa/PagamentoEmDinheiro.fxml"));
 		PagamentoEmDinheiro= new Scene(fxmlPagamentoEmDinheiro);
 		
-		
-		
 
+		String cargo = MainModel.verificaCargo();
+		
+		this.primaryStage.setScene(TelaDeEnviarMensagem);
+		this.primaryStage.show();
+		
+		
+		/*
+		
+		
 		// inicializa as cenas
 
 		// verifica a sessão do usuario para vê se ele já realizou login
@@ -193,6 +204,8 @@ public class Main extends Application {
 			this.primaryStage.setScene(login);
 			this.primaryStage.show();
 		} 
+
+		*/
 
 	}
 	

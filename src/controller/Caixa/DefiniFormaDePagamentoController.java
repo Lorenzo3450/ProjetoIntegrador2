@@ -5,6 +5,7 @@ import java.io.IOException;
 import controller.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -43,6 +44,9 @@ public class DefiniFormaDePagamentoController {
     private Label Lbl5;
 
     @FXML
+    private TextField txtCodigoDeBarra;
+    
+    @FXML
     private ImageView Logo;
 
     @FXML
@@ -54,12 +58,31 @@ public class DefiniFormaDePagamentoController {
     @FXML
     private Label TextoDoPainelDeCima;
     
-    
+    public void initialize() {
+    	
+    	 Painel.requestFocus();
+    	
+        Painel.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
+ 	        if (event.getCode() == KeyCode.DIGIT1) {
+ 	           try {
+					Main.Cena("PagamentoDinheiro");
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+ 	            System.out.println("Tecla F1 foi pressionada");
+ 	            
+ 	           
+ 	            
+ 	        }
+ 	    });    	
+
+ 
+    }
     
     @FXML
     void AbrirSideBar(MouseEvent event) {
 
-    	Painel.requestFocus();
     	
     	 try {
     	        // Carregue a cena da barra lateral a partir do arquivo FXML
@@ -83,22 +106,7 @@ public class DefiniFormaDePagamentoController {
     	
     }
     
-    public void initialize() {
-    	
-    	
 
- 	   Painel.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
- 	        if (event.getCode() == KeyCode.DIGIT4) {
- 	           try {
-					Main.Cena("DefiniFormaDePagamento");
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
- 	            System.out.println("Tecla F12 foi pressionada");
- 	        }
- 	    });
-    }
     
 
 }

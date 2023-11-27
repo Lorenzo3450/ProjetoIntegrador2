@@ -135,8 +135,8 @@ public class TabelaFuncionarioController {
 		colorAdjust.setBrightness(hueValues[2]); // Componente azul    
 		
 		
-        BtnFiltro.setEffect(colorAdjust);
-		BtnImprimir.setEffect(colorAdjust);
+   //     BtnFiltro.setEffect(colorAdjust);
+		//		BtnImprimir.setEffect(colorAdjust);
         
 		tableView.getItems().clear();
 		nomeCompletoColumn.setCellValueFactory(cellData -> cellData.getValue().nomeCompletoProperty());

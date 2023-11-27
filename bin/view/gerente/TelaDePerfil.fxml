@@ -1,115 +1,254 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="painelprincipal" prefHeight="720.0" prefWidth="1335.0" style="-fx-background-color: #778899;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.gerente.TelaDePerfilController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1336.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.gerente.TelaDePerfilController">
    <children>
-      <Pane fx:id="barracima" layoutX="-7.0" prefHeight="56.0" prefWidth="1370.0" style="-fx-background-color: #002147;">
+      <ImageView fx:id="ImagemDeFundo" fitHeight="720.0" fitWidth="1366.0" layoutY="60.0" pickOnBounds="true" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <image>
+            <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="PainelDeCima" layoutX="10.0" layoutY="10.0" prefHeight="59.0" prefWidth="1366.0" style="-fx-background-color: #002147;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fx:id="logo" fitHeight="55.0" fitWidth="57.0" layoutX="13.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Logo" fitHeight="57.0" fitWidth="62.0" layoutX="60.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20login/Group%204%201.png" />
                </image>
             </ImageView>
-            <Label fx:id="lblPerfil" layoutX="75.0" layoutY="1.0" text="-Perfil do usuário" textFill="WHITE">
+            <ImageView fx:id="imgSideBar" fitHeight="31.0" fitWidth="36.0" layoutX="14.0" layoutY="17.0" onMouseClicked="#AbrirSideBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Vector.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="TextoDoPainelDeCima" layoutX="132.0" layoutY="14.0" text="Tela de perfil (Gerente)" textFill="WHITE">
                <font>
-                  <Font size="36.0" />
+                  <Font name="Calibri" size="30.0" />
                </font>
             </Label>
          </children>
-      </Pane>
-      <Label fx:id="lblInformacoes" layoutX="37.0" layoutY="79.0" prefHeight="57.0" prefWidth="354.0" text="Informações do perfil" textFill="#05254a">
-         <font>
-            <Font name="System Italic" size="24.0" />
-         </font>
-      </Label>
-      <ImageView fx:id="imgFoto" fitHeight="100.0" fitWidth="100.0" layoutX="90.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/User_Circle2.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="txtNome" layoutX="206.0" layoutY="178.0" prefHeight="28.0" prefWidth="408.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #05254a; -fx-border-radius: 10;" text="Nome">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-      <Label fx:id="lblTrocarFoto" layoutX="210.0" layoutY="152.0" onMouseClicked="#trocaFoto" prefHeight="25.0" prefWidth="163.0" text="Alterar foto de perfil" textFill="#05254a">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="57.0" fitWidth="53.0" layoutX="624.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../ArquivosEclipse/SistemaSupermercado/Imagens/Note_EditNota.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="txtEmail" layoutX="47.0" layoutY="242.0" prefHeight="33.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #05254a; -fx-border-radius: 10;" text="Email">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtSenha" layoutX="497.0" layoutY="244.0" prefHeight="28.0" prefWidth="408.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #05254a; -fx-border-radius: 10;" text="Senha">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-      <Label fx:id="lblInformacoes2" layoutX="37.0" layoutY="298.0" prefHeight="57.0" prefWidth="354.0" text="Dados pessoais" textFill="#05254a">
-         <font>
-            <Font name="System Italic" size="24.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtNascimento" layoutX="47.0" layoutY="434.0" prefHeight="33.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #05254a; -fx-border-radius: 10;" text="Data de nascimento">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtTelefone" layoutX="497.0" layoutY="359.0" prefHeight="28.0" prefWidth="408.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #05254a; -fx-border-radius: 10;" text="Telefone">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtCPF" layoutX="47.0" layoutY="357.0" prefHeight="33.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #05254a; -fx-border-radius: 10;" text="CPF">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-      <Label fx:id="lblInformacoes3" layoutX="37.0" layoutY="488.0" prefHeight="57.0" prefWidth="354.0" text="Endereço" textFill="#05254a">
-         <font>
-            <Font name="System Italic" size="24.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtCidade" layoutX="47.0" layoutY="551.0" prefHeight="33.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #05254a; -fx-border-radius: 10;" text="Cidade">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtBairro" layoutX="497.0" layoutY="553.0" prefHeight="33.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #05254a; -fx-border-radius: 10;" text="Bairro">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtCep" layoutX="497.0" layoutY="621.0" prefHeight="33.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #05254a; -fx-border-radius: 10;" text="CEP">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtLogradouro" layoutX="47.0" layoutY="622.0" prefHeight="33.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #05254a; -fx-border-radius: 10;" text="Rua,casa">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-      <Button fx:id="BtnEncerrarSessao" layoutX="1135.0" layoutY="639.0" mnemonicParsing="false" onMouseClicked="#EncerrarSessao" prefHeight="56.0" prefWidth="138.0" style="-fx-background-color: #002147; -fx-background-radius: 20;" text="Encerrar" textFill="WHITE" />
-      <Button fx:id="BtnEncerrarSessao1" layoutX="836.0" layoutY="123.0" mnemonicParsing="false" onMouseClicked="#IrParaPersolizaSistema" prefHeight="51.0" prefWidth="240.0" style="-fx-background-color: #002147; -fx-background-radius: 20;" text="Personaizar sistema" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="21.0" />
-         </font>
-      </Button>
+      </AnchorPane>
+      <AnchorPane fx:id="PainelPrincipal" layoutX="31.0" layoutY="72.0" prefHeight="637.0" prefWidth="545.0" style="-fx-background-color: #002147; -fx-background-radius: 20;">
+         <children>
+            <ImageView fx:id="imgFoto" fitHeight="115.0" fitWidth="177.0" layoutX="199.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/User_CircleCirculo.png" />
+               </image>
+            </ImageView>
+            <Line fx:id="linha2" endX="31.0" layoutX="297.0" layoutY="59.0" startX="-99.0" stroke="WHITE" />
+            <Line fx:id="linha1" endX="28.62451171875" endY="8.998046875" layoutX="229.0" layoutY="111.0" rotate="90.0" startX="-92.015625" startY="8.515625" stroke="WHITE" />
+            <Line fx:id="linha4" endX="31.0" layoutX="297.0" layoutY="180.0" startX="-99.0" stroke="WHITE" />
+            <Line fx:id="linha3" endX="28.62451171875" endY="8.998046875" layoutX="360.0" layoutY="111.0" rotate="90.0" startX="-92.015625" startY="8.515625" stroke="WHITE" />
+            <Label fx:id="trocaFoto" layoutX="219.0" layoutY="195.0" onMouseClicked="#trocaFoto" text="Alterar foto" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="btnLogo" fitHeight="16.0" fitWidth="16.0" layoutX="298.0" layoutY="196.0" onMouseClicked="#trocaFoto" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/MenuPrincipal/alterar.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lbl" layoutX="62.0" layoutY="252.0" text="Nome do Super Mercado" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl2" layoutX="62.0" layoutY="355.0" text="Email comercial do Super Mercado" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl3" layoutX="62.0" layoutY="462.0" text="Senha do Email" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField fx:id="TxtNomeSuperM" layoutX="50.0" layoutY="289.0" prefHeight="45.0" prefWidth="447.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-background-radius: 15;">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtEmailSuperM" layoutX="50.0" layoutY="392.0" prefHeight="45.0" prefWidth="447.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 15;">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtSenhaEmailSM" layoutX="50.0" layoutY="497.0" prefHeight="45.0" prefWidth="447.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 40; -fx-background-radius: 15;">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PainelPrincipal1" layoutX="611.0" layoutY="72.0" prefHeight="637.0" prefWidth="699.0" style="-fx-background-color: #002147; -fx-background-radius: 20;">
+         <children>
+            <Label fx:id="lbl1" layoutX="39.0" layoutY="14.0" text="Dados pessoais " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNome" layoutX="41.0" layoutY="81.0" prefHeight="45.0" prefWidth="279.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-background-radius: 15;">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lbl4" layoutX="56.0" layoutY="44.0" text="Nome Completo" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtSenha" layoutX="41.0" layoutY="166.0" prefHeight="45.0" prefWidth="279.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-background-radius: 15;">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lbl41" layoutX="56.0" layoutY="135.0" text="Senha" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtEmail" layoutX="379.0" layoutY="81.0" prefHeight="45.0" prefWidth="279.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-background-radius: 15;">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lbl42" layoutX="393.0" layoutY="44.0" text="Email" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCPF" layoutX="379.0" layoutY="166.0" prefHeight="45.0" prefWidth="279.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-background-radius: 15;">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lbl43" layoutX="393.0" layoutY="135.0" text="CPF" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNascimento" layoutX="41.0" layoutY="251.0" prefHeight="45.0" prefWidth="279.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-background-radius: 15;">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lbl411" layoutX="56.0" layoutY="220.0" text="Data de Nascimento" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtTelefone" layoutX="379.0" layoutY="251.0" prefHeight="45.0" prefWidth="279.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-background-radius: 15;">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lbl4111" layoutX="393.0" layoutY="220.0" text="Telefone" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl11" layoutX="41.0" layoutY="390.0" text="Endereço" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCidade" layoutX="41.0" layoutY="452.0" prefHeight="45.0" prefWidth="279.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-background-radius: 15;">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtLogradouro" layoutX="41.0" layoutY="537.0" prefHeight="45.0" prefWidth="279.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-background-radius: 15;">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lbl44" layoutX="54.0" layoutY="421.0" text="Cidade" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl441" layoutX="54.0" layoutY="506.0" text="Longradouro" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtBairro" layoutX="379.0" layoutY="452.0" prefHeight="45.0" prefWidth="279.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-background-radius: 15;">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lbl442" layoutX="401.0" layoutY="421.0" text="Bairro" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCep" layoutX="379.0" layoutY="537.0" prefHeight="45.0" prefWidth="279.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-background-radius: 15;">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lbl4421" layoutX="401.0" layoutY="506.0" text="CEP" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl44211" layoutX="456.0" layoutY="594.0" onMouseClicked="#RealizarAlteracao" text="Salvar Alterações" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="27.0" fitWidth="36.0" layoutX="619.0" layoutY="596.0" onMouseClicked="#RealizarAlteracao" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/Save.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lbl442111" layoutX="431.0" layoutY="16.0" onMouseClicked="#IrParaPersolizaSistema" text="Personaliza Sistema" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="27.0" fitWidth="36.0" layoutX="617.0" layoutY="17.0" onMouseClicked="#IrParaPersolizaSistema" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/imagem_2023-11-15_220911008_updated%201.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lbl442112" layoutX="264.0" layoutY="594.0" onMouseClicked="#EncerrarSessao" text="Encerrar Sessão" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="18.0" fitWidth="16.0" layoutX="412.0" layoutY="600.0" onMouseClicked="#EncerrarSessao" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/fechar.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblEmail" layoutX="60.0" layoutY="304.0" text="Email Comercial" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblsenha" layoutX="384.0" layoutY="306.0" prefHeight="31.0" prefWidth="160.0" text="Senha do email" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtEmailComercial" layoutX="41.0" layoutY="335.0" prefHeight="45.0" prefWidth="279.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-background-radius: 15;">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtSenhaEmail" layoutX="380.0" layoutY="335.0" prefHeight="45.0" prefWidth="279.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-background-radius: 15;">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+         </children></AnchorPane>
    </children>
 </AnchorPane>
