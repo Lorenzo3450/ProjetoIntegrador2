@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1336.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Caixa.PagamentoEmPixController">
+   <children>
+      <ImageView fx:id="ImagemDeFundo" fitHeight="720.0" fitWidth="1366.0" layoutY="60.0" pickOnBounds="true" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <image>
+            <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="223.0" layoutY="112.0" prefHeight="557.0" prefWidth="966.0" style="-fx-background-color: #002147; -fx-border-radius: 40; -fx-background-radius: 40;">
+         <children>
+            <Label fx:id="lblFormaDePagamento" layoutX="333.0" layoutY="41.0" text="Forma de pagamento : PIX" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="262.0" layoutY="97.0" prefHeight="355.0" prefWidth="423.0" style="-fx-background-color: #ffffff; -fx-background-radius: 15;">
+               <children>
+                  <ImageView fx:id="QRCode" fitHeight="312.0" fitWidth="512.0" layoutX="56.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imagens/imagens%20gerente/SideBar/image%203.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label fx:id="ValorDaCompra" layoutX="384.0" layoutY="476.0" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblFormaDePagamento1" layoutX="226.0" layoutY="476.0" text="Total a pagar : " textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PainelDeCima" layoutX="10.0" layoutY="10.0" prefHeight="59.0" prefWidth="1366.0" style="-fx-background-color: #002147;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="Logo" fitHeight="57.0" fitWidth="62.0" layoutX="60.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Group%204%201.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="36.0" layoutX="14.0" layoutY="17.0" onMouseClicked="#AbrirSideBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Vector.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="TextoDoPainelDeCima" layoutX="132.0" layoutY="14.0" text="- Frente de Caixa" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

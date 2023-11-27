@@ -14,26 +14,41 @@
             <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="56.0" layoutY="98.0" prefHeight="577.0" prefWidth="1226.0" style="-fx-background-color: #002147; -fx-border-radius: 40; -fx-background-radius: 40;">
+      <AnchorPane layoutX="136.0" layoutY="154.0" prefHeight="436.0" prefWidth="1065.0" style="-fx-background-color: #002147; -fx-border-radius: 40; -fx-background-radius: 40;">
          <children>
-            <TextField fx:id="txtSubTotal" editable="false" focusTraversable="false" layoutX="437.0" layoutY="46.0" prefHeight="100.0" prefWidth="713.0" style="-fx-border-radius: 20; -fx-background-radius: 5;" />
-            <Label layoutX="34.0" layoutY="49.0" prefHeight="94.0" prefWidth="277.0" text="Subtotal" textFill="#fcff7f">
+            <Label fx:id="lblFormaDePagamento" layoutX="371.0" layoutY="40.0" text="Forma de pagamento: Dinheiro" textFill="WHITE">
                <font>
-                  <Font name="Calibri" size="64.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="txtTotalRecebido" layoutX="437.0" layoutY="201.0" prefHeight="100.0" prefWidth="713.0" style="-fx-border-radius: 20; -fx-background-radius: 5;" />
-            <Label layoutX="20.0" layoutY="204.0" prefHeight="94.0" prefWidth="399.0" text="Total Recebido" textFill="#fcff7f">
+            <TextField fx:id="txtSubTotal" editable="false" layoutX="120.0" layoutY="193.0" prefHeight="45.0" prefWidth="249.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" />
+            <Label fx:id="lblFormaDePagamento1" layoutX="137.0" layoutY="151.0" text="Valor Total" textFill="WHITE">
                <font>
-                  <Font name="Calibri" size="64.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="20.0" layoutY="343.0" prefHeight="94.0" prefWidth="399.0" text="Troco " textFill="#fcff7f">
+            <TextField fx:id="txtTotalRecebido" layoutX="420.0" layoutY="193.0" prefHeight="45.0" prefWidth="249.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" />
+            <TextField fx:id="txtTroco" editable="false" layoutX="720.0" layoutY="193.0" prefHeight="45.0" prefWidth="249.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" />
+            <Label fx:id="lblFormaDePagamento11" layoutX="432.0" layoutY="151.0" text="Total Recebido" textFill="WHITE">
                <font>
-                  <Font name="Calibri" size="64.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="txtTroco" editable="false" focusTraversable="false" layoutX="437.0" layoutY="337.0" prefHeight="100.0" prefWidth="713.0" style="-fx-border-radius: 20; -fx-background-radius: 5;" />
+            <Label fx:id="lblFormaDePagamento111" layoutX="727.0" layoutY="151.0" text="Troco" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="BtnFinalizar" layoutX="252.0" layoutY="294.0" prefHeight="45.0" prefWidth="214.0" style="-fx-background-radius: 15; -fx-background-color: #FFFFFF;" text="        Finalizar (F1)" textFill="#002147">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="BtnF2" layoutX="605.0" layoutY="294.0" prefHeight="45.0" prefWidth="214.0" style="-fx-background-radius: 15; -fx-background-color: #FFFFFF;" text="        Cancelar (F2)" textFill="#002147">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="PainelDeCima" layoutX="10.0" layoutY="10.0" prefHeight="59.0" prefWidth="1366.0" style="-fx-background-color: #002147;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

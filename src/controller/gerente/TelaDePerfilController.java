@@ -36,11 +36,11 @@ import controller.Ferramentas.EfeitoBtn;
 
 public class TelaDePerfilController {
 
-	EfeitoBtn efeito = new EfeitoBtn();
+	@FXML
+    private ImageView Fechar;
 
     @FXML
-    private Button BtnEncerrarSessao;
-
+    private ImageView FotoQRCode;
 
     @FXML
     private ImageView ImagemDeFundo;
@@ -52,6 +52,9 @@ public class TelaDePerfilController {
     private AnchorPane PainelDeCima;
 
     @FXML
+    private AnchorPane PainelPix;
+
+    @FXML
     private AnchorPane PainelPrincipal;
 
     @FXML
@@ -61,6 +64,9 @@ public class TelaDePerfilController {
     private Label TextoDoPainelDeCima;
 
     @FXML
+    private ImageView TrocaQR2;
+
+    @FXML
     private TextField TxtEmailSuperM;
 
     @FXML
@@ -68,6 +74,9 @@ public class TelaDePerfilController {
 
     @FXML
     private TextField TxtSenhaEmailSM;
+
+    @FXML
+    private Label adicionarPix;
 
     @FXML
     private ImageView btnLogo;
@@ -128,7 +137,10 @@ public class TelaDePerfilController {
 
     @FXML
     private Label lbl442111;
-    
+
+    @FXML
+    private Label lbl442112;
+
     @FXML
     private Label lblEmail;
 
@@ -151,6 +163,9 @@ public class TelaDePerfilController {
     private Label trocaFoto;
 
     @FXML
+    private Label trocaQR1;
+
+    @FXML
     private TextField txtBairro;
 
     @FXML
@@ -166,6 +181,9 @@ public class TelaDePerfilController {
     private TextField txtEmail;
 
     @FXML
+    private TextField txtEmailComercial;
+
+    @FXML
     private TextField txtLogradouro;
 
     @FXML
@@ -178,13 +196,10 @@ public class TelaDePerfilController {
     private TextField txtSenha;
 
     @FXML
-    private TextField txtTelefone;
-    
-    @FXML
-    private TextField txtEmailComercial;
-    
-    @FXML
     private TextField txtSenhaEmail;
+
+    @FXML
+    private TextField txtTelefone;
     
     
     
@@ -228,10 +243,28 @@ public class TelaDePerfilController {
             
         }
         
+        PainelPix.setVisible(false);
+        PainelPix.setDisable(true);
 
         
     }
     
+    @FXML
+    void adicionaPix(MouseEvent event) {
+
+    	  PainelPix.setVisible(true);
+          PainelPix.setDisable(false);
+    	
+    }
+    
+    @FXML
+    void FecharPainel(MouseEvent event) {
+
+    	  PainelPix.setVisible(false);
+          PainelPix.setDisable(true);
+
+    	
+    }
 
     
     @FXML
@@ -275,12 +308,7 @@ public class TelaDePerfilController {
     	
     }
 
-    @FXML
-    void Entrar7(MouseEvent event) {
-
-    	BtnEncerrarSessao.setEffect(efeito.Efeito());
-    	
-    }
+   
 
 
     @FXML
@@ -329,12 +357,7 @@ public class TelaDePerfilController {
         }
     }
     
-    @FXML
-    void Sair7(MouseEvent event) {
-
-    	BtnEncerrarSessao.setEffect(null);
-    	
-    }
+    
     
     
     @FXML
