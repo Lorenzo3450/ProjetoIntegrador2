@@ -349,9 +349,19 @@ public class SideBarController {
     }
 
     @FXML
-    void IrParaVendas(MouseEvent event) {
-
+    void IrParaVendas(MouseEvent event) throws Exception {
+    		FecharSideBar(event);
+    		Main.Cena("TelaDeVenda");
     }
+    
+    @FXML
+    void EnviaEmail(MouseEvent event) throws Exception {
+
+    	FecharSideBar(event);
+    	Main.Cena("Envia Mensagem");
+    	
+    }
+    
 
     public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
 			String corPrincipal,String corSecundaria,String corTercearia) {

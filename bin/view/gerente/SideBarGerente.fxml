@@ -148,47 +148,47 @@
                   <Image url="@../../../Imagens/imagens%20gerente/SideBar/Vector3.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="Produtos2" fitHeight="24.0" fitWidth="24.0" layoutX="14.0" layoutY="260.0" onMouseClicked="#IrParaProdutos" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Produtos2" fitHeight="24.0" fitWidth="24.0" layoutX="12.0" layoutY="299.0" onMouseClicked="#IrParaProdutos" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/SideBar/Vector5.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="setas31" fitHeight="10.0" fitWidth="16.0" layoutX="178.0" layoutY="266.0" onMouseClicked="#IrParaProdutos" pickOnBounds="true" rotate="-90.0">
+            <ImageView fx:id="setas31" fitHeight="10.0" fitWidth="16.0" layoutX="176.0" layoutY="305.0" onMouseClicked="#IrParaProdutos" pickOnBounds="true" rotate="-90.0">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/SideBar/Vector3.png" />
                </image>
             </ImageView>
-            <Label fx:id="lblProdutos2" layoutX="54.0" layoutY="261.0" onMouseClicked="#IrParaProdutos" text="Produtos" textFill="WHITE">
+            <Label fx:id="lblProdutos2" layoutX="52.0" layoutY="300.0" onMouseClicked="#IrParaProdutos" text="Produtos" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <ImageView fx:id="carrinho2" fitHeight="24.0" fitWidth="24.0" layoutX="14.0" layoutY="309.0" onMouseClicked="#IrParaVendas" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="carrinho2" fitHeight="24.0" fitWidth="24.0" layoutX="12.0" layoutY="348.0" onMouseClicked="#IrParaVendas" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/SideBar/Vector%20(2).png" />
                </image>
             </ImageView>
-            <Label fx:id="lblVendas2" layoutX="62.0" layoutY="311.0" onMouseClicked="#IrParaVendas" text="Vendas" textFill="WHITE">
+            <Label fx:id="lblVendas2" layoutX="60.0" layoutY="350.0" onMouseClicked="#IrParaVendas" text="Vendas" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <ImageView fx:id="setas32" fitHeight="10.0" fitWidth="16.0" layoutX="178.0" layoutY="316.0" onMouseClicked="#IrParaVendas" pickOnBounds="true" rotate="-90.0">
+            <ImageView fx:id="setas32" fitHeight="10.0" fitWidth="16.0" layoutX="176.0" layoutY="355.0" onMouseClicked="#IrParaVendas" pickOnBounds="true" rotate="-90.0">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/SideBar/Vector3.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="relatorios2" fitHeight="24.0" fitWidth="24.0" layoutX="14.0" layoutY="359.0" onMouseClicked="#IrParaRelatorios" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="relatorios2" fitHeight="24.0" fitWidth="24.0" layoutX="12.0" layoutY="398.0" onMouseClicked="#IrParaRelatorios" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/SideBar/File_Document.png" />
                </image>
             </ImageView>
-            <Label fx:id="lblRelatorios2" layoutX="62.0" layoutY="361.0" onMouseClicked="#IrParaRelatorios" text="Relatorios" textFill="WHITE">
+            <Label fx:id="lblRelatorios2" layoutX="60.0" layoutY="400.0" onMouseClicked="#IrParaRelatorios" text="Relatorios" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <ImageView fx:id="setas33" fitHeight="10.0" fitWidth="16.0" layoutX="178.0" layoutY="367.0" onMouseClicked="#IrParaRelatorios" pickOnBounds="true" rotate="-90.0">
+            <ImageView fx:id="setas33" fitHeight="10.0" fitWidth="16.0" layoutX="176.0" layoutY="406.0" onMouseClicked="#IrParaRelatorios" pickOnBounds="true" rotate="-90.0">
                <image>
                   <Image url="@../../../Imagens/imagens%20gerente/SideBar/Vector3.png" />
                </image>
@@ -208,9 +208,24 @@
                   <Font size="15.0" />
                </font>
             </Label>
+            <ImageView fx:id="Email" fitHeight="30.0" fitWidth="42.0" layoutX="2.0" layoutY="259.0" onMouseClicked="#EnviaEmail" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/File_Document.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="TabelaFuncionario1" fitHeight="16.0" fitWidth="24.0" layoutX="18.0" layoutY="274.0" onMouseClicked="#EnviaEmail" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/Vector%20(1).png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblFuncionario1" layoutX="60.0" layoutY="264.0" onMouseClicked="#EnviaEmail" text="Enviar Email" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="painelRelatorio" layoutX="222.0" layoutY="-6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="200.0" style="-fx-background-color: #002147;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="painelRelatorio" layoutX="228.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="200.0" style="-fx-background-color: #002147;" AnchorPane.leftAnchor="228.0" AnchorPane.topAnchor="0.0">
          <children>
             <Separator fx:id="separato2" layoutY="58.0" prefHeight="0.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" />
             <ImageView fx:id="Logo11" fitHeight="45.0" fitWidth="42.0" layoutX="8.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">

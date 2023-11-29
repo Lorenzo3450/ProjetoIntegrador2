@@ -186,14 +186,7 @@ public class Main extends Application {
 		PagamentoEmDinheiro= new Scene(fxmlPagamentoEmDinheiro);
 		
 
-		String cargo = MainModel.verificaCargo();
-		
-		this.primaryStage.setScene(TelaDeEnviarMensagem);
-		this.primaryStage.show();
-		
-		
-		/*
-		
+	
 		
 		// inicializa as cenas
 
@@ -236,7 +229,7 @@ public class Main extends Application {
 			this.primaryStage.show();
 		} 
 
-		*/
+		
 
 	}
 	
