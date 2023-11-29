@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="painelABerto" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="200.0" style="-fx-background-color: #002147;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.gerente.SideBarController">
+<AnchorPane fx:id="painelABerto" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="200.0" style="-fx-background-color: #002147;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Gestor.SideBarGestorController">
    <children>
       <Separator fx:id="separato1" layoutY="58.0" prefHeight="0.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" />
       <ImageView fx:id="Logo1" fitHeight="45.0" fitWidth="42.0" layoutX="8.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -196,6 +196,106 @@
             <Label fx:id="lblGraficoSessoes" layoutX="37.0" layoutY="399.0" onMouseClicked="#IrParaGraficoSecao" text="Gráfico de lucro das seções" textFill="WHITE">
                <font>
                   <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="painelProduto" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="200.0" style="-fx-background-color: #002147;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Separator fx:id="separato11" layoutY="58.0" prefHeight="0.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" />
+            <ImageView fx:id="Logo11" fitHeight="45.0" fitWidth="42.0" layoutX="8.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Group%204%201.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="fechar11" fitHeight="16.0" fitWidth="16.0" layoutX="170.0" layoutY="25.0" onMouseClicked="#FecharSideBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/Vector.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="perfil1" fitHeight="24.0" fitWidth="24.0" layoutX="14.0" layoutY="80.0" onMouseClicked="#IrParaPerfil" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/User_Circle.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Inicio31" fitHeight="24.0" fitWidth="24.0" layoutX="14.0" layoutY="130.0" onMouseClicked="#IrParaInicio" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/Vector2.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblPerfil31" layoutX="50.0" layoutY="84.0" onMouseClicked="#IrParaPerfil" text="Perfil" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblInicio1" layoutX="50.0" layoutY="129.0" onMouseClicked="#IrParaInicio" text="Inicio" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="Produto31" fitHeight="24.0" fitWidth="24.0" layoutX="12.0" layoutY="175.0" onMouseClicked="#IrParaProdutos" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/Vector5.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="seta221" fitHeight="10.0" fitWidth="16.0" layoutX="176.0" layoutY="182.0" onMouseClicked="#IrParaProdutos" pickOnBounds="true" rotate="360.0">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/Vector3.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblProduto31" layoutX="52.0" layoutY="177.0" onMouseClicked="#IrParaProdutos" text="Produtos" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="Vendas31" fitHeight="24.0" fitWidth="24.0" layoutX="5.0" layoutY="286.0" onMouseClicked="#IrParaVendas" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/Vector%20(2).png" />
+               </image>
+            </ImageView>
+            <Label fx:id="LblVendas31" layoutX="53.0" layoutY="288.0" onMouseClicked="#IrParaVendas" text="Vendas" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="seta231" fitHeight="10.0" fitWidth="16.0" layoutX="169.0" layoutY="293.0" onMouseClicked="#IrParaVendas" pickOnBounds="true" rotate="-90.0">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/Vector3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Relatorio31" fitHeight="24.0" fitWidth="24.0" layoutX="5.0" layoutY="336.0" onMouseClicked="#IrParaRelatorios" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/File_Document.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblRelatorio31" layoutX="53.0" layoutY="338.0" onMouseClicked="#IrParaRelatorios" text="Relatorios" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="seta241" fitHeight="10.0" fitWidth="16.0" layoutX="169.0" layoutY="344.0" onMouseClicked="#IrParaRelatorios" pickOnBounds="true" rotate="-90.0">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/Vector3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Produto311" fitHeight="24.0" fitWidth="24.0" layoutX="6.0" layoutY="210.0" onMouseClicked="#IrParaProdutos" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/caixa_updated%201.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Produto3111" fitHeight="24.0" fitWidth="24.0" layoutX="6.0" layoutY="243.0" onMouseClicked="#IrParaCadastroFornecedor" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20gerente/SideBar/funci_updated%20(1)%201.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblProduto311" layoutX="30.0" layoutY="212.0" onMouseClicked="#IrParaCadastroProdutos" text="Cadastrar Produtos" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblProduto3111" layoutX="37.0" layoutY="245.0" onMouseClicked="#IrParaCadastroFornecedor" text="Cadastrar Fornecedor" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
                </font>
             </Label>
          </children>

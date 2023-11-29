@@ -30,9 +30,31 @@ public class Produto {
     private int setQuantidadeVendida;
     private int IdSecao; 
     private int estoqueMinimo;
+    private int quatidadeComprautomatica;
     
     
-    public int getIdSecao() {
+    
+    
+    
+    public int getQuatidadeComprautomatica() {
+		return quatidadeComprautomatica;
+	}
+
+
+
+
+
+
+	public void setQuatidadeComprautomatica(int quatidadeComprautomatica) {
+		this.quatidadeComprautomatica = quatidadeComprautomatica;
+	}
+
+
+
+
+
+
+	public int getIdSecao() {
 		return IdSecao;
 	}
 
@@ -202,6 +224,12 @@ public class Produto {
 
 
 
+
+
+
+
+
+
 	public Produto(
 		    String descricao, LocalDate validade, int quantidade, double valorCompraUnidade,
 		    double valorVendaUnidade, String marca, String codigo, int quantidadeAdquirida,
@@ -227,7 +255,19 @@ public class Produto {
 
 
 
-    public String getPorcentagem() {
+    
+
+
+
+
+
+
+
+
+
+
+
+	public String getPorcentagem() {
         return porcentagem.get();
     }
 

@@ -1,21 +1,42 @@
 package controller.Gestor;
 
-import controller.Main;
+import java.io.IOException;
+
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import model.Gestor.TelaDeCadastrarProdutoDao;
-import java.util.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
 public class TeladeCadastraProdutoController {
 
     @FXML
-    private ImageView BtnSalvar;
+    private Button BtnEnviar;
+
+    @FXML
+    private ImageView ImagemDeFundo;
+
+    @FXML
+    private ImageView Logo;
+
+    @FXML
+    private AnchorPane PainelDeCima;
+
+    @FXML
+    private AnchorPane PainelPrincipal;
+
+    @FXML
+    private Label TextoDoPainelDeCima;
+
+    @FXML
+    private Label TextoDoPainelDeCima1;
 
     @FXML
     private TextField TxtCodigoDeBarras;
@@ -27,99 +48,101 @@ public class TeladeCadastraProdutoController {
     private TextField TxtDescricao;
 
     @FXML
-    private TextField TxtPrecoUnidade;
+    private TextField TxtFornecedor;
 
     @FXML
-    private TextField TxtQuantidadeTotal;
+    private TextField TxtMarcaDoProduto;
+
+    @FXML
+    private TextField TxtQtdAdquirida;
+
+    @FXML
+    private TextField TxtQtdCompraAutomatica;
+
+    @FXML
+    private TextField TxtQtdMinima;
+
+    @FXML
+    private TextField TxtSetor;
 
     @FXML
     private TextField TxtValidade;
 
     @FXML
-    private TextField TxtVendidoUnidade;
-    
-    @FXML
-    private TextField TxtEstoqueMinimo;
+    private TextField TxtValorCompra;
 
+    @FXML
+    private TextField TxtValorDeVenda;
+
+    @FXML
+    void initialize() {
+    	
+    	TxtQtdCompraAutomatica.setText("0");
+    	
+    }
     
     @FXML
-    void Vol1(MouseEvent event) throws Exception {
+    void AbrirSideBar(MouseEvent event) {
+
+	 try {
+	        // Carregue a cena da barra lateral a partir do arquivo FXML
+	        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Gestor/SideBarGestor.fxml"));
+	        AnchorPane sideBarRoot = loader.load();
+
+	        // Crie uma nova janela para exibir a cena da barra lateral
+	        Stage sideBarStage = new Stage();
+	        sideBarStage.initStyle(StageStyle.UNDECORATED);
+	        Scene sideBarScene = new Scene(sideBarRoot);
+	        sideBarStage.setScene(sideBarScene);
+
+	        sideBarStage.setX(0);
+	        sideBarStage.setY(0);
+	        // Exiba a janela da barra lateral
+	        sideBarStage.show();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	
+	
+}
+
+    @FXML
+    void AtivarCompraAutomatica(MouseEvent event) {
+
+    	TxtQtdCompraAutomatica.setEditable(true);
     	
-    	Main.Cena("MenuGestor");
     	
     }
 
     @FXML
-    void Salvar(MouseEvent event) {
-        // Obtenha os valores dos campos de entrada
-        String codigoDeBarras = TxtCodigoDeBarras.getText();
-        String descricao = TxtDescricao.getText();
-        String precoUnidade = TxtPrecoUnidade.getText();
-        String quantidadeTotal = TxtQuantidadeTotal.getText();
-        String validade = TxtValidade.getText();
-        String vendidoUnidade = TxtVendidoUnidade.getText();
-        String Estoque_Minimo = TxtEstoqueMinimo.getText();
-
+    void Cadastrar(MouseEvent event) {
         try {
-            // Obtenha a data da compra como uma string do campo de entrada
-            String dataCompraStr = TxtDataCompra.getText();
+        	
+            String descricao = TxtDescricao.getText();
+            String dataCompra = TxtDataCompra.getText();
+            String validade = TxtValidade.getText();
+            int quantidade = Integer.parseInt(TxtQtdAdquirida.getText());
+            float valorCompra = Float.parseFloat(TxtValorCompra.getText());
+            float valorVenda = Float.parseFloat(TxtValorDeVenda.getText());
+            String marcaProduto = TxtMarcaDoProduto.getText();
+            String codigoProduto = TxtCodigoDeBarras.getText();
+            int idFornecedor = Integer.parseInt(TxtFornecedor.getText());
+            int idSecao = Integer.parseInt(TxtSetor.getText());
+            
+            int estoqueMinimo = Integer.parseInt(TxtQtdMinima.getText());
+            int quantidadeDaCompra = Integer.parseInt(TxtQtdCompraAutomatica.getText());
 
-            // Formate a data da compra para o formato "yyyy-MM-dd"
-            SimpleDateFormat sdfInput = new SimpleDateFormat("dd/MM/yyyy");
-            SimpleDateFormat sdfOutput = new SimpleDateFormat("yyyy-MM-dd");
+            TelaDeCadastrarProdutoDao.cadastrarProduto(
+                    descricao, dataCompra, validade, quantidade, valorCompra, valorVenda,
+                    marcaProduto, codigoProduto, idFornecedor, idSecao,
+                    estoqueMinimo, quantidadeDaCompra
+            );
 
-            Date dataCompra = sdfInput.parse(dataCompraStr);
-            String dataCompraFormatada = sdfOutput.format(dataCompra);
+            // Adicione aqui qualquer lógica adicional após o cadastro, se necessário.
 
-            // Formate a data da validade para o formato "yyyy-MM-dd"
-            Date validadeDate = sdfInput.parse(validade);
-            String validadeFormatada = sdfOutput.format(validadeDate);
-
-            // Crie uma instância do DAO
-            TelaDeCadastrarProdutoDao produtoDao = new TelaDeCadastrarProdutoDao();
-
-            // Chame o método de cadastro de produto
-            produtoDao.cadastraProduto(codigoDeBarras, dataCompraFormatada, descricao, precoUnidade, quantidadeTotal, validadeFormatada, vendidoUnidade, Estoque_Minimo);
-
-            // Exiba uma mensagem de sucesso
-            Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Cadastro de Produto");
-            alert.setHeaderText(null);
-            alert.setContentText("Produto cadastrado com sucesso!");
-            alert.showAndWait();
-
-            // Limpe os campos após o cadastro
-            LimparCampos();
-
-        } catch (ParseException e) {
-            // Em caso de erro na conversão de data, exiba uma mensagem de erro
-            Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Erro");
-            alert.setHeaderText(null);
-            alert.setContentText("Formato de data inválido. Use o formato dd/MM/yyyy.");
-            alert.showAndWait();
         } catch (Exception e) {
-            // Em caso de erro, exiba uma mensagem de erro
-            Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Erro");
-            alert.setHeaderText(null);
-            alert.setContentText("Ocorreu um erro ao cadastrar o produto.");
-            alert.showAndWait();
-            e.printStackTrace();
+            e.printStackTrace();  // Trate a exceção de forma adequada para o seu aplicativo.
         }
     }
-
-    
-    
-    // Método para limpar os campos após o cadastro
-    private void LimparCampos() {
-        TxtCodigoDeBarras.clear();
-        TxtDataCompra.clear();
-        TxtDescricao.clear();
-        TxtPrecoUnidade.clear();
-        TxtQuantidadeTotal.clear();
-        TxtValidade.clear();
-        TxtVendidoUnidade.clear();
-        TxtEstoqueMinimo.clear();
-    }
 }
+

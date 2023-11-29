@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1336.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Gestor.TeladeCadastraProdutoController">
+   <children>
+      <ImageView fx:id="ImagemDeFundo" fitHeight="720.0" fitWidth="1366.0" layoutY="60.0" pickOnBounds="true" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <image>
+            <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="PainelDeCima" layoutX="10.0" layoutY="10.0" prefHeight="59.0" prefWidth="1366.0" style="-fx-background-color: #002147;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="Logo" fitHeight="57.0" fitWidth="62.0" layoutX="60.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Group%204%201.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="36.0" layoutX="14.0" layoutY="17.0" onMouseClicked="#AbrirSideBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Vector.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="TextoDoPainelDeCima" layoutX="132.0" layoutY="14.0" text="- Tela de cadastrar Produto" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PainelPrincipal" layoutX="91.0" layoutY="75.0" prefHeight="632.0" prefWidth="1184.0" style="-fx-background-color: #002147; -fx-background-radius: 20;">
+         <children>
+            <TextField fx:id="TxtDescricao" layoutX="62.0" layoutY="110.0" prefHeight="49.0" prefWidth="332.0" promptText="Descrição" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <Label fx:id="TextoDoPainelDeCima1" layoutX="392.0" layoutY="24.0" text="Cadastro de Produtos" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="42.0" />
+               </font>
+            </Label>
+            <Separator layoutX="359.0" layoutY="79.0" prefHeight="0.0" prefWidth="484.0" />
+            <TextField fx:id="TxtValorCompra" layoutX="790.0" layoutY="110.0" prefHeight="49.0" prefWidth="332.0" promptText="Valor de custo da unidade" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtDataCompra" layoutX="62.0" layoutY="188.0" prefHeight="49.0" prefWidth="332.0" promptText="DataCompra" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtValidade" layoutX="784.0" layoutY="188.0" prefHeight="49.0" prefWidth="332.0" promptText="Validade" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <Button fx:id="BtnEnviar" layoutX="503.0" layoutY="521.0" mnemonicParsing="false" onMouseClicked="#Cadastrar" prefHeight="49.0" prefWidth="155.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Cadastrar" textFill="#002147">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <TextField fx:id="TxtQtdAdquirida" layoutX="62.0" layoutY="264.0" prefHeight="49.0" prefWidth="332.0" promptText="quantidade adiquirida" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtValorDeVenda" layoutX="790.0" layoutY="264.0" prefHeight="49.0" prefWidth="332.0" promptText="Valor de venda da unidade" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtMarcaDoProduto" layoutX="62.0" layoutY="343.0" prefHeight="49.0" prefWidth="332.0" promptText="Marca do Produto" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtCodigoDeBarras" layoutX="426.0" layoutY="184.0" prefHeight="49.0" prefWidth="332.0" promptText="Codigo de Barras" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtQtdMinima" layoutX="426.0" layoutY="110.0" prefHeight="49.0" prefWidth="332.0" promptText="Quatidade Minima" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtSetor" layoutX="435.0" layoutY="269.0" prefHeight="49.0" prefWidth="332.0" promptText="Setor" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtFornecedor" layoutX="426.0" layoutY="343.0" prefHeight="49.0" prefWidth="332.0" promptText="Fornecedor" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtQtdCompraAutomatica" layoutX="790.0" layoutY="343.0" prefHeight="49.0" prefWidth="332.0" promptText="Quantia de unidades da compra automatica" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <CheckBox layoutX="168.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#AtivarCompraAutomatica" text="Ativar compra automatica" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </CheckBox>
+            <Label layoutX="730.0" layoutY="448.0" text="ao ativar a compra automatica, " textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="731.0" layoutY="480.0" text="toda vez que o estoque do produto " textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="731.0" layoutY="512.0" text="Atigir seu limite minimo, será eviado" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="724.0" layoutY="546.0" text=" uma mensagem para o fornecedor" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="724.0" layoutY="578.0" text="  solicitado a reposição" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

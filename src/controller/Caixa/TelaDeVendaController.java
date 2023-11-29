@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.print.PrinterJob;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -15,6 +16,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.DesignSistema;
@@ -23,8 +26,12 @@ import model.dao.Caixa.TelaDeVendaDao;
 import model.dao.Gerente.PersonalizaSistemaDao;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
+
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyCodeCombination;
+
 
 
 import controller.Main;
@@ -59,6 +66,8 @@ public class TelaDeVendaController {
 
     @FXML
     private ListView<Label> lvListagem;
+    
+    
 
     @FXML
     private TextField txtCodigoDeBarra;
@@ -75,11 +84,17 @@ public class TelaDeVendaController {
     @FXML
     private TextField txtSubTotal;
     
+    private StringBuilder notaFiscalText = new StringBuilder();
+    
+    public static List<Produto2> produtos = new ArrayList<>();
+    
     public static double subtotal=0;
-    double total=0;
-    String codigo;
-    int quantidade=1;
-    int nItem=0;
+    private double total=0;
+    private String codigo;
+    private int quantidade=1;
+    private int nItem=0;
+    private int aux=0;
+    
 
     
 
@@ -105,6 +120,9 @@ public class TelaDeVendaController {
          Painel.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
  	        if (event.getCode() == KeyCode.F1) {
  	           try {
+ 	        	   
+ 	        	   imprimirNotaFiscal();
+ 	        	   
 					Main.Cena("DefiniFormaDePagamento");
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -144,10 +162,18 @@ public class TelaDeVendaController {
                 }
             }
         });
+        
+      
+        
+        // Adiciona cabeçalho
+        notaFiscalText.append("SuperSminding\n");
+        // Adiciona divisor
+        notaFiscalText.append("---------------------------------------------\n");
 
-        TextoInicial.setText("NºIntem       Codigo            Descrição            Qtd      Val.Unit     Total");
+        String linhaFormatada = String.format("%s %14s %19s %13s %12s %10s", "NºIntem", "Codigo", "Descrição", "Qtd", "Val.Unit", "Total");
+        TextoInicial.setText(linhaFormatada);
         TextoInicial.setStyle("-fx-text-fill: black; -fx-font-family: 'Arial'; -fx-font-size: 18;");
-        // Adicionar o item ao ListView
+
         lvListagem.getItems().add(TextoInicial);
     }
     
@@ -165,6 +191,8 @@ public class TelaDeVendaController {
         //ele está chamando o metodo getProduto que pesquisa no banco o produto com base no codigo de barras fornecido e retorna um objeto da classe produto 
         
         produto = TelaDeVendaDao.getProdutoByCodigoDeBarras(codigoDeBarras);
+        
+        produtos.add(produto);
         
         System.out.println(produto.getDescricao());
         
@@ -201,6 +229,7 @@ public class TelaDeVendaController {
             	String rotuloFormatado = formatarLabel(nItem, produto.getCodigo(), produto.getDescricao(), quantidade, produto.getValorUnidade(), total);
             	int index = lvListagem.getItems().size() - 1;
                 Label produtoLabel = lvListagem.getItems().get(index);
+                
                 produtoLabel.setText(rotuloFormatado);
             	
             } else {
@@ -217,6 +246,7 @@ public class TelaDeVendaController {
                 
               
                 lvListagem.getItems().add(new Label(rotuloFormatado));
+                
             }
             
             txtPrecoTotal.setText("" + formato.format(total));
@@ -263,7 +293,38 @@ public class TelaDeVendaController {
     	
     }
     
-    
+    private void imprimirNotaFiscal() {
+        PrinterJob printerJob = PrinterJob.createPrinterJob();
+
+        if (printerJob != null && printerJob.showPrintDialog(null)) {
+            // Cria um StringBuilder para armazenar o conteúdo da nota fiscal
+            StringBuilder notaFiscalText = new StringBuilder();
+            
+            // Adiciona cabeçalho
+            notaFiscalText.append("SuperSminding\n");
+            // Adiciona divisor
+            notaFiscalText.append("---------------------------------------------\n");
+            
+            
+            notaFiscalText.append(String.format("%s %29s %30s %12s %10s %10s", "NºIntem", "Codigo", "Descrição", "Qtd", "Val.Unit", "Total")+"\n");
+            // Adiciona conteúdo da lvListagem, começando da segunda linha
+            for (int i = 1; i < lvListagem.getItems().size(); i++) {
+                Label label = lvListagem.getItems().get(i);
+                notaFiscalText.append(label.getText()).append("\n");
+            }
+
+            // Cria um objeto Text para facilitar a impressão
+            Text notaFiscalTextObj = new Text(notaFiscalText.toString());
+
+            // Imprime o conteúdo da nota fiscal
+            boolean success = printerJob.printPage(notaFiscalTextObj);
+
+            if (success) {
+                printerJob.endJob();
+            }
+        }
+    }
+
     public void AlterarComponentes(Image fundo,Image logo,String txtf,String letraTxtf,String btn,String letraBtn,
 			String corPrincipal,String corSecundaria,String corTercearia) {
 

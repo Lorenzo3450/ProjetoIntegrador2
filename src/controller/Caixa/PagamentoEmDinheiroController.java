@@ -49,8 +49,9 @@ public class PagamentoEmDinheiroController {
     @FXML
     private void initialize() {
        
-    	subtotal=TelaDeVendaController.subtotal;
-    	txtTotalRecebido.requestFocus();
+    	
+    
+    	
     	
     	   Painel.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
     	        if (event.getCode() == KeyCode.F1) {
@@ -66,6 +67,15 @@ public class PagamentoEmDinheiroController {
      
     	
     }
+    
+    
+    @FXML
+    void Teste(MouseEvent event) {
+    	txtTotalRecebido.requestFocus();
+    	txtSubTotal.setText(""+TelaDeVendaController.subtotal);
+    	
+    }
+
     
     
     @FXML

@@ -26,7 +26,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model.Fornecedor;
 import model.Funcionario;
+import model.Produto2;
+import model.Gestor.TelaDeCadastrarProdutoDao;
 import model.Gestor.TelaDeEnviarEmailDao;
 import model.dao.Gerente.TabelaFuncionarioDao;
 import model.dao.Gerente.TelaDePerfilDao;
@@ -84,7 +87,10 @@ public class TelaDeEnviarMensagemController {
 	@FXML
 	private void initialize() throws SQLException {
 		
-	
+		 int idFuncionario = MainModel.verificaID();
+	        List<Funcionario> funcionarios = TelaDePerfilDao.getFuncionarioComEndereco(idFuncionario);
+
+	        Funcionario funcionario = funcionarios.get(0); 
 	
 		txtRemetente.setText("De : "+TelaDeEnviarEmailDao.obterEmailFuncionarioConectado());
 		
@@ -102,6 +108,32 @@ public class TelaDeEnviarMensagemController {
 			e.printStackTrace();
 		}
 		
+		List<Produto2> produtos = TelaDeCadastrarProdutoDao.obterProdutosAbaixoEstoqueMinimo();
+        List<Fornecedor> fornecedores = TelaDeCadastrarProdutoDao.obterFornecedoresPorProdutos(produtos);
+        System.out.println("oi");
+
+        // Iterar sobre a lista de fornecedores e enviar emails
+        for (Fornecedor fornecedor : fornecedores) {
+            System.out.println("oi");
+
+            String emailFornecedor = fornecedor.getEmail();
+            String assunto = "Pedido de Quantidade";
+            String mensagem = "Prezado Fornecedor,\n\nGostaríamos de solicitar uma quantidade adicional de do seguinte produto:\n\n";
+
+            for (Produto2 produto : produtos) {
+                if (produto.getIdFornecedor() == fornecedor.getId()) {
+                    mensagem += "Produto: " + produto.getDescricao() + "\n com a quantia de"+produto.getQuatidadeComprautomatica()+" unidades";
+                    // Adicione mais informações do produto, se necessário
+                    System.out.println(mensagem);
+                }
+            }
+
+            mensagem += "\nAtenciosamente,\n" + TelaDeEnviarEmailDao.obterEmailFuncionarioConectado();
+
+            // Utilize os dados do método EnviarEmail
+            EnviaEmail.EnviarEmail(funcionario.getEmailDeTrabalho(),funcionario.getSenhaEmail(), assunto, mensagem, emailFornecedor);
+        }
+		
 		
 		
 
@@ -111,27 +143,29 @@ public class TelaDeEnviarMensagemController {
 	 @FXML
 	    void AbrirSideBar(MouseEvent event) {
 
-	    	 try {
-	    	        // Carregue a cena da barra lateral a partir do arquivo FXML
-	    	        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/gerente/SideBarGerente.fxml"));
-	    	        AnchorPane sideBarRoot = loader.load();
+		 try {
+ 	        // Carregue a cena da barra lateral a partir do arquivo FXML
+ 	        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Gestor/SideBarGestor.fxml"));
+ 	        AnchorPane sideBarRoot = loader.load();
 
-	    	        // Crie uma nova janela para exibir a cena da barra lateral
-	    	        Stage sideBarStage = new Stage();
-	    	        sideBarStage.initStyle(StageStyle.UNDECORATED);
-	    	        Scene sideBarScene = new Scene(sideBarRoot);
-	    	        sideBarStage.setScene(sideBarScene);
+ 	        // Crie uma nova janela para exibir a cena da barra lateral
+ 	        Stage sideBarStage = new Stage();
+ 	        sideBarStage.initStyle(StageStyle.UNDECORATED);
+ 	        Scene sideBarScene = new Scene(sideBarRoot);
+ 	        sideBarStage.setScene(sideBarScene);
 
-	    	        sideBarStage.setX(0);
-	    	        sideBarStage.setY(0);
-	    	        // Exiba a janela da barra lateral
-	    	        sideBarStage.show();
-	    	    } catch (IOException e) {
-	    	        e.printStackTrace();
-	    	    }
-	    	
-	    	
-	    }
+ 	        sideBarStage.setX(0);
+ 	        sideBarStage.setY(0);
+ 	        // Exiba a janela da barra lateral
+ 	        sideBarStage.show();
+ 	    } catch (IOException e) {
+ 	        e.printStackTrace();
+ 	    }
+ 	
+ 	
+ }
+ 
+	    
 	    
 
 		@FXML

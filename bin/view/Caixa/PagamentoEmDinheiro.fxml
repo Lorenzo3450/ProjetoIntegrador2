@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1336.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Caixa.PagamentoEmDinheiroController">
+<AnchorPane fx:id="Painel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#Teste" prefHeight="720.0" prefWidth="1336.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Caixa.PagamentoEmDinheiroController">
    <children>
-      <ImageView fx:id="ImagemDeFundo" fitHeight="720.0" fitWidth="1366.0" layoutY="60.0" pickOnBounds="true" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <ImageView fx:id="ImagemDeFundo" fitHeight="720.0" fitWidth="1366.0" layoutY="60.0" onMouseEntered="#Teste" pickOnBounds="true" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <image>
             <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="136.0" layoutY="154.0" prefHeight="436.0" prefWidth="1065.0" style="-fx-background-color: #002147; -fx-border-radius: 40; -fx-background-radius: 40;">
+      <AnchorPane layoutX="136.0" layoutY="154.0" onMouseEntered="#Teste" prefHeight="436.0" prefWidth="1065.0" style="-fx-background-color: #002147; -fx-border-radius: 40; -fx-background-radius: 40;">
          <children>
             <Label fx:id="lblFormaDePagamento" layoutX="371.0" layoutY="40.0" text="Forma de pagamento: Dinheiro" textFill="WHITE">
                <font>
@@ -27,7 +27,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="txtTotalRecebido" layoutX="420.0" layoutY="193.0" prefHeight="45.0" prefWidth="249.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" />
+            <TextField fx:id="txtTotalRecebido" layoutX="420.0" layoutY="193.0" onKeyPressed="#onTotalRecebidoKeyPressed" prefHeight="45.0" prefWidth="249.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" />
             <TextField fx:id="txtTroco" editable="false" layoutX="720.0" layoutY="193.0" prefHeight="45.0" prefWidth="249.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" />
             <Label fx:id="lblFormaDePagamento11" layoutX="432.0" layoutY="151.0" text="Total Recebido" textFill="WHITE">
                <font>
@@ -51,7 +51,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="PainelDeCima" layoutX="10.0" layoutY="10.0" prefHeight="59.0" prefWidth="1366.0" style="-fx-background-color: #002147;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="PainelDeCima" layoutX="10.0" layoutY="10.0" onMouseEntered="#Teste" prefHeight="59.0" prefWidth="1366.0" style="-fx-background-color: #002147;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fx:id="Logo" fitHeight="57.0" fitWidth="62.0" layoutX="60.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1336.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Gestor.TelaDeCadastraFornecedorController">
+   <children>
+      <ImageView fx:id="ImagemDeFundo" fitHeight="720.0" fitWidth="1366.0" layoutY="60.0" pickOnBounds="true" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <image>
+            <Image url="@../../../Imagens/imagens%20login/Premium%20Vector%20_%20White%20wood%20plank%20texture%20background_%201.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="PainelDeCima" layoutX="10.0" layoutY="10.0" prefHeight="59.0" prefWidth="1366.0" style="-fx-background-color: #002147;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="Logo" fitHeight="57.0" fitWidth="62.0" layoutX="60.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Group%204%201.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="36.0" layoutX="14.0" layoutY="17.0" onMouseClicked="#AbrirSideBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagens/imagens%20login/Vector.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="TextoDoPainelDeCima" layoutX="132.0" layoutY="14.0" text="- Tela de cadastrar Fornecedor" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PainelPrincipal" layoutX="91.0" layoutY="123.0" prefHeight="518.0" prefWidth="1184.0" style="-fx-background-color: #002147; -fx-background-radius: 20;">
+         <children>
+            <TextField fx:id="TxtNome" layoutX="83.0" layoutY="168.0" prefHeight="49.0" prefWidth="461.0" promptText="Nome" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <Label fx:id="TextoDoPainelDeCima1" layoutX="384.0" layoutY="46.0" text="Cadastro de Fornecedor" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="42.0" />
+               </font>
+            </Label>
+            <Separator layoutX="351.0" layoutY="101.0" prefHeight="0.0" prefWidth="484.0" />
+            <TextField fx:id="TxtEmail" layoutX="634.0" layoutY="168.0" prefHeight="49.0" prefWidth="461.0" promptText="Email" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtTelefone" layoutX="83.0" layoutY="278.0" prefHeight="49.0" prefWidth="461.0" promptText="Telefone" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtTelefone1" layoutX="634.0" layoutY="278.0" prefHeight="49.0" prefWidth="461.0" promptText="Endereço" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </TextField>
+            <Button fx:id="BtnEnviar" layoutX="515.0" layoutY="409.0" mnemonicParsing="false" onMouseClicked="#Cadastrar" prefHeight="49.0" prefWidth="155.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 20;" text="Cadastrar" textFill="#002147">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

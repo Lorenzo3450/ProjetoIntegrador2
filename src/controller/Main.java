@@ -7,6 +7,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import controller.Caixa.PagamentoEmDinheiroController;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import model.dao.ConexãoBD;
 import model.dao.login.MainModel;
 import javafx.application.Application;
@@ -51,6 +54,8 @@ public class Main extends Application {
 	private static Scene CadastraProduto;
 	private static Scene TabelaProdutos;
 	private static Scene TelaDeEnviarMensagem;
+	private static Scene TelaDeCadastraFornecedor;
+	private static Scene SideBarGestor;
 	
 	//Telas de caixa
 	private static Scene FrenteDeCaixa;
@@ -64,6 +69,16 @@ public class Main extends Application {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("SuperSminding");
 
+		  primaryStage.sceneProperty().addListener(new ChangeListener<Scene>() {
+	            @Override
+	            public void changed(ObservableValue<? extends Scene> observable, Scene oldScene, Scene newScene) {
+	                // Este método será chamado sempre que a cena for alterada
+	                if (newScene != null) {
+	                    cenaExibida();
+	                }
+	            }
+	        });
+		
 		initMainStage();
 
 	}
@@ -122,11 +137,14 @@ public class Main extends Application {
 		PersonalizaSistema = new Scene(fxmlPersonalizaSistema);
 		
 		
-		//cenas do pacote RH
+		//cenas do pacote RH descontinuado
 		
 		Parent fxmlMenuPrincipalRH = FXMLLoader
 				.load(getClass().getResource("/view/RH/TelaPrincipalRH.fxml"));
 		MenuPrincipalRH = new Scene(fxmlMenuPrincipalRH);
+		
+		
+
 		
 		//cenas gestor
 	
@@ -134,14 +152,27 @@ public class Main extends Application {
 				.load(getClass().getResource("/view/gestor/TelaPrincipalGestor.fxml"));
 		TelaPrincipalGestor = new Scene(fxmlTelaPrincipal);
 
-		Parent fxmlCadastraProduto = FXMLLoader.load(getClass().getResource("/view/gestor/TelaDeCadastrarProduto.fxml"));
+		
+		Parent fxmlCadastraProduto = FXMLLoader.load(getClass().getResource("/view/Gestor/TelaDeCadastraProduto.fxml"));
 		CadastraProduto= new Scene(fxmlCadastraProduto);
 		
-		Parent fxmlTabelaProduto = FXMLLoader.load(getClass().getResource("/view/gestor/TabelaProdutos.fxml"));
+		
+		
+		Parent fxmlTabelaProduto = FXMLLoader.load(getClass().getResource("/view/Gestor/TabelaProdutos.fxml"));
 		TabelaProdutos= new Scene(fxmlTabelaProduto);
 		
-		Parent fxmlEnviaMensagem = FXMLLoader.load(getClass().getResource("/view/gestor/TelaDeEnviarMensagem.fxml"));
+		Parent fxmlEnviaMensagem = FXMLLoader.load(getClass().getResource("/view/Gestor/TelaDeEnviarMensagem.fxml"));
 		TelaDeEnviarMensagem = new Scene(fxmlEnviaMensagem);
+		
+		
+		
+		Parent fxmlTelaDeCadastraFornecedor = FXMLLoader.load(getClass().getResource("/view/Gestor/TelaDeCadastrarFornecedor.fxml"));
+		TelaDeCadastraFornecedor = new Scene(fxmlTelaDeCadastraFornecedor);
+		
+		
+		Parent fxmlSideBarGestor = FXMLLoader.load(getClass().getResource("/view/Gestor/SideBarGestor.fxml"));
+		SideBarGestor = new Scene(fxmlSideBarGestor);
+		
 		
 		//Telas caixa
 		
@@ -328,9 +359,33 @@ public class Main extends Application {
 
 		}
 		
+		if (a.equals("Envia Mensagem")) {
+
+			primaryStage.setScene(TelaDeEnviarMensagem);
+
+		}
+		
+		if (a.equals("cadastra fornecedor")) {
+
+			primaryStage.setScene(TelaDeCadastraFornecedor);
+
+		}
+		
+		
+		
 		
 	}
 	
+	
+	private void cenaExibida() {
+		Scene cenaAtual = primaryStage.getScene();
+		
+			if(cenaAtual == PagamentoEmDinheiro) {
+	      
+			}
+		
+		
+	}
 
 
 	//metodo main

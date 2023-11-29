@@ -122,5 +122,6 @@
             </Label>
          </children>
       </AnchorPane>
+      <ListView fx:id="lvListagem2" layoutX="500.0" prefHeight="45.0" prefWidth="98.0" visible="false" />
    </children>
 </AnchorPane>

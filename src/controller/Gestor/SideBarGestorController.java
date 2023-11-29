@@ -154,6 +154,10 @@ public class SideBarGestorController {
 
     @FXML
     private AnchorPane painelRelatorio;
+    
+
+    @FXML
+    private AnchorPane painelProduto;
 
     @FXML
     private ImageView perfil;
@@ -256,10 +260,10 @@ public class SideBarGestorController {
 
        	painelRelatorio.setVisible(false);
     	painelRelatorio.setDisable(true);
-    	painelFuncionario.setVisible(false);
-    	painelFuncionario.setDisable(true);
     	painelABerto.setVisible(true);
     	painelABerto.setDisable(false);
+    	painelProduto.setVisible(false);
+    	painelProduto.setDisable(true);
     	
     	
     }
@@ -275,11 +279,11 @@ public class SideBarGestorController {
 
     	painelRelatorio.setVisible(false);
     	painelRelatorio.setDisable(true);
-    	painelFuncionario.setVisible(true);
-    	painelFuncionario.setDisable(false);
+    	
     	painelABerto.setVisible(true);
     	painelABerto.setDisable(false);
-    	
+     	painelProduto.setVisible(false);
+    	painelProduto.setDisable(true);    	
     }
 
     @FXML
@@ -317,7 +321,31 @@ public class SideBarGestorController {
     @FXML
     void IrParaProdutos(MouseEvent event) {
 
+    	painelRelatorio.setVisible(false);
+    	painelRelatorio.setDisable(true);
+    	painelABerto.setVisible(true);
+    	painelABerto.setDisable(false);
+    	painelProduto.setVisible(true);
+    	painelProduto.setDisable(false);
+    	
     }
+    
+    
+
+    @FXML
+    void IrParaCadastroFornecedor(MouseEvent event) throws Exception {
+
+    	Main.Cena("cadastra fornecedor");
+    	
+    }
+
+    @FXML
+    void IrParaCadastroProdutos(MouseEvent event) throws Exception {
+
+    	Main.Cena("CadastraProduto");
+    	
+    }
+
 
     @FXML
     void IrParaRelatorioABC(MouseEvent event) throws Exception {
@@ -331,10 +359,10 @@ public class SideBarGestorController {
 
     	painelRelatorio.setVisible(true);
     	painelRelatorio.setDisable(false);
-    	painelFuncionario.setVisible(false);
-    	painelFuncionario.setDisable(true);
     	painelABerto.setVisible(true);
     	painelABerto.setDisable(false);
+     	painelProduto.setVisible(false);
+    	painelProduto.setDisable(true);
     	
     }
 
